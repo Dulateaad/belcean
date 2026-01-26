@@ -127,7 +127,7 @@ export default function Home() {
             <div className="absolute left-1/2 top-10 bottom-10 w-0.5 bg-border -translate-x-1/2 hidden md:block"></div>
             <div className="grid gap-y-16">
               {howItWorks.map((step, index) => (
-                <div key={index} className="relative z-10">
+                <div key={index} className="relative">
                   <div className="md:hidden flex items-start gap-6">
                     <div className="flex-shrink-0 w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold z-10 mt-1 shadow-lg">
                       {index + 1}
@@ -140,7 +140,7 @@ export default function Home() {
                   <div className="hidden md:grid md:grid-cols-2 md:gap-16 items-center">
                     {index % 2 === 0 ? (
                       <>
-                        <div className="text-right relative">
+                        <div className="text-right relative z-20">
                           <h3 className="text-2xl font-bold">{step.title}</h3>
                           <p className="text-muted-foreground mt-2 text-lg">{step.description}</p>
                         </div>
@@ -149,7 +149,7 @@ export default function Home() {
                     ) : (
                       <>
                         <div></div>
-                        <div className="relative">
+                        <div className="relative z-20">
                           <h3 className="text-2xl font-bold">{step.title}</h3>
                           <p className="text-muted-foreground mt-2 text-lg">{step.description}</p>
                         </div>
