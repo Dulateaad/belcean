@@ -1,4 +1,4 @@
-import { Building2, ShoppingBag, HeartPulse, HardHat, Sparkles, Wind, Sofa, Users, UserCheck, BookCheck, Camera, CheckSquare } from 'lucide-react';
+import { Building2, ShoppingBag, HeartPulse, HardHat, Sparkles, Wind, Sofa, Users, UserCheck, BookCheck, Camera, CheckSquare, ClipboardList, ShieldCheck, Smile } from 'lucide-react';
 import type { Service, Testimonial, ClientType, WhyBeCleanReason, HowItWorksStep, PriceItem } from './types';
 import { PlaceHolderImages } from './placeholder-images';
 
@@ -15,7 +15,7 @@ export const services: Service[] = [
     slug: '/abonentskiy-klining',
     title: 'Абонентский клининг',
     description: 'Регулярная уборка по согласованному графику.',
-    icon: CheckSquare,
+    icon: ClipboardList,
     imageId: 'service-subscription',
     imageHint: 'calendar schedule'
   },
@@ -89,19 +89,19 @@ export const whyBeClean: WhyBeCleanReason[] = [
         icon: Users 
     },
     { 
-        title: 'Чек-листы',
-        description: 'Мы используем подробные чек-листы для каждого объекта, чтобы гарантировать высокое качество.',
-        icon: BookCheck 
+        title: 'Гарантия качества',
+        description: 'Мы используем подробные чек-листы для каждого объекта, чтобы гарантировать высокий стандарт.',
+        icon: ShieldCheck 
     },
     { 
-        title: 'Ответственный менеджер',
+        title: 'Персональный менеджер',
         description: 'За каждым клиентом закрепляется персональный менеджер для решения всех вопросов.',
         icon: UserCheck
     },
     { 
-        title: 'Фотоотчёт',
+        title: 'Довольные клиенты',
         description: 'Предоставляем фотоотчёты о проделанной работе для полного контроля с вашей стороны.',
-        icon: Camera
+        icon: Smile
     },
 ];
 

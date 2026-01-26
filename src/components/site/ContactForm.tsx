@@ -72,7 +72,7 @@ export function ContactForm({ defaultService }: { defaultService?: string }) {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Имя</FormLabel>
+              <FormLabel className="sr-only">Имя</FormLabel>
               <FormControl>
                 <Input placeholder="Ваше имя" {...field} />
               </FormControl>
@@ -85,7 +85,7 @@ export function ContactForm({ defaultService }: { defaultService?: string }) {
           name="phone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Телефон</FormLabel>
+              <FormLabel className="sr-only">Телефон</FormLabel>
               <FormControl>
                 <Input placeholder="+998 XX XXX XX XX" type="tel" {...field} />
               </FormControl>
@@ -98,7 +98,7 @@ export function ContactForm({ defaultService }: { defaultService?: string }) {
           name="service"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Услуга</FormLabel>
+              <FormLabel className="sr-only">Услуга</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger>
@@ -106,6 +106,7 @@ export function ContactForm({ defaultService }: { defaultService?: string }) {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
+                  <SelectItem value="">-- Не выбрано --</SelectItem>
                   {services.map((service) => (
                     <SelectItem key={service.slug} value={service.title}>
                       {service.title}
@@ -117,7 +118,7 @@ export function ContactForm({ defaultService }: { defaultService?: string }) {
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full" disabled={form.formState.isSubmitting}>
+        <Button type="submit" size="lg" className="w-full" disabled={form.formState.isSubmitting}>
           {form.formState.isSubmitting ? "Отправка..." : "Оставить заявку"}
         </Button>
       </form>
