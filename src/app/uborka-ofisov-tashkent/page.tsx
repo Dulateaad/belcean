@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { CheckCircle, ListChecks } from 'lucide-react';
 import { ContactForm } from '@/components/site/ContactForm';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
