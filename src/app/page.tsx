@@ -124,20 +124,20 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl font-headline mb-16">Как мы работаем</h2>
           <div className="relative">
-            <div className="absolute left-1/2 top-10 bottom-10 w-0.5 bg-border -translate-x-1/2 hidden md:block"></div>
+            <div className="absolute left-7 top-10 bottom-10 w-0.5 bg-border -translate-x-1/2 md:left-1/2"></div>
             <div className="grid gap-y-16">
               {howItWorks.map((step, index) => (
                 <div key={index} className="relative">
-                  <div className="md:hidden flex items-start gap-6">
-                    <div className="flex-shrink-0 w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold z-10 mt-1 shadow-lg">
+                  <div className="md:hidden flex items-start gap-8">
+                    <div className="flex-shrink-0 w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold z-10 border-4 border-background shadow-lg">
                       {index + 1}
                     </div>
-                    <div>
+                    <div className="pt-1">
                       <h3 className="text-2xl font-bold">{step.title}</h3>
                       <p className="text-muted-foreground mt-1 text-lg">{step.description}</p>
                     </div>
                   </div>
-                  <div className="hidden md:grid md:grid-cols-2 md:gap-40 lg:gap-64 items-center">
+                  <div className="hidden md:grid md:grid-cols-2 md:gap-64 lg:gap-96 items-center">
                     {index % 2 === 0 ? (
                       <>
                         <div className="text-right relative z-20">
