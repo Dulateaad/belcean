@@ -7,7 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, ChevronDown } from 'lucide-react';
 import { Logo } from './Logo';
 import { services } from '@/lib/constants';
@@ -58,7 +58,13 @@ export function SiteHeader() {
             </Button>
           </SheetTrigger>
           <SheetContent side="left">
-            <Link href="/" className="mb-8">
+            <SheetHeader className="sr-only">
+              <SheetTitle>Menu</SheetTitle>
+              <SheetDescription>
+                Mobile navigation menu
+              </SheetDescription>
+            </SheetHeader>
+            <Link href="/" className="mb-8 block">
               <Logo />
             </Link>
             <div className="flex flex-col space-y-4">
