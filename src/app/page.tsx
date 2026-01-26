@@ -150,7 +150,7 @@ export default function Home() {
                   <div className="hidden md:grid md:grid-cols-2 md:gap-8 items-center">
                     {index % 2 === 0 ? (
                       <>
-                        <div className="text-right">
+                        <div className="text-right relative z-20">
                           <h3 className="text-2xl font-bold">{step.title}</h3>
                           <p className="text-muted-foreground mt-2">{step.description}</p>
                         </div>
@@ -159,7 +159,7 @@ export default function Home() {
                     ) : (
                       <>
                         <div></div>
-                        <div>
+                        <div className="relative z-20">
                           <h3 className="text-2xl font-bold">{step.title}</h3>
                           <p className="text-muted-foreground mt-2">{step.description}</p>
                         </div>
@@ -206,7 +206,7 @@ export default function Home() {
           >
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index} className="sm:basis-1/2">
+                <CarouselItem key={index} className="md:basis-1/2">
                   <div className="p-1">
                     <Card>
                       <CardContent className="p-6 space-y-4">
