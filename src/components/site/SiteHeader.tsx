@@ -58,9 +58,9 @@ export function SiteHeader() {
             </Button>
           </SheetTrigger>
           <SheetContent side="left">
-            <SheetHeader className="sr-only">
-              <SheetTitle>Menu</SheetTitle>
-              <SheetDescription>
+            <SheetHeader>
+              <SheetTitle className="sr-only">Menu</SheetTitle>
+              <SheetDescription className="sr-only">
                 Mobile navigation menu
               </SheetDescription>
             </SheetHeader>
