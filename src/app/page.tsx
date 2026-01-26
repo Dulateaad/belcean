@@ -137,7 +137,7 @@ export default function Home() {
                       <p className="text-muted-foreground mt-1 text-lg">{step.description}</p>
                     </div>
                   </div>
-                  <div className="hidden md:grid md:grid-cols-2 md:gap-8 items-center">
+                  <div className="hidden md:grid md:grid-cols-2 md:gap-16 items-center">
                     {index % 2 === 0 ? (
                       <>
                         <div className="text-right relative">
