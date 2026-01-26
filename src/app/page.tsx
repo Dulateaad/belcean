@@ -30,6 +30,7 @@ import {
 import { ContactForm } from '@/components/site/ContactForm';
 import { services, testimonials, clientTypes, whyBeClean, howItWorks } from '@/lib/constants';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { cn } from '@/lib/utils';
 
 export default function Home() {
   const mapPlaceholder = PlaceHolderImages.find(p => p.id === 'map');
@@ -61,7 +62,7 @@ export default function Home() {
               height="400"
               src={PlaceHolderImages.find(p => p.id === 'hero')?.imageUrl || ''}
               width="600"
-              data-ai-hint="cleaning professional"
+              data-ai-hint="professional cleaner"
             />
           </div>
         </div>
@@ -134,27 +135,41 @@ export default function Home() {
           <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-5xl font-headline mb-12">Как мы работаем</h2>
           <div className="relative">
             <div className="absolute left-1/2 top-10 bottom-10 w-0.5 bg-border -translate-x-1/2 hidden md:block"></div>
-            <div className="grid gap-12 md:grid-cols-1">
+            <div className="grid gap-y-12">
               {howItWorks.map((step, index) => (
-                <div key={index} className="md:flex items-center gap-8 relative">
-                   <div className="flex-1 md:text-right md:[&>div]:ml-auto">
-                    {index % 2 === 0 && (
-                      <div className="max-w-md space-y-2">
-                        <h3 className="text-2xl font-bold">{step.title}</h3>
-                        <p className="text-muted-foreground">{step.description}</p>
-                      </div>
-                    )}
-                   </div>
-                  <div className="flex-shrink-0 w-24 h-24 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-3xl font-bold my-4 md:my-0 mx-auto md:mx-0 z-10">
-                    {index + 1}
+                <div key={index} className="relative">
+                  <div className="md:hidden flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold z-10 mt-1">
+                      {index + 1}
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold">{step.title}</h3>
+                      <p className="text-muted-foreground mt-1">{step.description}</p>
+                    </div>
                   </div>
-                  <div className="flex-1">
-                     {index % 2 !== 0 && (
-                      <div className="max-w-md space-y-2">
-                        <h3 className="text-2xl font-bold">{step.title}</h3>
-                        <p className="text-muted-foreground">{step.description}</p>
-                      </div>
+                  <div className="hidden md:grid md:grid-cols-2 md:gap-8 items-center">
+                    {index % 2 === 0 ? (
+                      <>
+                        <div className="text-right">
+                          <h3 className="text-2xl font-bold">{step.title}</h3>
+                          <p className="text-muted-foreground mt-2">{step.description}</p>
+                        </div>
+                        <div></div>
+                      </>
+                    ) : (
+                      <>
+                        <div></div>
+                        <div>
+                          <h3 className="text-2xl font-bold">{step.title}</h3>
+                          <p className="text-muted-foreground mt-2">{step.description}</p>
+                        </div>
+                      </>
                     )}
+                    <div className="absolute w-full h-full flex justify-center items-center pointer-events-none">
+                       <div className="w-24 h-24 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-3xl font-bold z-10 border-8 border-background">
+                        {index + 1}
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -191,7 +206,7 @@ export default function Home() {
           >
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index} className="md:basis-1/2">
+                <CarouselItem key={index} className="sm:basis-1/2">
                   <div className="p-1">
                     <Card>
                       <CardContent className="p-6 space-y-4">
