@@ -106,7 +106,6 @@ export function ContactForm({ defaultService }: { defaultService?: string }) {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="">-- Не выбрано --</SelectItem>
                   {services.map((service) => (
                     <SelectItem key={service.slug} value={service.title}>
                       {service.title}
