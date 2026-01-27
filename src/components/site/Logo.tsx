@@ -8,7 +8,8 @@ export function Logo() {
         alt="BeClean Pro Logo"
         width={140}
         height={40}
-        className="h-10 w-auto"
+        className="w-auto"
+        style={{ height: 25 }}
         priority
       />
     </div>
