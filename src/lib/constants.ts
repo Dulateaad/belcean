@@ -1,138 +1,53 @@
-import { Building2, ShoppingBag, HeartPulse, HardHat, Sparkles, Wind, Sofa, Users, UserCheck, BookCheck, Camera, CheckSquare, ClipboardList, ShieldCheck, Smile } from 'lucide-react';
-import type { Service, Testimonial, ClientType, WhyBeCleanReason, HowItWorksStep, PriceItem } from './types';
+import { Building2, ShoppingBag, HeartPulse, HardHat, Sparkles, Wind, Sofa, Users, UserCheck, ShieldCheck, Smile, ClipboardList } from 'lucide-react';
 import { PlaceHolderImages } from './placeholder-images';
 
-export const services: Service[] = [
-  {
-    slug: '/uborka-ofisov-tashkent',
-    title: 'Уборка офисов',
-    description: 'Поддержим чистоту и порядок в вашем рабочем пространстве.',
-    icon: Building2,
-    imageId: 'service-office',
-    imageHint: 'clean office'
-  },
-  {
-    slug: '/abonentskiy-klining',
-    title: 'Абонентский клининг',
-    description: 'Регулярная уборка по согласованному графику.',
-    icon: ClipboardList,
-    imageId: 'service-subscription',
-    imageHint: 'calendar schedule'
-  },
-  {
-    slug: '/generalnaya-uborka',
-    title: 'Генеральная уборка',
-    description: 'Комплексная и тщательная уборка всех помещений.',
-    icon: Sparkles,
-    imageId: 'service-general',
-    imageHint: 'floor polishing'
-  },
-  {
-    slug: '/poslestroitelnaya-uborka',
-    title: 'Послестроительная уборка',
-    description: 'Уберем всю строительную пыль и мусор.',
-    icon: HardHat,
-    imageId: 'service-construction',
-    imageHint: 'construction site'
-  },
-  {
-    slug: '/moika-okon',
-    title: 'Мойка окон',
-    description: 'Кристально чистые окна, фасады и витрины.',
-    icon: Wind,
-    imageId: 'service-windows',
-    imageHint: 'window cleaning'
-  },
-  {
-    slug: '/himchistka-mebeli',
-    title: 'Химчистка мебели',
-    description: 'Вернем вашей мебели свежий и опрятный вид.',
-    icon: Sofa,
-    imageId: 'service-furniture',
-    imageHint: 'upholstery cleaning'
-  },
-];
+export const getServices = (t: any) => {
+    const servicesText = t.Constants.services;
+    return [
+      { slug: servicesText[0].slug, title: servicesText[0].title, description: servicesText[0].description, icon: Building2, imageId: 'service-office', imageHint: 'clean office' },
+      { slug: servicesText[1].slug, title: servicesText[1].title, description: servicesText[1].description, icon: ClipboardList, imageId: 'service-subscription', imageHint: 'calendar schedule' },
+      { slug: servicesText[2].slug, title: servicesText[2].title, description: servicesText[2].description, icon: Sparkles, imageId: 'service-general', imageHint: 'floor polishing' },
+      { slug: servicesText[3].slug, title: servicesText[3].title, description: servicesText[3].description, icon: HardHat, imageId: 'service-construction', imageHint: 'construction site' },
+      { slug: servicesText[4].slug, title: servicesText[4].title, description: servicesText[4].description, icon: Wind, imageId: 'service-windows', imageHint: 'window cleaning' },
+      { slug: servicesText[5].slug, title: servicesText[5].title, description: servicesText[5].description, icon: Sofa, imageId: 'service-furniture', imageHint: 'upholstery cleaning' },
+    ];
+};
 
-export const testimonials: Testimonial[] = [
-  {
-    name: 'Алишер Каримов',
-    role: 'Директор, IT-компания',
-    quote: 'BeClean Pro — настоящие профессионалы. Наш офис никогда не был таким чистым. Особенно радует ответственный менеджер, который всегда на связи.',
-    avatarUrl: PlaceHolderImages.find(p => p.id === 'testimonial-1')?.imageUrl || '',
-  },
-  {
-    name: 'Елена Пак',
-    role: 'Управляющая бизнес-центра',
-    quote: 'Перешли на абонентское обслуживание от BeClean и очень довольны. Персонал обученный, вежливый, а фотоотчёты помогают контролировать качество.',
-    avatarUrl: PlaceHolderImages.find(p => p.id === 'testimonial-2')?.imageUrl || '',
-  },
-  {
-    name: 'Тимур Ибрагимов',
-    role: 'Владелец клиники',
-    quote: 'Для нас стерильность — главный приоритет. Команда BeClean полностью оправдала наши ожидания. Работают по чек-листам, ничего не упускают.',
-    avatarUrl: PlaceHolderImages.find(p => p.id === 'testimonial-3')?.imageUrl || '',
-  },
-];
+export const getTestimonials = (t: any) => {
+    const testimonialsText = t.Constants.testimonials;
+    return [
+      { name: testimonialsText[0].name, role: testimonialsText[0].role, quote: testimonialsText[0].quote, avatarUrl: PlaceHolderImages.find(p => p.id === 'testimonial-1')?.imageUrl || '' },
+      { name: testimonialsText[1].name, role: testimonialsText[1].role, quote: testimonialsText[1].quote, avatarUrl: PlaceHolderImages.find(p => p.id === 'testimonial-2')?.imageUrl || '' },
+      { name: testimonialsText[2].name, role: testimonialsText[2].role, quote: testimonialsText[2].quote, avatarUrl: PlaceHolderImages.find(p => p.id === 'testimonial-3')?.imageUrl || '' },
+    ];
+};
 
-export const clientTypes: ClientType[] = [
-    { name: 'Офисы', icon: Building2 },
-    { name: 'Бизнес-центры', icon: Building2 },
-    { name: 'Магазины', icon: ShoppingBag },
-    { name: 'Клиники', icon: HeartPulse },
-    { name: 'Склады', icon: HardHat },
-];
 
-export const whyBeClean: WhyBeCleanReason[] = [
-    { 
-        title: 'Обученный персонал',
-        description: 'Все наши сотрудники проходят специальное обучение и регулярно повышают квалификацию.',
-        icon: Users 
-    },
-    { 
-        title: 'Гарантия качества',
-        description: 'Мы используем подробные чек-листы для каждого объекта, чтобы гарантировать высокий стандарт.',
-        icon: ShieldCheck 
-    },
-    { 
-        title: 'Персональный менеджер',
-        description: 'За каждым клиентом закрепляется персональный менеджер для решения всех вопросов.',
-        icon: UserCheck
-    },
-    { 
-        title: 'Довольные клиенты',
-        description: 'Предоставляем фотоотчёты о проделанной работе для полного контроля с вашей стороны.',
-        icon: Smile
-    },
-];
+export const getClientTypes = (t: any) => {
+    const clientTypesText = t.Constants.client_types;
+    return [
+        { name: clientTypesText[0].name, icon: Building2 },
+        { name: clientTypesText[1].name, icon: Building2 },
+        { name: clientTypesText[2].name, icon: ShoppingBag },
+        { name: clientTypesText[3].name, icon: HeartPulse },
+        { name: clientTypesText[4].name, icon: HardHat },
+    ];
+};
 
-export const howItWorks: HowItWorksStep[] = [
-    {
-        title: 'Заявка или звонок',
-        description: 'Вы оставляете заявку на сайте или звоните нам. Мы обсуждаем ваши потребности.',
-    },
-    {
-        title: 'Оценка объекта',
-        description: 'Наш менеджер бесплатно выезжает на ваш объект для оценки объёма работ и составления сметы.',
-    },
-    {
-        title: 'Заключение договора',
-        description: 'Мы подготавливаем и подписываем договор с чётко прописанными условиями и графиком работ.',
-    },
-    {
-        title: 'Выполнение работ',
-        description: 'Наша команда приступает к работе в соответствии с согласованным планом и чек-листами.',
-    },
-    {
-        title: 'Контроль качества',
-        description: 'Менеджер контролирует качество уборки и предоставляет вам отчёт о проделанной работе.',
-    }
-];
+export const getWhyBeClean = (t: any) => {
+    const whyBeCleanText = t.Constants.why_beclean;
+    return [
+        { title: whyBeCleanText[0].title, description: whyBeCleanText[0].description, icon: Users  },
+        { title: whyBeCleanText[1].title, description: whyBeCleanText[1].description, icon: ShieldCheck },
+        { title: whyBeCleanText[2].title, description: whyBeCleanText[2].description, icon: UserCheck },
+        { title: whyBeCleanText[3].title, description: whyBeCleanText[3].description, icon: Smile },
+    ];
+};
 
-export const prices: PriceItem[] = [
-  { name: "Разовая уборка офиса", price: "от 4 000 сум / м²" },
-  { name: "Абонентский клининг", price: "от 3 000 000 сум / месяц" },
-  { name: "Генеральная уборка", price: "от 10 000 сум / м²" },
-  { name: "Послестроительная уборка", price: "от 15 000 сум / м²" },
-  { name: "Мойка окон", price: "от 20 000 сум / м²" },
-  { name: "Химчистка мебели", price: "от 60 000 сум" },
-];
+export const getHowItWorks = (t: any) => {
+    return t.Constants.how_it_works;
+};
+
+export const getPrices = (t: any) => {
+    return t.Constants.prices;
+};

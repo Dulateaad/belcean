@@ -21,21 +21,31 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { services } from "@/lib/constants";
 import { submitInquiry } from "@/lib/actions";
+import { useDictionary } from "@/contexts/dictionary-context";
+import * as constants from "@/lib/constants";
 
 const formSchema = z.object({
-  name: z.string().min(2, { message: "Имя должно быть не менее 2 символов." }),
-  phone: z.string().min(7, { message: "Пожалуйста, введите корректный номер телефона." }),
+  name: z.string().min(2),
+  phone: z.string().min(7),
   service: z.string().optional(),
 });
 
 type ContactFormValues = z.infer<typeof formSchema>;
 
 export function ContactForm({ defaultService }: { defaultService?: string }) {
+  const t = useDictionary();
+  const services = constants.getServices(t);
+  
+  const dynamicFormSchema = z.object({
+    name: z.string().min(2, { message: t.ContactForm.name_error }),
+    phone: z.string().min(7, { message: t.ContactForm.phone_error }),
+    service: z.string().optional(),
+  });
+
   const { toast } = useToast();
   const form = useForm<ContactFormValues>({
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(dynamicFormSchema),
     defaultValues: {
       name: "",
       phone: "",
@@ -46,20 +56,18 @@ export function ContactForm({ defaultService }: { defaultService?: string }) {
   async function onSubmit(data: ContactFormValues) {
     try {
       const result = await submitInquiry(data);
-      if (result.success) {
-        // Redirect is handled by the server action
-      } else {
+      if (result && !result.success) {
         toast({
           variant: "destructive",
-          title: "Ошибка отправки",
-          description: result.message || "Произошла ошибка при отправке формы.",
+          title: t.ContactForm.error_toast_title,
+          description: result.message || t.ContactForm.error_toast_description,
         });
       }
     } catch (error) {
       toast({
         variant: "destructive",
-        title: "Ошибка",
-        description: "Не удалось связаться с сервером.",
+        title: t.ContactForm.server_error_toast_title,
+        description: t.ContactForm.server_error_toast_description,
       });
     }
   }
@@ -72,9 +80,9 @@ export function ContactForm({ defaultService }: { defaultService?: string }) {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="sr-only">Имя</FormLabel>
+              <FormLabel className="sr-only">{t.ContactForm.name_placeholder}</FormLabel>
               <FormControl>
-                <Input placeholder="Ваше имя" {...field} />
+                <Input placeholder={t.ContactForm.name_placeholder} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -85,9 +93,9 @@ export function ContactForm({ defaultService }: { defaultService?: string }) {
           name="phone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="sr-only">Телефон</FormLabel>
+              <FormLabel className="sr-only">{t.ContactForm.phone_placeholder}</FormLabel>
               <FormControl>
-                <Input placeholder="+998 XX XXX XX XX" type="tel" {...field} />
+                <Input placeholder={t.ContactForm.phone_placeholder} type="tel" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -98,15 +106,15 @@ export function ContactForm({ defaultService }: { defaultService?: string }) {
           name="service"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="sr-only">Услуга</FormLabel>
+              <FormLabel className="sr-only">{t.ContactForm.service_placeholder}</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="Выберите услугу (необязательно)" />
+                    <SelectValue placeholder={t.ContactForm.service_placeholder} />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  {services.map((service) => (
+                  {services.map((service: any) => (
                     <SelectItem key={service.slug} value={service.title}>
                       {service.title}
                     </SelectItem>
@@ -118,7 +126,7 @@ export function ContactForm({ defaultService }: { defaultService?: string }) {
           )}
         />
         <Button type="submit" size="lg" className="w-full" disabled={form.formState.isSubmitting}>
-          {form.formState.isSubmitting ? "Отправка..." : "Оставить заявку"}
+          {form.formState.isSubmitting ? t.ContactForm.submitting_button : t.ContactForm.submit_button}
         </Button>
       </form>
     </Form>

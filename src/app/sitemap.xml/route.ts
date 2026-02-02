@@ -1,31 +1,32 @@
 import { MetadataRoute } from 'next';
-import { services } from '@/lib/constants';
+import { i18n } from '@/i18n-config';
+import ru from '@/dictionaries/ru.json';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://beclean-pro.example.com'; // Replace with your actual domain
+  const baseUrl = 'https://beclean-pro.example.com'; 
 
-  const serviceUrls = services.map((service) => ({
-    url: `${baseUrl}${service.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
-  }));
+  const serviceSlugs = ru.Constants.services.map((service) => service.slug);
 
   const staticPages = [
     '/',
     '/calculator',
     '/quiz',
   ];
+  
+  const allPages = [...staticPages, ...serviceSlugs];
 
-  const staticUrls = staticPages.map((page) => ({
-    url: `${baseUrl}${page}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: page === '/' ? 1.0 : 0.9,
-  }));
+  const urls: MetadataRoute.Sitemap = [];
 
-  return [
-    ...staticUrls,
-    ...serviceUrls,
-  ];
+  i18n.locales.forEach((locale) => {
+    allPages.forEach((page) => {
+      urls.push({
+        url: `${baseUrl}/${locale}${page === '/' ? '' : page}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: page === '/' ? 1.0 : 0.8,
+      });
+    });
+  });
+
+  return urls;
 }

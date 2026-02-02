@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -10,91 +11,51 @@ import {
 import {
   Sheet,
   SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetDescription,
   SheetTrigger,
 } from '@/components/ui/sheet';
-import { Menu, ChevronDown, Phone } from 'lucide-react';
+import { Menu, ChevronDown, Phone, Clock } from 'lucide-react';
 import { Logo } from './Logo';
-import { services } from '@/lib/constants';
+import { useDictionary } from '@/contexts/dictionary-context';
+import * as constants from '@/lib/constants';
+import { i18n } from '@/i18n-config';
 
 export function SiteHeader() {
+  const t = useDictionary();
+  const services = constants.getServices(t);
+  const pathname = usePathname();
+
+  const redirectedPathName = (locale: string) => {
+    if (!pathname) return '/';
+    const segments = pathname.split('/');
+    segments[1] = locale;
+    return segments.join('/');
+  };
+
+  const currentLocale = pathname.split('/')[1];
+
   const navLinks = [
-    { href: '/calculator', label: 'Калькулятор' },
-    { href: '#contacts', label: 'Контакты' },
+    { href: '/calculator', label: t.Header.calculator },
+    { href: '#contacts', label: t.Header.contacts },
   ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-20 items-center">
-        {/* Left-aligned content */}
-        <div className="flex items-center gap-6 mr-auto">
-          <Link href="/">
-            <Logo />
-          </Link>
-          <nav className="hidden items-center space-x-6 text-base font-medium md:flex">
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center outline-none hover:text-primary transition-colors">
-                Услуги <ChevronDown className="h-4 w-4 ml-1" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                {services.map((service) => (
-                  <DropdownMenuItem key={service.slug} asChild>
-                    <Link href={service.slug}>{service.title}</Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="transition-colors hover:text-primary"
-              >
-                {link.label}
+        <div className="mr-auto md:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Toggle Menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="w-[300px]">
+              <Link href="/" className="mb-8 block">
+                <Logo />
               </Link>
-            ))}
-          </nav>
-        </div>
-
-        {/* Right-aligned content */}
-        <div className="flex items-center space-x-4">
-          <div className="hidden items-center gap-2 sm:flex">
-            <Phone className="h-5 w-5 text-primary" />
-            <a
-              href="tel:+998773566070"
-              className="font-bold text-lg hover:text-primary transition-colors"
-            >
-              +998 77 356 60 70
-            </a>
-          </div>
-          <Button asChild className="hidden md:inline-flex">
-            <Link href="#cta">Заказать звонок</Link>
-          </Button>
-
-          {/* Mobile Menu */}
-          <div className="md:hidden">
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <Menu className="h-6 w-6" />
-                  <span className="sr-only">Toggle Menu</span>
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="left">
-                <SheetHeader>
-                  <SheetTitle className="sr-only">Меню</SheetTitle>
-                  <SheetDescription className="sr-only">
-                    Главная навигация сайта
-                  </SheetDescription>
-                </SheetHeader>
-                <Link href="/" className="mb-8 block">
-                  <Logo />
-                </Link>
-                <div className="flex flex-col space-y-4">
-                  <h4 className="font-semibold text-lg">Услуги</h4>
-                  {services.map((service) => (
+              <div className="flex flex-col space-y-4">
+                  <h4 className="font-semibold text-lg">{t.Header.services}</h4>
+                  {services.map((service: any) => (
                     <Link
                       key={service.slug}
                       href={service.slug}
@@ -113,10 +74,71 @@ export function SiteHeader() {
                       {link.label}
                     </Link>
                   ))}
-                </div>
-              </SheetContent>
-            </Sheet>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
+
+        <Link href="/" className="hidden md:flex mr-6">
+            <Logo />
+        </Link>
+        
+        <nav className="hidden items-center space-x-6 text-base font-medium md:flex">
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex items-center outline-none hover:text-primary transition-colors">
+              {t.Header.services} <ChevronDown className="h-4 w-4 ml-1" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              {services.map((service: any) => (
+                <DropdownMenuItem key={service.slug} asChild>
+                  <Link href={service.slug}>{service.title}</Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="transition-colors hover:text-primary"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="flex items-center space-x-2 sm:space-x-4 ml-auto">
+          <div className="hidden items-center gap-2 sm:flex">
+             <Clock className="h-5 w-5 text-primary" />
+             <span className="font-semibold text-base">{t.Header.work_hours}</span>
           </div>
+          <div className="hidden items-center gap-2 sm:flex">
+            <Phone className="h-5 w-5 text-primary" />
+            <a
+              href="tel:+998773566070"
+              className="font-bold text-lg hover:text-primary transition-colors"
+            >
+              +998 77 356 60 70
+            </a>
+          </div>
+           <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="sm" className="w-[70px]">
+                  {currentLocale.toUpperCase()}
+                  <ChevronDown className="h-4 w-4 ml-2" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                {i18n.locales.map(locale => (
+                    <DropdownMenuItem key={locale} asChild>
+                        <Link href={redirectedPathName(locale)}>{locale.toUpperCase()}</Link>
+                    </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          <Button asChild className="hidden lg:inline-flex">
+            <Link href="#cta">{t.Header.call_request}</Link>
+          </Button>
         </div>
       </div>
     </header>
