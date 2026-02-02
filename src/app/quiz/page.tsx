@@ -2,7 +2,6 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
@@ -13,11 +12,6 @@ import { services } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import { ArrowLeft, ArrowRight, Check, RefreshCw } from 'lucide-react';
 import { Progress } from '@/components/ui/progress';
-
-export const metadata: Metadata = {
-  title: 'Подобрать услугу клининга | BeClean Pro',
-  description: 'Ответьте на несколько вопросов, и мы подберем идеальную клининговую услугу для вашего бизнеса в Ташкенте.',
-};
 
 const propertyTypes = [
   { value: "office", label: "Офис" },
