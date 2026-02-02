@@ -9,7 +9,7 @@ export function Logo() {
         width={140}
         height={40}
         className="w-auto"
-        style={{ height: 25 }}
+        style={{ height: 35 }}
         priority
       />
     </div>
