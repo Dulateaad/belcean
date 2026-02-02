@@ -4,7 +4,7 @@ export function Logo() {
   return (
     <div className="flex items-center gap-2">
       <Image
-        src="https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%B1%D0%BA%D0%BB%D0%B8%D0%BD.png?alt=media&token=21a7a612-4e35-4e28-83a1-941c55bc3457"
+        src="https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/photo_5190879925169230470_x.jpg?alt=media&token=e507f7fa-f14d-4990-8a89-1cb85f219ff8"
         alt="BeClean Pro Logo"
         width={140}
         height={40}
