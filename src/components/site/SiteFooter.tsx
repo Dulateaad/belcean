@@ -40,7 +40,7 @@ export function SiteFooter() {
                 <Link href="#" aria-label="Facebook">
                   <Facebook className="h-6 w-6 text-muted-foreground hover:text-primary" />
                 </Link>
-                <Link href="https://www.instagram.com/beclean.uz/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <Link href="https://www.instagram.com/beclean_pro/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                   <Instagram className="h-6 w-6 text-muted-foreground hover:text-primary" />
                 </Link>
                 <Link href="https://t.me/beclean_uz" target="_blank" rel="noopener noreferrer" aria-label="Telegram">

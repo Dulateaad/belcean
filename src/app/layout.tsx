@@ -52,7 +52,7 @@ export default function RootLayout({
         }
     ],
     "sameAs": [
-        "https://www.instagram.com/beclean.uz/",
+        "https://www.instagram.com/beclean_pro/",
         "https://t.me/beclean_uz"
     ]
   };

@@ -241,13 +241,13 @@ export default function CalculatorPage() {
                     </CardContent>
                  </Card>
               ) : (
-                <Card className="bg-secondary/70 text-center">
+                <Card className="bg-secondary/70 text-center flex flex-col justify-center">
                     <CardHeader>
                       <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-2"/>
                       <CardTitle className="text-2xl">Спасибо за заявку!</CardTitle>
                       <CardDescription>Наш менеджер скоро свяжется с вами.</CardDescription>
                     </CardHeader>
-                    <CardContent className="space-y-4">
+                    <CardContent>
                       <div className="p-4 rounded-lg bg-background shadow">
                           <p className="text-sm text-muted-foreground">Примерная стоимость</p>
                           <p className="text-5xl font-bold text-primary">
