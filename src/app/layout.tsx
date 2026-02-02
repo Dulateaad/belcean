@@ -21,7 +21,7 @@ export default function RootLayout({
     "name": "BeClean Pro",
     "image": "https://beclean-pro.example.com/logo.png",
     "url": "https://beclean-pro.example.com",
-    "telephone": "+998 71 200 00 00",
+    "telephone": "+998 77 356 60 70",
     "description": "Профессиональный клининг для бизнеса в Ташкенте. Офисы, БЦ, клиники. Договор. Контроль качества.",
     "address": {
       "@type": "PostalAddress",

@@ -27,9 +27,9 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-20 items-center justify-between">
+      <div className="container flex h-20 items-center">
         {/* Left-aligned content */}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-6 mr-auto">
           <Link href="/">
             <Logo />
           </Link>
@@ -63,10 +63,10 @@ export function SiteHeader() {
           <div className="hidden items-center gap-2 sm:flex">
             <Phone className="h-5 w-5 text-primary" />
             <a
-              href="tel:+998712000000"
+              href="tel:+998773566070"
               className="font-bold text-lg hover:text-primary transition-colors"
             >
-              +998 71 200 00 00
+              +998 77 356 60 70
             </a>
           </div>
           <Button asChild className="hidden md:inline-flex">

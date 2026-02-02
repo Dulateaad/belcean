@@ -124,48 +124,45 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl font-headline mb-16">Как мы работаем</h2>
           <div className="relative">
-            <div className="absolute left-7 top-10 bottom-10 w-0.5 bg-border -translate-x-1/2 md:left-1/2 md:hidden"></div>
-             <div className="hidden md:block absolute left-1/2 top-10 bottom-10 w-0.5 bg-border -translate-x-1/2"></div>
-
-            <div className="grid gap-y-12 md:gap-y-16">
+             <div className="absolute left-7 top-10 bottom-10 w-0.5 bg-border -translate-x-1/2 md:left-1/2"></div>
+             
+            <div className="grid gap-y-16">
               {howItWorks.map((step, index) => (
-                <div key={index} className="relative z-10">
-                  <div className="flex items-start gap-6 md:gap-12 lg:gap-32">
-                     <div className="md:hidden flex items-start gap-6">
-                        <div className="flex-shrink-0 w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold z-10 border-4 border-background shadow-lg">
-                            {index + 1}
-                        </div>
-                        <div className="pt-1">
-                            <h3 className="text-2xl font-bold">{step.title}</h3>
-                            <p className="text-muted-foreground mt-1 text-lg">{step.description}</p>
-                        </div>
-                    </div>
+                <div key={index} className="relative">
+                   <div className="md:hidden flex items-start gap-8">
+                       <div className="flex-shrink-0 w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold z-10 border-4 border-background shadow-lg">
+                           {index + 1}
+                       </div>
+                       <div className="pt-1">
+                           <h3 className="text-2xl font-bold">{step.title}</h3>
+                           <p className="text-muted-foreground mt-1 text-lg">{step.description}</p>
+                       </div>
+                   </div>
 
-                    <div className="hidden md:grid md:grid-cols-2 md:gap-12 lg:gap-32 items-center w-full">
-                         {index % 2 === 0 ? (
-                        <>
-                            <div className="text-right">
-                                <h3 className="text-2xl font-bold">{step.title}</h3>
-                                <p className="text-muted-foreground mt-2 text-lg">{step.description}</p>
-                            </div>
-                            <div></div>
-                        </>
-                        ) : (
-                        <>
-                            <div></div>
-                            <div>
-                                <h3 className="text-2xl font-bold">{step.title}</h3>
-                                <p className="text-muted-foreground mt-2 text-lg">{step.description}</p>
-                            </div>
-                        </>
-                        )}
-                    </div>
-                  </div>
-                   <div className="absolute top-1/2 -translate-y-1/2 w-full h-full hidden md:flex justify-center items-center pointer-events-none">
-                       <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-3xl font-bold z-10 border-8 border-background shadow-md">
-                        {index + 1}
-                      </div>
-                    </div>
+                   <div className="hidden md:grid md:grid-cols-2 md:gap-96 items-center">
+                        {index % 2 === 0 ? (
+                       <>
+                           <div className="text-right relative z-20">
+                               <h3 className="text-2xl font-bold">{step.title}</h3>
+                               <p className="text-muted-foreground mt-2 text-lg">{step.description}</p>
+                           </div>
+                           <div></div>
+                       </>
+                       ) : (
+                       <>
+                           <div></div>
+                           <div className="relative z-20">
+                               <h3 className="text-2xl font-bold">{step.title}</h3>
+                               <p className="text-muted-foreground mt-2 text-lg">{step.description}</p>
+                           </div>
+                       </>
+                       )}
+                   </div>
+                   <div className="absolute w-full h-full flex justify-center items-center pointer-events-none">
+                      <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-3xl font-bold z-10 border-8 border-background shadow-md">
+                       {index + 1}
+                     </div>
+                   </div>
                 </div>
               ))}
             </div>
@@ -268,7 +265,7 @@ export default function Home() {
               <p className="text-muted-foreground text-lg">Мы всегда на связи, чтобы ответить на ваши вопросы.</p>
               <div className="space-y-3 text-lg">
                 <p><strong>Адрес:</strong> г. Ташкент, ул. Амира Темура, 1</p>
-                <p><strong>Телефон:</strong> <a href="tel:+998712000000" className="text-primary hover:underline font-semibold">+998 71 200 00 00</a></p>
+                <p><strong>Телефон:</strong> <a href="tel:+998773566070" className="text-primary hover:underline font-semibold">+998 77 356 60 70</a></p>
                 <p><strong>Email:</strong> <a href="mailto:info@beclean.pro" className="text-primary hover:underline font-semibold">info@beclean.pro</a></p>
                 <p><strong>Часы работы:</strong> Пн-Пт с 9:00 до 18:00</p>
               </div>

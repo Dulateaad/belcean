@@ -34,7 +34,7 @@ export function SiteFooter() {
                 <a href="mailto:info@beclean.pro" className="hover:text-primary hover:underline">info@beclean.pro</a>
               </p>
               <p>
-                <a href="tel:+998712000000" className="hover:text-primary hover:underline font-semibold">+998 71 200 00 00</a>
+                <a href="tel:+998773566070" className="hover:text-primary hover:underline font-semibold">+998 77 356 60 70</a>
               </p>
                <div className="flex space-x-4 pt-4">
                 <Link href="#" aria-label="Facebook">
