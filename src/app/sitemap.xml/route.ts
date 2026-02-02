@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     '/',
     '/calculator',
+    '/quiz',
   ];
 
   const staticUrls = staticPages.map((page) => ({
