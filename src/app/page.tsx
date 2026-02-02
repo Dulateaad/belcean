@@ -124,25 +124,28 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl font-headline mb-16">Как мы работаем</h2>
           <div className="relative">
-             <div className="absolute left-7 top-10 bottom-10 w-0.5 bg-border -translate-x-1/2 md:left-1/2"></div>
+             <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2 hidden md:block"></div>
              
             <div className="grid gap-y-16">
               {howItWorks.map((step, index) => (
                 <div key={index} className="relative">
-                   <div className="md:hidden flex items-start gap-8">
-                       <div className="flex-shrink-0 w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold z-10 border-4 border-background shadow-lg">
-                           {index + 1}
-                       </div>
-                       <div className="pt-1">
-                           <h3 className="text-2xl font-bold">{step.title}</h3>
-                           <p className="text-muted-foreground mt-1 text-lg">{step.description}</p>
-                       </div>
+                   <div className="md:hidden relative">
+                      <div className="absolute left-7 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2 z-0"></div>
+                      <div className="flex items-start gap-6 relative z-10">
+                         <div className="flex-shrink-0 w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold border-4 border-background shadow-lg">
+                             {index + 1}
+                         </div>
+                         <div className="pt-1">
+                             <h3 className="text-2xl font-bold">{step.title}</h3>
+                             <p className="text-muted-foreground mt-1 text-lg">{step.description}</p>
+                         </div>
+                      </div>
                    </div>
 
-                   <div className="hidden md:grid md:grid-cols-2 md:gap-96 items-center">
+                   <div className="hidden md:grid md:grid-cols-2 md:gap-x-32 lg:gap-x-64 xl:gap-x-96 items-center">
                         {index % 2 === 0 ? (
                        <>
-                           <div className="text-right relative z-20">
+                           <div className="text-right">
                                <h3 className="text-2xl font-bold">{step.title}</h3>
                                <p className="text-muted-foreground mt-2 text-lg">{step.description}</p>
                            </div>
@@ -151,15 +154,15 @@ export default function Home() {
                        ) : (
                        <>
                            <div></div>
-                           <div className="relative z-20">
+                           <div>
                                <h3 className="text-2xl font-bold">{step.title}</h3>
                                <p className="text-muted-foreground mt-2 text-lg">{step.description}</p>
                            </div>
                        </>
                        )}
                    </div>
-                   <div className="absolute w-full h-full flex justify-center items-center pointer-events-none">
-                      <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-3xl font-bold z-10 border-8 border-background shadow-md">
+                   <div className="absolute w-full h-full -top-3 md:top-0 flex justify-center items-center pointer-events-none">
+                      <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground hidden md:flex items-center justify-center text-3xl font-bold z-10 border-8 border-background shadow-md">
                        {index + 1}
                      </div>
                    </div>
@@ -267,7 +270,7 @@ export default function Home() {
                 <p><strong>Адрес:</strong> г. Ташкент, ул. Амира Темура, 1</p>
                 <p><strong>Телефон:</strong> <a href="tel:+998773566070" className="text-primary hover:underline font-semibold">+998 77 356 60 70</a></p>
                 <p><strong>Email:</strong> <a href="mailto:info@beclean.pro" className="text-primary hover:underline font-semibold">info@beclean.pro</a></p>
-                <p><strong>Часы работы:</strong> Пн-Пт с 9:00 до 18:00</p>
+                <p><strong>Часы работы:</strong> 24/7</p>
               </div>
             </div>
             <div>

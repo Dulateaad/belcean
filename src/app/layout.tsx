@@ -19,9 +19,9 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "BeClean Pro",
-    "image": "https://beclean-pro.example.com/logo.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/photo_5190879925169230470_x.jpg?alt=media&token=e507f7fa-f14d-4990-8a89-1cb85f219ff8",
     "url": "https://beclean-pro.example.com",
-    "telephone": "+998 77 356 60 70",
+    "telephone": "+998773566070",
     "description": "Профессиональный клининг для бизнеса в Ташкенте. Офисы, БЦ, клиники. Договор. Контроль качества.",
     "address": {
       "@type": "PostalAddress",
@@ -35,19 +35,26 @@ export default function RootLayout({
       "latitude": 41.311081,
       "longitude": 69.244072
     },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
-      "opens": "09:00",
-      "closes": "18:00"
-    },
-    "sameAs": []
+    "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+    ],
+    "sameAs": [
+        "https://www.instagram.com/beclean.uz/",
+        "https://t.me/beclean_uz"
+    ]
   };
 
   return (
