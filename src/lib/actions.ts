@@ -29,3 +29,26 @@ export async function submitInquiry(data: unknown) {
   // even though this part of the code won't be reached after a successful redirect.
   return { success: true };
 }
+
+const calculatorInquirySchema = z.object({
+  name: z.string().min(2, { message: "Имя должно быть не менее 2 символов." }),
+  phone: z.string().min(7, { message: "Пожалуйста, введите корректный номер телефона." }),
+  service: z.string().optional(),
+  details: z.string().optional(),
+});
+
+export async function submitCalculatorInquiry(data: unknown) {
+  const parsedData = calculatorInquirySchema.safeParse(data);
+
+  if (!parsedData.success) {
+    return { success: false, message: 'Неверные данные.' };
+  }
+
+  console.log("New Calculator Inquiry Received:", parsedData.data);
+
+  // Simulate network delay
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  
+  // No redirect here
+  return { success: true };
+}
