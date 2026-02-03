@@ -116,7 +116,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       <section id="how-it-works" className="w-full py-12 md:py-24">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl font-headline mb-16">{t.HomePage.how_it_works_title}</h2>
-          <div className="relative">
+          <div className="relative max-w-4xl mx-auto">
              <div className="absolute left-7 top-10 bottom-10 w-0.5 bg-border -translate-x-1/2 md:left-1/2" />
              
             <div className="grid gap-y-16">
@@ -132,7 +132,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
                          </div>
                    </div>
 
-                   <div className="hidden md:grid md:grid-cols-2 md:gap-64 lg:gap-96 items-center">
+                   <div className="hidden md:grid md:grid-cols-2 md:gap-20 items-center">
                         {index % 2 === 0 ? (
                        <>
                            <div className="text-right relative z-20">
