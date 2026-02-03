@@ -70,7 +70,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
               </p>
             </div>
           </div>
-          <div className="mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 items-start justify-center gap-8 py-12">
+          <div className="mx-auto grid max-w-6xl grid-cols-2 items-start gap-8 pt-16 pb-12 md:grid-cols-3 lg:grid-cols-5">
             {clientTypes.map((client: any, index: number) => (
               <div key={index} className="flex flex-col items-center gap-4 text-center">
                 <div className="bg-primary/10 rounded-full p-5 text-primary">
