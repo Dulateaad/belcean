@@ -38,7 +38,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
     <div className="flex flex-col min-h-screen bg-background">
       <section id="hero" className="relative w-full h-[60vh] md:h-[70vh] overflow-hidden">
         <HeroCarousel images={heroCarouselImages} />
-        <div className="absolute inset-0 bg-primary/20" />
+        <div className="absolute inset-0 bg-primary/30 backdrop-blur-lg" />
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-primary-foreground p-4">
           <div className="container">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-7xl/none font-headline text-white" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>

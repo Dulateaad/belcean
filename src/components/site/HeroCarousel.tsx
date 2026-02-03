@@ -1,39 +1,35 @@
 'use client';
 
 import Image from 'next/image';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from '@/components/ui/carousel';
-import Autoplay from 'embla-carousel-autoplay';
-import * as React from 'react';
+import { useState, useEffect } from 'react';
+import { cn } from '@/lib/utils';
 
 export function HeroCarousel({ images }: { images: any[] }) {
-    const plugin = React.useRef(
-        Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true })
-    );
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [images.length]);
 
   return (
-    <Carousel
-      className="absolute inset-0 w-full h-full"
-      opts={{ loop: true }}
-      plugins={[plugin.current]}
-    >
-      <CarouselContent>
-        {images.map((image, index) => (
-          <CarouselItem key={index}>
-            <Image
-              alt={image.description}
-              className="object-cover"
-              src={image.imageUrl}
-              fill
-              priority={index === 0}
-              data-ai-hint={image.imageHint}
-            />
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-    </Carousel>
+    <div className="absolute inset-0 w-full h-full">
+      {images.map((image, index) => (
+        <Image
+          key={image.id || index}
+          alt={image.description}
+          className={cn(
+            "object-cover transition-opacity duration-1000 ease-in-out",
+            current === index ? "opacity-100" : "opacity-0"
+          )}
+          src={image.imageUrl}
+          fill
+          priority={index === 0}
+          data-ai-hint={image.imageHint}
+        />
+      ))}
+    </div>
   );
 }
