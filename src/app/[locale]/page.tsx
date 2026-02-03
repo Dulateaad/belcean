@@ -89,16 +89,16 @@ export default async function Home({ params: { locale } }: { params: { locale: L
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
             {services.map((service: any, index: number) => {
               return (
-                <Card key={index} className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                   <CardContent className="p-6 flex-grow">
+                <Card key={index} className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full">
+                   <CardContent className="p-6 flex-grow flex flex-col">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="bg-primary/10 p-3 rounded-lg text-primary">
                          <service.icon className="w-8 h-8" />
                       </div>
                       <CardTitle className="text-xl">{service.title}</CardTitle>
                     </div>
-                    <p className="text-muted-foreground mb-4">{service.description}</p>
-                     <Button asChild variant="link" className="p-0 h-auto font-semibold">
+                    <p className="text-muted-foreground mb-4 flex-grow">{service.description}</p>
+                     <Button asChild variant="link" className="p-0 h-auto font-semibold self-start">
                       <Link href={service.slug}>Подробнее <ArrowRight className="ml-2 h-4 w-4" /></Link>
                     </Button>
                   </CardContent>
