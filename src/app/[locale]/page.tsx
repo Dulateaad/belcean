@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -44,6 +45,9 @@ export default async function Home({ params: { locale } }: { params: { locale: L
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-7xl/none font-headline text-white" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>
                   {t.HomePage.hero_title}
               </h1>
+              <p className="max-w-[900px] text-white/90 md:text-xl/relaxed mt-6" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.7)'}}>
+                {t.HomePage.hero_subtitle}
+              </p>
               <div className="flex flex-col gap-4 min-[400px]:flex-row justify-center mt-8">
                   <Button asChild size="lg">
                       <Link href="/calculator">{t.HomePage.calculate_button} <ArrowRight className="ml-2 h-5 w-5" /></Link>
@@ -53,11 +57,6 @@ export default async function Home({ params: { locale } }: { params: { locale: L
                   </Button>
               </div>
           </div>
-        </div>
-        <div className="absolute z-10 bottom-5 left-5">
-            <p className="bg-[rgba(0,0,0,0.55)] text-white text-[22px] font-semibold leading-[1.3] py-3 px-[18px] rounded-md backdrop-blur-[2px]">
-              {t.HomePage.hero_subtitle}
-            </p>
         </div>
       </section>
 
