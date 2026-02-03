@@ -116,46 +116,48 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       <section id="how-it-works" className="w-full py-12 md:py-24">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl font-headline mb-16">{t.HomePage.how_it_works_title}</h2>
-          <div className="relative max-w-4xl mx-auto">
-             <div className="absolute left-7 top-10 bottom-10 w-0.5 bg-border -translate-x-1/2 md:left-1/2" />
-             
+          <div className="relative max-w-5xl mx-auto">
+            <div className="absolute left-1/2 -translate-x-1/2 top-4 bottom-4 w-0.5 bg-border hidden md:block" />
+            <div className="absolute left-7 -translate-x-1/2 top-4 bottom-4 w-0.5 bg-border md:hidden" />
+            
             <div className="grid gap-y-16">
               {howItWorks.map((step: any, index: number) => (
                 <div key={index} className="relative">
-                   <div className="md:hidden flex items-start gap-8">
-                         <div className="flex-shrink-0 w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold z-10 border-4 border-background shadow-lg">
-                             {index + 1}
-                         </div>
-                         <div className="pt-1">
-                             <h3 className="text-2xl font-bold">{step.title}</h3>
-                             <p className="text-muted-foreground mt-1 text-lg">{step.description}</p>
-                         </div>
-                   </div>
+                  <div className="md:hidden flex items-start gap-6 pl-14">
+                      <div className="absolute left-0 flex-shrink-0 w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold z-10 border-4 border-background shadow-lg">
+                          {index + 1}
+                      </div>
+                      <div className="pt-1">
+                          <h3 className="text-2xl font-bold">{step.title}</h3>
+                          <p className="text-muted-foreground mt-1 text-lg">{step.description}</p>
+                      </div>
+                  </div>
 
-                   <div className="hidden md:grid md:grid-cols-2 items-center">
-                        {index % 2 === 0 ? (
-                       <>
-                           <div className="text-right relative z-20 pr-10">
-                               <h3 className="text-2xl font-bold">{step.title}</h3>
-                               <p className="text-muted-foreground mt-2 text-lg">{step.description}</p>
-                           </div>
-                           <div></div>
-                       </>
-                       ) : (
-                       <>
-                           <div></div>
-                           <div className="relative z-20 pl-10">
-                               <h3 className="text-2xl font-bold">{step.title}</h3>
-                               <p className="text-muted-foreground mt-2 text-lg">{step.description}</p>
-                           </div>
-                       </>
-                       )}
-                   </div>
-                   <div className="absolute w-full h-full -top-3 md:top-0 flex justify-center items-center pointer-events-none">
-                      <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground hidden md:flex items-center justify-center text-3xl font-bold z-10 border-8 border-background shadow-md">
-                       {index + 1}
-                     </div>
-                   </div>
+                  <div className="hidden md:grid grid-cols-[1fr_auto_1fr] gap-x-12 items-center">
+                    {index % 2 === 0 ? (
+                      <>
+                        <div className="text-right">
+                          <h3 className="text-2xl font-bold">{step.title}</h3>
+                          <p className="text-muted-foreground mt-2 text-lg">{step.description}</p>
+                        </div>
+                        <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-3xl font-bold z-10 border-8 border-background shadow-md">
+                          {index + 1}
+                        </div>
+                        <div />
+                      </>
+                    ) : (
+                      <>
+                        <div />
+                        <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-3xl font-bold z-10 border-8 border-background shadow-md">
+                          {index + 1}
+                        </div>
+                        <div>
+                          <h3 className="text-2xl font-bold">{step.title}</h3>
+                          <p className="text-muted-foreground mt-2 text-lg">{step.description}</p>
+                        </div>
+                      </>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
