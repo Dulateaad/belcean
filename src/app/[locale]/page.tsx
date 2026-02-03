@@ -18,6 +18,7 @@ import * as constants from '@/lib/constants';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { getDictionary } from '@/lib/get-dictionary';
 import type { Locale } from '@/i18n-config';
+import { HeroCarousel } from '@/components/site/HeroCarousel';
 
 
 export default async function Home({ params: { locale } }: { params: { locale: Locale } }) {
@@ -35,46 +36,25 @@ export default async function Home({ params: { locale } }: { params: { locale: L
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
-      <section id="hero" className="w-full py-20 md:py-32 bg-secondary/70">
-        <div className="container px-4 md:px-6">
-          <div className="grid gap-8 lg:grid-cols-5 lg:gap-12 xl:gap-16">
-            <div className="flex flex-col justify-center space-y-6 lg:col-span-3">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-7xl/none font-headline">
-                {t.HomePage.hero_title}
+      <section id="hero" className="relative w-full h-[60vh] md:h-[70vh] overflow-hidden">
+        <HeroCarousel images={heroCarouselImages} />
+        <div className="absolute inset-0 bg-primary/20" />
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-primary-foreground p-4">
+          <div className="container">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-7xl/none font-headline text-white" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>
+                  {t.HomePage.hero_title}
               </h1>
-              <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                {t.HomePage.hero_subtitle}
+              <p className="max-w-[600px] mx-auto mt-4 text-lg md:text-xl text-white/90" style={{textShadow: '1px 1px 2px rgba(0,0,0,0.5)'}}>
+                  {t.HomePage.hero_subtitle}
               </p>
-              <div className="flex flex-col gap-4 min-[400px]:flex-row">
-                <Button asChild size="lg">
-                  <Link href="/calculator">{t.HomePage.calculate_button} <ArrowRight className="ml-2 h-5 w-5" /></Link>
-                </Button>
-                <Button asChild variant="outline" size="lg">
-                  <Link href="/quiz">{t.HomePage.pick_service_button}</Link>
-                </Button>
+              <div className="flex flex-col gap-4 min-[400px]:flex-row justify-center mt-8">
+                  <Button asChild size="lg">
+                      <Link href="/calculator">{t.HomePage.calculate_button} <ArrowRight className="ml-2 h-5 w-5" /></Link>
+                  </Button>
+                  <Button asChild variant="secondary" size="lg">
+                      <Link href="/quiz">{t.HomePage.pick_service_button}</Link>
+                  </Button>
               </div>
-            </div>
-            <div className="lg:col-span-2 flex items-center justify-center">
-              <Carousel className="w-full max-w-md shadow-2xl rounded-xl overflow-hidden" opts={{ loop: true }}>
-                <CarouselContent>
-                  {heroCarouselImages.map((image, index) => (
-                    <CarouselItem key={index}>
-                      <Image
-                        alt={image.description}
-                        className="aspect-video w-full object-cover"
-                        height={400}
-                        src={image.imageUrl}
-                        width={600}
-                        data-ai-hint={image.imageHint}
-                        priority={index === 0}
-                      />
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious className="absolute left-4 bg-background/50 hover:bg-background/80 border-none" />
-                <CarouselNext className="absolute right-4 bg-background/50 hover:bg-background/80 border-none" />
-              </Carousel>
-            </div>
           </div>
         </div>
       </section>
@@ -151,7 +131,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
                   <div className="hidden md:grid grid-cols-[1fr_auto_1fr] items-center">
                     {index % 2 === 0 ? (
                       <>
-                        <div className="text-right pr-8">
+                        <div className="text-right pr-12">
                           <h3 className="text-2xl font-bold">{step.title}</h3>
                           <p className="text-muted-foreground mt-2 text-lg">{step.description}</p>
                         </div>
@@ -166,7 +146,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
                         <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-3xl font-bold z-10 border-8 border-background shadow-md">
                           {index + 1}
                         </div>
-                        <div className="pl-8">
+                        <div className="pl-12">
                           <h3 className="text-2xl font-bold">{step.title}</h3>
                           <p className="text-muted-foreground mt-2 text-lg">{step.description}</p>
                         </div>
