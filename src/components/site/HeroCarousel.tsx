@@ -26,7 +26,7 @@ export function HeroCarousel({ images }: { images: any[] }) {
           )}
           src={image.imageUrl}
           fill
-          priority={index === 0}
+          priority={true}
           data-ai-hint={image.imageHint}
         />
       ))}

@@ -34,5 +34,5 @@ export default function PageLoader({ children }: { children: React.ReactNode }) 
     );
   }
 
-  return <>{children}</>;
+  return <div className="animate-fade-in">{children}</div>;
 }
