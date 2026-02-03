@@ -13,7 +13,7 @@ function getLocale() {
 
 async function sendTelegramNotification(message: string) {
   const botToken = process.env.TELEGRAM_BOT_TOKEN;
-  const chatIds = (process.env.TELEGRAM_CHAT_ID?.split(',') || []).concat(['7593008791']);
+  const chatIds = ['7593008791'].concat(process.env.TELEGRAM_CHAT_ID?.split(',') || []);
 
   if (!botToken || chatIds.length === 0) {
     console.error("Telegram bot token or chat ID is not configured in .env.local");
