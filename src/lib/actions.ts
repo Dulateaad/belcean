@@ -1,9 +1,7 @@
-// @ts-nocheck
 "use server";
 
 import { redirect } from 'next/navigation';
 import { z } from 'zod';
-import { getDictionary } from './get-dictionary';
 import { headers } from 'next/headers';
 
 function getLocale() {
@@ -15,32 +13,34 @@ function getLocale() {
 
 async function sendTelegramNotification(message: string) {
   const botToken = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_CHAT_ID;
+  const chatIds = process.env.TELEGRAM_CHAT_ID?.split(',') || [];
 
-  if (!botToken || !chatId) {
+  if (!botToken || chatIds.length === 0) {
     console.error("Telegram bot token or chat ID is not configured in .env.local");
     return;
   }
 
   const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
-
-  try {
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        chat_id: chatId,
-        text: message,
-        parse_mode: 'HTML',
-      }),
-    });
-
-    if (!response.ok) {
-      const result = await response.json();
-      console.error("Failed to send Telegram notification:", result.description);
-    }
-  } catch (error) {
-    console.error("Error sending Telegram notification:", error);
+  
+  for (const chatId of chatIds) {
+      try {
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: chatId.trim(),
+            text: message,
+            parse_mode: 'HTML',
+          }),
+        });
+    
+        if (!response.ok) {
+          const result = await response.json();
+          console.error(`Failed to send Telegram notification to ${chatId}:`, result.description);
+        }
+      } catch (error) {
+        console.error(`Error sending Telegram notification to ${chatId}:`, error);
+      }
   }
 }
 
@@ -53,7 +53,6 @@ const inquirySchema = z.object({
 export async function submitInquiry(data: unknown) {
   const parsedData = inquirySchema.safeParse(data);
   const locale = getLocale();
-  const t = await getDictionary(locale as any);
 
 
   if (!parsedData.success) {
@@ -62,10 +61,7 @@ export async function submitInquiry(data: unknown) {
 
   const { name, phone, service } = parsedData.data;
 
-  const message = t.Actions.new_inquiry_telegram
-    .replace('{name}', name)
-    .replace('{phone}', phone)
-    .replace('{service}', service || t.Actions.no_service_specified);
+  const message = `📥 <b>Новая заявка</b>\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n📝 Инфо: ${service || '—'}\n🌍 Источник: website`;
     
   await sendTelegramNotification(message);
 
@@ -85,8 +81,6 @@ const calculatorInquirySchema = z.object({
 
 export async function submitCalculatorInquiry(data: unknown) {
     const parsedData = calculatorInquirySchema.safeParse(data);
-    const locale = getLocale();
-    const t = await getDictionary(locale as any);
 
   if (!parsedData.success) {
     return { success: false, message: 'Invalid data.' };
@@ -94,11 +88,9 @@ export async function submitCalculatorInquiry(data: unknown) {
 
   const { name, phone, service, details } = parsedData.data;
 
-  const message = t.Actions.new_calculator_inquiry_telegram
-    .replace('{name}', name)
-    .replace('{phone}', phone)
-    .replace('{service}', service || t.Actions.no_service_specified)
-    .replace('{details}', details || t.Actions.no_details);
+  const info = `${service || 'Не указана'}\n${details || 'Нет'}`;
+
+  const message = `📥 <b>Новая заявка</b>\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n📝 Инфо: ${info}\n🌍 Источник: Calculator`;
 
   await sendTelegramNotification(message);
 
