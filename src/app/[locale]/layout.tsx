@@ -52,7 +52,7 @@ export default async function LocaleLayout({
         }
     ],
     "sameAs": [
-        "https://www.instagram.com/beclean_pro/",
+        "https://www.instagram.com/beclean_pro?igsh=OTlpZXg3ODlrZnYw",
         "https://t.me/beclean_uz"
     ]
   };
@@ -67,6 +67,7 @@ export default async function LocaleLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
+        <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module" async></script>
       </head>
       <body className="font-body antialiased min-h-screen flex flex-col bg-background">
         <DictionaryProvider dictionary={t}>

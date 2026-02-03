@@ -25,6 +25,14 @@ import { submitInquiry } from "@/lib/actions";
 import { useDictionary } from "@/contexts/dictionary-context";
 import * as constants from "@/lib/constants";
 
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'dotlottie-wc': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement> & { src: string; autoplay?: boolean; loop?: boolean; style?: React.CSSProperties }, HTMLElement>;
+    }
+  }
+}
+
 const formSchema = z.object({
   name: z.string().min(2),
   phone: z.string().min(7),
@@ -70,6 +78,19 @@ export function ContactForm({ defaultService }: { defaultService?: string }) {
         description: t.ContactForm.server_error_toast_description,
       });
     }
+  }
+
+  if (form.formState.isSubmitting) {
+    return (
+      <div className="flex justify-center items-center min-h-[260px]">
+        <dotlottie-wc 
+            src="https://lottie.host/e77a7057-00fa-4005-87a6-9e4cf5d9f4c1/JoYgNJl1b6.lottie" 
+            style={{ width: '250px', height: '250px' }} 
+            autoplay 
+            loop>
+        </dotlottie-wc>
+      </div>
+    );
   }
 
   return (
@@ -125,8 +146,8 @@ export function ContactForm({ defaultService }: { defaultService?: string }) {
             </FormItem>
           )}
         />
-        <Button type="submit" size="lg" className="w-full" disabled={form.formState.isSubmitting}>
-          {form.formState.isSubmitting ? t.ContactForm.submitting_button : t.ContactForm.submit_button}
+        <Button type="submit" size="lg" className="w-full">
+          {t.ContactForm.submit_button}
         </Button>
       </form>
     </Form>

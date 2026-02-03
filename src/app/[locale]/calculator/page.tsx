@@ -14,12 +14,20 @@ import { cn } from '@/lib/utils';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Form, FormControl, FormField, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { submitCalculatorInquiry } from "@/lib/actions";
 import { CheckCircle } from 'lucide-react';
 import { useDictionary } from '@/contexts/dictionary-context';
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'dotlottie-wc': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement> & { src: string; autoplay?: boolean; loop?: boolean; style?: React.CSSProperties }, HTMLElement>;
+    }
+  }
+}
 
 export default function CalculatorPage() {
   const t = useDictionary().CalculatorPage;
@@ -56,6 +64,8 @@ export default function CalculatorPage() {
     resolver: zodResolver(formSchema),
     defaultValues: { name: "", phone: "" },
   });
+
+  const { formState: { isSubmitting } } = form;
 
   const estimatedCost = useMemo(() => {
     const selectedCleaning = cleaningTypes.find(c => c.value === cleaningType);
@@ -183,7 +193,16 @@ export default function CalculatorPage() {
           </div>
           
           <div className="lg:col-span-2 space-y-8 sticky top-24 self-start">
-              {!isSubmitted ? (
+              {isSubmitting ? (
+                 <div className="flex justify-center items-center min-h-[300px]">
+                    <dotlottie-wc 
+                        src="https://lottie.host/e77a7057-00fa-4005-87a6-9e4cf5d9f4c1/JoYgNJl1b6.lottie" 
+                        style={{ width: '300px', height: '300px' }} 
+                        autoplay 
+                        loop>
+                    </dotlottie-wc>
+                  </div>
+              ) : !isSubmitted ? (
                  <Card>
                     <CardHeader>
                         <CardTitle className="text-2xl">{t.form_title}</CardTitle>
@@ -218,8 +237,8 @@ export default function CalculatorPage() {
                                     </FormItem>
                                   )}
                                 />
-                                <Button type="submit" size="lg" className="w-full" disabled={form.formState.isSubmitting}>
-                                  {form.formState.isSubmitting ? t.submitting_button : t.submit_button}
+                                <Button type="submit" size="lg" className="w-full">
+                                  {t.submit_button}
                                 </Button>
                             </form>
                         </Form>
@@ -246,7 +265,7 @@ export default function CalculatorPage() {
                 </Card>
               )}
 
-              {calculatorImage && !isSubmitted && (
+              {calculatorImage && !isSubmitted && !isSubmitting && (
                   <Image
                       alt="Калькулятор"
                       className="rounded-xl object-cover w-full aspect-video shadow-lg"
