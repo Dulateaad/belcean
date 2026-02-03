@@ -132,10 +132,10 @@ export default async function Home({ params: { locale } }: { params: { locale: L
                          </div>
                    </div>
 
-                   <div className="hidden md:grid md:grid-cols-2 md:gap-20 items-center">
+                   <div className="hidden md:grid md:grid-cols-2 items-center">
                         {index % 2 === 0 ? (
                        <>
-                           <div className="text-right relative z-20">
+                           <div className="text-right relative z-20 pr-10">
                                <h3 className="text-2xl font-bold">{step.title}</h3>
                                <p className="text-muted-foreground mt-2 text-lg">{step.description}</p>
                            </div>
@@ -144,7 +144,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
                        ) : (
                        <>
                            <div></div>
-                           <div className="relative z-20">
+                           <div className="relative z-20 pl-10">
                                <h3 className="text-2xl font-bold">{step.title}</h3>
                                <p className="text-muted-foreground mt-2 text-lg">{step.description}</p>
                            </div>
