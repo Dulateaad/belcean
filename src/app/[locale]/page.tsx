@@ -44,7 +44,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-7xl/none font-headline text-white" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>
                   {t.HomePage.hero_title}
               </h1>
-              <p className="max-w-[600px] mx-auto mt-4 text-lg md:text-xl text-white/90" style={{textShadow: '1px 1px 2px rgba(0,0,0,0.5)'}}>
+              <p className="max-w-[600px] mx-auto mt-4 text-lg md:text-xl text-white/90" style={{textShadow: '2px 2px 6px rgba(0,0,0,0.8)'}}>
                   {t.HomePage.hero_subtitle}
               </p>
               <div className="flex flex-col gap-4 min-[400px]:flex-row justify-center mt-8">
