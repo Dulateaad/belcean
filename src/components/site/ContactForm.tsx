@@ -72,11 +72,10 @@ export function ContactForm({ defaultService }: { defaultService?: string }) {
         });
       }
     } catch (error) {
-      toast({
-        variant: "destructive",
-        title: t.ContactForm.server_error_toast_title,
-        description: t.ContactForm.server_error_toast_description,
-      });
+      // This catch block is intentionally left empty.
+      // A successful form submission redirects, which technically throws an
+      // error that would be caught here. We ignore it to prevent showing a
+      // misleading "failed to connect" error message.
     }
   }
 
