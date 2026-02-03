@@ -1,12 +1,6 @@
 {
   "placeholderImages": [
     {
-      "id": "hero",
-      "description": "A professional cleaner in uniform meticulously wiping a modern office desk.",
-      "imageUrl": "https://images.unsplash.com/photo-1679137353859-c882992ad223?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBjbGVhbmVyfGVufDB8fHx8MTc2OTQzNDg1OXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "professional cleaner"
-    },
-    {
       "id": "service-office",
       "description": "A bright and clean modern office space with empty chairs and desks.",
       "imageUrl": "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjbGVhbiUyMG9mZmljZXxlbnwwfHx8fDE3Njk0MzQ4NTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -77,6 +71,18 @@
       "description": "A person holding a thank you sign.",
       "imageUrl": "https://images.unsplash.com/photo-1602045486350-4e53a69865c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0aGFuayUyMHlvdXxlbnwwfHx8fDE3Njk0MzQ4NTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "thank you"
+    },
+    {
+      "id": "hero-carousel-1",
+      "description": "A professional cleaner in uniform wiping a glass door.",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/photo_5193048351077765425_x.jpg?alt=media&token=6514e6a8-1710-49eb-9158-09dcf4ff3a21",
+      "imageHint": "professional cleaning"
+    },
+    {
+      "id": "hero-carousel-2",
+      "description": "A professional cleaner vacuuming the floor in an office.",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/photo_5193048351077765427_y.jpg?alt=media&token=10c804ec-b9fc-4d63-a540-147d7112eca4",
+      "imageHint": "floor vacuuming"
     }
   ]
 }

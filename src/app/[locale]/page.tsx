@@ -28,6 +28,10 @@ export default async function Home({ params: { locale } }: { params: { locale: L
   const clientTypes = constants.getClientTypes(t);
   const whyBeClean = constants.getWhyBeClean(t);
   const howItWorks = constants.getHowItWorks(t);
+  const heroCarouselImages = [
+    PlaceHolderImages.find(p => p.id === 'hero-carousel-1'),
+    PlaceHolderImages.find(p => p.id === 'hero-carousel-2')
+  ].filter(Boolean) as any[];
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
@@ -51,14 +55,25 @@ export default async function Home({ params: { locale } }: { params: { locale: L
               </div>
             </div>
             <div className="lg:col-span-2 flex items-center justify-center">
-              <Card className="w-full max-w-md shadow-2xl">
-                <CardHeader>
-                  <CardTitle className="text-center text-2xl">{t.HomePage.form_title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ContactForm />
-                </CardContent>
-              </Card>
+              <Carousel className="w-full max-w-md shadow-2xl rounded-xl overflow-hidden" opts={{ loop: true }}>
+                <CarouselContent>
+                  {heroCarouselImages.map((image, index) => (
+                    <CarouselItem key={index}>
+                      <Image
+                        alt={image.description}
+                        className="aspect-video w-full object-cover"
+                        height={400}
+                        src={image.imageUrl}
+                        width={600}
+                        data-ai-hint={image.imageHint}
+                        priority={index === 0}
+                      />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="absolute left-4 bg-background/50 hover:bg-background/80 border-none" />
+                <CarouselNext className="absolute right-4 bg-background/50 hover:bg-background/80 border-none" />
+              </Carousel>
             </div>
           </div>
         </div>
@@ -117,8 +132,8 @@ export default async function Home({ params: { locale } }: { params: { locale: L
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl font-headline mb-16">{t.HomePage.how_it_works_title}</h2>
           <div className="relative max-w-5xl mx-auto">
-            <div className="absolute left-1/2 -translate-x-1/2 top-4 bottom-4 w-0.5 bg-border hidden md:block" />
-            <div className="absolute left-7 -translate-x-1/2 top-4 bottom-4 w-0.5 bg-border md:hidden" />
+            <div className="absolute left-1/2 top-4 bottom-4 w-0.5 -translate-x-1/2 bg-border hidden md:block"></div>
+            <div className="absolute left-7 top-4 bottom-4 w-0.5 -translate-x-1/2 bg-border md:hidden"></div>
             
             <div className="grid gap-y-16">
               {howItWorks.map((step: any, index: number) => (
@@ -133,25 +148,25 @@ export default async function Home({ params: { locale } }: { params: { locale: L
                       </div>
                   </div>
 
-                  <div className="hidden md:grid grid-cols-[1fr_auto_1fr] gap-x-12 items-center">
+                  <div className="hidden md:grid grid-cols-[1fr_auto_1fr] items-center">
                     {index % 2 === 0 ? (
                       <>
-                        <div className="text-right">
+                        <div className="text-right pr-8">
                           <h3 className="text-2xl font-bold">{step.title}</h3>
                           <p className="text-muted-foreground mt-2 text-lg">{step.description}</p>
                         </div>
                         <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-3xl font-bold z-10 border-8 border-background shadow-md">
                           {index + 1}
                         </div>
-                        <div />
+                        <div></div>
                       </>
                     ) : (
                       <>
-                        <div />
+                        <div></div>
                         <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-3xl font-bold z-10 border-8 border-background shadow-md">
                           {index + 1}
                         </div>
-                        <div>
+                        <div className="pl-8">
                           <h3 className="text-2xl font-bold">{step.title}</h3>
                           <p className="text-muted-foreground mt-2 text-lg">{step.description}</p>
                         </div>
