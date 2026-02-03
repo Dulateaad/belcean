@@ -86,7 +86,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       <section id="services" className="w-full py-12 md:py-24 bg-secondary/70">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl font-headline mb-12">{t.HomePage.services_title}</h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-3xl mx-auto">
             {services.map((service: any, index: number) => {
               return (
                 <Card key={index} className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full">
@@ -98,7 +98,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
                       <CardTitle className="text-xl">{service.title}</CardTitle>
                     </div>
                     <p className="text-muted-foreground mb-4 flex-grow">{service.description}</p>
-                     <Button asChild variant="link" className="p-0 h-auto font-semibold self-start">
+                     <Button asChild variant="link" className="p-0 h-auto font-semibold self-start mt-auto">
                       <Link href={service.slug}>Подробнее <ArrowRight className="ml-2 h-4 w-4" /></Link>
                     </Button>
                   </CardContent>
