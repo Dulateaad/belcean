@@ -41,7 +41,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
         <HeroCarousel images={heroCarouselImages} />
         <div className="absolute inset-0 bg-[rgba(24,144,255,0.12)] backdrop-blur-[2px]" />
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-primary-foreground p-4">
-          <div className="container">
+          <div className="w-full max-w-[1792px] mx-auto px-4">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-7xl/none font-headline text-white" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>
                   {t.HomePage.hero_title}
               </h1>
@@ -61,7 +61,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       </section>
 
       <section id="clients" className="w-full py-12 md:py-24">
-        <div className="container px-4 md:px-6">
+        <div className="max-w-[1792px] mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">{t.HomePage.clients_title}</h2>
@@ -70,7 +70,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-screen-2xl grid-cols-2 items-start gap-8 pt-12 sm:grid-cols-3 lg:grid-cols-6 lg:gap-12 text-center">
+          <div className="mx-auto grid grid-cols-2 items-start gap-8 pt-12 sm:grid-cols-3 lg:grid-cols-6 lg:gap-12 text-center">
             {clientTypes.map((client: any, index: number) => (
               <div key={index} className="flex flex-col items-center gap-4 text-center">
                 {client.imageUrl ? (
@@ -94,9 +94,9 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       </section>
 
       <section id="services" className="w-full py-12 md:py-24 bg-secondary/70 text-center">
-        <div className="container px-4 md:px-6 text-center">
+        <div className="max-w-[1792px] mx-auto px-4 md:px-6 text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12">{t.HomePage.services_title}</h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-screen-2xl mx-auto">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mx-auto">
             {services.map((service: any, index: number) => {
               return (
                 <Card key={index} className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full">
@@ -118,9 +118,9 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       </section>
 
       <section id="how-it-works" className="w-full py-12 md:py-24 text-center">
-        <div className="container px-4 md:px-6">
+        <div className="max-w-[1792px] mx-auto px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-16">{t.HomePage.how_it_works_title}</h2>
-          <div className="relative max-w-screen-2xl mx-auto">
+          <div className="relative mx-auto">
             <div className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-border hidden md:block"></div>
             <div className="space-y-16 md:space-y-0 md:grid md:grid-cols-1 md:gap-y-16">
               {howItWorks.map((step: any, index: number) => (
@@ -140,9 +140,9 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       </section>
 
       <section id="why-us" className="w-full py-12 md:py-24 bg-secondary/70 text-center">
-        <div className="container px-4 md:px-6">
+        <div className="max-w-[1792px] mx-auto px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12">{t.HomePage.why_us_title}</h2>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 max-w-screen-2xl mx-auto">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mx-auto">
             {whyBeClean.map((reason: any, index: number) => (
               <div key={index} className="flex flex-col items-center text-center gap-4 p-6 bg-background rounded-lg shadow-sm">
                 <div className="bg-primary/10 p-4 rounded-full text-primary">
@@ -157,13 +157,13 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       </section>
 
       <section id="testimonials" className="w-full py-12 md:py-24 text-center overflow-x-clip">
-        <div className="container px-4 md:px-6">
+        <div className="max-w-[1792px] mx-auto px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12">{t.HomePage.testimonials_title}</h2>
           <Carousel
             opts={{
               align: 'start',
             }}
-            className="w-full max-w-screen-2xl mx-auto"
+            className="w-full mx-auto"
           >
             <CarouselContent>
               {testimonials.map((testimonial: any, index: number) => (
@@ -210,7 +210,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       </section>
 
       <section id="cta" className="w-full py-12 md:py-24 lg:py-32 bg-secondary/70">
-        <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
+        <div className="max-w-[1792px] mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6">
           <div className="space-y-3">
             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">
               {t.HomePage.cta_title}
@@ -226,9 +226,9 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       </section>
 
       <section id="contacts" className="w-full py-12 md:py-24">
-        <div className="container px-4 md:px-6">
+        <div className="max-w-[1792px] mx-auto px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl font-headline mb-12">{t.HomePage.contacts_title}</h2>
-          <div className="max-w-screen-2xl mx-auto grid grid-cols-1 gap-12 items-center text-center">
+          <div className="mx-auto grid grid-cols-1 gap-12 items-center text-center">
             <div className="space-y-6">
               <h3 className="text-2xl font-bold">BeClean Pro</h3>
               <p className="text-muted-foreground text-lg max-w-[600px] mx-auto">{t.HomePage.contacts_subtitle}</p>
