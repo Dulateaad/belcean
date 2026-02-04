@@ -77,13 +77,13 @@ export default async function Home({ params: { locale } }: { params: { locale: L
                     <Image
                       src={client.imageUrl}
                       alt={client.name}
-                      width={64}
-                      height={64}
-                      className="h-16 w-16 rounded-full object-cover"
+                      width={96}
+                      height={96}
+                      className="h-24 w-24 rounded-2xl object-cover"
                     />
                   ) : (
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 p-4 text-primary">
-                      <client.icon className="h-8 w-8" />
+                    <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-primary/10 p-4 text-primary">
+                      <client.icon className="h-12 w-12" />
                     </div>
                   )}
                 <p className="text-lg font-semibold">{client.name}</p>

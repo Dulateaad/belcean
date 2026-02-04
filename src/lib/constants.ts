@@ -27,11 +27,11 @@ export const getClientTypes = (t: any) => {
     const clientTypesText = t.Constants.client_types;
     return [
         { name: clientTypesText[0].name, icon: Building2, imageUrl: null },
-        { name: clientTypesText[1].name, icon: Building2, imageUrl: null },
+        { name: clientTypesText[1].name, icon: Building2, imageUrl: 'https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/Gemini_Generated_Image_wqlim4wqlim4wqli.png?alt=media&token=2836cd0c-fba1-48f7-a840-12156db46e68' },
         { name: clientTypesText[2].name, icon: ShoppingBag, imageUrl: 'https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/Gemini_Generated_Image_mrb58smrb58smrb5.png?alt=media&token=6784452a-b066-405a-971b-1606c7de2cb2' },
         { name: clientTypesText[3].name, icon: HeartPulse, imageUrl: 'https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/Gemini_Generated_Image_x21e9gx21e9gx21e.png?alt=media&token=cdd15f92-cbe6-4fc5-b9bd-e63e37439429' },
         { name: clientTypesText[4].name, icon: HardHat, imageUrl: 'https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/Gemini_Generated_Image_8ha5h68ha5h68ha5.png?alt=media&token=cdfe0667-95c2-40cb-adf6-00e5911e906d' },
-        { name: clientTypesText[5].name, icon: Home, imageUrl: null },
+        { name: clientTypesText[5].name, icon: Home, imageUrl: 'https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/Gemini_Generated_Image_so9mwwso9mwwso9m.png?alt=media&token=6c739362-5949-4dd0-86de-2bb1cc257e22' },
     ];
 };
 
