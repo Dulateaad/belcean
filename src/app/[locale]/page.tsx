@@ -121,7 +121,6 @@ export default async function Home({ params: { locale } }: { params: { locale: L
         <div className="max-w-[1792px] mx-auto px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-16">{t.HomePage.how_it_works_title}</h2>
           <div className="relative mx-auto">
-            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-border hidden md:block"></div>
             <div className="space-y-16 md:space-y-0 md:grid md:grid-cols-1 md:gap-y-16">
               {howItWorks.map((step: any, index: number) => (
                 <div key={index} className="relative flex flex-col items-center text-center">
