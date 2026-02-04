@@ -52,7 +52,7 @@ export default async function LocaleLayout({
     ],
     "sameAs": [
         "https://www.instagram.com/beclean_pro?igsh=OTlpZXg3ODlrZnYw",
-        "https://t.me/beclean_uz"
+        "https://t.me/beclean_manager"
     ]
   };
 

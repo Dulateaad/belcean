@@ -56,7 +56,7 @@ export function SiteFooter() {
                 <Link href="https://www.instagram.com/beclean_pro?igsh=OTlpZXg3ODlrZnYw" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                   <Instagram className="h-6 w-6 text-muted-foreground hover:text-primary" />
                 </Link>
-                <Link href="https://t.me/beclean_uz" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+                <Link href="https://t.me/beclean_manager" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
                   <Send className="h-6 w-6 text-muted-foreground hover:text-primary" />
                 </Link>
               </div>

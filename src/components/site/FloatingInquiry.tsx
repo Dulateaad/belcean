@@ -59,7 +59,7 @@ export function FloatingInquiry() {
           <Tooltip>
               <TooltipTrigger asChild>
                   <Button asChild size="icon" className="h-14 w-14 rounded-full shadow-lg animate-pulse-glow bg-[#229ED9] hover:bg-[#1A88C2] text-white">
-                      <Link href="https://t.me/beclean_uz" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+                      <Link href="https://t.me/beclean_manager" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
                           <Send className="h-7 w-7" />
                       </Link>
                   </Button>
