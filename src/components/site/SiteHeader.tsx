@@ -11,6 +11,8 @@ import {
 import {
   Sheet,
   SheetContent,
+  SheetHeader,
+  SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { Menu, ChevronDown, Phone, Clock } from 'lucide-react';
@@ -50,6 +52,9 @@ export function SiteHeader() {
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="w-[300px]">
+              <SheetHeader>
+                <SheetTitle className="sr-only">Menu</SheetTitle>
+              </SheetHeader>
               <Link href={`/${currentLocale}`} className="mb-8 block">
                 <Logo />
               </Link>
