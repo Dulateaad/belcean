@@ -11,7 +11,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
-import { Phone, Calculator, Wand2 } from 'lucide-react';
+import { Phone, Calculator, Wand2, Send } from 'lucide-react';
 import { ContactForm } from './ContactForm';
 import { useDictionary } from '@/contexts/dictionary-context';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
@@ -51,6 +51,21 @@ export function FloatingInquiry() {
               </TooltipTrigger>
               <TooltipContent side="left">
                   <p>{tHome.pick_service_button}</p>
+              </TooltipContent>
+          </Tooltip>
+      </TooltipProvider>
+
+      <TooltipProvider delayDuration={100}>
+          <Tooltip>
+              <TooltipTrigger asChild>
+                  <Button asChild size="icon" className="h-14 w-14 rounded-full shadow-lg animate-pulse-glow bg-[#229ED9] hover:bg-[#1A88C2] text-white">
+                      <Link href="https://t.me/beclean_uz" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+                          <Send className="h-7 w-7" />
+                      </Link>
+                  </Button>
+              </TooltipTrigger>
+              <TooltipContent side="left">
+                  <p>{tFloating.telegram}</p>
               </TooltipContent>
           </Tooltip>
       </TooltipProvider>

@@ -298,7 +298,8 @@
   "FloatingInquiry": {
     "aria_label": "Ariza qoldirish",
     "title": "Qo'ng'iroqqa buyurtma berish",
-    "description": "Raqamingizni qoldiring va biz barcha tafsilotlarni muhokama qilish uchun tez orada sizga qo'ng'iroq qilamiz."
+    "description": "Raqamingizni qoldiring va biz barcha tafsilotlarni muhokama qilish uchun tez orada sizga qo'ng'iroq qilamiz.",
+    "telegram": "Telegramda yozish"
   }
 }
 
