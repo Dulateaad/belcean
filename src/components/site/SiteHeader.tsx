@@ -108,7 +108,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center space-x-2 sm:space-x-4 ml-auto">
-          <div className="hidden items-center gap-2 sm:flex">
+          <div className="flex items-center gap-2">
              <Clock className="h-5 w-5 text-primary" />
              <span className="font-semibold text-base">{t.Header.work_hours}</span>
           </div>
