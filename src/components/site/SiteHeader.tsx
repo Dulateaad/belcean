@@ -15,7 +15,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
-import { Menu, ChevronDown, Phone, Clock } from 'lucide-react';
+import { Menu, ChevronDown, Phone, Clock, Send } from 'lucide-react';
 import { Logo } from './Logo';
 import { useDictionary } from '@/contexts/dictionary-context';
 import * as constants from '@/lib/constants';
@@ -53,7 +53,7 @@ export function SiteHeader() {
             </SheetTrigger>
             <SheetContent side="left" className="w-[300px]">
               <SheetHeader>
-                <SheetTitle className="sr-only">Menu</SheetTitle>
+                <SheetTitle className="sr-only">{t.Header.services}</SheetTitle>
               </SheetHeader>
               <Link href={`/${currentLocale}`} className="mb-8 block">
                 <Logo />
@@ -112,38 +112,44 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="flex items-center space-x-2 sm:space-x-4 ml-auto">
-          <div className="flex items-center gap-2">
-             <Clock className="h-5 w-5 text-primary" />
-             <span className="font-semibold text-base">{t.Header.work_hours}</span>
-          </div>
-          <div className="hidden items-center gap-2 sm:flex">
-            <Phone className="h-5 w-5 text-primary" />
-            <a
-              href="tel:+998773566070"
-              className="font-bold text-lg hover:text-primary transition-colors"
-            >
-              +998 77 356 60 70
-            </a>
-          </div>
-           <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="sm" className="w-[70px]">
-                  {currentLocale.toUpperCase()}
-                  <ChevronDown className="h-4 w-4 ml-2" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                {i18n.locales.map(locale => (
-                    <DropdownMenuItem key={locale} asChild>
-                        <Link href={redirectedPathName(locale)}>{locale.toUpperCase()}</Link>
-                    </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-          <Button asChild className="hidden lg:inline-flex">
-            <Link href="#cta">{t.Header.call_request}</Link>
-          </Button>
+        <div className="flex items-center ml-auto lg:space-x-4">
+            <div className="flex flex-col items-end gap-1 lg:flex-row lg:items-center lg:gap-4">
+                <div className="flex items-center gap-3">
+                    <a href="https://t.me/beclean_manager" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 font-semibold text-xs sm:text-sm hover:text-primary transition-colors">
+                        <Send className="h-4 w-4 text-primary" />
+                        <span>@beclean_manager</span>
+                    </a>
+                    <a href="tel:+998773566070" className="flex items-center gap-1 font-bold text-xs sm:text-base hover:text-primary transition-colors">
+                        <Phone className="h-4 w-4 text-primary" />
+                        <span>77 356-60-70</span>
+                    </a>
+                </div>
+                <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1">
+                        <Clock className="h-4 w-4 text-primary" />
+                        <span className="font-semibold text-xs sm:text-sm">{t.Header.work_hours}</span>
+                    </div>
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                        <Button variant="outline" size="sm" className="w-[60px] h-7 text-xs sm:w-[70px]">
+                            {currentLocale.toUpperCase()}
+                            <ChevronDown className="h-4 w-4 ml-1 sm:ml-2" />
+                        </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent>
+                        {i18n.locales.map(locale => (
+                            <DropdownMenuItem key={locale} asChild>
+                                <Link href={redirectedPathName(locale)}>{locale.toUpperCase()}</Link>
+                            </DropdownMenuItem>
+                        ))}
+                        </DropdownMenuContent>
+                    </DropdownMenu>
+                </div>
+            </div>
+
+            <Button asChild className="hidden lg:inline-flex">
+                <Link href="#cta">{t.Header.call_request}</Link>
+            </Button>
         </div>
       </div>
     </header>
