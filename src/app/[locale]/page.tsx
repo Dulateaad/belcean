@@ -37,22 +37,22 @@ export default async function Home({ params: { locale } }: { params: { locale: L
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
-      <section id="hero" className="relative w-full h-[60vh] md:h-[70vh] overflow-hidden">
+      <section id="hero" className="relative w-full h-[70vh] md:h-[80vh] overflow-hidden">
         <HeroCarousel images={heroCarouselImages} />
-        <div className="absolute inset-0 bg-[rgba(24,144,255,0.12)] backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-primary-foreground p-4">
           <div className="w-full max-w-[1792px] mx-auto px-4">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-7xl/none font-headline text-white" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-6xl xl:text-8xl/none font-headline text-white">
                   {t.HomePage.hero_title}
               </h1>
-              <p className="max-w-[600px] mx-auto text-white/90 md:text-xl/relaxed mt-6" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.7)'}}>
+              <p className="max-w-[700px] mx-auto text-white/90 md:text-xl/relaxed mt-6">
                 {t.HomePage.hero_subtitle}
               </p>
               <div className="flex flex-col gap-4 min-[400px]:flex-row justify-center mt-8">
                   <Button asChild size="lg">
                       <Link href={`/${locale}/calculator`}>{t.HomePage.calculate_button} <ArrowRight className="ml-2 h-5 w-5" /></Link>
                   </Button>
-                  <Button asChild variant="secondary" size="lg">
+                  <Button asChild variant="outline" size="lg">
                       <Link href={`/${locale}/quiz`}>{t.HomePage.pick_service_button}</Link>
                   </Button>
               </div>
@@ -60,19 +60,19 @@ export default async function Home({ params: { locale } }: { params: { locale: L
         </div>
       </section>
 
-      <section id="clients" className="w-full py-12 md:py-24">
+      <section id="clients" className="w-full py-16 md:py-32">
         <div className="max-w-[1792px] mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
+            <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">{t.HomePage.clients_title}</h2>
-              <p className="max-w-[600px] mx-auto text-muted-foreground md:text-xl/relaxed">
+              <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl/relaxed">
                 {t.HomePage.clients_subtitle}
               </p>
             </div>
           </div>
           <div className="mx-auto grid grid-cols-2 items-start gap-8 pt-12 sm:grid-cols-3 lg:grid-cols-6 lg:gap-12 text-center">
             {clientTypes.map((client: any, index: number) => (
-              <div key={index} className="flex flex-col items-center gap-4 text-center">
+              <div key={index} className="flex flex-col items-center gap-4 text-center transition-transform duration-300 hover:scale-105">
                 {client.imageUrl ? (
                     <Image
                       src={client.imageUrl}
@@ -93,20 +93,20 @@ export default async function Home({ params: { locale } }: { params: { locale: L
         </div>
       </section>
 
-      <section id="services" className="w-full py-12 md:py-24 bg-secondary/70 text-center">
+      <section id="services" className="w-full py-16 md:py-32 bg-secondary text-center">
         <div className="max-w-[1792px] mx-auto px-4 md:px-6 text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12">{t.HomePage.services_title}</h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mx-auto">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mx-auto">
             {services.map((service: any, index: number) => {
               return (
-                <Card key={index} className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full">
-                   <CardContent className="p-6 flex-grow flex flex-col items-center text-center">
-                    <div className="bg-primary/10 p-3 rounded-lg text-primary">
-                       <service.icon className="w-8 h-8" />
+                <Card key={index} className="flex flex-col overflow-hidden bg-background border border-transparent hover:border-primary transition-colors duration-300 h-full text-center group">
+                   <CardContent className="p-8 flex-grow flex flex-col items-center">
+                    <div className="bg-primary/10 p-4 rounded-xl text-primary mb-6">
+                       <service.icon className="w-10 h-10" />
                     </div>
                     <CardTitle className="text-xl mt-4">{service.title}</CardTitle>
                     <p className="text-muted-foreground mt-2 mb-4 flex-grow">{service.description}</p>
-                     <Button asChild variant="link" className="p-0 h-auto font-semibold mt-auto">
+                     <Button asChild variant="link" className="p-0 h-auto font-semibold mt-auto opacity-70 group-hover:opacity-100 transition-opacity">
                       <Link href={`/${locale}${service.slug}`}>Подробнее <ArrowRight className="ml-2 h-4 w-4" /></Link>
                     </Button>
                   </CardContent>
@@ -117,7 +117,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
         </div>
       </section>
 
-      <section id="how-it-works" className="w-full py-12 md:py-24 text-center">
+      <section id="how-it-works" className="w-full py-16 md:py-32 text-center">
         <div className="max-w-[1792px] mx-auto px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-16">{t.HomePage.how_it_works_title}</h2>
           <div className="relative mx-auto">
@@ -125,10 +125,10 @@ export default async function Home({ params: { locale } }: { params: { locale: L
             <div className="space-y-16 md:space-y-0 md:grid md:grid-cols-1 md:gap-y-16">
               {howItWorks.map((step: any, index: number) => (
                 <div key={index} className="relative flex flex-col items-center text-center">
-                  <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-3xl font-bold z-10 border-8 border-background shadow-md">
+                  <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-3xl font-bold z-10 border-8 border-background shadow-lg">
                     {index + 1}
                   </div>
-                  <div className="mt-4">
+                  <div className="mt-6">
                     <h3 className="text-2xl font-bold">{step.title}</h3>
                     <p className="text-muted-foreground mt-2 text-lg max-w-md mx-auto">{step.description}</p>
                   </div>
@@ -139,12 +139,12 @@ export default async function Home({ params: { locale } }: { params: { locale: L
         </div>
       </section>
 
-      <section id="why-us" className="w-full py-12 md:py-24 bg-secondary/70 text-center">
+      <section id="why-us" className="w-full py-16 md:py-32 bg-secondary text-center">
         <div className="max-w-[1792px] mx-auto px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12">{t.HomePage.why_us_title}</h2>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mx-auto">
             {whyBeClean.map((reason: any, index: number) => (
-              <div key={index} className="flex flex-col items-center text-center gap-4 p-6 bg-background rounded-lg shadow-sm">
+              <div key={index} className="flex flex-col items-center text-center gap-4 p-8 bg-background rounded-lg shadow-sm">
                 <div className="bg-primary/10 p-4 rounded-full text-primary">
                   <reason.icon className="w-10 h-10" />
                 </div>
@@ -156,7 +156,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
         </div>
       </section>
 
-      <section id="testimonials" className="w-full py-12 md:py-24 text-center overflow-x-clip">
+      <section id="testimonials" className="w-full py-16 md:py-32 text-center overflow-x-clip">
         <div className="max-w-[1792px] mx-auto px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12">{t.HomePage.testimonials_title}</h2>
           <Carousel
@@ -169,12 +169,12 @@ export default async function Home({ params: { locale } }: { params: { locale: L
               {testimonials.map((testimonial: any, index: number) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-2 h-full">
-                    <Card className="h-full flex flex-col text-center">
-                      <CardContent className="p-6 space-y-4 flex-grow flex flex-col justify-center items-center">
+                    <Card className="h-full flex flex-col text-center bg-secondary">
+                      <CardContent className="p-8 space-y-6 flex-grow flex flex-col justify-center items-center">
                          <div className="text-center">
                           <div className="flex items-center justify-center mb-4">
                             {[...Array(5)].map((_, i) => (
-                              <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                              <Star key={i} className="w-5 h-5 fill-primary text-primary" />
                             ))}
                           </div>
                           <p className="text-muted-foreground text-base max-w-[600px] mx-auto">"{testimonial.quote}"</p>
@@ -209,7 +209,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
         </div>
       </section>
 
-      <section id="cta" className="w-full py-12 md:py-24 lg:py-32 bg-secondary/70">
+      <section id="cta" className="w-full py-16 md:py-32 lg:py-40 bg-secondary">
         <div className="max-w-[1792px] mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6">
           <div className="space-y-3">
             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">
@@ -225,7 +225,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
         </div>
       </section>
 
-      <section id="contacts" className="w-full py-12 md:py-24">
+      <section id="contacts" className="w-full py-16 md:py-32">
         <div className="max-w-[1792px] mx-auto px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl font-headline mb-12">{t.HomePage.contacts_title}</h2>
           <div className="mx-auto grid grid-cols-1 gap-12 items-center text-center">
@@ -239,14 +239,14 @@ export default async function Home({ params: { locale } }: { params: { locale: L
                 <p><strong>{t.HomePage.contacts_hours}</strong> 24/7</p>
               </div>
             </div>
-            <div className="w-full mx-auto">
+            <div className="w-full mx-auto max-w-4xl">
               <a href="https://maps.google.com/?q=Tashkent" target="_blank" rel="noopener noreferrer" className="inline-block">
                 <Image
                   alt="Карта расположения офиса BeClean в Ташкенте"
-                  className="rounded-xl object-cover w-full h-full min-h-[350px] shadow-lg"
+                  className="rounded-xl object-cover w-full h-full min-h-[400px] shadow-lg"
                   height="400"
                   src={mapPlaceholder?.imageUrl || ''}
-                  width="600"
+                  width="800"
                   data-ai-hint="city map"
                 />
               </a>

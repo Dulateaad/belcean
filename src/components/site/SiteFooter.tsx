@@ -21,7 +21,7 @@ export function SiteFooter() {
   }, []);
 
   return (
-    <footer className="w-full border-t bg-secondary/70">
+    <footer className="w-full border-t bg-secondary">
       <div className="container py-12">
         <div className="grid gap-12 md:gap-8 md:grid-cols-4 text-center md:text-left">
           <div className="space-y-4 md:col-span-2 flex flex-col items-center md:items-start">
