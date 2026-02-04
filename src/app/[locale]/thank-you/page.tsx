@@ -23,7 +23,7 @@ export default async function ThankYouPage({ params: { locale } }: { params: { l
             {pageData.subtitle}
           </p>
           <Button asChild>
-            <Link href="/">{pageData.button}</Link>
+            <Link href={`/${locale}`}>{pageData.button}</Link>
           </Button>
         </div>
         <div>

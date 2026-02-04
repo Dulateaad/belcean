@@ -14,11 +14,14 @@ import { cn } from '@/lib/utils';
 import { ArrowLeft, ArrowRight, Check, RefreshCw } from 'lucide-react';
 import { Progress } from '@/components/ui/progress';
 import { useDictionary } from '@/contexts/dictionary-context';
+import { usePathname } from 'next/navigation';
 
 export default function QuizPage() {
   const t = useDictionary();
   const tQuiz = t.QuizPage;
   const services = constants.getServices(t);
+  const pathname = usePathname();
+  const locale = pathname.split('/')[1];
 
   const propertyTypes = [
     { value: "office", label: tQuiz.property_types.office },
@@ -178,7 +181,7 @@ export default function QuizPage() {
                                     .replace('{goal}', cleaningGoals.find(g => g.value === answers.cleaningGoal)?.label.toLowerCase() || '')
                                 }</p>
                                 <Button asChild variant="link" className="px-0 mt-2">
-                                    <Link href={recommendedService.slug}>{tQuiz.learn_more_button} <ArrowRight className="ml-2 h-4 w-4"/></Link>
+                                    <Link href={`/${locale}${recommendedService.slug}`}>{tQuiz.learn_more_button} <ArrowRight className="ml-2 h-4 w-4"/></Link>
                                 </Button>
                             </CardContent>
                          </Card>

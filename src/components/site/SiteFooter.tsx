@@ -4,10 +4,14 @@ import { Logo } from './Logo';
 import { Facebook, Instagram, Send } from 'lucide-react';
 import { useDictionary } from '@/contexts/dictionary-context';
 import * as constants from '@/lib/constants';
+import { usePathname } from 'next/navigation';
+import { i18n } from '@/i18n-config';
 
 export function SiteFooter() {
   const t = useDictionary();
   const services = constants.getServices(t);
+  const pathname = usePathname();
+  const currentLocale = pathname.split('/')[1] || i18n.defaultLocale;
 
   return (
     <footer className="w-full border-t bg-secondary/70">
@@ -24,7 +28,7 @@ export function SiteFooter() {
             <ul className="space-y-2">
               {services.map((service: any) => (
                 <li key={service.slug}>
-                  <Link href={service.slug} className="text-sm text-muted-foreground hover:text-primary hover:underline">
+                  <Link href={`/${currentLocale}${service.slug}`} className="text-sm text-muted-foreground hover:text-primary hover:underline">
                     {service.title}
                   </Link>
                 </li>

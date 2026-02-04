@@ -50,10 +50,10 @@ export default async function Home({ params: { locale } }: { params: { locale: L
               </p>
               <div className="flex flex-col gap-4 min-[400px]:flex-row justify-center mt-8">
                   <Button asChild size="lg">
-                      <Link href="/calculator">{t.HomePage.calculate_button} <ArrowRight className="ml-2 h-5 w-5" /></Link>
+                      <Link href={`/${locale}/calculator`}>{t.HomePage.calculate_button} <ArrowRight className="ml-2 h-5 w-5" /></Link>
                   </Button>
                   <Button asChild variant="secondary" size="lg">
-                      <Link href="/quiz">{t.HomePage.pick_service_button}</Link>
+                      <Link href={`/${locale}/quiz`}>{t.HomePage.pick_service_button}</Link>
                   </Button>
               </div>
           </div>
@@ -109,7 +109,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
                     </div>
                     <p className="text-muted-foreground mb-4 flex-grow">{service.description}</p>
                      <Button asChild variant="link" className="p-0 h-auto font-semibold self-start mt-auto">
-                      <Link href={service.slug}>Подробнее <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                      <Link href={`/${locale}${service.slug}`}>Подробнее <ArrowRight className="ml-2 h-4 w-4" /></Link>
                     </Button>
                   </CardContent>
                 </Card>
@@ -289,5 +289,3 @@ export default async function Home({ params: { locale } }: { params: { locale: L
     </div>
   );
 }
-
-    

@@ -26,7 +26,7 @@ export const getTestimonials = (t: any) => {
 export const getClientTypes = (t: any) => {
     const clientTypesText = t.Constants.client_types;
     return [
-        { name: clientTypesText[0].name, icon: Building2, imageUrl: null },
+        { name: clientTypesText[0].name, icon: Building2, imageUrl: 'https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/Gemini_Generated_Image_o234dto234dto234.png?alt=media&token=7e30c5a4-791a-4b2c-9e99-5d3cf59e0cfd' },
         { name: clientTypesText[1].name, icon: Building2, imageUrl: 'https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/Gemini_Generated_Image_wqlim4wqlim4wqli.png?alt=media&token=2836cd0c-fba1-48f7-a840-12156db46e68' },
         { name: clientTypesText[2].name, icon: ShoppingBag, imageUrl: 'https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/Gemini_Generated_Image_mrb58smrb58smrb5.png?alt=media&token=6784452a-b066-405a-971b-1606c7de2cb2' },
         { name: clientTypesText[3].name, icon: HeartPulse, imageUrl: 'https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/Gemini_Generated_Image_x21e9gx21e9gx21e.png?alt=media&token=cdd15f92-cbe6-4fc5-b9bd-e63e37439429' },
@@ -52,5 +52,3 @@ export const getHowItWorks = (t: any) => {
 export const getPrices = (t: any) => {
     return t.Constants.prices;
 };
-
-    

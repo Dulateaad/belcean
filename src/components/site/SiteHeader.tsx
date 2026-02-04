@@ -24,6 +24,8 @@ export function SiteHeader() {
   const services = constants.getServices(t);
   const pathname = usePathname();
 
+  const currentLocale = pathname.split('/')[1] || i18n.defaultLocale;
+
   const redirectedPathName = (locale: string) => {
     if (!pathname) return '/';
     const segments = pathname.split('/');
@@ -31,10 +33,8 @@ export function SiteHeader() {
     return segments.join('/');
   };
 
-  const currentLocale = pathname.split('/')[1];
-
   const navLinks = [
-    { href: '/calculator', label: t.Header.calculator },
+    { href: `/${currentLocale}/calculator`, label: t.Header.calculator },
     { href: '#contacts', label: t.Header.contacts },
   ];
 
@@ -50,7 +50,7 @@ export function SiteHeader() {
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="w-[300px]">
-              <Link href="/" className="mb-8 block">
+              <Link href={`/${currentLocale}`} className="mb-8 block">
                 <Logo />
               </Link>
               <div className="flex flex-col space-y-4">
@@ -58,7 +58,7 @@ export function SiteHeader() {
                   {services.map((service: any) => (
                     <Link
                       key={service.slug}
-                      href={service.slug}
+                      href={`/${currentLocale}${service.slug}`}
                       className="text-muted-foreground hover:text-foreground"
                     >
                       {service.title}
@@ -79,7 +79,7 @@ export function SiteHeader() {
           </Sheet>
         </div>
 
-        <Link href="/" className="hidden md:flex mr-6">
+        <Link href={`/${currentLocale}`} className="hidden md:flex mr-6">
             <Logo />
         </Link>
         
@@ -91,7 +91,7 @@ export function SiteHeader() {
             <DropdownMenuContent>
               {services.map((service: any) => (
                 <DropdownMenuItem key={service.slug} asChild>
-                  <Link href={service.slug}>{service.title}</Link>
+                  <Link href={`/${currentLocale}${service.slug}`}>{service.title}</Link>
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
