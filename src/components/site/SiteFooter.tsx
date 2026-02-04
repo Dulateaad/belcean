@@ -6,12 +6,19 @@ import { useDictionary } from '@/contexts/dictionary-context';
 import * as constants from '@/lib/constants';
 import { usePathname } from 'next/navigation';
 import { i18n } from '@/i18n-config';
+import { useEffect, useState } from 'react';
 
 export function SiteFooter() {
   const t = useDictionary();
   const services = constants.getServices(t);
   const pathname = usePathname();
   const currentLocale = pathname.split('/')[1] || i18n.defaultLocale;
+
+  const [year, setYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
 
   return (
     <footer className="w-full border-t bg-secondary/70">
@@ -57,7 +64,7 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p>{t.Footer.copyright.replace('{year}', new Date().getFullYear())}</p>
+          <p>{t.Footer.copyright.replace('{year}', String(year))}</p>
         </div>
       </div>
     </footer>
