@@ -112,9 +112,9 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="flex items-center ml-auto lg:space-x-4">
-            <div className="flex flex-col items-end gap-1 lg:flex-row lg:items-center lg:gap-4">
-                <div className="flex items-center gap-2">
+        <div className="ml-auto flex items-center">
+            <div className="flex items-center gap-4">
+                <div className="flex flex-col items-start gap-1 md:flex-row md:items-center md:gap-2">
                     <div className="flex items-center gap-1">
                         <Clock className="h-4 w-4 text-primary" />
                         <span className="font-semibold text-xs sm:text-sm">{t.Header.work_hours}</span>
@@ -135,7 +135,7 @@ export function SiteHeader() {
                         </DropdownMenuContent>
                     </DropdownMenu>
                 </div>
-                <div className="flex flex-col items-end gap-1 lg:flex-row lg:items-center lg:gap-3">
+                <div className="flex flex-col items-end gap-1">
                     <a href="tel:+998773566070" className="flex items-center gap-1 font-bold text-xs sm:text-base hover:text-primary transition-colors">
                         <Phone className="h-4 w-4 text-primary" />
                         <span>77 356-60-70</span>
@@ -147,7 +147,7 @@ export function SiteHeader() {
                 </div>
             </div>
 
-            <Button asChild className="hidden lg:inline-flex">
+            <Button asChild className="hidden lg:inline-flex ml-4">
                 <Link href="#cta">{t.Header.call_request}</Link>
             </Button>
         </div>
