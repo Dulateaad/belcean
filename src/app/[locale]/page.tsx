@@ -1,4 +1,5 @@
 
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -39,7 +40,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
     <div className="flex flex-col min-h-screen bg-background">
       <section id="hero" className="relative w-full h-[70vh] md:h-[80vh] overflow-hidden">
         <HeroCarousel images={heroCarouselImages} />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
+        <div className="absolute inset-0 bg-cyan-950/60" />
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-primary-foreground p-4">
           <div className="w-full max-w-[1792px] mx-auto px-4">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-6xl xl:text-8xl/none font-headline text-white">
@@ -52,7 +53,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
                   <Button asChild size="lg">
                       <Link href={`/${locale}/calculator`}>{t.HomePage.calculate_button} <ArrowRight className="ml-2 h-5 w-5" /></Link>
                   </Button>
-                  <Button asChild variant="outline" size="lg">
+                  <Button asChild variant="secondary" size="lg">
                       <Link href={`/${locale}/quiz`}>{t.HomePage.pick_service_button}</Link>
                   </Button>
               </div>
