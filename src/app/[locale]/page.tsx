@@ -70,13 +70,23 @@ export default async function Home({ params: { locale } }: { params: { locale: L
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-[1200px] grid-cols-2 items-start gap-8 pt-20 pb-12 md:grid-cols-3 lg:grid-cols-6">
+          <div className="mx-auto grid max-w-5xl grid-cols-2 items-start gap-8 pt-12 sm:grid-cols-3 lg:grid-cols-6">
             {clientTypes.map((client: any, index: number) => (
               <div key={index} className="flex flex-col items-center gap-4 text-center">
-                <div className="bg-primary/10 rounded-full p-5 text-primary">
-                  <client.icon className="w-10 h-10" />
-                </div>
-                <p className="text-xl font-semibold">{client.name}</p>
+                {client.imageUrl ? (
+                    <Image
+                      src={client.imageUrl}
+                      alt={client.name}
+                      width={64}
+                      height={64}
+                      className="h-16 w-16 rounded-full object-cover"
+                    />
+                  ) : (
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 p-4 text-primary">
+                      <client.icon className="h-8 w-8" />
+                    </div>
+                  )}
+                <p className="text-lg font-semibold">{client.name}</p>
               </div>
             ))}
           </div>
