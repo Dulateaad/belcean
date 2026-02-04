@@ -27,16 +27,15 @@ export default async function LocaleLayout({
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "BeClean Pro",
+    "name": "BECLEAN SERVIS",
     "image": "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/photo_5190879925169230470_x.jpg?alt=media&token=e507f7fa-f14d-4990-8a89-1cb85f219ff8",
-    "url": "https://beclean-pro.example.com",
+    "url": "https://becleanservis.example.com",
     "telephone": "+998773566070",
     "description": "Профессиональный клининг для бизнеса в Ташкенте. Офисы, БЦ, клиники. Договор. Контроль качества.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "ул. Амира Темура, 1",
-      "addressLocality": "Ташкент",
-      "postalCode": "100000",
+      "streetAddress": "Yonariq mahallasi, Birdamlik ko'chasi, 283-uy",
+      "addressLocality": "Qibray tumani, Toshkent viloyati",
       "addressCountry": "UZ"
     },
     "geo": {

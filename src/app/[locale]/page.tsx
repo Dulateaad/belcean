@@ -230,7 +230,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
           <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl font-headline mb-12">{t.HomePage.contacts_title}</h2>
           <div className="mx-auto grid grid-cols-1 gap-12 items-center text-center">
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold">BeClean Pro</h3>
+              <h3 className="text-2xl font-bold">BECLEAN SERVIS</h3>
               <p className="text-muted-foreground text-lg max-w-[600px] mx-auto">{t.HomePage.contacts_subtitle}</p>
               <div className="space-y-3 text-lg">
                 <p><strong>{t.HomePage.contacts_address}</strong> {t.Footer.address}</p>

@@ -11,8 +11,8 @@
     "description": "Toshkentdagi biznesingiz uchun professional tozalash. Ishonishingiz mumkin bo'lgan tozalik.",
     "services": "Xizmatlar",
     "contacts": "Kontaktlar",
-    "address": "Toshkent sh., Amir Temur ko'chasi, 1",
-    "copyright": "© {year} BeClean Pro. Barcha huquqlar himoyalangan."
+    "address": "Toshkent viloyati, Qibray tumani, Yonariq QFY, Yonariq mahallasi, Birdamlik ko'chasi, 283-uy",
+    "copyright": "© {year} BECLEAN SERVIS. Barcha huquqlar himoyalangan."
   },
   "ContactForm": {
     "name_placeholder": "Ismingiz",
@@ -28,9 +28,9 @@
     "server_error_toast_description": "Server bilan bog'lanib bo'lmadi."
   },
   "HomePage": {
-    "meta_title": "BeClean Pro - Toshkentdagi biznes uchun professional tozalash",
+    "meta_title": "BECLEAN SERVIS - Toshkentdagi biznes uchun professional tozalash",
     "meta_description": "Toshkentdagi ofislar, biznes markazlari, klinikalar va do'konlar uchun professional tozalash xizmatlari. Sifat kafolati, shartnoma, o'qitilgan xodimlar.",
-    "meta_keywords": "toshkent tozalash, ofislarni tozalash, tozalash xizmatlari, professional tozalash, BeClean Pro",
+    "meta_keywords": "toshkent tozalash, ofislarni tozalash, tozalash xizmatlari, professional tozalash, BECLEAN SERVIS",
     "hero_title": "Toshkentdagi biznes uchun professional tozalash",
     "hero_subtitle": "Ofislar, BM, klinikalar. Shartnoma. Sifat nazorati.",
     "calculate_button": "Narxni hisoblash",
@@ -98,7 +98,7 @@
   },
   "ThankYouPage": {
       "title": "Arizangiz uchun rahmat!",
-      "subtitle": "Menejerimiz tez orada tafsilotlarni aniqlashtirish uchun siz bilan bog'lanadi. BeClean Pro'ga bo'lgan qiziqishingizni qadrlaymiz.",
+      "subtitle": "Menejerimiz tez orada tafsilotlarni aniqlashtirish uchun siz bilan bog'lanadi. BECLEAN SERVIS'ga bo'lgan qiziqishingizni qadrlaymiz.",
       "button": "Bosh sahifaga qaytish"
   },
   "ServicePages": {

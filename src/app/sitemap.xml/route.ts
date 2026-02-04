@@ -3,7 +3,7 @@ import { i18n } from '@/i18n-config';
 import ru from '@/dictionaries/ru.json';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://beclean-pro.example.com'; 
+  const baseUrl = 'https://becleanservis.example.com'; 
 
   const serviceSlugs = ru.Constants.services.map((service) => service.slug);
 
