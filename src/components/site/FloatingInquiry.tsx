@@ -22,13 +22,14 @@ export function FloatingInquiry() {
   const tHome = t.HomePage;
   const pathname = usePathname();
   const locale = pathname.split('/')[1] || 'ru';
+  const orangeButtonOverride = "bg-[hsl(24,95%,53%)] hover:bg-[hsl(24,95%,48%)]";
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4">
       <TooltipProvider delayDuration={100}>
           <Tooltip>
               <TooltipTrigger asChild>
-                  <Button asChild variant="default" size="icon" className="h-14 w-14 rounded-full shadow-lg animate-pulse-glow">
+                  <Button asChild variant="default" size="icon" className={`h-14 w-14 rounded-full shadow-lg animate-pulse-glow ${orangeButtonOverride}`}>
                       <Link href={`/${locale}/calculator`} aria-label={tHome.calculate_button}>
                           <Calculator className="h-7 w-7" />
                       </Link>
@@ -43,7 +44,7 @@ export function FloatingInquiry() {
       <TooltipProvider delayDuration={100}>
           <Tooltip>
               <TooltipTrigger asChild>
-                  <Button asChild variant="default" size="icon" className="h-14 w-14 rounded-full shadow-lg animate-pulse-glow">
+                  <Button asChild variant="default" size="icon" className={`h-14 w-14 rounded-full shadow-lg animate-pulse-glow ${orangeButtonOverride}`}>
                       <Link href={`/${locale}/quiz`} aria-label={tHome.pick_service_button}>
                           <Wand2 className="h-7 w-7" />
                       </Link>
@@ -63,7 +64,7 @@ export function FloatingInquiry() {
                         <Button
                         variant="default"
                         size="icon"
-                        className="h-16 w-16 rounded-full shadow-lg animate-pulse-glow"
+                        className={`h-16 w-16 rounded-full shadow-lg animate-pulse-glow ${orangeButtonOverride}`}
                         >
                         <Phone className="h-8 w-8" />
                         </Button>
