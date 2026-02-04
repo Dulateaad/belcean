@@ -16,19 +16,22 @@ export default function Icon() {
     (
       <div
         style={{
-          fontSize: 22,
-          background: 'hsl(173 82% 46%)',
+          display: 'flex',
           width: '100%',
           height: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          color: 'white',
           borderRadius: '6px',
-          fontWeight: '800',
+          overflow: 'hidden',
         }}
       >
-        B
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/photo_5190879925169230470_x.jpg?alt=media&token=e507f7fa-f14d-4990-8a89-1cb85f219ff8"
+          alt="BECLEAN SERVIS Logo"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+          }}
+        />
       </div>
     ),
     {
