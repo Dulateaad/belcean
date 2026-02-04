@@ -16,8 +16,8 @@ export function SiteFooter() {
   return (
     <footer className="w-full border-t bg-secondary/70">
       <div className="container py-12">
-        <div className="grid gap-8 md:grid-cols-4">
-          <div className="space-y-4 md:col-span-2">
+        <div className="grid gap-12 md:gap-8 md:grid-cols-4 text-center md:text-left">
+          <div className="space-y-4 md:col-span-2 flex flex-col items-center md:items-start">
             <Logo />
             <p className="text-sm text-muted-foreground max-w-sm">
               {t.Footer.description}
@@ -45,7 +45,7 @@ export function SiteFooter() {
               <p>
                 <a href="tel:+998773566070" className="hover:text-primary hover:underline font-semibold">+998 77 356 60 70</a>
               </p>
-               <div className="flex space-x-4 pt-4">
+               <div className="flex space-x-4 pt-4 justify-center md:justify-start">
                 <Link href="https://www.instagram.com/beclean_pro?igsh=OTlpZXg3ODlrZnYw" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                   <Instagram className="h-6 w-6 text-muted-foreground hover:text-primary" />
                 </Link>

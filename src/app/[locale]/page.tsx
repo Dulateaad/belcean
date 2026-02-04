@@ -70,7 +70,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl grid-cols-2 items-start gap-8 pt-12 sm:grid-cols-3 lg:grid-cols-6">
+          <div className="mx-auto grid max-w-6xl grid-cols-2 items-start gap-8 pt-12 sm:grid-cols-3 lg:grid-cols-6 lg:gap-12 mt-8">
             {clientTypes.map((client: any, index: number) => (
               <div key={index} className="flex flex-col items-center gap-4 text-center">
                 {client.imageUrl ? (
@@ -100,15 +100,13 @@ export default async function Home({ params: { locale } }: { params: { locale: L
             {services.map((service: any, index: number) => {
               return (
                 <Card key={index} className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full">
-                   <CardContent className="p-6 flex-grow flex flex-col">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="bg-primary/10 p-3 rounded-lg text-primary">
-                         <service.icon className="w-8 h-8" />
-                      </div>
-                      <CardTitle className="text-xl">{service.title}</CardTitle>
+                   <CardContent className="p-6 flex-grow flex flex-col items-center text-center">
+                    <div className="bg-primary/10 p-3 rounded-lg text-primary">
+                       <service.icon className="w-8 h-8" />
                     </div>
-                    <p className="text-muted-foreground mb-4 flex-grow">{service.description}</p>
-                     <Button asChild variant="link" className="p-0 h-auto font-semibold self-start mt-auto">
+                    <CardTitle className="text-xl mt-4">{service.title}</CardTitle>
+                    <p className="text-muted-foreground mt-2 mb-4 flex-grow">{service.description}</p>
+                     <Button asChild variant="link" className="p-0 h-auto font-semibold mt-auto">
                       <Link href={`/${locale}${service.slug}`}>Подробнее <ArrowRight className="ml-2 h-4 w-4" /></Link>
                     </Button>
                   </CardContent>
@@ -122,47 +120,17 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       <section id="how-it-works" className="w-full py-12 md:py-24">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl font-headline mb-16">{t.HomePage.how_it_works_title}</h2>
-          <div className="relative max-w-5xl mx-auto">
-            <div className="absolute left-1/2 top-4 bottom-4 w-0.5 -translate-x-1/2 bg-border hidden md:block"></div>
-            <div className="absolute left-7 top-4 bottom-4 w-0.5 -translate-x-1/2 bg-border md:hidden"></div>
-            
-            <div className="grid gap-y-16">
+          <div className="relative max-w-3xl mx-auto">
+            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-border"></div>
+            <div className="space-y-16">
               {howItWorks.map((step: any, index: number) => (
-                <div key={index} className="relative">
-                  <div className="md:hidden flex items-start gap-6 pl-14">
-                      <div className="absolute left-0 flex-shrink-0 w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold z-10 border-4 border-background shadow-lg">
-                          {index + 1}
-                      </div>
-                      <div className="pt-1">
-                          <h3 className="text-2xl font-bold">{step.title}</h3>
-                          <p className="text-muted-foreground mt-1 text-lg">{step.description}</p>
-                      </div>
+                <div key={index} className="relative flex flex-col items-center text-center">
+                  <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-3xl font-bold z-10 border-8 border-background shadow-md">
+                    {index + 1}
                   </div>
-
-                  <div className="hidden md:grid grid-cols-[1fr_auto_1fr] items-center">
-                    {index % 2 === 0 ? (
-                      <>
-                        <div className="text-right pr-12">
-                          <h3 className="text-2xl font-bold">{step.title}</h3>
-                          <p className="text-muted-foreground mt-2 text-lg">{step.description}</p>
-                        </div>
-                        <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-3xl font-bold z-10 border-8 border-background shadow-md">
-                          {index + 1}
-                        </div>
-                        <div></div>
-                      </>
-                    ) : (
-                      <>
-                        <div></div>
-                        <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-3xl font-bold z-10 border-8 border-background shadow-md">
-                          {index + 1}
-                        </div>
-                        <div className="pl-12">
-                          <h3 className="text-2xl font-bold">{step.title}</h3>
-                          <p className="text-muted-foreground mt-2 text-lg">{step.description}</p>
-                        </div>
-                      </>
-                    )}
+                  <div className="mt-4">
+                    <h3 className="text-2xl font-bold">{step.title}</h3>
+                    <p className="text-muted-foreground mt-2 text-lg max-w-md">{step.description}</p>
                   </div>
                 </div>
               ))}
