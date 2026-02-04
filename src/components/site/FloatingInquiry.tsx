@@ -28,7 +28,7 @@ export function FloatingInquiry() {
       <TooltipProvider delayDuration={100}>
           <Tooltip>
               <TooltipTrigger asChild>
-                  <Button asChild variant="default" size="icon" className="h-14 w-14 rounded-full shadow-lg animate-pulse-glow">
+                  <Button asChild size="icon" className="h-14 w-14 rounded-full shadow-lg animate-pulse-glow bg-orange-500 hover:bg-orange-600 text-white">
                       <Link href={`/${locale}/calculator`} aria-label={tHome.calculate_button}>
                           <Calculator className="h-7 w-7" />
                       </Link>
@@ -43,7 +43,7 @@ export function FloatingInquiry() {
       <TooltipProvider delayDuration={100}>
           <Tooltip>
               <TooltipTrigger asChild>
-                  <Button asChild variant="default" size="icon" className="h-14 w-14 rounded-full shadow-lg animate-pulse-glow">
+                  <Button asChild size="icon" className="h-14 w-14 rounded-full shadow-lg animate-pulse-glow bg-orange-500 hover:bg-orange-600 text-white">
                       <Link href={`/${locale}/quiz`} aria-label={tHome.pick_service_button}>
                           <Wand2 className="h-7 w-7" />
                       </Link>
@@ -61,9 +61,8 @@ export function FloatingInquiry() {
                 <TooltipTrigger asChild>
                     <DialogTrigger asChild>
                         <Button
-                        variant="default"
                         size="icon"
-                        className="h-16 w-16 rounded-full shadow-lg animate-pulse-glow"
+                        className="h-16 w-16 rounded-full shadow-lg animate-pulse-glow bg-orange-500 hover:bg-orange-600 text-white"
                         >
                         <Phone className="h-8 w-8" />
                         </Button>
