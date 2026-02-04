@@ -114,16 +114,6 @@ export function SiteHeader() {
 
         <div className="flex items-center ml-auto lg:space-x-4">
             <div className="flex flex-col items-end gap-1 lg:flex-row lg:items-center lg:gap-4">
-                <div className="flex items-center gap-3">
-                    <a href="https://t.me/beclean_manager" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 font-semibold text-xs sm:text-sm hover:text-primary transition-colors">
-                        <Send className="h-4 w-4 text-primary" />
-                        <span>@beclean_manager</span>
-                    </a>
-                    <a href="tel:+998773566070" className="flex items-center gap-1 font-bold text-xs sm:text-base hover:text-primary transition-colors">
-                        <Phone className="h-4 w-4 text-primary" />
-                        <span>77 356-60-70</span>
-                    </a>
-                </div>
                 <div className="flex items-center gap-2">
                     <div className="flex items-center gap-1">
                         <Clock className="h-4 w-4 text-primary" />
@@ -144,6 +134,16 @@ export function SiteHeader() {
                         ))}
                         </DropdownMenuContent>
                     </DropdownMenu>
+                </div>
+                <div className="flex items-center gap-3">
+                    <a href="https://t.me/beclean_manager" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 font-semibold text-xs sm:text-sm hover:text-primary transition-colors">
+                        <Send className="h-4 w-4 text-primary" />
+                        <span>@beclean_manager</span>
+                    </a>
+                    <a href="tel:+998773566070" className="flex items-center gap-1 font-bold text-xs sm:text-base hover:text-primary transition-colors">
+                        <Phone className="h-4 w-4 text-primary" />
+                        <span>77 356-60-70</span>
+                    </a>
                 </div>
             </div>
 
