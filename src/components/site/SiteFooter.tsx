@@ -14,7 +14,7 @@ export function SiteFooter() {
   const pathname = usePathname();
   const currentLocale = pathname.split('/')[1] || i18n.defaultLocale;
 
-  const [year, setYear] = useState(new Date().getFullYear());
+  const [year, setYear] = useState<number | null>(null);
 
   useEffect(() => {
     setYear(new Date().getFullYear());
@@ -63,8 +63,8 @@ export function SiteFooter() {
             </div>
           </div>
         </div>
-        <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p>{t.Footer.copyright.replace('{year}', String(year))}</p>
+        <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground min-h-[20px]">
+          {year && <p>{t.Footer.copyright.replace('{year}', String(year))}</p>}
         </div>
       </div>
     </footer>
