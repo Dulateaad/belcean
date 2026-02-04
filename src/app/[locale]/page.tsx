@@ -70,7 +70,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-6xl grid-cols-2 items-start gap-8 pt-12 sm:grid-cols-3 lg:grid-cols-6 lg:gap-12 mt-8">
+          <div className="mx-auto grid max-w-6xl grid-cols-2 items-start gap-8 pt-12 sm:grid-cols-3 lg:grid-cols-6 lg:gap-12 mt-8 text-center">
             {clientTypes.map((client: any, index: number) => (
               <div key={index} className="flex flex-col items-center gap-4 text-center">
                 {client.imageUrl ? (
@@ -94,8 +94,8 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       </section>
 
       <section id="services" className="w-full py-12 md:py-24 bg-secondary/70">
-        <div className="container px-4 md:px-6">
-          <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl font-headline mb-12">{t.HomePage.services_title}</h2>
+        <div className="container px-4 md:px-6 text-center">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12">{t.HomePage.services_title}</h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto">
             {services.map((service: any, index: number) => {
               return (
@@ -117,12 +117,12 @@ export default async function Home({ params: { locale } }: { params: { locale: L
         </div>
       </section>
 
-      <section id="how-it-works" className="w-full py-12 md:py-24">
+      <section id="how-it-works" className="w-full py-12 md:py-24 text-center">
         <div className="container px-4 md:px-6">
-          <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl font-headline mb-16">{t.HomePage.how_it_works_title}</h2>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-16">{t.HomePage.how_it_works_title}</h2>
           <div className="relative max-w-3xl mx-auto">
-            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-border"></div>
-            <div className="space-y-16">
+            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-border hidden md:block"></div>
+            <div className="space-y-16 md:space-y-0 md:grid md:grid-cols-1 md:gap-y-16">
               {howItWorks.map((step: any, index: number) => (
                 <div key={index} className="relative flex flex-col items-center text-center">
                   <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-3xl font-bold z-10 border-8 border-background shadow-md">
@@ -130,7 +130,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
                   </div>
                   <div className="mt-4">
                     <h3 className="text-2xl font-bold">{step.title}</h3>
-                    <p className="text-muted-foreground mt-2 text-lg max-w-md">{step.description}</p>
+                    <p className="text-muted-foreground mt-2 text-lg max-w-md mx-auto">{step.description}</p>
                   </div>
                 </div>
               ))}
@@ -139,10 +139,10 @@ export default async function Home({ params: { locale } }: { params: { locale: L
         </div>
       </section>
 
-      <section id="why-us" className="w-full py-12 md:py-24 bg-secondary/70">
+      <section id="why-us" className="w-full py-12 md:py-24 bg-secondary/70 text-center">
         <div className="container px-4 md:px-6">
-          <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl font-headline mb-12">{t.HomePage.why_us_title}</h2>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12">{t.HomePage.why_us_title}</h2>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
             {whyBeClean.map((reason: any, index: number) => (
               <div key={index} className="flex flex-col items-center text-center gap-4 p-6 bg-background rounded-lg shadow-sm">
                 <div className="bg-primary/10 p-4 rounded-full text-primary">
@@ -156,9 +156,9 @@ export default async function Home({ params: { locale } }: { params: { locale: L
         </div>
       </section>
 
-      <section id="testimonials" className="w-full py-12 md:py-24">
+      <section id="testimonials" className="w-full py-12 md:py-24 text-center">
         <div className="container px-4 md:px-6">
-          <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl font-headline mb-12">{t.HomePage.testimonials_title}</h2>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12">{t.HomePage.testimonials_title}</h2>
           <Carousel
             opts={{
               align: 'start',
@@ -169,7 +169,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
               {testimonials.map((testimonial: any, index: number) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-2 h-full">
-                    <Card className="h-full flex flex-col">
+                    <Card className="h-full flex flex-col text-left">
                       <CardContent className="p-6 space-y-4 flex-grow flex flex-col justify-between">
                          <div>
                           <div className="flex items-center mb-4">
@@ -228,7 +228,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       <section id="contacts" className="w-full py-12 md:py-24">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl font-headline mb-12">{t.HomePage.contacts_title}</h2>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="max-w-4xl mx-auto grid grid-cols-1 gap-12 items-center text-center">
             <div className="space-y-6">
               <h3 className="text-2xl font-bold">BeClean Pro</h3>
               <p className="text-muted-foreground text-lg">{t.HomePage.contacts_subtitle}</p>
@@ -239,8 +239,8 @@ export default async function Home({ params: { locale } }: { params: { locale: L
                 <p><strong>{t.HomePage.contacts_hours}</strong> 24/7</p>
               </div>
             </div>
-            <div>
-              <a href="https://maps.google.com/?q=Tashkent" target="_blank" rel="noopener noreferrer">
+            <div className="w-full">
+              <a href="https://maps.google.com/?q=Tashkent" target="_blank" rel="noopener noreferrer" className="inline-block">
                 <Image
                   alt="Карта расположения офиса BeClean в Ташкенте"
                   className="rounded-xl object-cover w-full h-full min-h-[350px] shadow-lg"
