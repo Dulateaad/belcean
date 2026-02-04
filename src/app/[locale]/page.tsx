@@ -70,7 +70,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-6xl grid-cols-2 items-start gap-8 pt-16 pb-12 md:grid-cols-3 lg:grid-cols-5">
+          <div className="mx-auto grid max-w-[1200px] grid-cols-2 items-start gap-8 pt-20 pb-12 md:grid-cols-3 lg:grid-cols-6">
             {clientTypes.map((client: any, index: number) => (
               <div key={index} className="flex flex-col items-center gap-4 text-center">
                 <div className="bg-primary/10 rounded-full p-5 text-primary">
@@ -86,7 +86,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       <section id="services" className="w-full py-12 md:py-24 bg-secondary/70">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl font-headline mb-12">{t.HomePage.services_title}</h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-3xl mx-auto">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto">
             {services.map((service: any, index: number) => {
               return (
                 <Card key={index} className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full">
@@ -279,3 +279,5 @@ export default async function Home({ params: { locale } }: { params: { locale: L
     </div>
   );
 }
+
+    

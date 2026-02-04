@@ -1,4 +1,4 @@
-import { Building2, ShoppingBag, HeartPulse, HardHat, Sparkles, Wind, Sofa, Users, UserCheck, ShieldCheck, Smile, ClipboardList } from 'lucide-react';
+import { Building2, ShoppingBag, HeartPulse, HardHat, Sparkles, Wind, Sofa, Users, UserCheck, ShieldCheck, Smile, ClipboardList, Home } from 'lucide-react';
 import { PlaceHolderImages } from './placeholder-images';
 
 export const getServices = (t: any) => {
@@ -31,6 +31,7 @@ export const getClientTypes = (t: any) => {
         { name: clientTypesText[2].name, icon: ShoppingBag },
         { name: clientTypesText[3].name, icon: HeartPulse },
         { name: clientTypesText[4].name, icon: HardHat },
+        { name: clientTypesText[5].name, icon: Home },
     ];
 };
 
@@ -51,3 +52,5 @@ export const getHowItWorks = (t: any) => {
 export const getPrices = (t: any) => {
     return t.Constants.prices;
 };
+
+    
