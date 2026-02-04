@@ -96,7 +96,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       <section id="services" className="w-full py-12 md:py-24 bg-secondary/70">
         <div className="container px-4 md:px-6 text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12">{t.HomePage.services_title}</h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
             {services.map((service: any, index: number) => {
               return (
                 <Card key={index} className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full">
@@ -142,7 +142,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       <section id="why-us" className="w-full py-12 md:py-24 bg-secondary/70 text-center">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12">{t.HomePage.why_us_title}</h2>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto">
             {whyBeClean.map((reason: any, index: number) => (
               <div key={index} className="flex flex-col items-center text-center gap-4 p-6 bg-background rounded-lg shadow-sm">
                 <div className="bg-primary/10 p-4 rounded-full text-primary">
@@ -156,7 +156,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
         </div>
       </section>
 
-      <section id="testimonials" className="w-full py-12 md:py-24 text-center overflow-hidden">
+      <section id="testimonials" className="w-full py-12 md:py-24 text-center overflow-x-clip">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12">{t.HomePage.testimonials_title}</h2>
           <Carousel
@@ -170,7 +170,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-2 h-full">
                     <Card className="h-full flex flex-col text-center">
-                      <CardContent className="p-6 space-y-4 flex-grow flex flex-col justify-center">
+                      <CardContent className="p-6 space-y-4 flex-grow flex flex-col justify-center items-center">
                          <div>
                           <div className="flex items-center justify-center mb-4">
                             {[...Array(5)].map((_, i) => (
