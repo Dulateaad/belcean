@@ -45,7 +45,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-7xl/none font-headline text-white" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>
                   {t.HomePage.hero_title}
               </h1>
-              <p className="max-w-[900px] text-white/90 md:text-xl/relaxed mt-6" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.7)'}}>
+              <p className="max-w-[600px] mx-auto text-white/90 md:text-xl/relaxed mt-6" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.7)'}}>
                 {t.HomePage.hero_subtitle}
               </p>
               <div className="flex flex-col gap-4 min-[400px]:flex-row justify-center mt-8">
@@ -65,12 +65,12 @@ export default async function Home({ params: { locale } }: { params: { locale: L
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">{t.HomePage.clients_title}</h2>
-              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
+              <p className="max-w-[600px] mx-auto text-muted-foreground md:text-xl/relaxed">
                 {t.HomePage.clients_subtitle}
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-6xl grid-cols-2 items-start gap-8 pt-12 sm:grid-cols-3 lg:grid-cols-6 lg:gap-12 mt-8 text-center">
+          <div className="mx-auto grid max-w-5xl grid-cols-2 items-start gap-8 pt-12 sm:grid-cols-3 lg:grid-cols-6 lg:gap-12 mt-8 text-center">
             {clientTypes.map((client: any, index: number) => (
               <div key={index} className="flex flex-col items-center gap-4 text-center">
                 {client.imageUrl ? (
@@ -169,17 +169,17 @@ export default async function Home({ params: { locale } }: { params: { locale: L
               {testimonials.map((testimonial: any, index: number) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-2 h-full">
-                    <Card className="h-full flex flex-col text-left">
+                    <Card className="h-full flex flex-col text-center">
                       <CardContent className="p-6 space-y-4 flex-grow flex flex-col justify-between">
                          <div>
-                          <div className="flex items-center mb-4">
+                          <div className="flex items-center justify-center mb-4">
                             {[...Array(5)].map((_, i) => (
                               <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                             ))}
                           </div>
                           <p className="text-muted-foreground text-base">"{testimonial.quote}"</p>
                          </div>
-                        <div className="flex items-center gap-4 pt-4">
+                        <div className="flex items-center justify-center gap-4 pt-4">
                           <Image
                             alt={testimonial.name}
                             className="rounded-full"
@@ -231,7 +231,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
           <div className="max-w-4xl mx-auto grid grid-cols-1 gap-12 items-center text-center">
             <div className="space-y-6">
               <h3 className="text-2xl font-bold">BeClean Pro</h3>
-              <p className="text-muted-foreground text-lg">{t.HomePage.contacts_subtitle}</p>
+              <p className="text-muted-foreground text-lg max-w-[600px] mx-auto">{t.HomePage.contacts_subtitle}</p>
               <div className="space-y-3 text-lg">
                 <p><strong>{t.HomePage.contacts_address}</strong> {t.Footer.address}</p>
                 <p><strong>{t.HomePage.contacts_phone}</strong> <a href="tel:+998773566070" className="text-primary hover:underline font-semibold">+998 77 356 60 70</a></p>
