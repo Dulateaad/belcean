@@ -35,7 +35,6 @@ export default async function LocaleLayout({
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Yonariq mahallasi, Birdamlik ko'chasi, 283-uy",
-      "addressLocality": "Qibray tumani, Toshkent viloyati",
       "addressCountry": "UZ"
     },
     "geo": {
