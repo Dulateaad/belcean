@@ -4,7 +4,6 @@ import { SiteFooter } from '@/components/site/SiteFooter';
 import { getDictionary } from '@/lib/get-dictionary';
 import type { Locale } from '@/i18n-config';
 import { DictionaryProvider } from '@/contexts/dictionary-context';
-import PageLoader from '@/components/site/PageLoader';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: Locale } }) {
   const t = await getDictionary(locale);
@@ -72,11 +71,11 @@ export default async function LocaleLayout({
       </head>
       <body className="font-body antialiased min-h-screen flex flex-col bg-background">
         <DictionaryProvider dictionary={t}>
-          <PageLoader>
+          <div className="animate-fade-in flex flex-col flex-1">
             <SiteHeader />
             <main className="flex-grow">{children}</main>
             <SiteFooter />
-          </PageLoader>
+          </div>
         </DictionaryProvider>
         <Toaster />
       </body>
