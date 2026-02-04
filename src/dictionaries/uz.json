@@ -294,6 +294,11 @@
       "next_button": "Keyingisi",
       "show_result_button": "Natijani ko'rsatish",
       "start_over_button": "Qayta boshlash"
+  },
+  "FloatingInquiry": {
+    "aria_label": "Ariza qoldirish",
+    "title": "Qo'ng'iroqqa buyurtma berish",
+    "description": "Raqamingizni qoldiring va biz barcha tafsilotlarni muhokama qilish uchun tez orada sizga qo'ng'iroq qilamiz."
   }
 }
 

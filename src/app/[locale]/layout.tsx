@@ -4,6 +4,7 @@ import { SiteFooter } from '@/components/site/SiteFooter';
 import { getDictionary } from '@/lib/get-dictionary';
 import type { Locale } from '@/i18n-config';
 import { DictionaryProvider } from '@/contexts/dictionary-context';
+import { FloatingInquiry } from '@/components/site/FloatingInquiry';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: Locale } }) {
   const t = await getDictionary(locale);
@@ -76,6 +77,7 @@ export default async function LocaleLayout({
             <main className="flex-grow">{children}</main>
             <SiteFooter />
           </div>
+          <FloatingInquiry />
         </DictionaryProvider>
         <Toaster />
       </body>
