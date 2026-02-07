@@ -72,6 +72,32 @@ export default async function LocaleLayout({
           }}
         />
         {/* End Google Tag Manager */}
+        {/* Yandex.Metrika counter */}
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(m,e,t,r,i,k,a){
+                  m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                  m[i].l=1*new Date();
+                  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+                  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+              })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106653042', 'ym');
+
+              ym(106653042, 'init', {
+                  ssr: true,
+                  webvisor: true,
+                  clickmap:true,
+                  ecommerce:"dataLayer",
+                  referrer: document.referrer,
+                  url: location.href,
+                  accurateTrackBounce:true,
+                  trackLinks:true
+              });
+            `,
+          }}
+        />
+        {/* End Yandex.Metrika counter */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet" />
@@ -92,6 +118,17 @@ export default async function LocaleLayout({
             </iframe>
         </noscript>
         {/* End Google Tag Manager (noscript) */}
+        {/* Yandex.Metrika counter (noscript) */}
+        <noscript>
+          <div>
+            <img
+              src="https://mc.yandex.ru/watch/106653042"
+              style={{ position: 'absolute', left: '-9999px' }}
+              alt=""
+            />
+          </div>
+        </noscript>
+        {/* /Yandex.Metrika counter */}
         <DictionaryProvider dictionary={t}>
           <div className="animate-fade-in flex flex-col flex-1">
             <SiteHeader />
@@ -104,3 +141,4 @@ export default async function LocaleLayout({
       </body>
     </html>
   );
+}
