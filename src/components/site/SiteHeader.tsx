@@ -115,11 +115,11 @@ export function SiteHeader() {
         <div className="ml-auto flex items-center">
             <div className="flex items-start gap-x-3 sm:gap-x-4 md:items-center">
                 <div className="flex flex-col items-start gap-1 md:order-2 md:flex-row md:items-center md:gap-4">
-                    <a href="tel:+998773566070" className="flex items-center gap-1 font-bold text-xs sm:text-base hover:text-primary transition-colors">
+                    <a href="tel:+998773566070" className="flex items-center gap-1 font-bold text-sm sm:text-lg hover:text-primary transition-colors">
                         <Phone className="h-4 w-4 text-primary" />
                         <span>77 356-60-70</span>
                     </a>
-                    <a href="https://t.me/beclean_manager" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 font-semibold text-xs sm:text-sm hover:text-primary transition-colors">
+                    <a href="https://t.me/beclean_manager" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 font-semibold text-sm sm:text-base hover:text-primary transition-colors">
                         <Send className="h-4 w-4 text-primary" />
                         <span>@beclean_manager</span>
                     </a>
