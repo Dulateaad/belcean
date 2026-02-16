@@ -5,6 +5,7 @@ import { getDictionary } from '@/lib/get-dictionary';
 import type { Locale } from '@/i18n-config';
 import { DictionaryProvider } from '@/contexts/dictionary-context';
 import { FloatingInquiry } from '@/components/site/FloatingInquiry';
+import { headers } from 'next/headers';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: Locale } }) {
   const t = await getDictionary(locale);
@@ -23,6 +24,31 @@ export default async function LocaleLayout({
   params: { locale: Locale };
 }) {
   const t = await getDictionary(locale);
+  const headersList = headers();
+  const ip = headersList.get('x-forwarded-for');
+
+  const yandexMetrikaScript = `
+    window.yaParams = { ip_address: "${ip || ''}" };
+
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106653042', 'ym');
+
+    ym(106653042, 'init', {
+        ssr:true,
+        webvisor:true,
+        clickmap:true,
+        ecommerce:"dataLayer",
+        referrer: document.referrer,
+        url: location.href,
+        accurateTrackBounce:true,
+        trackLinks:true,
+        params: window.yaParams
+    });
+  `;
 
   const schema = {
     "@context": "https://schema.org",
@@ -88,27 +114,7 @@ export default async function LocaleLayout({
         {/* Yandex.Metrika counter */}
         <script
           type="text/javascript"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(m,e,t,r,i,k,a){
-                  m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-                  m[i].l=1*new Date();
-                  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-                  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-              })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106653042', 'ym');
-
-              ym(106653042, 'init', {
-                  ssr: true,
-                  webvisor: true,
-                  clickmap:true,
-                  ecommerce:"dataLayer",
-                  referrer: document.referrer,
-                  url: location.href,
-                  accurateTrackBounce:true,
-                  trackLinks:true
-              });
-            `,
-          }}
+          dangerouslySetInnerHTML={{ __html: yandexMetrikaScript }}
         />
         {/* End Yandex.Metrika counter */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
