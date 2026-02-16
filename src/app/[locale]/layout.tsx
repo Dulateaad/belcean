@@ -25,10 +25,10 @@ export default async function LocaleLayout({
 }) {
   const t = await getDictionary(locale);
   const headersList = headers();
-  const ip = headersList.get('x-forwarded-for');
+  const ip = headersList.get('x-forwarded-for')?.split(',')[0].trim() || '';
 
   const yandexMetrikaScript = `
-    window.yaParams = { ip_address: "${ip || ''}" };
+    window.yaParams = { ip_address: "${ip}" };
 
     (function(m,e,t,r,i,k,a){
         m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
