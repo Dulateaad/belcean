@@ -21,6 +21,9 @@ export default function Icon() {
           height: '100%',
           borderRadius: '6px',
           overflow: 'hidden',
+          backgroundColor: 'white',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
       >
         <img
@@ -29,7 +32,7 @@ export default function Icon() {
           style={{
             width: '100%',
             height: '100%',
-            objectFit: 'cover',
+            objectFit: 'contain',
           }}
         />
       </div>
