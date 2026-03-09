@@ -41,23 +41,55 @@ export default async function Home({ params: { locale } }: { params: { locale: L
     PlaceHolderImages.find(p => p.id === 'hero-carousel-2')
   ].filter(Boolean) as any[];
 
+  const pricesData = [
+    { label: t.HomePage.pricing_types.regular, range: "6 000 - 8 000" },
+    { label: t.HomePage.pricing_types.general, range: "9 000 - 10 000" },
+    { label: t.HomePage.pricing_types.post_construction, range: "11 000 - 15 000" }
+  ];
+
   return (
     <div className="flex flex-col min-h-screen bg-background">
-      <section id="hero" className="relative w-full h-[70vh] md:h-[80vh] overflow-hidden">
-        <HeroCarousel images={heroCarouselImages} />
-        <div className="absolute inset-0 bg-cyan-950/60" />
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-primary-foreground p-4">
+      <section id="hero" className="relative w-full h-auto min-h-[80vh] overflow-hidden flex flex-col">
+        <div className="absolute inset-0 w-full h-full z-0">
+            <HeroCarousel images={heroCarouselImages} />
+            <div className="absolute inset-0 bg-cyan-950/60" />
+        </div>
+        
+        <div className="relative z-10 flex flex-col items-center justify-center flex-grow text-center text-primary-foreground p-4 pt-20 md:pt-32 pb-12">
           <div className="w-full max-w-[1792px] mx-auto px-4">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-6xl xl:text-8xl/none font-headline text-white">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-6xl xl:text-8xl/none font-headline text-white animate-fade-in">
                   {t.HomePage.hero_title}
               </h1>
               <p className="max-w-[700px] mx-auto text-white/90 md:text-xl/relaxed mt-6">
                 {t.HomePage.hero_subtitle}
               </p>
-              <div className="flex flex-col gap-4 min-[400px]:flex-row justify-center mt-8">
-                  <Button asChild size="lg">
-                      <Link href="#cta">{t.Header.call_request} <ArrowRight className="ml-2 h-5 w-5" /></Link>
-                  </Button>
+              
+              <div className="mt-12 w-full max-w-4xl mx-auto">
+                 <Card className="bg-background/95 backdrop-blur border-primary/20 shadow-2xl overflow-hidden">
+                    <CardHeader className="bg-primary/10 border-b border-primary/10">
+                        <CardTitle className="text-xl md:text-2xl font-bold text-primary flex items-center justify-center gap-2">
+                           <Sparkles className="w-5 h-5" /> {t.HomePage.pricing_title}
+                        </CardTitle>
+                    </CardHeader>
+                    <CardContent className="p-4 md:p-8">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            {pricesData.map((price, idx) => (
+                                <div key={idx} className="flex flex-col items-center gap-2 p-4 rounded-xl hover:bg-primary/5 transition-colors border border-transparent hover:border-primary/10">
+                                    <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">{price.label}</span>
+                                    <div className="flex flex-col items-center">
+                                        <span className="text-2xl md:text-3xl font-black text-primary">{price.range}</span>
+                                        <span className="text-xs font-medium text-muted-foreground">{t.HomePage.pricing_unit}</span>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                        <div className="mt-8 flex justify-center">
+                             <Button asChild size="lg" className="px-12 py-6 text-lg font-bold shadow-lg hover:shadow-primary/20 animate-pulse-glow">
+                                <Link href="#cta">{t.Header.call_request} <ArrowRight className="ml-2 h-5 w-5" /></Link>
+                             </Button>
+                        </div>
+                    </CardContent>
+                 </Card>
               </div>
           </div>
         </div>

@@ -33,6 +33,13 @@
     "meta_keywords": "toshkent tozalash, ofislarni tozalash, tozalash xizmatlari, professional tozalash, BECLEAN SERVIS",
     "hero_title": "Toshkentda biznes va uy uchun professional tozalash",
     "hero_subtitle": "Ofislar, BM, klinikalar. Shartnoma. Sifat nazorati.",
+    "pricing_title": "Minimal narxni hisoblash",
+    "pricing_unit": "so'm / m²",
+    "pricing_types": {
+      "regular": "Kundalik tozalash",
+      "general": "General tozalash",
+      "post_construction": "Ta'mirdan keyingi tozalash"
+    },
     "calculate_button": "Narxni hisoblash",
     "pick_service_button": "Xizmatni tanlash",
     "form_title": "Tozalashga buyurtma",
@@ -99,7 +106,7 @@
   },
   "ThankYouPage": {
       "title": "Arizangiz uchun rahmat!",
-      "subtitle": "Menejerimiz tez orada tafsilotlarni aniqlashtirish uchun siz bilan bog'lanadi. BECLEAN SERVIS'ga bo'lgan qiziqishingizni qadrlaymiz.",
+      "subtitle": "Biz 24/7 ishlaymiz, istalgan vaqtda qo'ng'iroq qiling.",
       "button": "Bosh sahifaga qaytish",
       "contact_prefix": "Yoki hoziroq biz bilan bog'laning:",
       "telegram_label": "Telegramda yozish"
@@ -200,7 +207,7 @@
         { "title": "Qabul qilish", "description": "Siz ishni qabul qilasiz, biz qayta aloqa olamiz." }
     ],
     "faq": [
-        { "question": "Qanday ob-havoda derazalarni yuvish mumkin?", "answer": "Biz kuchli shamol va -5°C dan past soвуқдан tashqari har qanday ob-havoda ishlaymiz. Optimal ob-havo - quruq va shamolsiz." },
+        { "question": "Qanday ob-havoda derazalarni yuvish mumkin?", "answer": "Biz kuchli shamol va -5°C dan past soвуқdan tashqari har qanday ob-havoda ishlaymiz. Optimal ob-havo - quruq va shamolsiz." },
         { "question": "Siz balandlikda derazalarni yuvasizmi?", "answer": "Ha, bizda har qanday balandlikdagi derazalar va fasadlarni yuvish uchun sertifikatlangan sanoat alpinistlari bor." },
         { "question": "Derazalarni yuvishga qanday tayyorgarlik ko'rish kerak?", "answer": "Deraza tokchalarini begona narsalardan bo'shatish va derazalarga kirishni ta'minlash maqsadga muvofiqdir." }
     ]
@@ -243,68 +250,40 @@
     ],
     "faq": [
         { "question": "Ofisni qanchalik tez-tez tozalash kerak?", "answer": "Tozalash chastotasi ofisning o'tish darajasi va hajmiga bog'liq. Standart variant - kundalik qo'llab-quвватловчи tozalash. Biz individual jadval tuzishimiz mumkin." },
-        { "question": "Siz gipoalerjenik vositalardan foydalanasizmi?", "answer": "Ha, so'rov bo'yicha biz xodimlar uchun xavfsiz bo'lgan sertifikatlangan gipoalerjenik va ekologik toza yuvish vositalaridan foydalanamiz." },
-        { "question": "Ishdan tashqari vaqtda tozalashni buyurtma qilish mumkinmi?", "answer": "Albatta. Biz sizning xodimlaringizga xalaqit bermaslik uchun ish kunidan oldin ertalab, ish kunidan keyin yoki dam olish kunlari tozalash o'tkazishimiz mumkin." }
+        { "question": "Siz gipoalerjenik vositalardan foydalanasizmi?", "answer": "Ha, so'rov bo'yicha biz xodimlar uchun xavfsiz bo'lgan sertifikatlangan gipoalerjenik va ekologik toza yuvish интенсив vositalaridan foydalanamiz." },
+        { "question": "Ishdan tashqari vaqtda tozalashni buyurtma qilish mumkinmi?", "answer": "Albatta. Biz sizning xodimlaringizga xalaqit bermaslik uchun ish kunidan oldin ertalab, ish kunidan после его окончания или в выходные, чтобы не мешать вашим сотрудникам." }
     ]
   },
   "CalculatorPage": {
-      "title": "Narx kalkulyatori",
-      "subtitle": "Bir necha daqiqada ob'ektingiz uchun tozalash xizmatlarining taxminiy narxini hisoblang. Aniq narx bepul ko'rikdan so'ng belgilanadi.",
-      "property_type_label": "Ob'ekt turi",
+      "title": "Калькулятор стоимости",
+      "subtitle": "Рассчитайте примерную стоимость клининговых услуг для вашего объекта за пару минут. Точная цена будет определена после бесплатного осмотра.",
+      "property_type_label": "Тип объекта",
       "property_types": {
-        "office": "Ofis", "business_center": "Biznes-markaz", "shop": "Do'kon", "clinic": "Klinika", "warehouse": "Ombor"
+        "office": "Офис", "business_center": "Бизнес-центр", "shop": "Магазин", "clinic": "Клиника", "warehouse": "Склад"
       },
-      "area_label": "Maydon",
-      "cleaning_type_label": "Tozalash turi",
+      "area_label": "Площадь",
+      "cleaning_type_label": "Вид уборки",
       "cleaning_types": {
-        "regular": "Bir martalik tozalash", "general": "General tozalash", "post-construction": "Qurilishdan keyingi tozalash", "subscription": "Abonent tozalash"
+        "regular": "Разовая уборка", "general": "Генеральная уборка", "post-construction": "Послестроительная уборка", "subscription": "Абонентский клининг"
       },
-      "frequency_label": "Davriylik",
+      "frequency_label": "Периодичность",
       "frequencies": {
-          "once": "Bir marta", "weekly": "Haftasiga bir marta", "bi-weekly": "Haftasiga 2 marta", "daily": "Har kuni (5/2)"
+          "once": "Один раз", "weekly": "Раз в неделю", "bi-weekly": "2 раза в неделю", "daily": "Каждый день (5/2)"
       },
-      "form_title": "Aniq hisob-kitobni oling",
-      "form_subtitle": "Narxni ko'rish va bepul maslahat olish uchun kontaktlaringзиni qoldiring.",
-      "submit_button": "Hisoblash va maslahat olish",
-      "submitting_button": "Hisoblanmoqda...",
-      "submitted_card_title": "Arizangiz uchun rahmat!",
-      "submitted_card_subtitle": "Menejerimiz tez orada siz bilan bog'lanadi.",
-      "estimated_cost_label": "Taxminiy narx",
-      "cost_unit": "so'm",
-      "per_month": "oyiga"
-  },
-  "QuizPage": {
-      "title": "Siz uchun ideal xizmatni tanlaymiz",
-      "subtitle": "3 ta oddiy savolga javob bering",
-      "step_prefix": "Qadam",
-      "step_of": "/",
-      "property_type_title": "Ob'ektingiz qanday turdagi?",
-      "property_types": {
-        "office": "Ofis", "business-center": "Biznes-markaz", "shop": "Do'kon / Butik", "clinic": "Klinika / Tibbiyot markazi", "warehouse": "Ombor / Ishlab chiqarish", "other": "Boshqa"
-      },
-      "cleaning_goal_title": "Tozalashning asosiy maqsadi nima?",
-      "cleaning_goals": {
-        "subscription": "Tozalikni muntazam saqlash", "general": "Kompleks chuqur tozalashni amalga oshirish", "post-construction": "Ta'mirlash yoki qurilishdan keyin tozalash", "furniture": "Mebel yoki gilamni tozalash", "windows": "Derazalar, vitrinalar yoki fasadni yuvish"
-      },
-      "area_title": "Taxminiy maydonni ko'rsating",
-      "area_slider_hint": "Qiymatni o'zgartirish uchun slayderni harakatlantiring",
-      "result_title": "Siz uchun ideal xizmat — «{service}»",
-      "result_description": "Bu {propertyType} uchun {area} m² maydonda eng yaxshi tanlov, agar maqsadingiz — {goal}.",
-      "property_type_genitive": {
-        "office": "ofis", "business-center": "biznes-markazi", "shop": "do'kon", "clinic": "klinika", "warehouse": "ombor", "other": "sizning binoingiz"
-      },
-      "learn_more_button": "Xizmat haqida batafsil",
-      "cta_title": "«{service}» xizmatiga buyurtma bering",
-      "cta_subtitle": "Ariza qoldiring, menejerimiz batafsil ma'lumot va aniq hisob-kitob uchun siz bilan bog'lanadi.",
-      "back_button": "Orqaga",
-      "next_button": "Keyingisi",
-      "show_result_button": "Natijani ko'rsatish",
-      "start_over_button": "Qayta boshlash"
+      "form_title": "Получить точный расчет",
+      "form_subtitle": "Оставьте контакты, чтобы увидеть стоимость и получить бесплатную консультацию.",
+      "submit_button": "Рассчитать и получить консультацию",
+      "submitting_button": "Расчет...",
+      "submitted_card_title": "Спасибо за заявку!",
+      "submitted_card_subtitle": "Наш менеджер скоро свяжется с вами.",
+      "estimated_cost_label": "Примерная стоимость",
+      "cost_unit": "сум",
+      "per_month": "в месяц"
   },
   "FloatingInquiry": {
-    "aria_label": "Ariza qoldirish",
-    "title": "Qo'ng'iroqqa buyurtma berish",
-    "description": "Raqamingizni qoldiring va biz barcha tafsilotlarni muhokama qilish uchun tez orada sizга qo'ng'iroq qilamiz.",
-    "telegram": "Telegramda yozish"
+    "aria_label": "Оставить заявку",
+    "title": "Заказать звонок",
+    "description": "Оставьте свой номер, и мы перезвоним вам в ближайшее время, чтобы обсудить все детали.",
+    "telegram": "Написать в Telegram"
   }
 }
