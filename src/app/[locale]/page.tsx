@@ -60,7 +60,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
         <div className="max-w-[1792px] mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-3">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">{t.HomePage.clients_title}</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline text-center">{t.HomePage.clients_title}</h2>
               <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl/relaxed">
                 {t.HomePage.clients_subtitle}
               </p>
@@ -91,7 +91,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
 
       <section id="services" className="w-full py-16 md:py-32 bg-secondary text-center">
         <div className="max-w-[1792px] mx-auto px-4 md:px-6 text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12">{t.HomePage.services_title}</h2>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12 text-center">{t.HomePage.services_title}</h2>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mx-auto">
             {services.map((service: any, index: number) => {
               return (
@@ -115,7 +115,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
 
       <section id="how-it-works" className="w-full py-16 md:py-32 text-center">
         <div className="max-w-[1792px] mx-auto px-4 md:px-6">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-16">{t.HomePage.how_it_works_title}</h2>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-16 text-center">{t.HomePage.how_it_works_title}</h2>
           <div className="relative mx-auto">
             <div className="space-y-16 md:space-y-0 md:grid md:grid-cols-1 md:gap-y-16">
               {howItWorks.map((step: any, index: number) => (
@@ -136,7 +136,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
 
       <section id="why-us" className="w-full py-16 md:py-32 bg-secondary text-center">
         <div className="max-w-[1792px] mx-auto px-4 md:px-6">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12">{t.HomePage.why_us_title}</h2>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12 text-center">{t.HomePage.why_us_title}</h2>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mx-auto">
             {whyBeClean.map((reason: any, index: number) => (
               <div key={index} className="flex flex-col items-center text-center gap-4 p-8 bg-background rounded-lg shadow-sm">
@@ -153,7 +153,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
 
       <section id="gallery" className="w-full py-16 md:py-32 text-center overflow-x-clip">
         <div className="max-w-[1792px] mx-auto px-4 md:px-6">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12">{t.HomePage.gallery_title}</h2>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12 text-center">{t.HomePage.gallery_title}</h2>
           <AutoCarousel className="w-full mx-auto">
             <CarouselContent>
               {beforeAfterImages.map((imageUrl: string, index: number) => (
@@ -180,7 +180,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
 
       <section id="testimonials" className="w-full py-16 md:py-32 bg-secondary text-center overflow-x-clip">
         <div className="max-w-[1792px] mx-auto px-4 md:px-6">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12">{t.HomePage.testimonials_title}</h2>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12 text-center">{t.HomePage.testimonials_title}</h2>
           <AutoCarousel className="w-full mx-auto" delay={5000}>
             <CarouselContent>
               {testimonialImages.map((imageUrl: string, index: number) => (
@@ -208,7 +208,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       <section id="cta" className="w-full py-16 md:py-32 lg:py-40 bg-background">
         <div className="max-w-[1792px] mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6">
           <div className="space-y-3">
-            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">
+            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline text-center">
               {t.HomePage.cta_title}
             </h2>
             <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed">

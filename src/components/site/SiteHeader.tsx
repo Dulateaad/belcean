@@ -112,14 +112,14 @@ export function SiteHeader() {
         </nav>
 
         <div className="ml-auto flex items-center">
-            <div className="flex items-start gap-x-3 sm:gap-x-4 md:items-center">
-                <div className="flex flex-col items-start gap-1 md:order-2 md:flex-row md:items-center md:gap-4">
+            <div className="flex items-center gap-x-3 sm:gap-x-4">
+                <div className="flex flex-col items-center gap-1 md:order-2 md:flex-row md:items-center md:gap-4">
                     <a href="tel:+998773566070" className="flex items-center gap-1 font-bold text-lg sm:text-xl hover:text-primary transition-colors">
                         <Phone className="h-5 w-5 text-primary" />
                         <span>77 356-60-70</span>
                     </a>
                 </div>
-                <div className="flex flex-col items-end gap-1 md:order-1 md:flex-row md:items-center md:gap-2">
+                <div className="flex flex-col items-center gap-1 md:order-1 md:flex-row md:items-center md:gap-2">
                     <div className="flex items-center gap-1">
                         <Clock className="h-4 w-4 text-primary" />
                         <span className="font-semibold text-xs sm:text-sm">{t.Header.work_hours}</span>
