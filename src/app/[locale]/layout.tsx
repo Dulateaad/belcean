@@ -1,3 +1,4 @@
+
 import { Toaster } from '@/components/ui/toaster';
 import { SiteHeader } from '@/components/site/SiteHeader';
 import { SiteFooter } from '@/components/site/SiteFooter';
@@ -77,7 +78,7 @@ export default async function LocaleLayout({
         }
     ],
     "sameAs": [
-        "https://www.instagram.com/beclean_pro?igsh=OTlpZXg3ODlrZnYw",
+        "https://www.instagram.com/beclean_servic?igsh=OTlpZXg3ODlrZnYw",
         "https://t.me/beclean_manager"
     ]
   };

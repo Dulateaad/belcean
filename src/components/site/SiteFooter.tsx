@@ -1,3 +1,4 @@
+
 'use client';
 import Link from 'next/link';
 import { Logo } from './Logo';
@@ -53,7 +54,7 @@ export function SiteFooter() {
                 <a href="tel:+998773566070" className="hover:text-primary hover:underline font-semibold">+998 77 356 60 70</a>
               </p>
                <div className="flex space-x-4 pt-4 justify-center md:justify-start">
-                <Link href="https://www.instagram.com/beclean_pro?igsh=OTlpZXg3ODlrZnYw" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <Link href="https://www.instagram.com/beclean_servic?igsh=OTlpZXg3ODlrZnYw" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                   <Instagram className="h-6 w-6 text-muted-foreground hover:text-primary" />
                 </Link>
                 <Link href="https://t.me/beclean_manager" target="_blank" rel="noopener noreferrer" aria-label="Telegram">

@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -91,7 +92,11 @@ export default async function Home({ params: { locale } }: { params: { locale: L
 
       <section id="services" className="w-full py-16 md:py-32 bg-secondary">
         <div className="container mx-auto px-4 md:px-6 flex flex-col items-center text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12">{t.HomePage.services_title}</h2>
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline text-center inline-block relative after:content-[''] after:absolute after:-bottom-4 after:left-1/4 after:right-1/4 after:h-1 after:bg-primary after:rounded-full">
+              {t.HomePage.services_title}
+            </h2>
+          </div>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 w-full">
             {services.map((service: any, index: number) => {
               return (
@@ -115,7 +120,11 @@ export default async function Home({ params: { locale } }: { params: { locale: L
 
       <section id="how-it-works" className="w-full py-16 md:py-32">
         <div className="container mx-auto px-4 md:px-6 flex flex-col items-center text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-16">{t.HomePage.how_it_works_title}</h2>
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline text-center inline-block relative after:content-[''] after:absolute after:-bottom-4 after:left-1/4 after:right-1/4 after:h-1 after:bg-primary after:rounded-full">
+              {t.HomePage.how_it_works_title}
+            </h2>
+          </div>
           <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-5 w-full">
               {howItWorks.map((step: any, index: number) => (
                 <div key={index} className="flex flex-col items-center text-center">
@@ -132,7 +141,11 @@ export default async function Home({ params: { locale } }: { params: { locale: L
 
       <section id="why-us" className="w-full py-16 md:py-32 bg-secondary">
         <div className="container mx-auto px-4 md:px-6 flex flex-col items-center text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12">{t.HomePage.why_us_title}</h2>
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline text-center inline-block relative after:content-[''] after:absolute after:-bottom-4 after:left-1/4 after:right-1/4 after:h-1 after:bg-primary after:rounded-full">
+              {t.HomePage.why_us_title}
+            </h2>
+          </div>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 w-full">
             {whyBeClean.map((reason: any, index: number) => (
               <div key={index} className="flex flex-col items-center text-center gap-4 p-8 bg-background rounded-lg shadow-sm hover:shadow-md transition-shadow">
