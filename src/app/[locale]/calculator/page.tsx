@@ -13,7 +13,6 @@ import { useDictionary } from '@/contexts/dictionary-context';
 
 export default function CalculatorPage() {
   const t = useDictionary().CalculatorPage;
-  const calculatorImage = PlaceHolderImages.find(p => p.id === 'calculator-hero');
 
   const pricingData = [
     {
@@ -80,21 +79,6 @@ export default function CalculatorPage() {
                     </p>
                 </div>
             </div>
-
-            {calculatorImage && (
-                <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl border">
-                    <Image
-                        alt="Расчет стоимости клининга"
-                        className="object-cover"
-                        fill
-                        src={calculatorImage.imageUrl}
-                        data-ai-hint={calculatorImage.imageHint}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
-                        <p className="text-white font-medium text-lg">Профессиональное оборудование и обученный персонал для объектов любой сложности.</p>
-                    </div>
-                </div>
-            )}
           </div>
           
           <div className="lg:col-span-2 space-y-8 sticky top-24 self-start">
