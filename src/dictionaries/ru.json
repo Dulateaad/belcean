@@ -99,7 +99,9 @@
   "ThankYouPage": {
       "title": "Спасибо за вашу заявку!",
       "subtitle": "Наш менеджер скоро свяжется с вами для уточнения деталей. Мы ценим ваш интерес к BECLEAN SERVIS.",
-      "button": "Вернуться на главную"
+      "button": "Вернуться на главную",
+      "contact_prefix": "Или свяжитесь с нами прямо сейчас:",
+      "telegram_label": "Написать в Telegram"
   },
   "ServicePages": {
       "included_title": "Что входит в услугу",
@@ -302,5 +304,3 @@
     "telegram": "Написать в Telegram"
   }
 }
-
-    

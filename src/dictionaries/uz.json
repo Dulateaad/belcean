@@ -99,7 +99,9 @@
   "ThankYouPage": {
       "title": "Arizangiz uchun rahmat!",
       "subtitle": "Menejerimiz tez orada tafsilotlarni aniqlashtirish uchun siz bilan bog'lanadi. BECLEAN SERVIS'ga bo'lgan qiziqishingizni qadrlaymiz.",
-      "button": "Bosh sahifaga qaytish"
+      "button": "Bosh sahifaga qaytish",
+      "contact_prefix": "Yoki hoziroq biz bilan bog'laning:",
+      "telegram_label": "Telegramda yozish"
   },
   "ServicePages": {
       "included_title": "Xizmatga nimalar kiradi",
@@ -163,7 +165,7 @@
     "service_name": "Mebelni kimyoviy tozalash",
     "service_subtitle": "Ofis mebelingiz va gilam qoplamalaringizga yangilik va tozalikni qaytaramiz. Dog'larni, changni va yoqimsiz hidlarni yo'qotamiz.",
     "whats_included": [
-        "Changyutgich bilan chuqur quruq tozalash", "Qoplama turiga qarab tozalash vositasini tanlash", "Dog'larni qayta ishlash va olib tashlash", "Butun yuzani ekstraktor bilan tozalash", "Yoqimsiz hidlarni yo'qotish", "Toza suv bilan yuvish va quritish", "Divanlar, kreslolar, stullarni tozalash", "Gilamlarni kimyoviy tozalash"
+        "Changyutgich bilan chuqur quruq tozalash", "Qoplama turiga qarab tozalash vositasini tanlash", "Dog'larni qayta ishlash va olib tashlash", "Butun yuzani ekstraktor bilan tozalash", "Yoqimsiz hidlarni yo'qotish", "Toza suv bilan yuvish og'irligiga qarab quritish", "Divanlar, kreslolar, stullarni tozalash", "Gilamlarni kimyoviy tozalash"
     ],
     "work_process": [
         { "title": "Ariza", "description": "Siz ariza qoldirasiz, biz tafsilotlarni aniqlaymiz." },
@@ -215,7 +217,7 @@
         { "title": "Qabul qilish", "description": "Siz ishni qabul qilasiz, biz qayta aloqa olamiz." }
     ],
     "faq": [
-        { "question": "Ta'mirdan keyin qachon tozalashni boshlash mumkin?", "answer": "Tozalashni barcha \"iflos\" ishlar tugagandan so'ng, lekin mebel va texnika o'rnatilishidan oldin boshlash eng yaxshisidir. Biz sizga optimal vaqt bo'yicha maslahat berishimiz mumkin." },
+        { "question": "Ta'mirdan keyin qachon tozalashni boshlash mumkin?", "answer": "Tozalashni barcha \"iflos\" ishlar tugagandan so'ng, React mebel va texnika o'rnatilishidan oldin boshlash eng yaxshisidir. Biz sizga optimal vaqt bo'yicha maslahat berishimiz mumkin." },
         { "question": "Siz katta qurilish chiqindilarini olib chiqasizmi?", "answer": "Biz mayda va o'rta qurilish chiqindilarini yig'amiz va olib chiqamiz. Katta hajmdagi chiqindilarni olib chiqish alohida muhokama qilinadi va maxsus konteyner buyurtma qilishni talab qilishi mumkin." },
         { "question": "Ob'ektda nechta odam ishlaydi?", "answer": "Tozalovchilar soni ob'ektning maydoni va murakkabligiga bog'liq. Ishni iloji boricha tez va sifatli bajarish uchun brigadani shakllantiramiz." }
     ]
@@ -258,7 +260,7 @@
           "once": "Bir marta", "weekly": "Haftasiga bir marta", "bi-weekly": "Haftasiga 2 marta", "daily": "Har kuni (5/2)"
       },
       "form_title": "Aniq hisob-kitobni oling",
-      "form_subtitle": "Narxni ko'rish va bepul maslahat olish uchun kontaktlaringizni qoldiring.",
+      "form_subtitle": "Narxni ko'rish va bepul maslahat olish uchun kontaktlaringзиni qoldiring.",
       "submit_button": "Hisoblash va maslahat olish",
       "submitting_button": "Hisoblanmoqda...",
       "submitted_card_title": "Arizangiz uchun rahmat!",
@@ -302,5 +304,3 @@
     "telegram": "Telegramda yozish"
   }
 }
-
-    
