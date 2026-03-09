@@ -90,14 +90,18 @@ export function SiteHeader() {
             </Link>
         </div>
 
-        {/* Центр: Навигация (десктоп) / Номер телефона (мобилка) */}
+        {/* Центр: Номер + 24/7 (мобилка) / Навигация (десктоп) */}
         <div className="flex flex-1 items-center justify-center md:flex-initial">
-             {/* Мобильный номер (только мобилка) */}
-             <div className="md:hidden">
-                <a href="tel:+998773566070" className="flex items-center gap-1 font-bold text-lg sm:text-xl hover:text-primary transition-colors">
-                    <Phone className="h-5 w-5 text-primary" />
+             {/* Мобильный номер и 24/7 (только мобилка) */}
+             <div className="md:hidden flex flex-col items-center pr-4">
+                <a href="tel:+998773566070" className="flex items-center gap-1 font-bold text-lg sm:text-xl hover:text-primary transition-colors leading-none">
+                    <Phone className="h-4 w-4 text-primary" />
                     <span className="whitespace-nowrap">77 356-60-70</span>
                 </a>
+                <div className="flex items-center gap-1 mt-0.5 opacity-80">
+                    <Clock className="h-3 w-3 text-primary" />
+                    <span className="text-[10px] font-bold uppercase tracking-wider">{t.Header.work_hours}</span>
+                </div>
              </div>
 
              {/* Десктопная навигация */}
@@ -126,7 +130,7 @@ export function SiteHeader() {
             </nav>
         </div>
 
-        {/* Правая часть: Контакты (десктоп) / Время+Язык (мобилка) */}
+        {/* Правая часть: Контакты (десктоп) / Язык (мобилка) */}
         <div className="flex flex-1 items-center justify-end md:flex-initial">
             <div className="flex items-center gap-x-2 sm:gap-x-4">
                 {/* Номер телефона (десктоп) */}
@@ -137,9 +141,9 @@ export function SiteHeader() {
                     </a>
                 </div>
 
-                {/* Время работы и язык */}
-                <div className="flex flex-col items-end gap-1 sm:flex-row sm:items-center sm:gap-4">
-                    <div className="flex items-center gap-1">
+                {/* Время работы (только десктоп) и язык (всегда) */}
+                <div className="flex items-center gap-2 sm:gap-4">
+                    <div className="hidden md:flex items-center gap-1">
                         <Clock className="h-4 w-4 text-primary" />
                         <span className="font-semibold text-xs sm:text-sm">{t.Header.work_hours}</span>
                     </div>
