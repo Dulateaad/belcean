@@ -130,29 +130,18 @@
   },
   "CalculatorPage": {
       "title": "Narxni hisoblash",
-      "subtitle": "Tozalash xizmatlarining taxminiy narxini bir necha daqiqada hisoblang. Aniq narx bepul ko'rikdan so'ng belgilanadi.",
-      "property_type_label": "Ob'ekt turi",
-      "property_types": {
-        "office": "Ofis", "business_center": "Biznes-markaz", "shop": "Do'kon", "clinic": "Klinika", "warehouse": "Ombor"
-      },
-      "area_label": "Maydon",
-      "cleaning_type_label": "Tozalash turi",
+      "subtitle": "Professional tozalash tariflarimiz bilan tanishing. Yakuniy narx individual ravishda shakllanadi.",
       "cleaning_types": {
         "regular": "Kundalik tozalash", "general": "General tozalash", "post-construction": "Ta'mirdan keyingi tozalash"
       },
-      "form_title": "Natijani ko'rish",
-      "form_subtitle": "Hisob-kitobni ko'rish va maslahat olish uchun kontaktlaringizni qoldiring.",
-      "submit_button": "Narxni hisoblash",
-      "submitted_card_title": "Rahmat!",
-      "submitted_card_subtitle": "Sizning parametrlaringiz bo'yicha hisob-kitob quyida keltirilgan.",
-      "estimated_cost_label": "Taxminiy narx",
-      "cost_unit": "so'm",
-      "contact_note": "Aniq narxni bilish va tafsilotlarni muhokama qilish uchun biz bilan bog'laning."
+      "form_title": "Narxni aniqlashtirish",
+      "form_subtitle": "Ariza qoldiring va mutaxassisimiz bepul maslahat uchun siz bilan bog'lanadi.",
+      "contact_note": "Aniq narxni bilish uchun biz bilan bog'laning"
   },
   "FloatingInquiry": {
     "aria_label": "Oставить ariza",
     "title": "Qo'ng'iroqqa buyurtma",
-    "description": "Raqamingizni qoldiring va biz tafsilotlarni muhokama qilish uchun tez orada sizga qo'ng'iroq qilamiz.",
+    "description": "Raqamingizni qoldiring va biz tafsilotlarni muhokama qilish uchun tez orada sizга qo'ng'iroq qilamiz.",
     "telegram": "Telegramda yozish"
   }
 }
