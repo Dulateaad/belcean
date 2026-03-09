@@ -10,7 +10,13 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import {
-  ArrowRight
+  ArrowRight,
+  Sparkles,
+  ClipboardList,
+  ShieldCheck,
+  CheckCircle2,
+  Camera,
+  MessageSquare
 } from 'lucide-react';
 import { ContactForm } from '@/components/site/ContactForm';
 import * as constants from '@/lib/constants';
@@ -61,7 +67,9 @@ export default async function Home({ params: { locale } }: { params: { locale: L
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-3">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline text-center">{t.HomePage.clients_title}</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline text-center flex items-center justify-center gap-3">
+                <CheckCircle2 className="w-8 h-8 text-primary" /> {t.HomePage.clients_title}
+              </h2>
               <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl/relaxed">
                 {t.HomePage.clients_subtitle}
               </p>
@@ -93,8 +101,8 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       <section id="services" className="w-full py-16 md:py-32 bg-secondary">
         <div className="container mx-auto px-4 md:px-6 flex flex-col items-center text-center">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline text-center inline-block relative after:content-[''] after:absolute after:-bottom-4 after:left-1/4 after:right-1/4 after:h-1 after:bg-primary after:rounded-full">
-              {t.HomePage.services_title}
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline text-center inline-flex items-center gap-3 relative after:content-[''] after:absolute after:-bottom-4 after:left-1/4 after:right-1/4 after:h-1 after:bg-primary after:rounded-full">
+              <Sparkles className="w-8 h-8 text-primary" /> {t.HomePage.services_title}
             </h2>
           </div>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 w-full">
@@ -121,8 +129,8 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       <section id="how-it-works" className="w-full py-16 md:py-32">
         <div className="container mx-auto px-4 md:px-6 flex flex-col items-center text-center">
           <div className="mb-16">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline text-center inline-block relative after:content-[''] after:absolute after:-bottom-4 after:left-1/4 after:right-1/4 after:h-1 after:bg-primary after:rounded-full">
-              {t.HomePage.how_it_works_title}
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline text-center inline-flex items-center gap-3 relative after:content-[''] after:absolute after:-bottom-4 after:left-1/4 after:right-1/4 after:h-1 after:bg-primary after:rounded-full">
+              <ClipboardList className="w-8 h-8 text-primary" /> {t.HomePage.how_it_works_title}
             </h2>
           </div>
           <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-5 w-full">
@@ -142,8 +150,8 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       <section id="why-us" className="w-full py-16 md:py-32 bg-secondary">
         <div className="container mx-auto px-4 md:px-6 flex flex-col items-center text-center">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline text-center inline-block relative after:content-[''] after:absolute after:-bottom-4 after:left-1/4 after:right-1/4 after:h-1 after:bg-primary after:rounded-full">
-              {t.HomePage.why_us_title}
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline text-center inline-flex items-center gap-3 relative after:content-[''] after:absolute after:-bottom-4 after:left-1/4 after:right-1/4 after:h-1 after:bg-primary after:rounded-full">
+              <ShieldCheck className="w-8 h-8 text-primary" /> {t.HomePage.why_us_title}
             </h2>
           </div>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 w-full">
@@ -162,7 +170,9 @@ export default async function Home({ params: { locale } }: { params: { locale: L
 
       <section id="gallery" className="w-full py-16 md:py-32 text-center overflow-x-clip">
         <div className="max-w-[1792px] mx-auto px-4 md:px-6">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12 text-center">{t.HomePage.gallery_title}</h2>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12 text-center flex items-center justify-center gap-3">
+            <Camera className="w-8 h-8 text-primary" /> {t.HomePage.gallery_title}
+          </h2>
           <AutoCarousel className="w-full mx-auto">
             <CarouselContent>
               {beforeAfterImages.map((imageUrl: string, index: number) => (
@@ -189,7 +199,9 @@ export default async function Home({ params: { locale } }: { params: { locale: L
 
       <section id="testimonials" className="w-full py-16 md:py-32 bg-secondary text-center overflow-x-clip">
         <div className="max-w-[1792px] mx-auto px-4 md:px-6">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12 text-center">{t.HomePage.testimonials_title}</h2>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12 text-center flex items-center justify-center gap-3">
+            <MessageSquare className="w-8 h-8 text-primary" /> {t.HomePage.testimonials_title}
+          </h2>
           <AutoCarousel className="w-full mx-auto" delay={5000}>
             <CarouselContent>
               {testimonialImages.map((imageUrl: string, index: number) => (
