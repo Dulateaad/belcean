@@ -1,18 +1,15 @@
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
-  Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import {
-  ArrowRight,
-  Star
+  ArrowRight
 } from 'lucide-react';
 import { ContactForm } from '@/components/site/ContactForm';
 import * as constants from '@/lib/constants';
@@ -20,7 +17,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { getDictionary } from '@/lib/get-dictionary';
 import type { Locale } from '@/i18n-config';
 import { HeroCarousel } from '@/components/site/HeroCarousel';
-
+import { AutoCarousel } from '@/components/site/AutoCarousel';
 
 export default async function Home({ params: { locale } }: { params: { locale: Locale } }) {
   const t = await getDictionary(locale);
@@ -157,12 +154,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       <section id="gallery" className="w-full py-16 md:py-32 text-center overflow-x-clip">
         <div className="max-w-[1792px] mx-auto px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12">{t.HomePage.gallery_title}</h2>
-          <Carousel
-            opts={{
-              align: 'start',
-            }}
-            className="w-full mx-auto"
-          >
+          <AutoCarousel className="w-full mx-auto">
             <CarouselContent>
               {beforeAfterImages.map((imageUrl: string, index: number) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
@@ -182,19 +174,14 @@ export default async function Home({ params: { locale } }: { params: { locale: L
             </CarouselContent>
             <CarouselPrevious className="-left-4 md:-left-12" />
             <CarouselNext className="-right-4 md:-right-12" />
-          </Carousel>
+          </AutoCarousel>
         </div>
       </section>
 
       <section id="testimonials" className="w-full py-16 md:py-32 bg-secondary text-center overflow-x-clip">
         <div className="max-w-[1792px] mx-auto px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12">{t.HomePage.testimonials_title}</h2>
-          <Carousel
-            opts={{
-              align: 'start',
-            }}
-            className="w-full mx-auto"
-          >
+          <AutoCarousel className="w-full mx-auto" delay={5000}>
             <CarouselContent>
               {testimonialImages.map((imageUrl: string, index: number) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
@@ -214,7 +201,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
             </CarouselContent>
             <CarouselPrevious className="-left-4 md:-left-12" />
             <CarouselNext className="-right-4 md:-right-12" />
-          </Carousel>
+          </AutoCarousel>
         </div>
       </section>
 
