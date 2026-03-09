@@ -57,7 +57,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       </section>
 
       <section id="clients" className="w-full py-16 md:py-32">
-        <div className="max-w-[1792px] mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline text-center">{t.HomePage.clients_title}</h2>
@@ -89,13 +89,13 @@ export default async function Home({ params: { locale } }: { params: { locale: L
         </div>
       </section>
 
-      <section id="services" className="w-full py-16 md:py-32 bg-secondary text-center">
-        <div className="max-w-[1792px] mx-auto px-4 md:px-6 text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12 text-center">{t.HomePage.services_title}</h2>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mx-auto">
+      <section id="services" className="w-full py-16 md:py-32 bg-secondary">
+        <div className="container mx-auto px-4 md:px-6 flex flex-col items-center text-center">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12">{t.HomePage.services_title}</h2>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 w-full">
             {services.map((service: any, index: number) => {
               return (
-                <Card key={index} className="flex flex-col overflow-hidden bg-background border border-transparent hover:border-primary transition-colors duration-300 h-full text-center group">
+                <Card key={index} className="flex flex-col overflow-hidden bg-background border border-transparent hover:border-primary transition-colors duration-300 h-full group">
                    <CardContent className="p-8 flex-grow flex flex-col items-center">
                     <div className="bg-primary/10 p-4 rounded-xl text-primary mb-6">
                        <service.icon className="w-10 h-10" />
@@ -113,38 +113,34 @@ export default async function Home({ params: { locale } }: { params: { locale: L
         </div>
       </section>
 
-      <section id="how-it-works" className="w-full py-16 md:py-32 text-center">
-        <div className="max-w-[1792px] mx-auto px-4 md:px-6">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-16 text-center">{t.HomePage.how_it_works_title}</h2>
-          <div className="relative mx-auto">
-            <div className="space-y-16 md:space-y-0 md:grid md:grid-cols-1 md:gap-y-16">
+      <section id="how-it-works" className="w-full py-16 md:py-32">
+        <div className="container mx-auto px-4 md:px-6 flex flex-col items-center text-center">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-16">{t.HomePage.how_it_works_title}</h2>
+          <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-5 w-full">
               {howItWorks.map((step: any, index: number) => (
-                <div key={index} className="relative flex flex-col items-center text-center">
-                  <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-3xl font-bold z-10 border-8 border-background shadow-lg">
+                <div key={index} className="flex flex-col items-center text-center">
+                  <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold mb-6 shadow-md">
                     {index + 1}
                   </div>
-                  <div className="mt-6">
-                    <h3 className="text-2xl font-bold">{step.title}</h3>
-                    <p className="text-muted-foreground mt-2 text-lg max-w-md mx-auto">{step.description}</p>
-                  </div>
+                  <h3 className="text-xl font-bold mb-2">{step.title}</h3>
+                  <p className="text-muted-foreground text-sm">{step.description}</p>
                 </div>
               ))}
-            </div>
           </div>
         </div>
       </section>
 
-      <section id="why-us" className="w-full py-16 md:py-32 bg-secondary text-center">
-        <div className="max-w-[1792px] mx-auto px-4 md:px-6">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12 text-center">{t.HomePage.why_us_title}</h2>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mx-auto">
+      <section id="why-us" className="w-full py-16 md:py-32 bg-secondary">
+        <div className="container mx-auto px-4 md:px-6 flex flex-col items-center text-center">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12">{t.HomePage.why_us_title}</h2>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 w-full">
             {whyBeClean.map((reason: any, index: number) => (
-              <div key={index} className="flex flex-col items-center text-center gap-4 p-8 bg-background rounded-lg shadow-sm">
+              <div key={index} className="flex flex-col items-center text-center gap-4 p-8 bg-background rounded-lg shadow-sm hover:shadow-md transition-shadow">
                 <div className="bg-primary/10 p-4 rounded-full text-primary">
                   <reason.icon className="w-10 h-10" />
                 </div>
                 <h3 className="text-xl font-bold">{reason.title}</h3>
-                <p className="text-muted-foreground">{reason.description}</p>
+                <p className="text-muted-foreground text-sm">{reason.description}</p>
               </div>
             ))}
           </div>
