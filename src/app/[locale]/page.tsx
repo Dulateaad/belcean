@@ -16,7 +16,8 @@ import {
   ShieldCheck,
   CheckCircle2,
   Camera,
-  MessageSquare
+  MessageSquare,
+  Calculator
 } from 'lucide-react';
 import { ContactForm } from '@/components/site/ContactForm';
 import * as constants from '@/lib/constants';
@@ -41,12 +42,6 @@ export default async function Home({ params: { locale } }: { params: { locale: L
     PlaceHolderImages.find(p => p.id === 'hero-carousel-2')
   ].filter(Boolean) as any[];
 
-  const pricesData = [
-    { label: t.HomePage.pricing_types.regular, range: "6 000 - 8 000" },
-    { label: t.HomePage.pricing_types.general, range: "9 000 - 10 000" },
-    { label: t.HomePage.pricing_types.post_construction, range: "11 000 - 15 000" }
-  ];
-
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <section id="hero" className="relative w-full h-auto min-h-[80vh] overflow-hidden flex flex-col">
@@ -64,32 +59,15 @@ export default async function Home({ params: { locale } }: { params: { locale: L
                 {t.HomePage.hero_subtitle}
               </p>
               
-              <div className="mt-12 w-full max-w-4xl mx-auto">
-                 <Card className="bg-background/95 backdrop-blur border-primary/20 shadow-2xl overflow-hidden">
-                    <CardHeader className="bg-primary/10 border-b border-primary/10">
-                        <CardTitle className="text-xl md:text-2xl font-bold text-primary flex items-center justify-center gap-2">
-                           <Sparkles className="w-5 h-5" /> {t.HomePage.pricing_title}
-                        </CardTitle>
-                    </CardHeader>
-                    <CardContent className="p-4 md:p-8">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            {pricesData.map((price, idx) => (
-                                <div key={idx} className="flex flex-col items-center gap-2 p-4 rounded-xl hover:bg-primary/5 transition-colors border border-transparent hover:border-primary/10">
-                                    <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">{price.label}</span>
-                                    <div className="flex flex-col items-center">
-                                        <span className="text-2xl md:text-3xl font-black text-primary">{price.range}</span>
-                                        <span className="text-xs font-medium text-muted-foreground">{t.HomePage.pricing_unit}</span>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                        <div className="mt-8 flex justify-center">
-                             <Button asChild size="lg" className="px-12 py-6 text-lg font-bold shadow-lg hover:shadow-primary/20 animate-pulse-glow">
-                                <Link href="#cta">{t.Header.call_request} <ArrowRight className="ml-2 h-5 w-5" /></Link>
-                             </Button>
-                        </div>
-                    </CardContent>
-                 </Card>
+              <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <Button asChild size="lg" className="px-8 py-6 text-lg font-bold shadow-lg hover:shadow-primary/20 animate-pulse-glow w-full sm:w-auto">
+                    <Link href={`/${locale}/calculator`}>
+                        <Calculator className="mr-2 h-5 w-5" /> {t.HomePage.calculate_button}
+                    </Link>
+                  </Button>
+                  <Button asChild variant="outline" size="lg" className="px-8 py-6 text-lg font-bold bg-white/10 text-white border-white/20 hover:bg-white/20 w-full sm:w-auto backdrop-blur-sm">
+                    <Link href="#cta">{t.Header.call_request} <ArrowRight className="ml-2 h-5 w-5" /></Link>
+                  </Button>
               </div>
           </div>
         </div>

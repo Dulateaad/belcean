@@ -128,162 +128,31 @@
       "price_postfix_windows": "Narx bir kvadrat metr oyna uchun ko'rsatilgan.",
       "price_postfix_furniture": "Narx mebel/gilam turi va hajmiga bog'liq."
   },
-    "ServicePageAbonentskiy": {
-      "meta_title": "Toshkentda abonentlik tozalash | BeClean Pro",
-      "meta_description": "Toshkentdagi ofislar va tijorat binolari uchun abonentlik xizmati va muntazam tozalash. Individual jadval tuzish.",
-      "service_name": "Abonent tozalash",
-      "service_subtitle": "Ortiqcha tashvishlarsiz doimiy tozalikni saqlang. Biz sizning ob'ektingizni tozalash bilan bog'liq barcha masalalarni o'z zimmamizga olamiz.",
-      "whats_included": [
-          "Kundalik qo'llab-quvvatlovchi tozalash", "Individual jadval tuzish", "Doimiy tozalovchilar jamoasini biriktirish", "Sarf materiallarini muntazam yetkazib berish", "Vaqti-vaqti bilan umumiy tozalash (shartnomaga muvofiq)", "Shaxsiy menejer", "Chek-listlar bo'yicha sifat nazorati", "Moslashuvchan shartnoma shartlari"
-      ],
-      "work_process": [
-          { "title": "Maslahat", "description": "Sizning talablaringiz va istalgan tozalash chastotasini muhokama qilamiz." },
-          { "title": "Ko'rik va reja", "description": "Batafsil tozalash rejasi va jadvalini tuzamiz." },
-          { "title": "Shartnoma", "description": "Abonent xizmati uchun shartnoma tuzamiz." },
-          { "title": "Muntazam tozalash", "description": "Bizning jamoamiz kelishilgan jadval bo'yicha ishlaydi." },
-          { "title": "Qayta aloqa", "description": "Sifatni nazorat qilish uchun muntazam ravishda aloqada bo'lamiz." }
-      ],
-      "faq": [
-          { "question": "Abonent xizmatiga nimalar kiradi?", "answer": "Abonent xizmatiga odatda kundalik yoki muntazam qo'llab-quvvatlovchi tozalash, sarf materiallarini yetkazib berish va sizga jamoani biriktirish kiradi. Xizmatlarning aniq ro'yxati shartnomada ko'rsatiladi." },
-          { "question": "Tozalash jadvalini o'zgartirish mumkinmi?", "answer": "Ha, biz jadvalni tuzishda moslashuvchan yondashamiz va uni tomonlarning kelishuviga binoan o'zgartirishimiz mumkin." },
-          { "question": "Agar ish sifatidan qoniqmasam-chi?", "answer": "Har bir ob'ektga sifatni nazorat qiluvchi menejer biriktirilgan. Agar sizda biron bir e'tiroz bo'lsa, biz barcha kamchiliklarni tezda bartaraf etamiz." }
-      ]
-  },
-  "ServicePageGeneralnaya": {
-    "meta_title": "Toshkentda general tozalash | BeClean Pro",
-    "meta_description": "Toshkentdagi ofislar, do'konlar va boshqa tijorat binolarini umumiy tozalash xizmatlari. Barcha yuzalarni chuqur tozalash.",
-    "service_name": "General tozalash",
-    "service_subtitle": "Tozalikka kompleks yondashuv. Biz sizning binongiz porlashi uchun eng qiyin joylardan ham kir va changni tozalaymiz.",
-    "whats_included": [
-        "Pollarni chuqur tozalash (rotorli mashina yordamida)", "Derazalarni ichki va tashqi tomondan yuvish", "Devorlar, shiftlar, chiroqlardan changni tozalash", "Radiatorlar, plintuslar, eshiklarni tozalash", "Sanuzellarni chuqur tozalash va dezinfektsiya qilish", "Gilam va yumshoq mebelni kimyoviy tozalash (ixtiyoriy)", "Mebelni tozalash va jilolash", "Barcha qiyin joylarni yuvish"
-    ],
-    "work_process": [
-        { "title": "Ariza", "description": "Siz ariza qoldirasiz, biz tafsilotlarni aniqlaymiz." },
-        { "title": "Baholash", "description": "Baholash uchun menejerning bepul tashrifi." },
-        { "title": "Shartnoma", "description": "Jadval va ishlar ro'yxati bilan shartnoma imzolaymiz." },
-        { "title": "Tozalash", "description": "Jamoamiz ishni sifatli va o'z vaqtida bajaradi." },
-        { "title": "Qabul qilish", "description": "Siz ishni qabul qilasiz, biz qayta aloqa olamiz." }
-    ],
-    "faq": [
-        { "question": "General tozalashni qanchalik tez-tez o'tkazish kerak?", "answer": "Binoda ideal tozalik va gigienani saqlash uchun yiliga 1-2 marta umumiy tozalash o'tkazish tavsiya etiladi." },
-        { "question": "General tozalash qancha vaqt oladi?", "answer": "Vaqt ob'ektning maydoniga va ifloslanish darajasiga bog'liq. Odatda, bu 4 dan 8 soatgacha davom etadi. Ko'rikdan so'ng aniq vaqtni aytamiz." },
-        { "question": "Tozalash paytida hozir bo'лить kerakmi?", "answer": "Sizning hozir bo'lishingiz shart emas. Kalitlarni menejerimizга qoldirishingiz mumkin. Biz sizning mulkingiz xavfsizligini kafolatlaymiz." }
-    ]
-  },
-  "ServicePageHimchistka": {
-    "meta_title": "Toshkentda mebelni kimyoviy tozalash | BeClean Pro",
-    "meta_description": "Toshkentdagi ofislarda yumshoq mebel, stullar, divanlar va gilamlarni professional kimyoviy tozalash. Dog'lar va hidlarni yo'qotish.",
-    "service_name": "Mebelni kimyoviy tozalash",
-    "service_subtitle": "Ofis mebelingiz va gilam qoplamalaringizga yangilik va tozalikni qaytaramiz. Dog'larni, changni va yoqimsiz hidlarni yo'qotamiz.",
-    "whats_included": [
-        "Changyutgich bilan chuqur quruq tozalash", "Qoplama turiga qarab tozalash vositasini tanlash", "Dog'larni qayта ishlash va olib tashlash", "Butun yuzani ekstraktor bilan tozalash", "Yoqimsiz hidlarni yo'qotish", "Toza suv bilan yuvish og'irligiga qarab quritish", "Divanlar, kreslolar, stullarni tozalash", "Gilamlarni kimyoviy tozalash"
-    ],
-    "work_process": [
-        { "title": "Ariza", "description": "Siz ariza qoldirasiz, biz tafsilotlarni aniqlaymiz." },
-        { "title": "Baholash", "description": "Baholash uchun menejerning bepul tashrifi." },
-        { "title": "Shartnoma", "description": "Jadval va ishlar ro'yxati bilan shartnoma imzolaymiz." },
-        { "title": "Tozalash", "description": "Jamoamiz ishni sifatli va o'z vaqtida bajaradi." },
-        { "title": "Qabul qilish", "description": "Siz ishni qabul qilasiz, biz qayta aloqa olamiz." }
-    ],
-    "faq": [
-        { "question": "Kimyoviy tozalashdan keyin mebel qancha vaqt quriydi?", "answer": "Qurish vaqti mato turiga, xonadagi harorat va namlikka bog'liq. O'rtacha, mebel 4-8 soat ichida to'liq quriydi." },
-        { "question": "Barcha dog'larni olib tashlash mumkinmi?", "answer": "Biz professional dog 'ketkazgichlardan foydalanamiz va ko'pchilik yangi va standart ifloslanishlarni olib tashlashimiz mumkin. Eski yoki o'ziga xos dog'lar (bo'yoq, elim) uchun natija har doim ham kafolatlanmaydi, lekin biz qo'limizdan kelganini qilamiz." },
-        { "question": "Bu allergiyaga chalinganlar uchun xavfsizmi?", "answer": "Ha, biz sertifikatlangan, gipoalerjenik vositalardan foydalanamiz. Tozalashdan so'ng, biz barcha kimyoviy qoldiqlarni olib tashlab, qoplamani yaxshilab yuvamiz." }
-    ]
-  },
-  "ServicePageMoikaOkon": {
-    "meta_title": "Toshkentda oyna yuvish | BeClean Pro",
-    "meta_description": "Tijorat binolari uchun Toshkentda derazalar, vitrinalar va fasadlarni professional yuvish. Professional uskunalar va xavfsiz vositalardan foydalanamiz.",
-    "service_name": "Oynalarni yuvish",
-    "service_subtitle": "Chiziqsiz kristal toza derazalar. Binoningizning tashqi ko'rinishini yaxshilaymiz va xonalarda maksimal tabiiy yorug'likni ta'minlaymiz.",
-    "whats_included": [
-        "Oynalarni ikki tomondan yuvish", "Deraza romlarini tozalash", "Deraza tokchalari va yonbag'irlarini yuvish", "Bo'yoq, skotch dog'larini olib tashlash", "Chivin to'rlarini tozalash (mavjud bo'lsa)", "Vitrina va shisha to'siqlarni yuvish", "Balandlikda ishlash (sanoat alpinizmi)", "Professional inventardan foydalanish"
-    ],
-    "work_process": [
-        { "title": "Ariza", "description": "Siz ariza qoldirasiz, biz tafsilotlarni aniqlaymiz." },
-        { "title": "Baholash", "description": "Baholash для menejerning bepul tashrifi." },
-        { "title": "Shartnoma", "description": "Jadval va ishlar ro'yxati bilan shartnoma imzolaymiz." },
-        { "title": "Tozalash", "description": "Jamoamiz ishni sifatli va o'z vaqtida bajaradi." },
-        { "title": "Qabul qilish", "description": "Siz ishni qabul qilasiz, biz qayta aloqa olamiz." }
-    ],
-    "faq": [
-        { "question": "Qanday ob-havoda derazalarni yuvish mumkin?", "answer": "Biz kuchli shamol va -5°C dan past soвуқdan tashqari har qanday ob-havoda ishlaymiz. Optimal ob-havo - quruq va shamolsiz." },
-        { "question": "Siz balandlikda derazalarni yuvasizmi?", "answer": "Ha, bizda har qanday balandlikdagi derazalar va fasadlarni yuvish uchun sertifikatlangan sanoat alpinistlari bor." },
-        { "question": "Derazalarni yuvishga qanday tayyorgarlik ko'rish kerak?", "answer": "Deraza tokchalarini begona narsalardan bo'shatish va derazalarga kirishni ta'minlash maqsadga muvofiqdir." }
-    ]
-  },
-  "ServicePagePoslestroy": {
-    "meta_title": "Toshkentda qurilishdan keyingi tozalash | BeClean Pro",
-    "meta_description": "Toshkentda ta'mirlash va qurilishdan keyin professional tozalash. Qurilish changini tozalash, chiqindilarni olib chiqish, ob'ektni foydalanishга tayyorlash.",
-    "service_name": "Qurilishdan keyingi tozalash",
-    "service_subtitle": "Ob'ektingizni ta'mirlash yoki qurilishdan so'ng ideal holatga keltiramiz, barcha chang, axlat va qurilish chiqindilarini tozalaymiz.",
-    "whats_included": [
-        "Qurilish chiqindilarini yig'ish va olib chiqish", "Barcha yuzalardan (devorlar, shiftlar) qurilish changini tozalash", "Bo'yoq, elim, tsementdan tozalash", "Pollarni chuqur tozalash", "Derazalar, romlar, deraza tokchalari yuvish", "Sanuzellarni tozalash va dezinfektsiya qilish", "Ob'ektni topshirishga tayyorlash", "Barcha xonalarni nam tozalash"
-    ],
-    "work_process": [
-        { "title": "Ariza", "description": "Siz ariza qoldirasiz, biz tafsilotlarni aniqlaymiz." },
-        { "title": "Baholash", "description": "Baholash для menejerning bepul tashrifi." },
-        { "title": "Shartnoma", "description": "Jadval va ishlar ro'yxati bilan shartnoma imzolaymiz." },
-        { "title": "Tozalash", "description": "Jamoamiz ishni sifatli va o'z vaqtida bajaradi." },
-        { "title": "Qabul qilish", "description": "Siz ishni qabul qilasiz, biz qayta aloqa olamiz." }
-    ],
-    "faq": [
-        { "question": "Ta'mirdan keyin qachon tozalashni boshlash mumkin?", "answer": "Tozalashni barcha \"iflos\" ishlar tugagandan so'ng, mebel va texnika o'rnatilishidan oldin boshlash eng yaxshisidir. Biz sizga optimal vaqt bo'yicha masлахat berishimiz mumkin." },
-        { "question": "Siz katta qurilish chiqindilarini olib chiqasizmi?", "answer": "Biz mayda va o'rta qurilish chiqindilarini yig'amiz va olib chiqamiz. Katta hajmdagi chiqindilarni olib chiqish alohida muhokama qilinadi va maxsus konteyner buyurtma qilishni talab qilishi mumkin." },
-        { "question": "Ob'ektda nechta odam ishlaydi?", "answer": "Tozalovchilar soni ob'ektning maydoni va murakkabligiga bog'liq. Ishni iloji boricha tez va sifatli bajarish uchun brigadani shakllantiramiz." }
-    ]
-  },
-  "ServicePageOffice": {
-    "meta_title": "Toshkentda ofislarni tozalash | BeClean Pro",
-    "meta_description": "Toshkentda ofislarni professional tozalash. Bir martalik, umumiy va abonentlik asosida ofis binolarini tozalash. Tozalik va tartib kafolati.",
-    "service_name": "Ofislarni tozalash",
-    "service_subtitle": "Sizning ofisingizda ideal tozalikni ta'minlaymiz, xodimlaringiz va tashrif buyuruvchilaringiz uchun qulay va sog'lom ish muhitini yaratamiz.",
-    "whats_included": [
-        "Pollarni nam tozalash", "Barcha yuzalardan changni tozalash", "Sanuzellarni tozalash va dezinfektsiya qilish", "Chiqindilarni olib chiqish", "Oyna va shisha yuzalarni yuvish", "Oshxona yoki ovqatlanish maydonini tozalash", "Gilam qoplamalarini changyutgich bilan tozalash", "Eshik tutqichlari va kalitlarni dezinfektsiya qilish"
-    ],
-    "work_process": [
-        { "title": "Ariza", "description": "Siz ariza qoldirasiz, biz tafsilotlarni aniqlaymiz." },
-        { "title": "Baholash", "description": "Baholash для menejerning bepul tashrifi." },
-        { "title": "Shartnoma", "description": "Jadval va ishlar ro'yxati bilan shartnoma imzolaymiz." },
-        { "title": "Tozalash", "description": "Jamoamiz ishni sifatli va o'z vaqtida bajaradi." },
-        { "title": "Qabul qilish", "description": "Siz ishni qabul qilasiz, biz qayta aloqa olamiz." }
-    ],
-    "faq": [
-        { "question": "Ofisni qanchalik tez-tez tozalash kerak?", "answer": "Tozalash chastotasi ofisning o'tish darajasi va hajmiga bog'liq. Standart variant - kundalik qo'llab-quвватловчи tozalash. Biz individual jadval tuzishimiz mumkin." },
-        { "question": "Siz gipoalerjenik vositalardan foydalanasizmi?", "answer": "Ha, so'rov bo'yicha biz xodimlar uchun xavfsiz bo'lgan sertifikatlangan gipoalerjenik va ekologik toza yuvish интенсив vositalaridan foydalanamiz." },
-        { "question": "Ishdan tashqari vaqtda tozalashni buyurtma qilish mumkinmi?", "answer": "Albatta. Biz sizning xodimlaringizga xalaqit bermaslik uchun ish kunidan oldin ertalab, ish kunidan после его окончания или в выходные, чтобы не мешать вашим сотрудникам." }
-    ]
-  },
   "CalculatorPage": {
-      "title": "Калькулятор стоимости",
-      "subtitle": "Рассчитайте примерную стоимость клининговых услуг для вашего объекта за пару минут. Точная цена будет определена после бесплатного осмотра.",
-      "property_type_label": "Тип объекта",
+      "title": "Narxni hisoblash",
+      "subtitle": "Tozalash xizmatlarining taxminiy narxini bir necha daqiqada hisoblang. Aniq narx bepul ko'rikdan so'ng belgilanadi.",
+      "property_type_label": "Ob'ekt turi",
       "property_types": {
-        "office": "Офис", "business_center": "Бизнес-центр", "shop": "Магазин", "clinic": "Клиника", "warehouse": "Склад"
+        "office": "Ofis", "business_center": "Biznes-markaz", "shop": "Do'kon", "clinic": "Klinika", "warehouse": "Ombor"
       },
-      "area_label": "Площадь",
-      "cleaning_type_label": "Вид уборки",
+      "area_label": "Maydon",
+      "cleaning_type_label": "Tozalash turi",
       "cleaning_types": {
-        "regular": "Разовая уборка", "general": "Генеральная уборка", "post-construction": "Послестроительная уборка", "subscription": "Абонентский клининг"
+        "regular": "Kundalik tozalash", "general": "General tozalash", "post-construction": "Ta'mirdan keyingi tozalash"
       },
-      "frequency_label": "Периодичность",
-      "frequencies": {
-          "once": "Один раз", "weekly": "Раз в неделю", "bi-weekly": "2 раза в неделю", "daily": "Каждый день (5/2)"
-      },
-      "form_title": "Получить точный расчет",
-      "form_subtitle": "Оставьте контакты, чтобы увидеть стоимость и получить бесплатную консультацию.",
-      "submit_button": "Рассчитать и получить консультацию",
-      "submitting_button": "Расчет...",
-      "submitted_card_title": "Спасибо за заявку!",
-      "submitted_card_subtitle": "Наш менеджер скоро свяжется с вами.",
-      "estimated_cost_label": "Примерная стоимость",
-      "cost_unit": "сум",
-      "per_month": "в месяц"
+      "form_title": "Natijani ko'rish",
+      "form_subtitle": "Hisob-kitobni ko'rish va maslahat olish uchun kontaktlaringizni qoldiring.",
+      "submit_button": "Narxni hisoblash",
+      "submitted_card_title": "Rahmat!",
+      "submitted_card_subtitle": "Sizning parametrlaringiz bo'yicha hisob-kitob quyida keltirilgan.",
+      "estimated_cost_label": "Taxminiy narx",
+      "cost_unit": "so'm",
+      "contact_note": "Aniq narxni bilish va tafsilotlarni muhokama qilish uchun biz bilan bog'laning."
   },
   "FloatingInquiry": {
-    "aria_label": "Оставить заявку",
-    "title": "Заказать звонок",
-    "description": "Оставьте свой номер, и мы перезвоним вам в ближайшее время, чтобы обсудить все детали.",
-    "telegram": "Написать в Telegram"
+    "aria_label": "Oставить ariza",
+    "title": "Qo'ng'iroqqa buyurtma",
+    "description": "Raqamingizni qoldiring va biz tafsilotlarni muhokama qilish uchun tez orada sizga qo'ng'iroq qilamiz.",
+    "telegram": "Telegramda yozish"
   }
 }

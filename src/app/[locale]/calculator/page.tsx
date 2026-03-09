@@ -1,3 +1,4 @@
+
 // @ts-nocheck
 "use client";
 
@@ -18,32 +19,16 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { submitCalculatorInquiry } from "@/lib/actions";
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, Info } from 'lucide-react';
 import { useDictionary } from '@/contexts/dictionary-context';
-
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'dotlottie-wc': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement> & { src: string; autoplay?: boolean; loop?: boolean; style?: React.CSSProperties }, HTMLElement>;
-    }
-  }
-}
 
 export default function CalculatorPage() {
   const t = useDictionary().CalculatorPage;
 
   const cleaningTypes = [
-    { value: 'regular', label: t.cleaning_types.regular, pricePerSqm: 4000 },
-    { value: 'general', label: t.cleaning_types.general, pricePerSqm: 10000 },
-    { value: 'post-construction', label: t.cleaning_types['post-construction'], pricePerSqm: 15000 },
-    { value: 'subscription', label: t.cleaning_types.subscription, pricePerSqm: 60000 },
-  ];
-
-  const frequencies = [
-    { value: 'once', label: t.frequencies.once, multiplier: 1 },
-    { value: 'weekly', label: t.frequencies.weekly, multiplier: 4 },
-    { value: 'bi-weekly', label: t.frequencies['bi-weekly'], multiplier: 8 },
-    { value: 'daily', label: t.frequencies.daily, multiplier: 22 },
+    { value: 'regular', label: t.cleaning_types.regular, minPrice: 6000, maxPrice: 8000 },
+    { value: 'general', label: t.cleaning_types.general, minPrice: 9000, maxPrice: 10000 },
+    { value: 'post-construction', label: t.cleaning_types['post-construction'], minPrice: 11000, maxPrice: 15000 },
   ];
 
   const formSchema = z.object({
@@ -56,7 +41,6 @@ export default function CalculatorPage() {
   const [area, setArea] = useState(100);
   const [propertyType, setPropertyType] = useState('office');
   const [cleaningType, setCleaningType] = useState(cleaningTypes[0].value);
-  const [frequency, setFrequency] = useState(frequencies[0].value);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
 
@@ -67,25 +51,22 @@ export default function CalculatorPage() {
 
   const { formState: { isSubmitting } } = form;
 
-  const estimatedCost = useMemo(() => {
+  const estimatedRange = useMemo(() => {
     const selectedCleaning = cleaningTypes.find(c => c.value === cleaningType);
-    const selectedFrequency = frequencies.find(f => f.value === frequency);
-    if (!selectedCleaning || !selectedFrequency) return 0;
+    if (!selectedCleaning) return { min: 0, max: 0 };
     
-    if(selectedCleaning.value === 'subscription') {
-        return area * selectedCleaning.pricePerSqm;
-    }
-
-    return area * selectedCleaning.pricePerSqm * selectedFrequency.multiplier;
-  }, [area, cleaningType, frequency, cleaningTypes, frequencies]);
+    return {
+        min: area * selectedCleaning.minPrice,
+        max: area * selectedCleaning.maxPrice
+    };
+  }, [area, cleaningType, cleaningTypes]);
 
   async function onSubmit(data: ContactFormValues) {
     const selectedCleaning = cleaningTypes.find(c => c.value === cleaningType);
-    const selectedFrequency = frequencies.find(f => f.value === frequency);
     const inquiryData = {
         ...data,
         service: selectedCleaning?.label || 'Не выбрано',
-        details: `Тип объекта: ${propertyType}, Площадь: ${area} м², Периодичность: ${cleaningType === 'subscription' ? 'Абонемент' : selectedFrequency?.label}`
+        details: `Тип объекта: ${propertyType}, Площадь: ${area} м², Расчет: ${estimatedRange.min.toLocaleString()} - ${estimatedRange.max.toLocaleString()} сум`
     };
 
     try {
@@ -100,9 +81,6 @@ export default function CalculatorPage() {
             });
         }
     } catch (error) {
-        // This catch block is intentionally left empty to prevent showing a
-        // "failed to connect" error message, as requested. The form submission
-        // is reported to be working correctly.
     }
   }
 
@@ -167,25 +145,12 @@ export default function CalculatorPage() {
                   </Select>
                 </div>
 
-                {cleaningType !== 'subscription' && (
-                  <div className="space-y-4">
-                    <Label className="text-lg font-semibold">{t.frequency_label}</Label>
-                    <RadioGroup value={frequency} onValueChange={setFrequency} className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                      {frequencies.map(freq => (
-                        <div key={freq.value}>
-                           <RadioGroupItem value={freq.value} id={freq.value} className="peer sr-only"/>
-                           <Label htmlFor={freq.value} className={cn(
-                             "flex flex-col items-center justify-center rounded-lg border-2 border-muted bg-popover p-4 h-24 text-center text-base",
-                             "hover:bg-accent hover:text-accent-foreground cursor-pointer",
-                             "peer-data-[state=checked]:border-primary peer-data-[state=checked]:shadow-md"
-                           )}>
-                             {freq.label}
-                           </Label>
-                        </div>
-                      ))}
-                    </RadioGroup>
-                  </div>
-                )}
+                <div className="p-4 rounded-lg bg-primary/5 border border-primary/10 flex items-start gap-3">
+                    <Info className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                    <p className="text-sm text-muted-foreground">
+                        {t.contact_note}
+                    </p>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -250,14 +215,12 @@ export default function CalculatorPage() {
                       <CardDescription>{t.submitted_card_subtitle}</CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <div className="p-4 rounded-lg bg-background shadow">
-                          <p className="text-sm text-muted-foreground">{t.estimated_cost_label}</p>
-                          <p className="text-5xl font-bold text-primary">
-                            {estimatedCost.toLocaleString('ru-RU')} {t.cost_unit}
+                      <div className="p-6 rounded-xl bg-background shadow-xl border border-primary/20">
+                          <p className="text-sm text-muted-foreground uppercase tracking-wider font-semibold mb-2">{t.estimated_cost_label}</p>
+                          <p className="text-3xl md:text-4xl font-black text-primary leading-tight">
+                            {estimatedRange.min.toLocaleString('ru-RU')} — {estimatedRange.max.toLocaleString('ru-RU')}
                           </p>
-                          <p className="font-semibold text-lg">
-                            {cleaningType === 'subscription' && t.per_month}
-                          </p>
+                          <p className="text-xl font-bold text-primary/80 mt-1">{t.cost_unit}</p>
                       </div>
                     </CardContent>
                 </Card>
