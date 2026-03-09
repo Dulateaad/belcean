@@ -15,7 +15,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
-import { Menu, ChevronDown, Phone, Clock, Send } from 'lucide-react';
+import { Menu, ChevronDown, Phone, Clock } from 'lucide-react';
 import { Logo } from './Logo';
 import { useDictionary } from '@/contexts/dictionary-context';
 import * as constants from '@/lib/constants';
@@ -117,10 +117,6 @@ export function SiteHeader() {
                     <a href="tel:+998773566070" className="flex items-center gap-1 font-bold text-lg sm:text-xl hover:text-primary transition-colors">
                         <Phone className="h-5 w-5 text-primary" />
                         <span>77 356-60-70</span>
-                    </a>
-                    <a href="https://t.me/beclean_manager" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 font-semibold text-base sm:text-lg hover:text-primary transition-colors">
-                        <Send className="h-5 w-5 text-primary" />
-                        <span>@beclean_manager</span>
                     </a>
                 </div>
                 <div className="flex flex-col items-end gap-1 md:order-1 md:flex-row md:items-center md:gap-2">
