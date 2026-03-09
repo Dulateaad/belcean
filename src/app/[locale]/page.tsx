@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -25,10 +26,12 @@ export default async function Home({ params: { locale } }: { params: { locale: L
   const t = await getDictionary(locale);
   const mapPlaceholder = PlaceHolderImages.find(p => p.id === 'map');
   const services = constants.getServices(t);
-  const testimonials = constants.getTestimonials(t);
   const clientTypes = constants.getClientTypes(t);
   const whyBeClean = constants.getWhyBeClean(t);
   const howItWorks = constants.getHowItWorks(t);
+  const beforeAfterImages = constants.getBeforeAfterImages();
+  const testimonialImages = constants.getTestimonialImages();
+
   const heroCarouselImages = [
     PlaceHolderImages.find(p => p.id === 'hero-carousel-1'),
     PlaceHolderImages.find(p => p.id === 'hero-carousel-2')
@@ -151,9 +154,9 @@ export default async function Home({ params: { locale } }: { params: { locale: L
         </div>
       </section>
 
-      <section id="testimonials" className="w-full py-16 md:py-32 text-center overflow-x-clip">
+      <section id="gallery" className="w-full py-16 md:py-32 text-center overflow-x-clip">
         <div className="max-w-[1792px] mx-auto px-4 md:px-6">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12">{t.HomePage.testimonials_title}</h2>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12">{t.HomePage.gallery_title}</h2>
           <Carousel
             opts={{
               align: 'start',
@@ -161,38 +164,17 @@ export default async function Home({ params: { locale } }: { params: { locale: L
             className="w-full mx-auto"
           >
             <CarouselContent>
-              {testimonials.map((testimonial: any, index: number) => (
+              {beforeAfterImages.map((imageUrl: string, index: number) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-2 h-full">
-                    <Card className="h-full flex flex-col text-center bg-secondary">
-                      <CardContent className="p-8 space-y-6 flex-grow flex flex-col justify-center items-center">
-                         <div className="text-center">
-                          <div className="flex items-center justify-center mb-4">
-                            {[...Array(5)].map((_, i) => (
-                              <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-                            ))}
-                          </div>
-                          <p className="text-muted-foreground text-base max-w-[600px] mx-auto">"{testimonial.quote}"</p>
-                         </div>
-                        <div className="flex items-center justify-center gap-4 pt-4">
-                          <Image
-                            alt={testimonial.name}
-                            className="rounded-full"
-                            height="48"
-                            src={testimonial.avatarUrl}
-                            style={{
-                              aspectRatio: '48/48',
-                              objectFit: 'cover',
-                            }}
-                            width="48"
-                            data-ai-hint="person"
-                          />
-                          <div>
-                            <p className="font-semibold">{testimonial.name}</p>
-                            <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                          </div>
-                        </div>
-                      </CardContent>
+                    <Card className="h-full overflow-hidden">
+                       <Image
+                          src={imageUrl}
+                          alt={`Work result ${index + 1}`}
+                          width={600}
+                          height={400}
+                          className="w-full aspect-video object-cover"
+                       />
                     </Card>
                   </div>
                 </CarouselItem>
@@ -204,7 +186,39 @@ export default async function Home({ params: { locale } }: { params: { locale: L
         </div>
       </section>
 
-      <section id="cta" className="w-full py-16 md:py-32 lg:py-40 bg-secondary">
+      <section id="testimonials" className="w-full py-16 md:py-32 bg-secondary text-center overflow-x-clip">
+        <div className="max-w-[1792px] mx-auto px-4 md:px-6">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12">{t.HomePage.testimonials_title}</h2>
+          <Carousel
+            opts={{
+              align: 'start',
+            }}
+            className="w-full mx-auto"
+          >
+            <CarouselContent>
+              {testimonialImages.map((imageUrl: string, index: number) => (
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <div className="p-2 h-full">
+                    <Card className="h-full overflow-hidden border-0 shadow-none bg-transparent">
+                       <Image
+                          src={imageUrl}
+                          alt={`Testimonial ${index + 1}`}
+                          width={400}
+                          height={600}
+                          className="w-full rounded-xl object-contain shadow-md"
+                       />
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="-left-4 md:-left-12" />
+            <CarouselNext className="-right-4 md:-right-12" />
+          </Carousel>
+        </div>
+      </section>
+
+      <section id="cta" className="w-full py-16 md:py-32 lg:py-40 bg-background">
         <div className="max-w-[1792px] mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6">
           <div className="space-y-3">
             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">

@@ -1,3 +1,4 @@
+
 import { Building2, ShoppingBag, HeartPulse, HardHat, Sparkles, Wind, Sofa, Users, UserCheck, ShieldCheck, Smile, ClipboardList, Home } from 'lucide-react';
 import { PlaceHolderImages } from './placeholder-images';
 
@@ -13,15 +14,27 @@ export const getServices = (t: any) => {
     ];
 };
 
-export const getTestimonials = (t: any) => {
-    const testimonialsText = t.Constants.testimonials;
-    return [
-      { name: testimonialsText[0].name, role: testimonialsText[0].role, quote: testimonialsText[0].quote, avatarUrl: PlaceHolderImages.find(p => p.id === 'testimonial-1')?.imageUrl || '' },
-      { name: testimonialsText[1].name, role: testimonialsText[1].role, quote: testimonialsText[1].quote, avatarUrl: PlaceHolderImages.find(p => p.id === 'testimonial-2')?.imageUrl || '' },
-      { name: testimonialsText[2].name, role: testimonialsText[2].role, quote: testimonialsText[2].quote, avatarUrl: PlaceHolderImages.find(p => p.id === 'testimonial-3')?.imageUrl || '' },
-    ];
-};
+export const getBeforeAfterImages = () => [
+  "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%B4%D0%BE.jpeg?alt=media&token=bd3e0619-26b5-482a-b91d-57d6564e3671",
+  "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%B4%D0%BE1.jpeg?alt=media&token=ae8a72d4-23ef-44e6-b24f-40d07d6ab7d5",
+  "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%B4%D0%BE2.jpeg?alt=media&token=9e855851-2242-4097-803a-61017b971400",
+  "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%B4%D0%BE3.jpeg?alt=media&token=acd24e5b-a797-4181-98b2-b66aed452dfb",
+  "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%B4%D0%BE4%202.jpeg?alt=media&token=20d3a5ec-7c67-48c2-9d88-394b546bb6f8",
+  "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%B4%D0%BE5.jpeg?alt=media&token=def6b829-07a3-4a00-8e60-952d6ea7b277"
+];
 
+export const getTestimonialImages = () => [
+  "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B7%D0%B8%D0%B25.jpeg?alt=media&token=f9245ddd-be63-40ea-9ae4-ea7dc08fca10",
+  "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B2.jpeg?alt=media&token=44ae9e55-5a1b-43fc-abbe-477e00b2ff41",
+  "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B211.jpeg?alt=media&token=c55789a6-786a-43d6-a140-4c61c4339866",
+  "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B22.jpeg?alt=media&token=d34eab04-ed63-47f0-ad5e-4cbc262bf710",
+  "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B23.jpeg?alt=media&token=641c6b83-6b68-4a13-97c6-8a8a3f6a3e1b",
+  "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B24.jpeg?alt=media&token=7347fc14-8c97-499b-9acb-cc05eb416646",
+  "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B25.jpeg?alt=media&token=9c069362-8236-4fe4-a19a-9155c7835b56",
+  "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B26.jpeg?alt=media&token=412f6d12-a4f6-4002-bdda-37a69a589af0",
+  "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B27.jpeg?alt=media&token=321bf542-a13f-445a-87b9-7df5fd48df3a",
+  "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B29.jpeg?alt=media&token=8d031a7a-bbb4-4f30-9c70-5b7c89785050"
+];
 
 export const getClientTypes = (t: any) => {
     const clientTypesText = t.Constants.client_types;
