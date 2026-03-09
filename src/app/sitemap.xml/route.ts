@@ -1,16 +1,20 @@
 import { MetadataRoute } from 'next';
 import { i18n } from '@/i18n-config';
-import ru from '@/dictionaries/ru.json';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://becleanservis.example.com'; 
 
-  const serviceSlugs = ru.Constants.services.map((service) => service.slug);
+  const serviceSlugs = [
+    '/uborka-ofisov-tashkent',
+    '/abonentskiy-klining',
+    '/generalnaya-uborka',
+    '/poslestroitelnaya-uborka',
+    '/moika-okon',
+    '/himchistka-mebeli'
+  ];
 
   const staticPages = [
     '/',
-    '/calculator',
-    '/quiz',
   ];
   
   const allPages = [...staticPages, ...serviceSlugs];

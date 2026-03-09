@@ -1,5 +1,3 @@
-
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -51,10 +49,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
               </p>
               <div className="flex flex-col gap-4 min-[400px]:flex-row justify-center mt-8">
                   <Button asChild size="lg">
-                      <Link href={`/${locale}/calculator`}>{t.HomePage.calculate_button} <ArrowRight className="ml-2 h-5 w-5" /></Link>
-                  </Button>
-                  <Button asChild variant="secondary" size="lg">
-                      <Link href={`/${locale}/quiz`}>{t.HomePage.pick_service_button}</Link>
+                      <Link href="#cta">{t.Header.call_request} <ArrowRight className="ml-2 h-5 w-5" /></Link>
                   </Button>
               </div>
           </div>
@@ -233,7 +228,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
               <h3 className="text-2xl font-bold">BECLEAN SERVIS</h3>
               <p className="text-muted-foreground text-lg max-w-[600px] mx-auto">{t.HomePage.contacts_subtitle}</p>
               <div className="space-y-3 text-lg">
-                <p><strong>{t.HomePage.contacts_address}</strong> {t.Footer.address}</p>
+                <p><strong>{t.HomePage.contacts_address}</strong> Yonariq mahallasi, Birdamlik ko&apos;chasi, 283-uy</p>
                 <p><strong>{t.HomePage.contacts_phone}</strong> <a href="tel:+998773566070" className="text-primary hover:underline font-semibold">+998 77 356 60 70</a></p>
                 <p><strong>{t.HomePage.contacts_email}</strong> <a href="mailto:info@beclean.pro" className="text-primary hover:underline font-semibold">info@beclean.pro</a></p>
                 <p><strong>{t.HomePage.contacts_hours}</strong> 24/7</p>

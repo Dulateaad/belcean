@@ -11,7 +11,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
-import { Phone, Calculator, Wand2, Send } from 'lucide-react';
+import { Phone, Send } from 'lucide-react';
 import { ContactForm } from './ContactForm';
 import { useDictionary } from '@/contexts/dictionary-context';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
@@ -19,42 +19,11 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 export function FloatingInquiry() {
   const t = useDictionary();
   const tFloating = t.FloatingInquiry;
-  const tHome = t.HomePage;
   const pathname = usePathname();
   const locale = pathname.split('/')[1] || 'ru';
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4">
-      <TooltipProvider delayDuration={100}>
-          <Tooltip>
-              <TooltipTrigger asChild>
-                  <Button asChild size="icon" className="h-14 w-14 rounded-full shadow-lg animate-pulse-glow bg-orange-500 hover:bg-orange-600 text-white">
-                      <Link href={`/${locale}/calculator`} aria-label={tHome.calculate_button}>
-                          <Calculator className="h-7 w-7" />
-                      </Link>
-                  </Button>
-              </TooltipTrigger>
-              <TooltipContent side="left">
-                  <p>{tHome.calculate_button}</p>
-              </TooltipContent>
-          </Tooltip>
-      </TooltipProvider>
-
-      <TooltipProvider delayDuration={100}>
-          <Tooltip>
-              <TooltipTrigger asChild>
-                  <Button asChild size="icon" className="h-14 w-14 rounded-full shadow-lg animate-pulse-glow bg-orange-500 hover:bg-orange-600 text-white">
-                      <Link href={`/${locale}/quiz`} aria-label={tHome.pick_service_button}>
-                          <Wand2 className="h-7 w-7" />
-                      </Link>
-                  </Button>
-              </TooltipTrigger>
-              <TooltipContent side="left">
-                  <p>{tHome.pick_service_button}</p>
-              </TooltipContent>
-          </Tooltip>
-      </TooltipProvider>
-
       <TooltipProvider delayDuration={100}>
           <Tooltip>
               <TooltipTrigger asChild>
