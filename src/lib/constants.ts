@@ -1,5 +1,5 @@
 
-import { Building2, ShoppingBag, HeartPulse, HardHat, Sparkles, Wind, Sofa, Users, UserCheck, ShieldCheck, Smile, ClipboardList, Home } from 'lucide-react';
+import { Building2, ShoppingBag, HeartPulse, HardHat, Sparkles, Wind, Sofa, Users, UserCheck, ShieldCheck, Smile, ClipboardList, Home, Trophy, Zap, Wallet } from 'lucide-react';
 import { PlaceHolderImages } from './placeholder-images';
 
 export const getServices = (t: any) => {
@@ -50,12 +50,11 @@ export const getClientTypes = (t: any) => {
 
 export const getWhyBeClean = (t: any) => {
     const whyBeCleanText = t.Constants.why_beclean;
-    return [
-        { title: whyBeCleanText[0].title, description: whyBeCleanText[0].description, icon: Users  },
-        { title: whyBeCleanText[1].title, description: whyBeCleanText[1].description, icon: ShieldCheck },
-        { title: whyBeCleanText[2].title, description: whyBeCleanText[2].description, icon: UserCheck },
-        { title: whyBeCleanText[3].title, description: whyBeCleanText[3].description, icon: Smile },
-    ];
+    const icons = [Trophy, Zap, Wallet, Users, ShieldCheck, UserCheck];
+    return whyBeCleanText.map((item: any, index: number) => ({
+        ...item,
+        icon: icons[index] || ShieldCheck
+    }));
 };
 
 export const getHowItWorks = (t: any) => {

@@ -77,10 +77,12 @@
       { "name": "Ofislar" }, { "name": "Biznes-markazlar" }, { "name": "Do'konlar" }, { "name": "Klinikalar" }, { "name": "Omborlar" }, { "name": "Kvartiralar" }
     ],
     "why_beclean": [
-      { "title": "O'qitilgan xodimlar", "description": "Barcha xodimlarimiz maxsus o'quv kurslaridan o'tadilar va muntazam ravishda malakalarini oshiradilar." },
-      { "title": "Sifat kafolati", "description": "Yuqori standartni kafolatlash uchun har bir ob'ekt uchun batafsil chek-listlardan foydalanamiz." },
-      { "title": "Shaxsiy menejer", "description": "Har bir mijozga barcha masalalarni hal qilish uchun shaxsiy menejer biriktiriladi." },
-      { "title": "Mamnun mijozlar", "description": "Siz tomondan to'liq nazorat uchun bajarilgan ishlar haqida foto hisobotlarni taqdim etamiz." }
+      { "title": "500+ dan ortiq ishlar", "description": "Toshkent bo'ylab har qanday murakkablikdagi ob'ektlarni tozalashda ulkan tajriba." },
+      { "title": "Karcher texnikasi", "description": "Benuqson tozalik uchun faqat professional nemis uskunalaridan foydalanamiz." },
+      { "title": "Tekshiruvdan so'ng to'lov", "description": "Siz ish natijasidan shaxsan qoniqqaningizdan keyingina to'lov qilasiz." },
+      { "title": "O'qitilgan xodimlar", "description": "Barcha xodimlarimiz maxsus o'quv kurslaridan o'tadilar." },
+      { "title": "Sifat kafolati", "description": "Yuqori standartni kafolatlash uchun batafsil chek-listlardan foydalanamiz." },
+      { "title": "Shaxsiy menejer", "description": "Har bir mijozga barcha masalalarni hal qilish uchun shaxsiy menejer biriktiriladi." }
     ],
     "how_it_works": [
       { "title": "Ariza yoki qo'ng'iroq", "description": "Siz saytda ariza qoldirasiz yoki bizga qo'ng'iroq qilasiz. Biz sizning ehtiyojlaringizni muhokama qilamiz." },

@@ -164,7 +164,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
               <ShieldCheck className="w-8 h-8 text-primary" /> {t.HomePage.why_us_title}
             </h2>
           </div>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 w-full">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 w-full">
             {whyBeClean.map((reason: any, index: number) => (
               <div key={index} className="flex flex-col items-center text-center gap-4 p-8 bg-background rounded-lg shadow-sm hover:shadow-md transition-shadow">
                 <div className="bg-primary/10 p-4 rounded-full text-primary">
