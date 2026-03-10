@@ -8,7 +8,8 @@ import { DictionaryProvider } from '@/contexts/dictionary-context';
 import { FloatingInquiry } from '@/components/site/FloatingInquiry';
 import { headers } from 'next/headers';
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: Locale } }) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: Locale }> }) {
+  const { locale } = await params;
   const t = await getDictionary(locale);
   return {
     title: t.HomePage.meta_title,
@@ -19,13 +20,14 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 
 export default async function LocaleLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
 }) {
+  const { locale } = await params;
   const t = await getDictionary(locale);
-  const headersList = headers();
+  const headersList = await headers();
   const ip = headersList.get('x-forwarded-for')?.split(',')[0].trim() || '';
 
   const yandexMetrikaScript = `

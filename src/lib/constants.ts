@@ -25,15 +25,13 @@ export const getBeforeAfterImages = () => [
 
 export const getTestimonials = (t: any) => {
   const testimonialsText = t.Constants.testimonials;
-  const avatars = [
-    "https://picsum.photos/seed/alisher/100/100",
-    "https://picsum.photos/seed/elena/100/100",
-    "https://picsum.photos/seed/timur/100/100"
+  const avatarSeeds = [
+    'alisher', 'elena', 'timur', 'malika', 'rustam', 'lola', 'sanzhar', 'dildora', 'bakhtiyor', 'aziza'
   ];
   
   return testimonialsText.map((item: any, index: number) => ({
     ...item,
-    avatar: avatars[index]
+    avatar: `https://picsum.photos/seed/${avatarSeeds[index]}/100/100`
   }));
 };
 

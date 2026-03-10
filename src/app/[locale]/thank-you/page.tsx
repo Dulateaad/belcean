@@ -7,7 +7,8 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { getDictionary } from "@/lib/get-dictionary";
 import { Locale } from "@/i18n-config";
 
-export default async function ThankYouPage({ params: { locale } }: { params: { locale: Locale } }) {
+export default async function ThankYouPage({ params }: { params: Promise<{ locale: Locale }> }) {
+  const { locale } = await params;
   const thankYouImage = PlaceHolderImages.find(p => p.id === 'thank-you');
   const t = await getDictionary(locale);
   const pageData = t.ThankYouPage;

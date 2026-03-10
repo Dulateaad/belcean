@@ -19,7 +19,8 @@ import {
   Camera,
   MessageSquare,
   Calculator,
-  Quote
+  Quote,
+  Star
 } from 'lucide-react';
 import { ContactForm } from '@/components/site/ContactForm';
 import * as constants from '@/lib/constants';
@@ -28,8 +29,10 @@ import { getDictionary } from '@/lib/get-dictionary';
 import type { Locale } from '@/i18n-config';
 import { HeroCarousel } from '@/components/site/HeroCarousel';
 import { AutoCarousel } from '@/components/site/AutoCarousel';
+import { cn } from '@/lib/utils';
 
-export default async function Home({ params: { locale } }: { params: { locale: Locale } }) {
+export default async function Home({ params }: { params: Promise<{ locale: Locale }> }) {
+  const { locale } = await params;
   const t = await getDictionary(locale);
   const mapPlaceholder = PlaceHolderImages.find(p => p.id === 'map');
   const services = constants.getServices(t);
@@ -54,10 +57,10 @@ export default async function Home({ params: { locale } }: { params: { locale: L
         
         <div className="relative z-10 flex flex-col items-center justify-center flex-grow text-center text-primary-foreground p-4 pt-20 md:pt-32 pb-12">
           <div className="w-full max-w-[1792px] mx-auto px-4">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-6xl xl:text-8xl/none font-headline text-white animate-fade-in">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-6xl xl:text-8xl/none font-headline text-white animate-fade-in text-center">
                   {t.HomePage.hero_title}
               </h1>
-              <p className="max-w-[700px] mx-auto text-white/90 md:text-xl/relaxed mt-6">
+              <p className="max-w-[700px] mx-auto text-white/90 md:text-xl/relaxed mt-6 text-center">
                 {t.HomePage.hero_subtitle}
               </p>
               
@@ -76,18 +79,16 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       </section>
 
       <section id="clients" className="w-full py-16 md:py-32">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-3">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline text-center flex items-center justify-center gap-3">
-                <CheckCircle2 className="w-8 h-8 text-primary" /> {t.HomePage.clients_title}
-              </h2>
-              <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl/relaxed">
-                {t.HomePage.clients_subtitle}
-              </p>
-            </div>
+        <div className="container mx-auto px-4 md:px-6 text-center">
+          <div className="flex flex-col items-center justify-center space-y-4 mb-12">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline flex items-center justify-center gap-3">
+              <CheckCircle2 className="w-8 h-8 text-primary" /> {t.HomePage.clients_title}
+            </h2>
+            <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl/relaxed">
+              {t.HomePage.clients_subtitle}
+            </p>
           </div>
-          <div className="mx-auto grid grid-cols-2 items-start gap-8 pt-12 sm:grid-cols-3 lg:grid-cols-6 lg:gap-12 text-center">
+          <div className="mx-auto grid grid-cols-2 items-start gap-8 sm:grid-cols-3 lg:grid-cols-6 lg:gap-12 text-center">
             {clientTypes.map((client: any, index: number) => (
               <div key={index} className="flex flex-col items-center gap-4 text-center transition-transform duration-300 hover:scale-105">
                 {client.imageUrl ? (
@@ -113,7 +114,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       <section id="services" className="w-full py-16 md:py-32 bg-secondary">
         <div className="container mx-auto px-4 md:px-6 flex flex-col items-center text-center">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline text-center inline-flex items-center gap-3 relative after:content-[''] after:absolute after:-bottom-4 after:left-1/4 after:right-1/4 after:h-1 after:bg-primary after:rounded-full">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline inline-flex items-center gap-3 relative after:content-[''] after:absolute after:-bottom-4 after:left-1/4 after:right-1/4 after:h-1 after:bg-primary after:rounded-full">
               <Sparkles className="w-8 h-8 text-primary" /> {t.HomePage.services_title}
             </h2>
           </div>
@@ -141,7 +142,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       <section id="how-it-works" className="w-full py-16 md:py-32">
         <div className="container mx-auto px-4 md:px-6 flex flex-col items-center text-center">
           <div className="mb-16">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline text-center inline-flex items-center gap-3 relative after:content-[''] after:absolute after:-bottom-4 after:left-1/4 after:right-1/4 after:h-1 after:bg-primary after:rounded-full">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline inline-flex items-center gap-3 relative after:content-[''] after:absolute after:-bottom-4 after:left-1/4 after:right-1/4 after:h-1 after:bg-primary after:rounded-full">
               <ClipboardList className="w-8 h-8 text-primary" /> {t.HomePage.how_it_works_title}
             </h2>
           </div>
@@ -162,7 +163,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       <section id="why-us" className="w-full py-16 md:py-32 bg-secondary">
         <div className="container mx-auto px-4 md:px-6 flex flex-col items-center text-center">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline text-center inline-flex items-center gap-3 relative after:content-[''] after:absolute after:-bottom-4 after:left-1/4 after:right-1/4 after:h-1 after:bg-primary after:rounded-full">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline inline-flex items-center gap-3 relative after:content-[''] after:absolute after:-bottom-4 after:left-1/4 after:right-1/4 after:h-1 after:bg-primary after:rounded-full">
               <ShieldCheck className="w-8 h-8 text-primary" /> {t.HomePage.why_us_title}
             </h2>
           </div>
@@ -182,7 +183,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
 
       <section id="gallery" className="w-full py-16 md:py-32 text-center overflow-x-clip">
         <div className="max-w-[1792px] mx-auto px-4 md:px-6">
-          <h2 className="text-lg font-bold tracking-tighter sm:text-xl font-headline mb-12 text-center flex items-center justify-center gap-3">
+          <h2 className="text-lg font-bold tracking-tighter sm:text-xl font-headline mb-12 flex items-center justify-center gap-3">
             <Camera className="w-8 h-8 text-primary" /> {t.HomePage.gallery_title}
           </h2>
           <AutoCarousel className="w-full mx-auto">
@@ -211,7 +212,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
 
       <section id="testimonials" className="w-full py-16 md:py-32 bg-secondary text-center overflow-x-clip">
         <div className="max-w-[1792px] mx-auto px-4 md:px-6">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12 text-center flex items-center justify-center gap-3">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12 flex items-center justify-center gap-3">
             <MessageSquare className="w-8 h-8 text-primary" /> {t.HomePage.testimonials_title}
           </h2>
           <AutoCarousel className="w-full mx-auto" delay={6000}>
@@ -219,20 +220,28 @@ export default async function Home({ params: { locale } }: { params: { locale: L
               {testimonials.map((item: any, index: number) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-2 h-full">
-                    <Card className="h-full overflow-hidden flex flex-col bg-background text-left">
-                       <CardHeader className="flex flex-row items-center gap-4 p-6">
+                    <Card className="h-full overflow-hidden flex flex-col bg-background text-left border-none shadow-md">
+                       <CardHeader className="flex flex-row items-center gap-4 p-6 pb-2">
                           <Avatar className="h-12 w-12 ring-2 ring-primary/10">
                             <AvatarImage src={item.avatar} alt={item.name} />
                             <AvatarFallback>{item.name[0]}</AvatarFallback>
                           </Avatar>
-                          <div className="flex flex-col">
-                            <p className="font-bold text-base leading-none mb-1">{item.name}</p>
-                            <p className="text-sm text-muted-foreground">{item.role}</p>
+                          <div className="flex flex-col flex-1">
+                            <div className="flex items-center justify-between">
+                                <p className="font-bold text-base leading-none mb-1">{item.name}</p>
+                                <span className="text-[10px] text-muted-foreground font-semibold bg-secondary px-2 py-0.5 rounded-full">{item.date}</span>
+                            </div>
+                            <p className="text-xs text-muted-foreground">{item.role}</p>
                           </div>
                        </CardHeader>
-                       <CardContent className="p-6 pt-0 flex-grow">
-                          <Quote className="w-8 h-8 text-primary/20 mb-4" />
-                          <p className="text-muted-foreground italic leading-relaxed">
+                       <CardContent className="p-6 pt-2 flex-grow">
+                          <div className="flex gap-0.5 mb-3 text-yellow-400">
+                             {[...Array(5)].map((_, i) => (
+                               <Star key={i} className={cn("w-4 h-4 fill-current", i >= (item.stars || 5) && "text-muted")} />
+                             ))}
+                          </div>
+                          <Quote className="w-6 h-6 text-primary/20 mb-3" />
+                          <p className="text-muted-foreground italic text-sm leading-relaxed">
                             "{item.quote}"
                           </p>
                        </CardContent>
@@ -250,10 +259,10 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       <section id="cta" className="w-full py-16 md:py-32 lg:py-40 bg-background">
         <div className="max-w-[1792px] mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6">
           <div className="space-y-3">
-            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline text-center">
+            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">
               {t.HomePage.cta_title}
             </h2>
-            <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed">
+            <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed text-center">
               {t.HomePage.cta_subtitle}
             </p>
           </div>
@@ -267,9 +276,9 @@ export default async function Home({ params: { locale } }: { params: { locale: L
         <div className="max-w-[1792px] mx-auto px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl font-headline mb-12">{t.HomePage.contacts_title}</h2>
           <div className="mx-auto grid grid-cols-1 gap-12 items-center text-center">
-            <div className="space-y-6">
+            <div className="space-y-6 text-center">
               <h3 className="text-2xl font-bold">BECLEAN SERVIS</h3>
-              <p className="text-muted-foreground text-lg max-w-[600px] mx-auto">{t.HomePage.contacts_subtitle}</p>
+              <p className="text-muted-foreground text-lg max-w-[600px] mx-auto text-center">{t.HomePage.contacts_subtitle}</p>
               <div className="space-y-3 text-lg">
                 <p><strong>{t.HomePage.contacts_address}</strong> Yonariq mahallasi, Birdamlik ko&apos;chasi, 283-uy</p>
                 <p><strong>{t.HomePage.contacts_phone}</strong> <a href="tel:+998773566070" className="text-primary hover:underline font-semibold">+998 77 356 60 70</a></p>

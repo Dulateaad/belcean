@@ -10,7 +10,8 @@ import * as constants from '@/lib/constants';
 import type { Locale } from '@/i18n-config';
 import { Metadata } from 'next';
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: Locale } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ locale: Locale }> }): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getDictionary(locale);
   const pageData = t.ServicePagePoslestroy;
   return {
@@ -19,7 +20,8 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   };
 }
 
-export default async function ServicePage({ params: { locale } }: { params: { locale: Locale } }) {
+export default async function ServicePage({ params }: { params: Promise<{ locale: Locale }> }) {
+  const { locale } = await params;
   const t = await getDictionary(locale);
   const pageData = t.ServicePagePoslestroy;
   const prices = constants.getPrices(t);
