@@ -1,3 +1,4 @@
+
 import { Toaster } from '@/components/ui/toaster';
 import { SiteHeader } from '@/components/site/SiteHeader';
 import { SiteFooter } from '@/components/site/SiteFooter';
@@ -5,7 +6,6 @@ import { getDictionary } from '@/lib/get-dictionary';
 import { i18n, type Locale } from '@/i18n-config';
 import { DictionaryProvider } from '@/contexts/dictionary-context';
 import { FloatingInquiry } from '@/components/site/FloatingInquiry';
-import { headers } from 'next/headers';
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ locale }));
@@ -30,11 +30,8 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
   const t = await getDictionary(locale);
-  const headersList = await headers();
-  const ip = headersList.get('x-forwarded-for')?.split(',')[0].trim() || '127.0.0.1';
 
   const yandexMetrikaScript = `
-    window.yaParams = { ip_address: "${ip}" };
     (function(m,e,t,r,i,k,a){
         m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
         m[i].l=1*new Date();
@@ -49,8 +46,7 @@ export default async function LocaleLayout({
         referrer: document.referrer,
         url: location.href,
         accurateTrackBounce:true,
-        trackLinks:true,
-        params: window.yaParams
+        trackLinks:true
     });
   `;
 
