@@ -1,4 +1,3 @@
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -219,14 +218,15 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
               {beforeAfterImages.map((imageUrl: string, index: number) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-2 h-full">
-                    <Card className="h-full overflow-hidden">
-                       <Image
-                          src={imageUrl}
-                          alt={`Work result ${index + 1}`}
-                          width={600}
-                          height={400}
-                          className="w-full aspect-video object-cover"
-                       />
+                    <Card className="h-full overflow-hidden bg-white/50 backdrop-blur-sm">
+                       <div className="relative aspect-video w-full">
+                        <Image
+                            src={imageUrl}
+                            alt={`Work result ${index + 1}`}
+                            fill
+                            className="object-contain p-2"
+                        />
+                       </div>
                     </Card>
                   </div>
                 </CarouselItem>
