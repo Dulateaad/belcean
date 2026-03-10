@@ -4,7 +4,7 @@
     "services": "Xizmatlar",
     "calculator": "Kalkulyator",
     "contacts": "Kontaktlar",
-    "call_request": "Qo'ng'iroqqa buyurtma",
+    "call_request": "Tozalashga buyurtma",
     "work_hours": "24/7"
   },
   "Footer": {
@@ -190,7 +190,7 @@
     ],
     "faq": [
         { "question": "Mebel tozalashdan keyin qancha vaqtda quriydi?", "answer": "Qurish vaqti mato turi, xonadagi harorat va namlikka bog'liq. O'rtacha mebel 4-8 soat ichida to'liq quriydi." },
-        { "question": "Hamma dog'larni ketkazish mumkinmi?", "answer": "Biz professional dog' ketkazuvchi vositalardan foydalanamiz va ko'plab yangi hamda standart dog'larni ketkaza olamiz. Juda eski yoki spesifik dog'lar (bo'yoq, kley) uchun natija doim ham kafolatlanmaydi, lekin biz qo'limizdan kelganini qilamiz." },
+        { "question": "Hamma dog'larni ketkazish mumkinmi?", "answer": "Biz professional dog' ketkazuvchi vositalardan foydalanamiz va ko'plab many yangi hamda standart dog'larni ketkaza olamiz. Juda eski yoki spesifik dog'lar (bo'yoq, kley) uchun natija doim ham kafolatlanmaydi, lekin biz qo'limizdan kelganini qilamiz." },
         { "question": "Bu allergiyasi borlar uchun xavfsizmi?", "answer": "Ha, biz sertifikatlangan, gipoallergen vositalardan foydalanamiz. Tozalashdan so'ng biz matoni yaxshilab yuvib, barcha kimyoviy qoldiqlarni chiqaramiz." }
     ]
   },
@@ -212,7 +212,7 @@
     "faq": [
         { "question": "Qanday ob-havoda oyna yuvish mumkin?", "answer": "Biz kuchli shamol va -5°C dan past sovuqdan tashqari har qanday ob-havoda ishlaymiz. Eng maqbul ob-havo — quruq va shamolsiz kun." },
         { "question": "Balandlikdagi oynalarni yuvish mumkinmi?", "answer": "Ha, bizda har qanday balandlikdagi oynalarni yuvish uchun sertifikatlangan sanoat alpinistlari mavjud." },
-        { "question": "Oyna yuvishga qanday tayyorlanish kerak?", "answer": "Podokonniklarni ortiqcha narsalardan bo'shatish va oynalarga kirishni ta'minlash tavsiya etiladi." }
+        { "question": "Oyna yuvishга qanday tayyorlanish kerak?", "answer": "Podokonniklarni ortiqcha narsalardan bo'shatish va oynalarga kirishni ta'minlash tavsiya etiladi." }
     ]
   },
   "ServicePagePoslestroy": {
@@ -231,7 +231,7 @@
         { "title": "Sifat", "description": "Siz tozalanib tayyor bo'lgan ob'ektni qabul qilasiz." }
     ],
     "faq": [
-        { "question": "Ta'mirdan keyingi tozalashni qachon o'tkazish kerak?", "answer": "Barcha \"iflos\" ishlar tugagandan so'ng, lekin mebel va texnika o'rnatilishidan oldin tozalashni boshlash ma'qul. Biz sizga eng maqbul vaqt bo'yicha maslahat bera olamiz." },
+        { "question": "Ta'mirdan keyingi tozalashni qachon o'tkazish kerak?", "answer": "Barcha \"iflos\" ishlar tugagandan so'ng, lekin mebel va texnika o'rnatilishidan oldin tozalashni boshlash ma'qul. Biz sizга eng maqbul vaqt bo'yicha maslahat bera olamiz." },
         { "question": "Katta qurilish chiqindilarini olib chiqasizmi?", "answer": "Biz mayda va o'rtacha qurilish chiqindilarini yig'amiz va olib chiqamiz. Yirik gabaritli chiqindilarni olib chiqish alohida muhokama qilinadi." },
         { "question": "Ob'ektda necha kishi ishlaydi?", "answer": "Klinerlar soni ob'ekt maydoni va murakkabligiga bog'liq. Biz ishni maksimal darajada tez va sifatli bajarish uchun brigadani shakllantiramiz." }
     ]
@@ -269,7 +269,7 @@
   },
   "FloatingInquiry": {
     "aria_label": "Ariza qoldirish",
-    "title": "Qo'ng'iroqqa buyurtma",
+    "title": "Tozalashga buyurtma",
     "description": "Raqamingizni qoldiring va biz tafsilotlarni muhokama qilish uchun tez orada sizga qo'ng'iroq qilamiz.",
     "telegram": "Telegramda yozish"
   }

@@ -4,7 +4,7 @@
     "services": "Услуги",
     "calculator": "Калькулятор",
     "contacts": "Контакты",
-    "call_request": "Заказать звонок",
+    "call_request": "Заказать уборку",
     "work_hours": "24/7"
   },
   "Footer": {
@@ -126,7 +126,7 @@
       "process_title": "Процесс работы",
       "faq_title": "Часто задаваемые вопросы",
       "price_title": "Примерные цены",
-      "form_title": "Заказать клининг",
+      "form_title": "Заказать уборку",
       "form_title_windows": "Заказать мойку окон",
       "form_title_furniture": "Заказать химчистку",
       "form_title_office": "Заказать уборку офиса",
@@ -276,7 +276,7 @@
   },
   "FloatingInquiry": {
     "aria_label": "Оставить заявку",
-    "title": "Заказать звонок",
+    "title": "Заказать уборку",
     "description": "Оставьте свой номер, и мы перезвоним вам в ближайшее время, чтобы обсудить все детали.",
     "telegram": "Написать в Telegram"
   }
