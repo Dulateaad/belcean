@@ -20,7 +20,8 @@ import {
   MessageSquare,
   Calculator,
   Quote,
-  Star
+  Star,
+  Handshake
 } from 'lucide-react';
 import { ContactForm } from '@/components/site/ContactForm';
 import * as constants from '@/lib/constants';
@@ -57,7 +58,7 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
         
         <div className="relative z-10 flex flex-col items-center justify-center flex-grow text-center text-primary-foreground p-4 pt-20 md:pt-32 pb-12">
           <div className="w-full max-w-[1792px] mx-auto px-4">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-6xl xl:text-8xl/none font-headline text-white animate-fade-in text-center">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-6xl xl:text-8xl/none font-headline text-white animate-pulse text-center">
                   {t.HomePage.hero_title}
               </h1>
               <p className="max-w-[700px] mx-auto text-white/90 md:text-xl/relaxed mt-6 text-center">
@@ -181,7 +182,27 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
         </div>
       </section>
 
-      <section id="gallery" className="w-full py-16 md:py-32 text-center overflow-x-clip">
+      <section id="partners" className="w-full py-16 md:py-32">
+        <div className="container mx-auto px-4 md:px-6 text-center">
+           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12 flex items-center justify-center gap-3">
+              <Handshake className="w-8 h-8 text-primary" /> {t.HomePage.partners_title}
+            </h2>
+            <div className="flex flex-wrap justify-center items-center gap-12 opacity-80 hover:opacity-100 transition-opacity">
+                <div className="flex flex-col items-center gap-2">
+                    <Image 
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/K%C3%A4rcher_logo.svg/1200px-K%C3%A4rcher_logo.svg.png" 
+                        alt="Karcher" 
+                        width={200} 
+                        height={60} 
+                        className="h-12 w-auto grayscale hover:grayscale-0 transition-all"
+                    />
+                    <span className="text-sm font-semibold text-muted-foreground">Karcher</span>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <section id="gallery" className="w-full py-16 md:py-32 text-center overflow-x-clip bg-secondary">
         <div className="max-w-[1792px] mx-auto px-4 md:px-6">
           <h2 className="text-xl font-bold tracking-tighter sm:text-2xl font-headline mb-12 flex items-center justify-center gap-3">
             <Camera className="w-8 h-8 text-primary" /> {t.HomePage.gallery_title}
@@ -210,7 +231,7 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
         </div>
       </section>
 
-      <section id="testimonials" className="w-full py-16 md:py-32 bg-secondary text-center overflow-x-clip">
+      <section id="testimonials" className="w-full py-16 md:py-32 text-center overflow-x-clip">
         <div className="max-w-[1792px] mx-auto px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12 flex items-center justify-center gap-3">
             <MessageSquare className="w-8 h-8 text-primary" /> {t.HomePage.testimonials_title}

@@ -48,6 +48,7 @@
     "services_title": "Bizning xizmatlarimiz",
     "how_it_works_title": "Biz qanday ishlaymiz",
     "why_us_title": "Nima uchun BeClean",
+    "partners_title": "Bizning hamkorlarimiz",
     "gallery_title": "Ishimiz natijalari (Oldin va Keyin)",
     "testimonials_title": "Mijozlarimizning fikrlari",
     "cta_title": "Tozalikka tayyormisiz?",
@@ -71,7 +72,7 @@
     "testimonials": [
       { "name": "Alisher Karimov", "role": "Direktor, IT-kompaniya", "quote": "BeClean SERVIS — haqiqiy professionallar. Ofisimiz hech qachon bunchalik toza bo'lmagan. Ayniqsa, har doim aloqada bo'lgan mas'uliyatli menejer juda quvontiradi." },
       { "name": "Elena Pak", "role": "Biznes markazi boshqaruvchisi", "quote": "BeClean abonent xizmatiga o'tdik va juda mamnunmiz. Xodimlar bilimli, xushmuomala, fotosurat hisobotlari esa sifatni nazorat qilishga yordam beradi." },
-      { "name": "Timur Ibragimov", "role": "Klinika egasi", "quote": "Biz uchun sterillik — asosiy ustuvorlik. BeClean jamoasi bizning umidlarimizni to'liq oqladi. Chek-listlar bo'yicha ishlashadi, hech narsani o'tkazib yuborishmaydi." }
+      { "name": "Timur Ibragimov", "role": "Klinika egasi", "quote": "Biz uchun sterillik — asosiy ustuvorlik. BeClean jamoasi bizning umidlarimizni to'liq oqladi. Chek-listlar bo'yismsiz ishlashadi, hech narsani o'tkazib yuborishmaydi." }
     ],
     "client_types": [
       { "name": "Ofislar" }, { "name": "Biznes-markazlar" }, { "name": "Do'konlar" }, { "name": "Klinikalar" }, { "name": "Omborlar" }, { "name": "Kvartiralar" }

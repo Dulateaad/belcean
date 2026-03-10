@@ -16,19 +16,19 @@ export default function CalculatorPage() {
 
   const pricingData = [
     {
-      title: t.cleaning_types.regular,
-      range: "6 000 — 8 000",
-      description: "Ежедневная или еженедельная уборка для поддержания чистоты."
+      title: "Уборка",
+      price: "20 000",
+      description: "Профессиональная уборка помещений любой сложности."
     },
     {
-      title: t.cleaning_types.general,
-      range: "9 000 — 10 000",
-      description: "Тщательная глубокая очистка всех поверхностей и труднодоступных мест."
+      title: "Фасад",
+      price: "16 000",
+      description: "Мойка фасадов, витрин и остекления зданий."
     },
     {
-      title: t.cleaning_types['post-construction'],
-      range: "11 000 — 15 000",
-      description: "Удаление строительной пыли, следов краски и затирки после ремонта."
+      title: "Химчистка",
+      price: "15 000",
+      description: "Глубокая чистка мягкой мебели и ковровых покрытий."
     }
   ];
 
@@ -57,7 +57,7 @@ export default function CalculatorPage() {
                                 </div>
                                 <div className="text-right">
                                     <div className="text-2xl font-black text-primary whitespace-nowrap">
-                                        {item.range}
+                                        от {item.price}
                                     </div>
                                     <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                                         сум / м²
