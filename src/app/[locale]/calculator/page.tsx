@@ -1,36 +1,48 @@
 
-// @ts-nocheck
 "use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
+import { useState, useMemo, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Input } from '@/components/ui/input';
+import { Slider } from '@/components/ui/slider';
+import { Label } from '@/components/ui/label';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { ContactForm } from "@/components/site/ContactForm";
-import { Info, CheckCircle2, Calculator } from 'lucide-react';
+import { Info, CheckCircle2, Calculator, ArrowRight, Sparkles } from 'lucide-react';
 import { useDictionary } from '@/contexts/dictionary-context';
+import { cn } from '@/lib/utils';
 
 export default function CalculatorPage() {
   const t = useDictionary().CalculatorPage;
+  const [area, setArea] = useState(100);
+  const [service, setService] = useState('cleaning');
 
-  const pricingData = [
-    {
-      title: "Уборка",
-      price: "20 000",
-      description: "Профессиональная уборка помещений любой сложности."
+  const pricingConfig = {
+    cleaning: {
+      id: 'cleaning',
+      label: 'Уборка',
+      price: 20000,
+      description: 'Профессиональная уборка помещений'
     },
-    {
-      title: "Фасад",
-      price: "16 000",
-      description: "Мойка фасадов, витрин и остекления зданий."
+    facade: {
+      id: 'facade',
+      label: 'Фасад',
+      price: 16000,
+      description: 'Мойка фасадов и остекления'
     },
-    {
-      title: "Химчистка",
-      price: "15 000",
-      description: "Глубокая чистка мягкой мебели и ковровых покрытий."
+    drycleaning: {
+      id: 'drycleaning',
+      label: 'Химчистка',
+      price: 15000,
+      description: 'Глубокая чистка покрытий'
     }
-  ];
+  };
+
+  const currentService = pricingConfig[service as keyof typeof pricingConfig];
+  const totalPrice = useMemo(() => area * currentService.price, [area, currentService]);
+
+  const formattedTotal = new Intl.NumberFormat('ru-RU').format(totalPrice);
 
   return (
     <div className="bg-background">
@@ -46,27 +58,88 @@ export default function CalculatorPage() {
 
         <div className="grid lg:grid-cols-5 gap-12">
           <div className="lg:col-span-3 space-y-8">
-            <div className="grid gap-6">
-                {pricingData.map((item, index) => (
-                    <Card key={index} className="overflow-hidden border-l-4 border-l-primary hover:shadow-md transition-shadow">
-                        <CardContent className="p-6">
-                            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                                <div className="space-y-1">
-                                    <h3 className="text-xl font-bold">{item.title}</h3>
-                                    <p className="text-sm text-muted-foreground">{item.description}</p>
-                                </div>
-                                <div className="text-right">
-                                    <div className="text-2xl font-black text-primary whitespace-nowrap">
-                                        от {item.price}
-                                    </div>
-                                    <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                                        сум / м²
-                                    </div>
-                                </div>
+            <Card className="border-primary/10 shadow-lg">
+                <CardHeader>
+                    <CardTitle className="text-xl">1. Выберите услугу</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <RadioGroup 
+                        value={service} 
+                        onValueChange={setService}
+                        className="grid md:grid-cols-3 gap-4"
+                    >
+                        {Object.values(pricingConfig).map((item) => (
+                            <div key={item.id}>
+                                <RadioGroupItem value={item.id} id={item.id} className="peer sr-only" />
+                                <Label
+                                    htmlFor={item.id}
+                                    className={cn(
+                                        "flex flex-col items-start p-4 rounded-xl border-2 border-muted bg-popover hover:bg-accent cursor-pointer transition-all h-full",
+                                        "peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/5"
+                                    )}
+                                >
+                                    <span className="font-bold text-lg mb-1">{item.label}</span>
+                                    <span className="text-xs text-muted-foreground leading-tight">{item.description}</span>
+                                    <span className="mt-4 text-primary font-black">{new Intl.NumberFormat('ru-RU').format(item.price)} сум/м²</span>
+                                </Label>
                             </div>
-                        </CardContent>
-                    </Card>
-                ))}
+                        ))}
+                    </RadioGroup>
+                </CardContent>
+            </Card>
+
+            <Card className="border-primary/10 shadow-lg">
+                <CardHeader>
+                    <CardTitle className="text-xl">2. Укажите площадь</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-8">
+                    <div className="flex items-center gap-4">
+                        <div className="flex-1">
+                            <Slider
+                                value={[area]}
+                                onValueChange={(val) => setArea(val[0])}
+                                max={2000}
+                                min={10}
+                                step={10}
+                                className="py-4"
+                            />
+                        </div>
+                        <div className="w-32 relative">
+                            <Input 
+                                type="number" 
+                                value={area} 
+                                onChange={(e) => setArea(Number(e.target.value))}
+                                className="text-right pr-8 font-bold"
+                            />
+                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground text-sm">м²</span>
+                        </div>
+                    </div>
+                    
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                        {[50, 100, 250, 500].map((val) => (
+                            <Button 
+                                key={val} 
+                                variant="outline" 
+                                size="sm" 
+                                onClick={() => setArea(val)}
+                                className={cn(area === val && "bg-primary/10 border-primary text-primary")}
+                            >
+                                {val} м²
+                            </Button>
+                        ))}
+                    </div>
+                </CardContent>
+            </Card>
+
+            <div className="p-8 rounded-2xl bg-primary text-primary-foreground shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <p className="text-primary-foreground/80 font-medium uppercase tracking-wider text-sm mb-1">Ориентировочная стоимость</p>
+                    <h2 className="text-4xl md:text-5xl font-black">{formattedTotal} <span className="text-2xl opacity-80">сум</span></h2>
+                </div>
+                <div className="flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
+                    <Sparkles className="w-5 h-5" />
+                    <span className="text-sm font-bold">Точный расчет после осмотра</span>
+                </div>
             </div>
 
             <div className="p-6 rounded-xl bg-primary/5 border border-primary/20 flex items-start gap-4">
@@ -82,13 +155,15 @@ export default function CalculatorPage() {
           </div>
           
           <div className="lg:col-span-2 space-y-8 sticky top-24 self-start">
-             <Card className="shadow-xl border-primary/10">
+             <Card className="shadow-xl border-primary/10 overflow-hidden">
                 <CardHeader className="bg-primary/5 border-b mb-6">
                     <CardTitle className="text-2xl">{t.form_title}</CardTitle>
                     <CardDescription>{t.form_subtitle}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <ContactForm />
+                    <ContactForm 
+                        defaultService={`${currentService.label} (${area} м²)`} 
+                    />
                 </CardContent>
              </Card>
              

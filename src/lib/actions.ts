@@ -1,14 +1,23 @@
+
 "use server";
 
 import { redirect } from 'next/navigation';
 import { z } from 'zod';
 import { headers } from 'next/headers';
 
-function getLocale() {
-    const headersList = headers();
-    const pathname = headersList.get('x-pathname');
-    const locale = pathname?.split('/')[1] || 'ru';
-    return locale;
+async function getLocale() {
+    const headersList = await headers();
+    const referer = headersList.get('referer');
+    if (referer) {
+      try {
+        const url = new URL(referer);
+        const segments = url.pathname.split('/');
+        if (segments[1] && segments[1].length === 2) {
+          return segments[1];
+        }
+      } catch (e) {}
+    }
+    return 'ru';
 }
 
 async function sendTelegramNotification(message: string) {
@@ -53,7 +62,7 @@ const inquirySchema = z.object({
 
 export async function submitInquiry(data: unknown) {
   const parsedData = inquirySchema.safeParse(data);
-  const locale = getLocale();
+  const locale = await getLocale();
 
 
   if (!parsedData.success) {
@@ -81,7 +90,8 @@ const calculatorInquirySchema = z.object({
 });
 
 export async function submitCalculatorInquiry(data: unknown) {
-    const parsedData = calculatorInquirySchema.safeParse(data);
+  const parsedData = calculatorInquirySchema.safeParse(data);
+  const locale = await getLocale();
 
   if (!parsedData.success) {
     return { success: false, message: 'Invalid data.' };
@@ -91,11 +101,13 @@ export async function submitCalculatorInquiry(data: unknown) {
 
   const info = `${service || 'Не указана'}\n${details || 'Нет'}`;
 
-  const message = `📥 <b>Новая заявка</b>\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n📝 Инфо: ${info}\n🌍 Источник: Calculator`;
+  const message = `📥 <b>Новая заявка (Калькулятор)</b>\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n📝 Инфо: ${info}`;
 
   await sendTelegramNotification(message);
 
   await new Promise(resolve => setTimeout(resolve, 1000));
   
+  redirect(`/${locale}/thank-you`);
+
   return { success: true };
 }
