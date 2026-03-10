@@ -1,4 +1,3 @@
-
 {
   "Header": {
     "services": "Xizmatlar",
@@ -64,7 +63,7 @@
     ],
     "testimonials": [
       { "name": "Alisher Karimov", "role": "Direktor, IT-kompaniya", "quote": "BeClean SERVIS — haqiqiy professionallar. Ofisimiz hech qachon bunchalik toza bo'lmagan. Ayniqsa, har doim aloqada bo'lgan mas'uliyatli menejer juda quvontiradi.", "date": "01.03.2025", "stars": 5 },
-      { "name": "Elena Pak", "role": "Biznes markazi boshqaruvchisi", "quote": "BeClean abonent xizmatiga o'tdik va juda mamnunmiz. Xodimlar bilimli, xushmuomala, fotosurat hisobotlari esa sifatni nazorat qilishga yordam beradi.", "date": "02.03.2025", "stars": 5 },
+      { "name": "Elena Pak", "role": "Biznes markazi boshqaruvchisi", "quote": "BeClean abonent xizmatiga o'tdik va juda mamnunmiz. Xodimlar bilimli, xushmuomala, fotosurat hisobotlari esa sifatni nazorat qilishга yordam beradi.", "date": "02.03.2025", "stars": 5 },
       { "name": "Timur Ibragimov", "role": "Klinika egasi", "quote": "Biz uchun sterillik — asosiy ustuvorlik. BeClean jamoasi bizning umidlarimizni to'liq oqladi. Ishlari tartibli va sifatli.", "date": "03.03.2025", "stars": 5 },
       { "name": "Malika Saidova", "role": "Restoran administratori", "quote": "Oshxonani general tozalashga buyurtma berdik. Hamma joy yaltirab ketdi! Hatto eng eski yog'larni ham tozalashdi.", "date": "04.03.2025", "stars": 5 },
       { "name": "Rustam Ahmedov", "role": "Shourum egasi", "quote": "Vitrina yuvish 5+ bahoga bajarildi. Hech qanday dog'larsiz, tez va ehtiyotkorlik bilan. Doimiy mijoz bo'lib qolamiz.", "date": "05.03.2025", "stars": 5 },
@@ -83,7 +82,7 @@
       { "title": "Tekshiruvdan so'ng to'lov", "description": "Siz ish natijasidan shaxsan qoniqqaningizdan keyingina to'lov qilasiz." },
       { "title": "O'qitilgan xodimlar", "description": "Barcha xodimlarimiz maxsus o'quv kurslaridan o'tadilar va muntazam ravishda malakalarini oshiradilar." },
       { "title": "Sifat kafolati", "description": "Yuqori standartni kafolatlash uchun har bir ob'ekt uchun batafsil chek-listlardan foydalanamiz." },
-      { "title": "Shaxsiy menejer", "description": "Har bir mijozga barcha masalalarni hal qilish uchun shaxsiy menejer biriktiriladi." }
+      { "title": "Shaxsiy menejer", "description": "Har bir mijozга barcha masalalarni hal qilish uchun shaxsiy menejer biriktiriladi." }
     ],
     "how_it_works": [
       { "title": "Ariza yoki qo'ng'iroq", "description": "Siz saytda ariza qoldirasiz yoki bizga qo'ng'iroq qilasiz. Biz sizning ehtiyojlaringizni muhokama qilamiz." },
@@ -170,7 +169,7 @@
     "faq": [
         { "question": "General tozalashni qanchalik tez-tez o'tkazish kerak?", "answer": "Binoda ideal tozalik va gigienani saqlash uchun yiliga 1-2 marta general tozalash o'tkazish tavsiya etiladi." },
         { "question": "General tozalash qancha vaqt oladi?", "answer": "Vaqt ob'ekt maydoniga va ifloslanish darajasiga bog'liq. Odatda bu 4 dan 8 soatgacha davom etadi. Aniqlangan vaqtni ko'rikdan so'ng aytamiz." },
-        { "question": "Tozalash vaqtida ishtirok etish shartmi?", "answer": "Sizning ishtirokingiz shart emas. Kalitlarni menejerimizga qoldirishingiz mumkin. Mulkingiz xavfsizligiga kafolat beramiz." }
+        { "question": "Tozalash vaqtida ishtiroк etish shartmi?", "answer": "Sizning ishtirokingiz shart emas. Kalitlarni menejerimizga qoldirishingiz mumkin. Mulkingiz xavfsizligiga kafolat beramiz." }
     ]
   },
   "ServicePageHimchistka": {
@@ -190,7 +189,7 @@
     ],
     "faq": [
         { "question": "Mebel tozalashdan keyin qancha vaqtda quriydi?", "answer": "Qurish vaqti mato turi, xonadagi harorat va namlikka bog'liq. O'rtacha mebel 4-8 soat ichida to'liq quriydi." },
-        { "question": "Hamma dog'larni ketkazish mumkinmi?", "answer": "Biz professional dog' ketkazuvchi vositalardan foydalanamiz va ko'plab many yangi hamda standart dog'larni ketkaza olamiz. Juda eski yoki spesifik dog'lar (bo'yoq, kley) uchun natija doim ham kafolatlanmaydi, lekin biz qo'limizdan kelganini qilamiz." },
+        { "question": "Hamma dog'larni ketkazish mumkinmi?", "answer": "Biz professional dog' ketkazuvchi vositalardan foydalanamiz va ko'plab yangi hamda standart dog'larni ketkaza olamiz. Juda eski yoki spesifik dog'lar (bo'yoq, kley) uchun natija doim ham kafolatlanmaydi, lekin biz qo'limizdan kelganini qilamiz." },
         { "question": "Bu allergiyasi borlar uchun xavfsizmi?", "answer": "Ha, biz sertifikatlangan, gipoallergen vositalardan foydalanamiz. Tozalashdan so'ng biz matoni yaxshilab yuvib, barcha kimyoviy qoldiqlarni chiqaramiz." }
     ]
   },
@@ -210,7 +209,7 @@
         { "title": "Qabul", "description": "Siz yaltirab turgan oynalarni qabul qilib olasiz." }
     ],
     "faq": [
-        { "question": "Qanday ob-havoda oyna yuvish mumkin?", "answer": "Biz kuchli shamol va -5°C dan past совуқдан ташқари ҳар қандай об-ҳавода ишлаймиз. Энг мақбул об-ҳаво — қуруқ ва шамолсиз кун." },
+        { "question": "Qanday ob-havoda oyna yuvish mumkin?", "answer": "Biz kuchli shamol va -5°C dan past sovuqdan tashqari har qanday ob-havoda ishlaymiz. Eng maqbul ob-havo — quruq va shamolsiz kun." },
         { "question": "Balandlikdagi oynalarni yuvish mumkinmi?", "answer": "Ha, bizda har qanday balandlikdagi oynalarni yuvish uchun sertifikatlangan sanoat alpinistlari mavjud." },
         { "question": "Oyna yuvishga qanday tayyorlanish kerak?", "answer": "Podokonniklarni ortiqcha narsalardan bo'shatish va oynalarga kirishni ta'minlash tavsiya etiladi." }
     ]
@@ -232,7 +231,7 @@
     ],
     "faq": [
         { "question": "Ta'mirdan keyingi tozalashni qachon o'tkazish kerak?", "answer": "Barcha \"iflos\" ishlar tugagandan so'ng, lekin mebel va texnika o'rnatilishidan oldin tozalashni boshlash ma'qul. Biz sizga eng maqbul vaqt bo'yicha maslahat bera olamiz." },
-        { "question": "Katta строительный мусорларни олиб чиқасизми?", "answer": "Biz mayda va o'rtacha qurilish chiqindilarini yig'amiz va olib chiqamiz. Yirik gabaritli chiqindilarni olib chiqish alohida muhokama qilinadi." },
+        { "question": "Katta qurilish chiqindilarini olib chiqasizmi?", "answer": "Biz mayda va o'rtacha qurilish chiqindilarini yig'amiz va olib chiqamiz. Yirik gabaritli chiqindilarni olib chiqish alohida muhokama qilinadi." },
         { "question": "Ob'ektda necha kishi ishlaydi?", "answer": "Klinerlar soni ob'ekt maydoni va murakkabligiga bog'liq. Biz ishni maksimal darajada tez va sifatli bajarish uchun brigadani shakllantiramiz." }
     ]
   },
