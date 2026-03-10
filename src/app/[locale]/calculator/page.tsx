@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from 'react';
@@ -8,7 +9,7 @@ import { Slider } from '@/components/ui/slider';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { ContactForm } from "@/components/site/ContactForm";
-import { Info, CheckCircle2, Calculator, Sparkles } from 'lucide-react';
+import { Info, Calculator, Sparkles } from 'lucide-react';
 import { useDictionary } from '@/contexts/dictionary-context';
 import { cn } from '@/lib/utils';
 
@@ -22,21 +23,21 @@ export default function CalculatorPage() {
   const pricingConfig = {
     cleaning: {
       id: 'cleaning',
-      label: d.CalculatorPage.cleaning_types.regular || 'Уборка',
+      label: d.Constants.services[0].title,
       price: 20000,
-      description: 'Профессиональная уборка помещений'
+      description: d.Constants.services[0].description
     },
     facade: {
       id: 'facade',
-      label: d.ServicePageMoikaOkon.service_name || 'Фасад',
+      label: d.Constants.services[4].title,
       price: 16000,
-      description: 'Мойка фасадов и остекления'
+      description: d.Constants.services[4].description
     },
     drycleaning: {
       id: 'drycleaning',
-      label: d.ServicePageHimchistka.service_name || 'Химчистка',
+      label: d.Constants.services[5].title,
       price: 15000,
-      description: 'Глубокая чистка покрытий'
+      description: d.Constants.services[5].description
     }
   };
 
@@ -80,7 +81,7 @@ export default function CalculatorPage() {
                                 >
                                     <span className="font-bold text-lg mb-1">{item.label}</span>
                                     <span className="text-xs text-muted-foreground leading-tight">{item.description}</span>
-                                    <span className="mt-4 text-primary font-black">{new Intl.NumberFormat('ru-RU').format(item.price)} сум/м²</span>
+                                    <span className="mt-4 text-primary font-black">{new Intl.NumberFormat('ru-RU').format(item.price)} {d.HomePage.pricing_unit}</span>
                                 </Label>
                             </div>
                         ))}

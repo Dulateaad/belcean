@@ -1,3 +1,4 @@
+
 {
   "Header": {
     "services": "Xizmatlar",
@@ -41,7 +42,7 @@
     "how_it_works_title": "Biz qanday ishlaymiz",
     "why_us_title": "Nima uchun BeClean",
     "partners_title": "Bizning hamkorlarimiz",
-    "gallery_title": "Ishimiz natijalari (Oldin va Keyin)",
+    "gallery_title": "Ishimiz natijalari (Oldin va Keyин)",
     "testimonials_title": "Mijozlarimizning fikrlari",
     "cta_title": "Tozalikka tayyormisiz?",
     "cta_subtitle": "Ariza qoldiring va menejerimiz tafsilotlarni muhokama qilish va narxni hisoblash uchun siz bilan bog'lanadi.",
@@ -92,12 +93,12 @@
       { "title": "Sifat nazorati", "description": "Menejer tozalash sifatini nazorat qiladi va sizga bajarilgan ishlar to'g'risida hisobot taqdim etadi." }
     ],
      "prices": [
-      { "name": "Ofisni bir martalik tozalash", "price": "4 000 so'm / m² dan" },
+      { "name": "Ofisni bir martalik tozalash", "price": "20 000 so'm / m² dan" },
       { "name": "Abonent tozalash", "price": "3 000 000 so'm / oydan" },
       { "name": "General tozalash", "price": "10 000 so'm / m² dan" },
-      { "name": "Qurilishdan keyingi tozalash", "price": "15 000 so'm / m² dan" },
-      { "name": "Oynalarni yuvish", "price": "20 000 so'm / m² dan" },
-      { "name": "Mebelni kimyoviy tozalash", "price": "60 000 so'mdan" }
+      { "name": "Qurilishdan keyingi tozalash", "price": "16 000 so'm / m² dan" },
+      { "name": "Oynalarni yuvish", "price": "16 000 so'm / m² dan" },
+      { "name": "Mebelni kimyoviy tozalash", "price": "15 000 so'mdan" }
     ]
   },
   "Actions": {
@@ -232,7 +233,7 @@
     "faq": [
         { "question": "Ta'mirdan keyingi tozalashni qachon o'tkazish kerak?", "answer": "Barcha \"iflos\" ishlar tugagandan so'ng, lekin mebel va texnika o'rnatilishidan oldin tozalashni boshlash ma'qul. Biz sizga eng maqbul vaqt bo'yicha maslahat bera olamiz." },
         { "question": "Katta qurilish chiqindilarini olib chiqasizmi?", "answer": "Biz mayda va o'rtacha qurilish chiqindilarini yig'amiz va olib chiqamiz. Yirik gabaritli chiqindilarni olib chiqish alohida muhokama qilinadi." },
-        { "question": "Ob'ektda necha kishi ishlaydi?", "answer": "Klinerlar soni ob'ekt maydoni va murakkabligiga bog'liq. Biz ishni maksimal darajada tez va sifatli bajarish uchun brigadani shakllantiramiz." }
+        { "question": "Ob'ektda necha kishi ishlaydi?", "answer": "Klinerlar soni ob'ekt maydoni va murakkabligiga bog'liq. Мы формируем бригаду так, чтобы выполнить работу максимально быстро и качественно." }
     ]
   },
   "ServicePageOffice": {
@@ -241,7 +242,7 @@
     "service_name": "Ofislarni tozalash",
     "service_subtitle": "Biz ofisingizda ideal tozalikni ta'minlaymiz, xodimlaringiz va tashrif buyuruvchilaringiz uchun qulay hamda sog'lom ish muhitini yaratamiz.",
     "whats_included": [
-        "Pollarni namli tozalash", "Barcha sirtlardan changlarni yo'qotish", "Sanuzellarni tozalash va dezinfeksiya qilish", "Chiqindilarni olib chiqish", "Ko'zgular va shisha sirtlarni yuvish", "Oshxona yoki ovqatlanish joyini tozalash", "Gilam qoplamalarini changyutgichda tozalash", "Eshik tutqichlari va vikluchatellarni dezinfeksiya qilish"
+        "Pollarni namli tozalash", "Barcha sirtlardan changlarni yo'qotish", "Sanuzellarni tozalash va dezinfeksiya qilish", "Chiqindilarni olib chiqish", "Ko'zgular va shisha sirtlarni yuvish", "Oshxona yoki ovqatlanish جایینی tozalash", "Gilam qoplamalarini changyutgichda tozalash", "Eshik tutqichlari va vikluchatellarni dezinfeksiya qilish"
     ],
     "work_process": [
         { "title": "Ariza", "description": "Siz ariza qoldirasiz, biz tafsilotlarni aniqlaymiz." },
@@ -252,7 +253,7 @@
     ],
     "faq": [
         { "question": "Ofisni qanchalik tez-tez tozalash kerak?", "answer": "Tozalash chastotasi ofisning hajmi va odamlar oqimiga bog'liq. Standart variant — kundalik qo'llab-quvvatlovchi tozalash. Biz individual jadval tuzishimiz mumkin." },
-        { "question": "Gipoallergen vositalardan foydalanasizmi?", "answer": "Ha, so'rov bo'yicha biz xodimlar uchun xavfsiz bo'lgan sertifikatlangan gipoallergen va ekologik toza yuvish vositalaridan foydalanamiz." },
+        { "question": "Gipoallergen vositalardan foydalanasizmi?", "answer": "Ha, so'rov bo'yicha biz xodimlarni xavfsiz bo'lgan sertifikatlangan gipoallergen va ekologik toza yuvish vositalaridan foydalanamiz." },
         { "question": "Ish vaqtidan tashqari tozalashga buyurtma berish mumkinmi?", "answer": "Albatta. Biz ish kuningiz boshlanishidan oldin, u tugagandan keyin yoki dam olish kunlari tozalash o'tkazishimiz mumkin." }
     ]
   },
@@ -270,7 +271,7 @@
       "contact_note": "Aniq narxni bilish uchun biz bilan bog'laning"
   },
   "FloatingInquiry": {
-    "aria_label": "Ariza qoldirish",
+    "aria_label": "Tozalashga buyurtma",
     "title": "Tozalashga buyurtma",
     "description": "Raqamingizni qoldiring va biz tafsilotlarni muhokama qilish uchun tez orada sizга qo'ng'iroq qilamiz.",
     "telegram": "Telegramda yozish"

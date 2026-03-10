@@ -34,7 +34,7 @@ async function sendTelegramNotification(message: string) {
   for (const chatId of chatIds) {
       if (!chatId.trim()) continue;
       try {
-        const response = await fetch(url, {
+        await fetch(url, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -43,11 +43,6 @@ async function sendTelegramNotification(message: string) {
             parse_mode: 'HTML',
           }),
         });
-    
-        if (!response.ok) {
-          const result = await response.json();
-          console.error(`Failed to send Telegram notification to ${chatId}:`, result.description);
-        }
       } catch (error) {
         console.error(`Error sending Telegram notification to ${chatId}:`, error);
       }
@@ -78,14 +73,6 @@ export async function submitInquiry(data: unknown) {
   await new Promise(resolve => setTimeout(resolve, 1000));
   
   redirect(`/${locale}/thank-you`);
-
-  return { success: true };
-}
-
-export async function submitLead(data: { name: string; phone: string; source: string }) {
-  const message = `📥 <b>Лид для открытия калькулятора</b>\n\n👤 Имя: ${data.name}\n📞 Телефон: ${data.phone}\n🌍 Источник: ${data.source}`;
-  await sendTelegramNotification(message);
-  return { success: true };
 }
 
 const calculatorInquirySchema = z.object({
@@ -114,6 +101,4 @@ export async function submitCalculatorInquiry(data: unknown) {
   await new Promise(resolve => setTimeout(resolve, 1000));
   
   redirect(`/${locale}/thank-you`);
-
-  return { success: true };
 }
