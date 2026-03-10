@@ -118,7 +118,7 @@
       "process_title": "Ish jarayoni",
       "faq_title": "Ko'p beriladigan savollar",
       "price_title": "Taxminiy narxlar",
-      "form_title": "Tozalashga buyurtma berish",
+      "form_title": "Tozalashга buyurtma berish",
       "form_title_windows": "Oyna yuvishga buyurtma",
       "form_title_furniture": "Kimyoviy tozalashga buyurtma",
       "form_title_office": "Ofis tozalashga buyurtma",
@@ -169,7 +169,7 @@
     "faq": [
         { "question": "General tozalashni qanchalik tez-tez o'tkazish kerak?", "answer": "Binoda ideal tozalik va gigienani saqlash uchun yiliga 1-2 marta general tozalash o'tkazish tavsiya etiladi." },
         { "question": "General tozalash qancha vaqt oladi?", "answer": "Vaqt ob'ekt maydoniga va ifloslanish darajasiga bog'liq. Odatda bu 4 dan 8 soatgacha davom etadi. Aniqlangan vaqtni ko'rikdan so'ng aytamiz." },
-        { "question": "Tozalash vaqtida ishtiroк etish shartmi?", "answer": "Sizning ishtirokingiz shart emas. Kalitlarni menejerimizga qoldirishingiz mumkin. Mulkingiz xavfsizligiga kafolat beramiz." }
+        { "question": "Tozalash vaqtida ishtiroк etish shartmi?", "answer": "Sizning ishtirokingiz shart emas. Kalitlarni menejerimizга qoldirishingiz mumkin. Mulkingiz xavfsizligiga kafolat beramiz." }
     ]
   },
   "ServicePageHimchistka": {
@@ -211,7 +211,7 @@
     "faq": [
         { "question": "Qanday ob-havoda oyna yuvish mumkin?", "answer": "Biz kuchli shamol va -5°C dan past sovuqdan tashqari har qanday ob-havoda ishlaymiz. Eng maqbul ob-havo — quruq va shamolsiz kun." },
         { "question": "Balandlikdagi oynalarni yuvish mumkinmi?", "answer": "Ha, bizda har qanday balandlikdagi oynalarni yuvish uchun sertifikatlangan sanoat alpinistlari mavjud." },
-        { "question": "Oyna yuvishga qanday tayyorlanish kerak?", "answer": "Podokonniklarni ortiqcha narsalardan bo'shatish va oynalarga kirishni ta'minlash tavsiya etiladi." }
+        { "question": "Oyna yuvishга qanday tayyorlanish kerak?", "answer": "Podokonniklarni ortiqcha narsalardan bo'shatish va oynalarga kirishni ta'minlash tavsiya etiladi." }
     ]
   },
   "ServicePagePoslestroy": {
@@ -272,7 +272,49 @@
   "FloatingInquiry": {
     "aria_label": "Ariza qoldirish",
     "title": "Tozalashga buyurtma",
-    "description": "Raqamingizni qoldiring va biz tafsilotlarni muhokama qilish uchun tez orada sizga qo'ng'iroq qilamiz.",
+    "description": "Raqamingizni qoldiring va biz tafsilotlarni muhokama qilish uchun tez orada sizга qo'ng'iroq qilamiz.",
     "telegram": "Telegramda yozish"
+  },
+  "QuizPage": {
+    "title": "Xizmatni tanlash",
+    "subtitle": "Bir nechta savolga javob bering va biz siz uchun ideal tozalash variantini tanlaymiz.",
+    "step_prefix": "Bosqich",
+    "step_of": "dan",
+    "property_type_title": "Ob'ekt turi",
+    "cleaning_goal_title": "Tozalash maqsadi",
+    "area_title": "Xona maydoni",
+    "result_title": "Tavsiya etamiz: {service}",
+    "result_description": "Sizning javoblaringizga ko'ra, {area} m² maydonga ega {propertyType} uchun {goal} eng mos keladi.",
+    "back_button": "Orqaga",
+    "next_button": "Keyingisi",
+    "show_result_button": "Natijani ko'rsatish",
+    "start_over_button": "Qaytadan boshlash",
+    "learn_more_button": "Xizmat haqida ko'proq bilish",
+    "cta_title": "{service}ga buyurtma berish",
+    "cta_subtitle": "Ariza qoldiring va biz ob'ektingizni tozalash tafsilotlarini muhokama qilamiz.",
+    "property_types": {
+      "office": "Ofis",
+      "business-center": "Biznes markazi",
+      "shop": "Do'kon",
+      "clinic": "Klinika",
+      "warehouse": "Ombor",
+      "other": "Boshqa"
+    },
+    "property_type_genitive": {
+      "office": "ofis",
+      "business-center": "biznes markazi",
+      "shop": "do'kon",
+      "clinic": "klinika",
+      "warehouse": "ombor",
+      "other": "ob'ektingiz"
+    },
+    "cleaning_goals": {
+      "subscription": "Muntazam tozalash",
+      "general": "General tozalash",
+      "post-construction": "Ta'mirdan keyin",
+      "furniture": "Mebel tozalash",
+      "windows": "Oyna yuvish"
+    },
+    "area_slider_hint": "Maydonni tanlash uchun polzunokni suring"
   }
 }

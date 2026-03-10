@@ -1,4 +1,3 @@
-
 {
   "Header": {
     "services": "Услуги",
@@ -282,5 +281,47 @@
     "title": "Заказать уборку",
     "description": "Оставьте свой номер, и мы перезвоним вам в ближайшее время, чтобы обсудить все детали.",
     "telegram": "Написать в Telegram"
+  },
+  "QuizPage": {
+    "title": "Подбор услуги",
+    "subtitle": "Ответьте на несколько вопросов, и мы подберем идеальный вариант уборки для вас.",
+    "step_prefix": "Шаг",
+    "step_of": "из",
+    "property_type_title": "Тип объекта",
+    "cleaning_goal_title": "Цель уборки",
+    "area_title": "Площадь помещения",
+    "result_title": "Рекомендуем: {service}",
+    "result_description": "На основе ваших ответов для {propertyType} площадью {area} м² лучше всего подойдет {goal}.",
+    "back_button": "Назад",
+    "next_button": "Далее",
+    "show_result_button": "Показать результат",
+    "start_over_button": "Начать заново",
+    "learn_more_button": "Узнать больше об услуге",
+    "cta_title": "Заказать {service}",
+    "cta_subtitle": "Оставьте заявку, и мы обсудим детали уборки вашего объекта.",
+    "property_types": {
+      "office": "Офис",
+      "business-center": "Бизнес-центр",
+      "shop": "Магазин",
+      "clinic": "Клиника",
+      "warehouse": "Склад",
+      "other": "Другое"
+    },
+    "property_type_genitive": {
+      "office": "офиса",
+      "business-center": "бизнес-центра",
+      "shop": "магазина",
+      "clinic": "клиники",
+      "warehouse": "склада",
+      "other": "вашего объекта"
+    },
+    "cleaning_goals": {
+      "subscription": "Регулярная уборка",
+      "general": "Генеральная уборка",
+      "post-construction": "После ремонта",
+      "furniture": "Химчистка мебели",
+      "windows": "Мойка окон"
+    },
+    "area_slider_hint": "Передвигайте ползунок для выбора площади"
   }
 }

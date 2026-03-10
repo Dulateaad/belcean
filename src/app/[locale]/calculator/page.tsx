@@ -22,19 +22,19 @@ export default function CalculatorPage() {
   const pricingConfig = {
     cleaning: {
       id: 'cleaning',
-      label: 'Уборка',
+      label: d.CalculatorPage.cleaning_types.regular || 'Уборка',
       price: 20000,
       description: 'Профессиональная уборка помещений'
     },
     facade: {
       id: 'facade',
-      label: 'Фасад',
+      label: d.ServicePageMoikaOkon.service_name || 'Фасад',
       price: 16000,
       description: 'Мойка фасадов и остекления'
     },
     drycleaning: {
       id: 'drycleaning',
-      label: 'Химчистка',
+      label: d.ServicePageHimchistka.service_name || 'Химчистка',
       price: 15000,
       description: 'Глубокая чистка покрытий'
     }
@@ -60,7 +60,7 @@ export default function CalculatorPage() {
           <div className="lg:col-span-3 space-y-8">
             <Card className="border-primary/10 shadow-lg">
                 <CardHeader>
-                    <CardTitle className="text-xl">1. Выберите услугу</CardTitle>
+                    <CardTitle className="text-xl">1. {d.Header.services}</CardTitle>
                 </CardHeader>
                 <CardContent>
                     <RadioGroup 
@@ -90,7 +90,7 @@ export default function CalculatorPage() {
 
             <Card className="border-primary/10 shadow-lg">
                 <CardHeader>
-                    <CardTitle className="text-xl">2. Укажите площадь</CardTitle>
+                    <CardTitle className="text-xl">2. {d.QuizPage.area_title}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-8">
                     <div className="flex items-center gap-4">
@@ -114,26 +114,12 @@ export default function CalculatorPage() {
                             <span className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground text-sm">м²</span>
                         </div>
                     </div>
-                    
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                        {[50, 100, 250, 500].map((val) => (
-                            <Button 
-                                key={val} 
-                                variant="outline" 
-                                size="sm" 
-                                onClick={() => setArea(val)}
-                                className={cn(area === val && "bg-primary/10 border-primary text-primary")}
-                            >
-                                {val} м²
-                            </Button>
-                        ))}
-                    </div>
                 </CardContent>
             </Card>
 
             <div className="p-8 rounded-2xl bg-primary text-primary-foreground shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>
-                    <p className="text-primary-foreground/80 font-medium uppercase tracking-wider text-sm mb-1">Ориентировочная стоимость</p>
+                    <p className="text-primary-foreground/80 font-medium uppercase tracking-wider text-sm mb-1">{d.HomePage.pricing_title}</p>
                     <h2 className="text-4xl md:text-5xl font-black">{formattedTotal} <span className="text-2xl opacity-80">сум</span></h2>
                 </div>
                 <div className="flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
@@ -147,7 +133,7 @@ export default function CalculatorPage() {
                 <div className="space-y-1">
                     <p className="font-bold text-lg">{t.contact_note}</p>
                     <p className="text-muted-foreground">
-                        Окончательная стоимость зависит от степени загрязнения, наличия мебели и сложности работ. 
+                        Окончательная стоимость зависит от сложности работ. 
                         Наш менеджер приедет к вам для бесплатного осмотра и назовет точную цену.
                     </p>
                 </div>
@@ -166,17 +152,6 @@ export default function CalculatorPage() {
                     />
                 </CardContent>
              </Card>
-             
-             <div className="grid grid-cols-2 gap-4">
-                <div className="flex flex-col items-center p-4 bg-secondary rounded-xl text-center">
-                    <CheckCircle2 className="w-8 h-8 text-primary mb-2" />
-                    <span className="text-sm font-bold leading-tight">Договор и гарантия</span>
-                </div>
-                <div className="flex flex-col items-center p-4 bg-secondary rounded-xl text-center">
-                    <CheckCircle2 className="w-8 h-8 text-primary mb-2" />
-                    <span className="text-sm font-bold leading-tight">Бесплатный выезд</span>
-                </div>
-             </div>
           </div>
         </div>
       </div>
