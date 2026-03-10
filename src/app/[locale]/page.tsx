@@ -21,7 +21,10 @@ import {
   Calculator,
   Quote,
   Star,
-  Handshake
+  Handshake,
+  Trophy,
+  Zap,
+  Wallet
 } from 'lucide-react';
 import { ContactForm } from '@/components/site/ContactForm';
 import * as constants from '@/lib/constants';
@@ -121,11 +124,12 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
           </div>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 w-full">
             {services.map((service: any, index: number) => {
+              const ServiceIcon = service.icon;
               return (
                 <Card key={index} className="flex flex-col overflow-hidden bg-background border border-transparent hover:border-primary transition-colors duration-300 h-full group">
                    <CardContent className="p-8 flex-grow flex flex-col items-center">
                     <div className="bg-primary/10 p-4 rounded-xl text-primary mb-6">
-                       <service.icon className="w-10 h-10" />
+                       <ServiceIcon className="w-10 h-10" />
                     </div>
                     <CardTitle className="text-xl mt-4">{service.title}</CardTitle>
                     <p className="text-muted-foreground mt-2 mb-4 flex-grow">{service.description}</p>
@@ -169,15 +173,18 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
             </h2>
           </div>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 w-full">
-            {whyBeClean.map((reason: any, index: number) => (
-              <div key={index} className="flex flex-col items-center text-center gap-4 p-8 bg-background rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                <div className="bg-primary/10 p-4 rounded-full text-primary">
-                  <reason.icon className="w-10 h-10" />
+            {whyBeClean.map((reason: any, index: number) => {
+              const ReasonIcon = reason.icon;
+              return (
+                <div key={index} className="flex flex-col items-center text-center gap-4 p-8 bg-background rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <div className="bg-primary/10 p-4 rounded-full text-primary">
+                    <ReasonIcon className="w-10 h-10" />
+                  </div>
+                  <h3 className="text-xl font-bold">{reason.title}</h3>
+                  <p className="text-muted-foreground text-sm">{reason.description}</p>
                 </div>
-                <h3 className="text-xl font-bold">{reason.title}</h3>
-                <p className="text-muted-foreground text-sm">{reason.description}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

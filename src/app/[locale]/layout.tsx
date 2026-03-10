@@ -88,7 +88,6 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <head>
-        {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -100,8 +99,6 @@ export default async function LocaleLayout({
             `,
           }}
         />
-        {/* End Google Tag Manager */}
-        {/* Google tag (gtag.js) */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-VT6Q7ZS6JZ"></script>
         <script
           dangerouslySetInnerHTML={{
@@ -114,12 +111,10 @@ export default async function LocaleLayout({
             `,
           }}
         />
-        {/* Yandex.Metrika counter */}
         <script
           type="text/javascript"
           dangerouslySetInnerHTML={{ __html: yandexMetrikaScript }}
         />
-        {/* End Yandex.Metrika counter */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet" />
@@ -130,7 +125,6 @@ export default async function LocaleLayout({
         <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module" async></script>
       </head>
       <body className="font-body antialiased min-h-screen flex flex-col bg-background">
-        {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-K3RV87GB"
@@ -139,8 +133,6 @@ export default async function LocaleLayout({
             style={{ display: 'none', visibility: 'hidden' }}
           ></iframe>
         </noscript>
-        {/* End Google Tag Manager (noscript) */}
-        {/* Yandex.Metrika counter (noscript) */}
         <noscript>
           <div>
             <img
@@ -150,7 +142,6 @@ export default async function LocaleLayout({
             />
           </div>
         </noscript>
-        {/* /Yandex.Metrika counter */}
         <DictionaryProvider dictionary={t}>
           <div className="animate-fade-in flex flex-col flex-1">
             <SiteHeader />
