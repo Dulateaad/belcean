@@ -23,17 +23,67 @@ export const getBeforeAfterImages = () => [
   "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%B4%D0%BE5.jpeg?alt=media&token=def6b829-07a3-4a00-8e60-952d6ea7b277"
 ];
 
-export const getTestimonialImages = () => [
-  "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B7%D0%B8%D0%B25.jpeg?alt=media&token=f9245ddd-be63-40ea-9ae4-ea7dc08fca10",
-  "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B2.jpeg?alt=media&token=44ae9e55-5a1b-43fc-abbe-477e00b2ff41",
-  "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B211.jpeg?alt=media&token=c55789a6-786a-43d6-a140-4c61c4339866",
-  "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B22.jpeg?alt=media&token=d34eab04-ed63-47f0-ad5e-4cbc262bf710",
-  "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B23.jpeg?alt=media&token=641c6b83-6b68-4a13-97c6-8a8a3f6a3e1b",
-  "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B24.jpeg?alt=media&token=7347fc14-8c97-499b-9acb-cc05eb416646",
-  "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B25.jpeg?alt=media&token=9c069362-8236-4fe4-a19a-9155c7835b56",
-  "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B26.jpeg?alt=media&token=412f6d12-a4f6-4002-bdda-37a69a589af0",
-  "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B27.jpeg?alt=media&token=321bf542-a13f-445a-87b9-7df5fd48df3a",
-  "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B29.jpeg?alt=media&token=8d031a7a-bbb4-4f30-9c70-5b7c89785050"
+export const getTestimonials = () => [
+  {
+    name: "Азиз Махмудов",
+    role: "Владелец кафе",
+    avatar: "https://picsum.photos/seed/aziz/100/100",
+    image: "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B7%D0%B8%D0%B25.jpeg?alt=media&token=f9245ddd-be63-40ea-9ae4-ea7dc08fca10"
+  },
+  {
+    name: "Малика Саидова",
+    role: "Частный клиент",
+    avatar: "https://picsum.photos/seed/malika/100/100",
+    image: "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B2.jpeg?alt=media&token=44ae9e55-5a1b-43fc-abbe-477e00b2ff41"
+  },
+  {
+    name: "Джахонгир Обидов",
+    role: "Менеджер офиса",
+    avatar: "https://picsum.photos/seed/jakhon/100/100",
+    image: "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B211.jpeg?alt=media&token=c55789a6-786a-43d6-a140-4c61c4339866"
+  },
+  {
+    name: "Наргиза Каримова",
+    role: "Директор клиники",
+    avatar: "https://picsum.photos/seed/nargiza/100/100",
+    image: "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B22.jpeg?alt=media&token=d34eab04-ed63-47f0-ad5e-4cbc262bf710"
+  },
+  {
+    name: "Сардор Умаров",
+    role: "IT-предприниматель",
+    avatar: "https://picsum.photos/seed/sardor/100/100",
+    image: "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B23.jpeg?alt=media&token=641c6b83-6b68-4a13-97c6-8a8a3f6a3e1b"
+  },
+  {
+    name: "Дильдора Касымова",
+    role: "Владелица магазина",
+    avatar: "https://picsum.photos/seed/dildora/100/100",
+    image: "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B24.jpeg?alt=media&token=7347fc14-8c97-499b-9acb-cc05eb416646"
+  },
+  {
+    name: "Фаррух Ахмедов",
+    role: "Управляющий БЦ",
+    avatar: "https://picsum.photos/seed/farrukh/100/100",
+    image: "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B25.jpeg?alt=media&token=9c069362-8236-4fe4-a19a-9155c7835b56"
+  },
+  {
+    name: "Гульнора Рахимова",
+    role: "Счастливый клиент",
+    avatar: "https://picsum.photos/seed/gulnora/100/100",
+    image: "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B26.jpeg?alt=media&token=412f6d12-a4f6-4002-bdda-37a69a589af0"
+  },
+  {
+    name: "Бобур Исхаков",
+    role: "Руководитель склада",
+    avatar: "https://picsum.photos/seed/bobur/100/100",
+    image: "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B27.jpeg?alt=media&token=321bf542-a13f-445a-87b9-7df5fd48df3a"
+  },
+  {
+    name: "Рано Турсунова",
+    role: "HR-менеджер",
+    avatar: "https://picsum.photos/seed/rano/100/100",
+    image: "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D0%BE%D1%82%D0%B7%D0%B8%D0%B29.jpeg?alt=media&token=8d031a7a-bbb4-4f30-9c70-5b7c89785050"
+  }
 ];
 
 export const getClientTypes = (t: any) => {

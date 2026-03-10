@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
   CarouselContent,
   CarouselItem,
@@ -35,7 +36,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
   const whyBeClean = constants.getWhyBeClean(t);
   const howItWorks = constants.getHowItWorks(t);
   const beforeAfterImages = constants.getBeforeAfterImages();
-  const testimonialImages = constants.getTestimonialImages();
+  const testimonials = constants.getTestimonials();
 
   const heroCarouselImages = [
     PlaceHolderImages.find(p => p.id === 'hero-carousel-1'),
@@ -214,17 +215,29 @@ export default async function Home({ params: { locale } }: { params: { locale: L
           </h2>
           <AutoCarousel className="w-full mx-auto" delay={5000}>
             <CarouselContent>
-              {testimonialImages.map((imageUrl: string, index: number) => (
+              {testimonials.map((item: any, index: number) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-2 h-full">
-                    <Card className="h-full overflow-hidden border-0 shadow-none bg-transparent">
-                       <Image
-                          src={imageUrl}
-                          alt={`Testimonial ${index + 1}`}
-                          width={400}
-                          height={600}
-                          className="w-full rounded-xl object-contain shadow-md"
-                       />
+                    <Card className="h-full overflow-hidden flex flex-col bg-background">
+                       <CardHeader className="flex flex-row items-center gap-4 p-6 text-left">
+                          <Avatar className="h-12 w-12 ring-2 ring-primary/10">
+                            <AvatarImage src={item.avatar} alt={item.name} />
+                            <AvatarFallback>{item.name[0]}</AvatarFallback>
+                          </Avatar>
+                          <div className="flex flex-col">
+                            <p className="font-bold text-base leading-none mb-1">{item.name}</p>
+                            <p className="text-sm text-muted-foreground">{item.role}</p>
+                          </div>
+                       </CardHeader>
+                       <CardContent className="p-0 border-t bg-muted/5">
+                          <Image
+                            src={item.image}
+                            alt={`Testimonial from ${item.name}`}
+                            width={400}
+                            height={600}
+                            className="w-full object-contain"
+                          />
+                       </CardContent>
                     </Card>
                   </div>
                 </CarouselItem>
