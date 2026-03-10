@@ -25,7 +25,13 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
   const t = await getDictionary(locale);
   const pageData = t.ServicePageOffice;
   const prices = constants.getPrices(t);
-  const priceItem = prices.find(p => p.name.includes(t.Constants.prices[0].name.split(' ').slice(0,2).join(' ')));
+  
+  // Улучшенный поиск цены по названию сервиса
+  const priceItem = prices.find(p => 
+    p.name.toLowerCase().includes('офис') || 
+    p.name.toLowerCase().includes('ofis')
+  );
+  
   const serviceImage = PlaceHolderImages.find(p => p.id === 'service-office');
 
   return (

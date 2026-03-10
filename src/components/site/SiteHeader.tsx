@@ -1,3 +1,4 @@
+
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -36,13 +37,12 @@ export function SiteHeader() {
   };
 
   const navLinks = [
-    { href: '#contacts', label: t.Header.contacts },
+    { href: `/${currentLocale}#contacts`, label: t.Header.contacts },
   ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" suppressHydrationWarning>
       <div className="container flex h-20 items-center justify-between">
-        {/* Левая часть: Меню (мобилка) / Лого (десктоп) */}
         <div className="flex flex-1 items-center justify-start md:flex-initial">
             <div className="md:hidden">
               <Sheet>
@@ -90,9 +90,7 @@ export function SiteHeader() {
             </Link>
         </div>
 
-        {/* Центр: Номер + 24/7 (мобилка) / Навигация (десктоп) */}
         <div className="flex flex-1 items-center justify-center md:flex-initial">
-             {/* Мобильный номер и 24/7 (только мобилка) */}
              <div className="md:hidden flex flex-col items-center pr-4">
                 <a href="tel:+998773566070" className="flex items-center gap-1 font-bold text-lg sm:text-xl hover:text-primary transition-colors leading-none">
                     <Phone className="h-4 w-4 text-primary" />
@@ -104,7 +102,6 @@ export function SiteHeader() {
                 </div>
              </div>
 
-             {/* Десктопная навигация */}
              <nav className="hidden items-center space-x-6 text-base font-medium md:flex">
               <DropdownMenu>
                 <DropdownMenuTrigger className="flex items-center outline-none hover:text-primary transition-colors">
@@ -130,10 +127,8 @@ export function SiteHeader() {
             </nav>
         </div>
 
-        {/* Правая часть: Контакты (десктоп) / Язык (мобилка) */}
         <div className="flex flex-1 items-center justify-end md:flex-initial">
             <div className="flex items-center gap-x-2 sm:gap-x-4">
-                {/* Номер телефона (десктоп) */}
                 <div className="hidden md:flex items-center gap-4">
                     <a href="tel:+998773566070" className="flex items-center gap-1 font-bold text-xl hover:text-primary transition-colors">
                         <Phone className="h-5 w-5 text-primary" />
@@ -141,7 +136,6 @@ export function SiteHeader() {
                     </a>
                 </div>
 
-                {/* Время работы (только десктоп) и язык (всегда) */}
                 <div className="flex items-center gap-2 sm:gap-4">
                     <div className="hidden md:flex items-center gap-1">
                         <Clock className="h-4 w-4 text-primary" />
@@ -165,7 +159,7 @@ export function SiteHeader() {
                 </div>
 
                 <Button asChild className="hidden lg:inline-flex ml-4">
-                    <Link href="#cta">{t.Header.call_request}</Link>
+                    <Link href={`/${currentLocale}#cta`}>{t.Header.call_request}</Link>
                 </Button>
             </div>
         </div>

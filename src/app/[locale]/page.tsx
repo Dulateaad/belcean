@@ -97,7 +97,7 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
                       alt={client.name}
                       width={96}
                       height={96}
-                      className="h-24 w-24 rounded-2xl object-cover"
+                      className="h-24 w-24 rounded-2xl object-cover shadow-sm"
                     />
                   ) : (
                     <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-primary/10 p-4 text-primary">
@@ -183,7 +183,7 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
 
       <section id="gallery" className="w-full py-16 md:py-32 text-center overflow-x-clip">
         <div className="max-w-[1792px] mx-auto px-4 md:px-6">
-          <h2 className="text-lg font-bold tracking-tighter sm:text-xl font-headline mb-12 flex items-center justify-center gap-3">
+          <h2 className="text-xl font-bold tracking-tighter sm:text-2xl font-headline mb-12 flex items-center justify-center gap-3">
             <Camera className="w-8 h-8 text-primary" /> {t.HomePage.gallery_title}
           </h2>
           <AutoCarousel className="w-full mx-auto">

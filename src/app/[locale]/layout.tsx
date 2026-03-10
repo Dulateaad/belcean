@@ -28,7 +28,7 @@ export default async function LocaleLayout({
   const { locale } = await params;
   const t = await getDictionary(locale);
   const headersList = await headers();
-  const ip = headersList.get('x-forwarded-for')?.split(',')[0].trim() || '';
+  const ip = headersList.get('x-forwarded-for')?.split(',')[0].trim() || '127.0.0.1';
 
   const yandexMetrikaScript = `
     window.yaParams = { ip_address: "${ip}" };
