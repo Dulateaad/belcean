@@ -35,7 +35,7 @@ export const getClientTypes = (t: any) => {
     const clientTypesText = t.Constants.client_types;
     return [
         { name: clientTypesText[0].name, icon: Building2, imageUrl: 'https://img.freepik.com/premium-vector/3d-cartoon-office-building-icon_1296140-2364.jpg?semt=ais_hybrid&w=740&q=80' },
-        { name: clientTypesText[1].name, icon: Building2, imageUrl: 'https://img.freepik.com/free-photo/3d-rendering-abstract-building_23-2150896894.jpg?semt=ais_hybrid&w=740&q=80' },
+        { name: clientTypesText[1].name, icon: Building2, imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPaby8QKhKQ595Z8p8r8wjm4BiLN8eTHnT0A&s' },
         { name: clientTypesText[2].name, icon: ShoppingBag, imageUrl: 'https://cdn3d.iconscout.com/3d/premium/thumb/shop-3d-icon-png-download-7311175.png' },
         { name: clientTypesText[3].name, icon: HeartPulse, imageUrl: 'https://cdn3d.iconscout.com/3d/premium/thumb/hospital-building-3d-icon-png-download-6742138.png' },
         { name: clientTypesText[4].name, icon: HardHat, imageUrl: 'https://img.freepik.com/premium-photo/warehouse-3d-render-icon-illustration_726846-1766.jpg' },
