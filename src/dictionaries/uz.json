@@ -33,10 +33,7 @@
     "meta_keywords": "toshkent tozalash, ofislarni tozalash, tozalash xizmatlari, professional tozalash, BECLEAN SERVIS",
     "hero_title": "Toshkentda biznes va uy uchun professional tozalash",
     "hero_subtitle": "Ofislar, BM, klinikalar. Shartnoma. Sifat nazorati.",
-    "pricing_title": "Umumiy qiymat",
-    "pricing_unit": "so'm",
     "calculate_button": "Narxni hisoblash",
-    "form_title": "Tozalashga buyurtma",
     "clients_title": "Biz kimlar uchun ishlaymiz",
     "clients_subtitle": "Biz har xil turdagi tijorat ob'ektlari uchun sifatli tozalash xizmatlarini taqdim etamiz.",
     "services_title": "Bizning xizmatlarimiz",
@@ -52,7 +49,8 @@
     "contacts_address": "Manzil:",
     "contacts_phone": "Telefon:",
     "contacts_email": "Email:",
-    "contacts_hours": "Ish vaqti:"
+    "contacts_hours": "Ish vaqti:",
+    "pricing_unit": "so'm"
   },
   "Constants": {
     "services": [
@@ -104,6 +102,102 @@
       "form_title_construction": "Qurilishdan keyingi buyurtma",
       "price_postfix_individual": "Narx individual hisoblanadi.",
       "price_postfix_complexity": "Aniq narx maydonga va ishning murakkabligiga bog'liq."
+  },
+  "ServicePageAbonentskiy": {
+    "service_name": "Abonent tozalash",
+    "service_subtitle": "Ofisingiz yoki tijorat ob'ektingizni kelishilgan jadval bo'yicha muntazam ravishda professional tozalash.",
+    "meta_title": "Toshkentda abonent tozalash - Biznes uchun muntazam tozalik",
+    "meta_description": "Toshkentda professional abonent tozalash xizmati. Shartnoma asosida ofis va binolarni muntazam tozalash. Yuqori sifat, o'qitilgan xodimlar.",
+    "whats_included": ["Pollarni namli tozalash", "Ishchi yuzalarni tozalash", "Mebellardan changni artish", "Sanuzellarni sanitariya ishlovi", "Chiqindilarni olib chiqish", "Sarf materiallarini almashtirish"],
+    "work_process": [
+      {"title": "Shartnoma", "description": "Aniq jadval bilan uzoq muddatli shartnoma tuzamiz."},
+      {"title": "Jamoa", "description": "Sizga doimiy mutaxassislar guruhi biriktiriladi."},
+      {"title": "Nazorat", "description": "Ob'ekt menejeri tomonidan muntazam sifat nazorati."}
+    ],
+    "faq": [
+      {"question": "Tozalash qanchalik tez-tez o'tkaziladi?", "answer": "Jadval individual tuziladi: har kuni, haftada 2-3 marta yoki sizning so'rovingizga ko'ra."},
+      {"question": "Inventar uchun kim javobgar?", "answer": "Biz barcha zarur uskunalar va kimyoviy vositalarni o'zimiz bilan olib kelamiz."}
+    ]
+  },
+  "ServicePageGeneralnaya": {
+    "service_name": "General tozalash",
+    "service_subtitle": "Barcha yuzalarni, shu jumladan borish qiyin bo'lgan joylarni kompleks va chuqur tozalash.",
+    "meta_title": "Toshkentda general tozalash - Kompleks klining xizmati",
+    "meta_description": "Toshkentda professional general tozalash. Ofislar, uylar va kvartiralarni sinchkovlik bilan tozalash. Qattiq kirlarni ketkazish.",
+    "whats_included": ["Deraza va ramalarni yuvish", "Pollarni chuqur tozalash", "Devor va shiftlarni tozalash", "Yumshoq mebellarni kimyoviy tozalash (ixtiyoriy)", "Yog' va qatlamlarni ketkazish", "Yuzalarni dezinfeksiya qilish"],
+    "work_process": [
+      {"title": "Ko'rik", "description": "Menejer ifloslanish darajasini baholaydi."},
+      {"title": "Tozalash", "description": "Kliningchilar guruhi tekshiruv ro'yxati bo'yicha ishlaydi."},
+      {"title": "Qabul qilish", "description": "Siz ishni tekshirasiz va dalolatnomani imzolaysiz."}
+    ],
+    "faq": [
+      {"question": "Tozalash qancha vaqt oladi?", "answer": "Maydonga qarab, 4 dan 8 soatgacha."},
+      {"question": "Men ishtirok etishim kerakmi?", "answer": "Shart emas, biz mulkingiz xavfsizligini kafolatlaymiz."}
+    ]
+  },
+  "ServicePageHimchistka": {
+    "service_name": "Mebelni kimyoviy tozalash",
+    "service_subtitle": "Divanlar, kreslolar, stullar va gilam qoplamalarini professional ekstraktorli tozalash.",
+    "meta_title": "Toshkentda mebel kimyoviy tozalash - Divanlarni yuvish",
+    "meta_description": "Toshkentda professional mebel kimyoviy tozalash. Dog'lar va hidlarni ketkazish. Xavfsiz kimyo, tezkor natija.",
+    "whats_included": ["Dog'larni ketkazish", "Hidlarni yo'qotish", "Changni chuqur ekstraksiya qilish", "Mato rangini tiklash", "Antibakterial ishlov berish"],
+    "work_process": [
+      {"title": "Sinov", "description": "Matoning tozalash vositasiga reaksiyasini tekshiramiz."},
+      {"title": "Tozalash", "description": "Bosim ostida ifloslanishni ketkazishning asosiy bosqichi."},
+      {"title": "Quritish", "description": "Mebel biroz nam qoladi va bir necha soat ichida quriydi."}
+    ],
+    "faq": [
+      {"question": "Kimyo bolalar uchun xavfsizmi?", "answer": "Ha, biz sertifikatlangan gipoallergen vositalardan foydalanamiz."},
+      {"question": "Mebel qancha vaqtda quriydi?", "answer": "Odatda shamollatishga qarab 3 soatdan 6 soatgacha."}
+    ]
+  },
+  "ServicePageMoikaOkon": {
+    "service_name": "Oynalarni yuvish",
+    "service_subtitle": "Har qanday balandlikda derazalar, vitrinalar va fasadlarni professional yuvish.",
+    "meta_title": "Toshkentda oyna yuvish - Toza vitrina va fasadlar",
+    "meta_description": "Toshkentda professional oyna yuvish. Shisha, rama va deraza tokchalarini tozalash. Vitrina va fasadlar bilan ishlaymiz.",
+    "whats_included": ["Shishalarni ikki tomondan yuvish", "Rama va ramalararo bo'shliqni tozalash", "Tokchalar va suv qaytargichlarni yuvish", "Stikerlar va bo'yoq izlarini ketkazish"],
+    "work_process": [
+      {"title": "Tayyorgarlik", "description": "Atrofdagi narsalarni suv tomchilaridan himoya qilish."},
+      {"title": "Yuvish", "description": "Professional asboblar va kimyodan foydalanish."},
+      {"title": "Natija", "description": "Izlarsiz, mukammal shaffof oynalar."}
+    ],
+    "faq": [
+      {"question": "Qishda deraza yuvasizlarmi?", "answer": "Ha, biz maxsus muzlamaydigan birikmalardan foydalanamiz."},
+      {"question": "To'r parda (setka) yuvish narxga kiradimi?", "answer": "Ha, biz ularni oqar suvda yuvib beramiz."}
+    ]
+  },
+  "ServicePageOffice": {
+    "service_name": "Ofislarni tozalash",
+    "service_subtitle": "Jamoangiz samarali ishlashi uchun ideal sharoitlar yaratamiz.",
+    "meta_title": "Toshkentda ofislarni tozalash - Professional BM kliningi",
+    "meta_description": "Toshkentda ofislarning kundalik va general tozalash ishlari. O'qitilgan xodimlar, sifat nazorati, shartnoma asosida ishlash.",
+    "whats_included": ["Orgtexnikani artish", "Pol qoplamalarini parvarish qilish", "Shisha to'siqlarni tozalash", "Oshxona zonasini tozalash", "O'simliklarni sug'orish (ixtiyoriy)"],
+    "work_process": [
+      {"title": "Audit", "description": "Ofis jadvali va o'ziga xosligini baholaymiz."},
+      {"title": "Ishga tushirish", "description": "Xodimlarning ob'ektga chiqishi."},
+      {"title": "Menejment", "description": "Buyurtmachidan muntazam qayta aloqa."}
+    ],
+    "faq": [
+      {"question": "Tungi vaqtda ishlaysizlarmi?", "answer": "Ha, biz sizning ish jadvalingizga moslashamiz."},
+      {"question": "Texnika xavfsizligiga qanday kafolat bor?", "answer": "Barcha xodimlar tekshiruvdan o'tadi va orgtexnika bilan ishlashga o'rgatiladi."}
+    ]
+  },
+  "ServicePagePoslestroy": {
+    "service_name": "Qurilishdan keyingi tozalash",
+    "service_subtitle": "Qurilish changi, sement, skotch va bo'yoq izlarini ta'mirdan keyin to'liq yo'qotish.",
+    "meta_title": "Toshkentda ta'mirdan keyingi tozalash - Poslestroy kliningi",
+    "meta_description": "Toshkentda ta'mirdan keyin professional tozalash. Qurilish changi va chiqindilarini tozalash. Ob'ektni ko'chib kirishga tayyorlash.",
+    "whats_included": ["Mayda changni yo'qotish", "Zatirka va sementdan tozalash", "Derazalarni qurilish belgilaridan yuvish", "Radiator va santexnikani tozalash", "Barcha nişlarni changdan tozalash"],
+    "work_process": [
+      {"title": "Kuchli texnika", "description": "Sanoat changyutgichlari va rotorlaridan foydalanish."},
+      {"title": "Batafsillik", "description": "Har bir santimetr yuzadan o'tamiz."},
+      {"title": "Finish", "description": "Ob'ekt foydalanishga to'liq tayyor."}
+    ],
+    "faq": [
+      {"question": "Yirik chiqindilarni olib chiqish kiradimi?", "answer": "Individual muhokama qilinadi, odatda biz mayda qurilish chiqindilarini yig'amiz."},
+      {"question": "Ta'mir hididan qanday qutulish mumkin?", "answer": "Biz ozonlash yoki chuqur namli tozalashni amalga oshiramiz."}
+    ]
   },
   "CalculatorPage": {
       "title": "Narxni hisoblash",

@@ -1,4 +1,3 @@
-
 import { Toaster } from '@/components/ui/toaster';
 import { SiteHeader } from '@/components/site/SiteHeader';
 import { SiteFooter } from '@/components/site/SiteFooter';
@@ -6,12 +5,13 @@ import { getDictionary } from '@/lib/get-dictionary';
 import { i18n, type Locale } from '@/i18n-config';
 import { DictionaryProvider } from '@/contexts/dictionary-context';
 import { FloatingInquiry } from '@/components/site/FloatingInquiry';
+import { Metadata } from 'next';
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: Locale }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: Locale }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getDictionary(locale);
   return {
