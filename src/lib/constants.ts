@@ -1,6 +1,4 @@
-
 import { Building2, ShoppingBag, HeartPulse, HardHat, Sparkles, Wind, Sofa, Users, UserCheck, ShieldCheck, Smile, ClipboardList, Home, Trophy, Zap, Wallet } from 'lucide-react';
-import { PlaceHolderImages } from './placeholder-images';
 
 export const getServices = (t: any) => {
     const servicesText = t.Constants.services;
@@ -44,12 +42,12 @@ export const getTestimonials = (t: any) => {
 export const getClientTypes = (t: any) => {
     const clientTypesText = t.Constants.client_types;
     return [
-        { name: clientTypesText[0].name, icon: Building2, imageUrl: 'https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/Gemini_Generated_Image_o234dto234dto234.png?alt=media&token=7e30c5a4-791a-4b2c-9e99-5d3cf59e0cfd' },
-        { name: clientTypesText[1].name, icon: Building2, imageUrl: 'https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/Gemini_Generated_Image_wqlim4wqlim4wqli.png?alt=media&token=2836cd0c-fba1-48f7-a840-12156db46e68' },
-        { name: clientTypesText[2].name, icon: ShoppingBag, imageUrl: 'https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/Gemini_Generated_Image_mrb58smrb58smrb5.png?alt=media&token=6784452a-b066-405a-971b-1606c7de2cb2' },
-        { name: clientTypesText[3].name, icon: HeartPulse, imageUrl: 'https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/Gemini_Generated_Image_x21e9gx21e9gx21e.png?alt=media&token=cdd15f92-cbe6-4fc5-b9bd-e63e37439429' },
-        { name: clientTypesText[4].name, icon: HardHat, imageUrl: 'https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/Gemini_Generated_Image_8ha5h68ha5h68ha5.png?alt=media&token=cdfe0667-95c2-40cb-adf6-00e5911e906d' },
-        { name: clientTypesText[5].name, icon: Home, imageUrl: 'https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/Gemini_Generated_Image_so9mwwso9mwwso9m.png?alt=media&token=6c739362-5949-4dd0-86de-2bb1cc257e22' },
+        { name: clientTypesText[0].name, icon: Building2, imageUrl: 'https://img.freepik.com/premium-vector/3d-cartoon-office-building-icon_1296140-2364.jpg?semt=ais_hybrid&w=740&q=80' },
+        { name: clientTypesText[1].name, icon: Building2, imageUrl: 'https://img.freepik.com/free-photo/3d-rendering-abstract-building_23-2150896894.jpg?semt=ais_hybrid&w=740&q=80' },
+        { name: clientTypesText[2].name, icon: ShoppingBag, imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEoUhNvlOCUREsMe4p1yqRqK9ACMXddvcJDQ&s' },
+        { name: clientTypesText[3].name, icon: HeartPulse, imageUrl: 'https://cdn3d.iconscout.com/3d/premium/thumb/hospital-building-3d-icon-png-download-6742138.png' },
+        { name: clientTypesText[4].name, icon: HardHat, imageUrl: 'https://img.freepik.com/premium-photo/warehouse-3d-render-icon-illustration_726846-1766.jpg' },
+        { name: clientTypesText[5].name, icon: Home, imageUrl: 'https://cdn-icons-png.flaticon.com/512/10740/10740590.png' },
     ];
 };
 
