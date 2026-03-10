@@ -18,7 +18,8 @@ import {
   CheckCircle2,
   Camera,
   MessageSquare,
-  Calculator
+  Calculator,
+  Quote
 } from 'lucide-react';
 import { ContactForm } from '@/components/site/ContactForm';
 import * as constants from '@/lib/constants';
@@ -36,7 +37,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
   const whyBeClean = constants.getWhyBeClean(t);
   const howItWorks = constants.getHowItWorks(t);
   const beforeAfterImages = constants.getBeforeAfterImages();
-  const testimonials = constants.getTestimonials();
+  const testimonials = constants.getTestimonials(t);
 
   const heroCarouselImages = [
     PlaceHolderImages.find(p => p.id === 'hero-carousel-1'),
@@ -181,7 +182,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
 
       <section id="gallery" className="w-full py-16 md:py-32 text-center overflow-x-clip">
         <div className="max-w-[1792px] mx-auto px-4 md:px-6">
-          <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl font-headline mb-12 text-center flex items-center justify-center gap-3">
+          <h2 className="text-lg font-bold tracking-tighter sm:text-xl font-headline mb-12 text-center flex items-center justify-center gap-3">
             <Camera className="w-8 h-8 text-primary" /> {t.HomePage.gallery_title}
           </h2>
           <AutoCarousel className="w-full mx-auto">
@@ -213,13 +214,13 @@ export default async function Home({ params: { locale } }: { params: { locale: L
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12 text-center flex items-center justify-center gap-3">
             <MessageSquare className="w-8 h-8 text-primary" /> {t.HomePage.testimonials_title}
           </h2>
-          <AutoCarousel className="w-full mx-auto" delay={5000}>
+          <AutoCarousel className="w-full mx-auto" delay={6000}>
             <CarouselContent>
               {testimonials.map((item: any, index: number) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-2 h-full">
-                    <Card className="h-full overflow-hidden flex flex-col bg-background">
-                       <CardHeader className="flex flex-row items-center gap-4 p-6 text-left">
+                    <Card className="h-full overflow-hidden flex flex-col bg-background text-left">
+                       <CardHeader className="flex flex-row items-center gap-4 p-6">
                           <Avatar className="h-12 w-12 ring-2 ring-primary/10">
                             <AvatarImage src={item.avatar} alt={item.name} />
                             <AvatarFallback>{item.name[0]}</AvatarFallback>
@@ -229,14 +230,11 @@ export default async function Home({ params: { locale } }: { params: { locale: L
                             <p className="text-sm text-muted-foreground">{item.role}</p>
                           </div>
                        </CardHeader>
-                       <CardContent className="p-0 border-t bg-muted/5">
-                          <Image
-                            src={item.image}
-                            alt={`Testimonial from ${item.name}`}
-                            width={400}
-                            height={600}
-                            className="w-full object-contain"
-                          />
+                       <CardContent className="p-6 pt-0 flex-grow">
+                          <Quote className="w-8 h-8 text-primary/20 mb-4" />
+                          <p className="text-muted-foreground italic leading-relaxed">
+                            "{item.quote}"
+                          </p>
                        </CardContent>
                     </Card>
                   </div>
