@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -9,14 +9,38 @@ import { Slider } from '@/components/ui/slider';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { ContactForm } from "@/components/site/ContactForm";
-import { Info, CheckCircle2, Calculator, ArrowRight, Sparkles } from 'lucide-react';
+import { Info, CheckCircle2, Calculator, Sparkles, Lock } from 'lucide-react';
 import { useDictionary } from '@/contexts/dictionary-context';
 import { cn } from '@/lib/utils';
+import { submitLead } from '@/lib/actions';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
+import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
 
 export default function CalculatorPage() {
-  const t = useDictionary().CalculatorPage;
+  const d = useDictionary();
+  const t = d.CalculatorPage;
+  const tForm = d.ContactForm;
+  
+  const [isUnlocked, setIsUnlocked] = useState(false);
   const [area, setArea] = useState(100);
   const [service, setService] = useState('cleaning');
+
+  const leadSchema = z.object({
+    name: z.string().min(2, { message: tForm.name_error }),
+    phone: z.string().min(7, { message: tForm.phone_error }),
+  });
+
+  const form = useForm<z.infer<typeof leadSchema>>({
+    resolver: zodResolver(leadSchema),
+    defaultValues: { name: "", phone: "" },
+  });
+
+  async function onUnlockSubmit(values: z.infer<typeof leadSchema>) {
+    await submitLead({ ...values, source: "Calculator Gate" });
+    setIsUnlocked(true);
+  }
 
   const pricingConfig = {
     cleaning: {
@@ -41,12 +65,69 @@ export default function CalculatorPage() {
 
   const currentService = pricingConfig[service as keyof typeof pricingConfig];
   const totalPrice = useMemo(() => area * currentService.price, [area, currentService]);
-
   const formattedTotal = new Intl.NumberFormat('ru-RU').format(totalPrice);
+
+  if (!isUnlocked) {
+    return (
+      <div className="bg-background min-h-[70vh] flex items-center justify-center py-12 px-4">
+        <Card className="max-w-md w-full shadow-2xl border-primary/20">
+          <CardHeader className="text-center space-y-4">
+            <div className="mx-auto bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-2">
+              <Lock className="w-8 h-8 text-primary" />
+            </div>
+            <CardTitle className="text-2xl font-bold font-headline">
+              {t.unlock_title || "Получить доступ к калькулятору"}
+            </CardTitle>
+            <CardDescription className="text-base">
+              {t.unlock_description || "Оставьте ваши контактные данные, чтобы открыть расчет стоимости клининга."}
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onUnlockSubmit)} className="space-y-4">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input placeholder={tForm.name_placeholder} {...field} className="h-12" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input placeholder={tForm.phone_placeholder} type="tel" {...field} className="h-12" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  className="w-full font-bold h-12"
+                  disabled={form.formState.isSubmitting}
+                >
+                  {form.formState.isSubmitting ? tForm.submitting_button : t.unlock_button || "Открыть калькулятор"}
+                </Button>
+              </form>
+            </Form>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-background">
-      <div className="container py-12 md:py-24">
+      <div className="container py-12 md:py-24 animate-fade-in">
          <div className="text-center mb-16">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl font-headline flex items-center justify-center gap-4">
                   <Calculator className="w-10 h-10 text-primary" /> {t.title}

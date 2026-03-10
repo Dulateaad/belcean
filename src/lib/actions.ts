@@ -82,6 +82,12 @@ export async function submitInquiry(data: unknown) {
   return { success: true };
 }
 
+export async function submitLead(data: { name: string; phone: string; source: string }) {
+  const message = `📥 <b>Лид для открытия калькулятора</b>\n\n👤 Имя: ${data.name}\n📞 Телефон: ${data.phone}\n🌍 Источник: ${data.source}`;
+  await sendTelegramNotification(message);
+  return { success: true };
+}
+
 const calculatorInquirySchema = z.object({
   name: z.string().min(2),
   phone: z.string().min(7),

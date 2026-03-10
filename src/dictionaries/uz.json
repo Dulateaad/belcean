@@ -210,9 +210,9 @@
         { "title": "Qabul", "description": "Siz yaltirab turgan oynalarni qabul qilib olasiz." }
     ],
     "faq": [
-        { "question": "Qanday ob-havoda oyna yuvish mumkin?", "answer": "Biz kuchli shamol va -5°C dan past sovuqdan tashqari har qanday ob-havoda ishlaymiz. Eng maqbul ob-havo — quruq va shamolsiz kun." },
+        { "question": "Qanday ob-havoda oyna yuvish mumkin?", "answer": "Biz kuchli shamol va -5°C dan past совуқдан ташқари ҳар қандай об-ҳавода ишлаймиз. Энг мақбул об-ҳаво — қуруқ ва шамолсиз кун." },
         { "question": "Balandlikdagi oynalarni yuvish mumkinmi?", "answer": "Ha, bizda har qanday balandlikdagi oynalarni yuvish uchun sertifikatlangan sanoat alpinistlari mavjud." },
-        { "question": "Oyna yuvishга qanday tayyorlanish kerak?", "answer": "Podokonniklarni ortiqcha narsalardan bo'shatish va oynalarga kirishni ta'minlash tavsiya etiladi." }
+        { "question": "Oyna yuvishga qanday tayyorlanish kerak?", "answer": "Podokonniklarni ortiqcha narsalardan bo'shatish va oynalarga kirishni ta'minlash tavsiya etiladi." }
     ]
   },
   "ServicePagePoslestroy": {
@@ -231,8 +231,8 @@
         { "title": "Sifat", "description": "Siz tozalanib tayyor bo'lgan ob'ektni qabul qilasiz." }
     ],
     "faq": [
-        { "question": "Ta'mirdan keyingi tozalashni qachon o'tkazish kerak?", "answer": "Barcha \"iflos\" ishlar tugagandan so'ng, lekin mebel va texnika o'rnatilishidan oldin tozalashni boshlash ma'qul. Biz sizга eng maqbul vaqt bo'yicha maslahat bera olamiz." },
-        { "question": "Katta qurilish chiqindilarini olib chiqasizmi?", "answer": "Biz mayda va o'rtacha qurilish chiqindilarini yig'amiz va olib chiqamiz. Yirik gabaritli chiqindilarni olib chiqish alohida muhokama qilinadi." },
+        { "question": "Ta'mirdan keyingi tozalashni qachon o'tkazish kerak?", "answer": "Barcha \"iflos\" ishlar tugagandan so'ng, lekin mebel va texnika o'rnatilishidan oldin tozalashni boshlash ma'qul. Biz sizga eng maqbul vaqt bo'yicha maslahat bera olamiz." },
+        { "question": "Katta строительный мусорларни олиб чиқасизми?", "answer": "Biz mayda va o'rtacha qurilish chiqindilarini yig'amiz va olib chiqamiz. Yirik gabaritli chiqindilarni olib chiqish alohida muhokama qilinadi." },
         { "question": "Ob'ektda necha kishi ishlaydi?", "answer": "Klinerlar soni ob'ekt maydoni va murakkabligiga bog'liq. Biz ishni maksimal darajada tez va sifatli bajarish uchun brigadani shakllantiramiz." }
     ]
   },
@@ -260,6 +260,9 @@
   "CalculatorPage": {
       "title": "Narxni hisoblash",
       "subtitle": "Professional tozalash tariflarimiz bilan tanishing. Yakuniy narx individual ravishda shakllanadi.",
+      "unlock_title": "Kalkulyatorga kirish",
+      "unlock_description": "Tozalash narxini bilish uchun kontaktlaringizni qoldiring.",
+      "unlock_button": "Kalkulyatorni ochish",
       "cleaning_types": {
         "regular": "Kundalik tozalash", "general": "General tozalash", "post-construction": "Ta'mirdan keyingi tozalash"
       },
