@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -20,10 +21,7 @@ import {
   Calculator,
   Quote,
   Star,
-  Handshake,
-  Trophy,
-  Zap,
-  Wallet
+  Handshake
 } from 'lucide-react';
 import { ContactForm } from '@/components/site/ContactForm';
 import * as constants from '@/lib/constants';
@@ -35,7 +33,8 @@ import { AutoCarousel } from '@/components/site/AutoCarousel';
 import { cn } from '@/lib/utils';
 
 export default async function Home({ params }: { params: Promise<{ locale: Locale }> }) {
-  const { locale } = await params;
+  const resolvedParams = await params;
+  const locale = resolvedParams.locale;
   const t = await getDictionary(locale);
   const mapPlaceholder = PlaceHolderImages.find(p => p.id === 'map');
   const services = constants.getServices(t);
@@ -196,11 +195,11 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
             <div className="flex flex-wrap justify-center items-center gap-12 opacity-80 hover:opacity-100 transition-opacity">
                 <div className="flex flex-col items-center gap-2">
                     <Image 
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/K%C3%A4rcher_logo.svg/1200px-K%C3%A4rcher_logo.svg.png" 
+                        src="https://technomarket.kg/images/feature_variant/11/Karcher-Logo.png" 
                         alt="Karcher" 
-                        width={200} 
-                        height={60} 
-                        className="h-12 w-auto grayscale hover:grayscale-0 transition-all"
+                        width={240} 
+                        height={80} 
+                        className="h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all"
                     />
                     <span className="text-sm font-semibold text-muted-foreground">Karcher</span>
                 </div>
