@@ -29,7 +29,8 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
   // Улучшенный поиск цены по названию сервиса
   const priceItem = prices.find(p => 
     p.name.toLowerCase().includes('офис') || 
-    p.name.toLowerCase().includes('ofis')
+    p.name.toLowerCase().includes('ofis') ||
+    p.name.toLowerCase().includes('tozalash')
   );
   
   const serviceImage = PlaceHolderImages.find(p => p.id === 'service-office');
