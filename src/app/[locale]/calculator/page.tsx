@@ -16,32 +16,15 @@ import { cn } from '@/lib/utils';
 export default function CalculatorPage() {
   const d = useDictionary();
   const t = d.CalculatorPage;
+  const prices = d.Constants.prices;
   
   const [area, setArea] = useState(100);
   const [service, setService] = useState('cleaning');
 
-  const pricingConfig = {
-    cleaning: {
-      id: 'cleaning',
-      label: d.Constants.services[0].title,
-      price: 20000,
-      description: d.Constants.services[0].description
-    },
-    facade: {
-      id: 'facade',
-      label: d.Constants.services[4].title,
-      price: 16000,
-      description: d.Constants.services[4].description
-    },
-    drycleaning: {
-      id: 'drycleaning',
-      label: d.Constants.services[5].title,
-      price: 15000,
-      description: d.Constants.services[5].description
-    }
-  };
+  const currentService = useMemo(() => 
+    prices.find((p: any) => p.id === service) || prices[0]
+  , [service, prices]);
 
-  const currentService = pricingConfig[service as keyof typeof pricingConfig];
   const totalPrice = useMemo(() => area * currentService.price, [area, currentService]);
   const formattedTotal = new Intl.NumberFormat('ru-RU').format(totalPrice);
 
@@ -69,7 +52,7 @@ export default function CalculatorPage() {
                         onValueChange={setService}
                         className="grid md:grid-cols-3 gap-4"
                     >
-                        {Object.values(pricingConfig).map((item) => (
+                        {prices.map((item: any) => (
                             <div key={item.id}>
                                 <RadioGroupItem value={item.id} id={item.id} className="peer sr-only" />
                                 <Label
@@ -79,9 +62,8 @@ export default function CalculatorPage() {
                                         "peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/5"
                                     )}
                                 >
-                                    <span className="font-bold text-lg mb-1">{item.label}</span>
-                                    <span className="text-xs text-muted-foreground leading-tight">{item.description}</span>
-                                    <span className="mt-4 text-primary font-black">{new Intl.NumberFormat('ru-RU').format(item.price)} {d.HomePage.pricing_unit}</span>
+                                    <span className="font-bold text-lg mb-1">{item.name}</span>
+                                    <span className="mt-4 text-primary font-black">{new Intl.NumberFormat('ru-RU').format(item.price)} {d.HomePage.pricing_unit}/м²</span>
                                 </Label>
                             </div>
                         ))}
@@ -91,7 +73,7 @@ export default function CalculatorPage() {
 
             <Card className="border-primary/10 shadow-lg">
                 <CardHeader>
-                    <CardTitle className="text-xl">2. {d.QuizPage.area_title}</CardTitle>
+                    <CardTitle className="text-xl">2. {t.area_label}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-8">
                     <div className="flex items-center gap-4">
@@ -120,22 +102,21 @@ export default function CalculatorPage() {
 
             <div className="p-8 rounded-2xl bg-primary text-primary-foreground shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>
-                    <p className="text-primary-foreground/80 font-medium uppercase tracking-wider text-sm mb-1">{d.HomePage.pricing_title}</p>
-                    <h2 className="text-4xl md:text-5xl font-black">{formattedTotal} <span className="text-2xl opacity-80">сум</span></h2>
+                    <p className="text-primary-foreground/80 font-medium uppercase tracking-wider text-sm mb-1">{t.total_label}</p>
+                    <h2 className="text-4xl md:text-5xl font-black">{formattedTotal} <span className="text-2xl opacity-80">{d.HomePage.pricing_unit}</span></h2>
                 </div>
                 <div className="flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
                     <Sparkles className="w-5 h-5" />
-                    <span className="text-sm font-bold">Точный расчет после осмотра</span>
+                    <span className="text-sm font-bold">{t.note_title}</span>
                 </div>
             </div>
 
             <div className="p-6 rounded-xl bg-primary/5 border border-primary/20 flex items-start gap-4">
                 <Info className="w-6 h-6 text-primary shrink-0 mt-1" />
                 <div className="space-y-1">
-                    <p className="font-bold text-lg">{t.contact_note}</p>
+                    <p className="font-bold text-lg">{t.note_title}</p>
                     <p className="text-muted-foreground">
-                        Окончательная стоимость зависит от сложности работ. 
-                        Наш менеджер приедет к вам для бесплатного осмотра и назовет точную цену.
+                        {t.note_description}
                     </p>
                 </div>
             </div>
@@ -149,7 +130,7 @@ export default function CalculatorPage() {
                 </CardHeader>
                 <CardContent>
                     <ContactForm 
-                        defaultService={`${currentService.label} (${area} м²)`} 
+                        defaultService={`${currentService.name} (${area} м²: ${formattedTotal} ${d.HomePage.pricing_unit})`} 
                     />
                 </CardContent>
              </Card>

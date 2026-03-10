@@ -33,8 +33,9 @@
     "meta_keywords": "toshkent tozalash, ofislarni tozalash, tozalash xizmatlari, professional tozalash, BECLEAN SERVIS",
     "hero_title": "Toshkentda biznes va uy uchun professional tozalash",
     "hero_subtitle": "Ofislar, BM, klinikalar. Shartnoma. Sifat nazorati.",
+    "pricing_title": "Umumiy qiymat",
+    "pricing_unit": "so'm",
     "calculate_button": "Narxni hisoblash",
-    "pick_service_button": "Xizmatni tanlash",
     "form_title": "Tozalashga buyurtma",
     "clients_title": "Biz kimlar uchun ishlaymiz",
     "clients_subtitle": "Biz har xil turdagi tijorat ob'ektlari uchun sifatli tozalash xizmatlarini taqdim etamiz.",
@@ -79,24 +80,22 @@
       { "title": "Ob'ektni baholash", "description": "Menejerimiz ish hajmini baholash uchun ob'ektingizga bepul boradi." }
     ],
      "prices": [
-      { "name": "Tozalash", "price": "20 000 so'm / m²" },
-      { "name": "Fasad", "price": "16 000 so'm / m²" },
-      { "name": "Kimyoviy tozalash", "price": "15 000 so'm / m²" }
+      { "id": "cleaning", "name": "Tozalash", "price": 20000 },
+      { "id": "facade", "name": "Fasad", "price": 16000 },
+      { "id": "drycleaning", "name": "Kimyoviy tozalash", "price": 15000 }
     ]
   },
   "ThankYouPage": {
       "title": "Arizangiz uchun rahmat!",
       "subtitle": "Biz 24/7 ishlaymiz, istalgan vaqtda qo'ng'iroq qiling.",
       "button": "Bosh sahifaga qaytish",
-      "contact_prefix": "Yoki hoziroq biz bilan bog'laning:",
-      "telegram_label": "Telegramda yozish"
+      "contact_prefix": "Yoki hoziroq biz bilan bog'laning:"
   },
   "ServicePages": {
       "included_title": "Xizmatga nimalar kiradi",
       "process_title": "Ish jarayoni",
       "faq_title": "Ko'p beriladigan savollar",
       "price_title": "Taxminiy narxlar",
-      "form_title": "Tozalashga buyurtma",
       "form_title_windows": "Oyna yuvishga buyurtma",
       "form_title_furniture": "Kimyoviy tozalashga buyurtma",
       "form_title_office": "Ofis tozalashga buyurtma",
@@ -108,15 +107,18 @@
   },
   "CalculatorPage": {
       "title": "Narxni hisoblash",
-      "subtitle": "Professional tozalash tariflarimiz bilan tanishing. Yakuniy narx individual ravishda shakllanadi.",
-      "form_title": "Narxni aniqlashtirish",
-      "form_subtitle": "Ariza qoldiring va mutaxassisimiz bepul maslahat uchun siz bilan bog'lanadi.",
-      "contact_note": "Aniq narxni bilish uchun biz bilan bog'laning"
+      "subtitle": "Xizmatni tanlang va maydonni kiriting.",
+      "form_title": "Hisob-kitobni yuborish",
+      "form_subtitle": "Narxni saqlab qolish uchun ariza qoldiring.",
+      "area_label": "Bino maydoni",
+      "total_label": "Taxminiy narx",
+      "note_title": "Tekshiruvdan so'ng aniq narx",
+      "note_description": "Menejerimiz bepul tekshiruv uchun boradi va yakuniy narxni aytadi."
   },
   "FloatingInquiry": {
     "aria_label": "Tozalashga buyurtma",
     "title": "Tozalashga buyurtma",
-    "description": "Raqamingizni qoldiring va biz tafsilotlarni muhokama qilish uchun tez orada sizga qo'ng'iroq qilamiz.",
+    "description": "Raqamingizni qoldiring va biz tez orada sizga qo'ng'iroq qilamiz.",
     "telegram": "Telegramda yozish"
   }
 }
