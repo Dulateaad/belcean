@@ -180,7 +180,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
 
       <section id="gallery" className="w-full py-16 md:py-32 text-center overflow-x-clip">
         <div className="max-w-[1792px] mx-auto px-4 md:px-6">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12 text-center flex items-center justify-center gap-3">
+          <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl font-headline mb-12 text-center flex items-center justify-center gap-3">
             <Camera className="w-8 h-8 text-primary" /> {t.HomePage.gallery_title}
           </h2>
           <AutoCarousel className="w-full mx-auto">
