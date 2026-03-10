@@ -27,7 +27,7 @@ export function SiteHeader() {
   const services = constants.getServices(t);
   const pathname = usePathname();
 
-  const currentLocale = pathname.split('/')[1] || i18n.defaultLocale;
+  const currentLocale = pathname?.split('/')[1] || i18n.defaultLocale;
 
   const redirectedPathName = (locale: string) => {
     if (!pathname) return '/';
