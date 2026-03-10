@@ -97,8 +97,8 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
                     <Image
                       src={client.imageUrl}
                       alt={client.name}
-                      width={96}
-                      height={96}
+                      width={120}
+                      height={120}
                       className="h-24 w-24 rounded-2xl object-contain shadow-sm bg-white p-2"
                     />
                   ) : (
