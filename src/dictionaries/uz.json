@@ -62,14 +62,14 @@
       { "slug": "/himchistka-mebeli", "title": "Mebelni kimyoviy tozalash", "description": "Mebelingizga yangi va ozoda ko'rinishni qaytaramiz." }
     ],
     "testimonials": [
-      { "name": "Alisher Karimov", "role": "Direktor, IT-kompaniya", "quote": "BeClean SERVIS — haqiqiy professionallar. Ofisimiz hech qachon bunchalik toza bo'lmagan.", "date": "01.03.2025", "stars": 5 },
-      { "name": "Elena Pak", "role": "Boshqaruvchi", "quote": "BeClean jamoasi juda bilimli va xushmuomala. Sifat nazorati a'lo darajada.", "date": "02.03.2025", "stars": 5 }
+      { "name": "Alisher Karimov", "role": "Direktor, IT-kompaniya", "quote": "BeClean SERVIS — haqiqiy professionallar. Ofisimiz hech qachon bunchalik toza bo'lmagan. Menejer mas'uliyatiga besh ketdik.", "date": "01.03.2025", "stars": 5 },
+      { "name": "Elena Pak", "role": "Boshqaruvchi", "quote": "BeClean jamoasi juda bilimli va xushmuomala. Sifat nazorati a'lo darajada. Foto hisobotlar ishimizni osonlashtirdi.", "date": "02.03.2025", "stars": 5 }
     ],
     "client_types": [
       { "name": "Ofislar" }, { "name": "Biznes-markazlar" }, { "name": "Do'konlar" }, { "name": "Klinikalar" }, { "name": "Omborlar" }, { "name": "Kvartiralar" }
     ],
     "why_beclean": [
-      { "title": "500+ dan ortiq ishlar", "description": "Toshkent bo'ylab har qanday murakkкablikdagi ob'ektlarni tozalashda ulkan tajriba." },
+      { "title": "500+ dan ortiq ishlar", "description": "Toshkent bo'ylab har qanday murakkablikdagi ob'ektlarni tozalashda ulkan tajriba." },
       { "title": "Karcher texnikasi", "description": "Benuqson tozalik uchun faqat professional nemis uskunalaridan foydalanamiz." },
       { "title": "Tekshiruvdan so'ng to'lov", "description": "Siz ish natijasidan shaxsan qoniqqaningizdan keyingina to'lov qilasiz." }
     ],

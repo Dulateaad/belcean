@@ -1,5 +1,5 @@
 
-// This file is disabled to avoid conflict with src/app/sitemap.ts in Next.js 15.
+// This route is disabled to prevent conflict with src/app/sitemap.ts
 export const dynamic = 'force-static';
 export function GET() {
   return new Response('', {
