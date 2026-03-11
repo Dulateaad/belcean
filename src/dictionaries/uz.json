@@ -214,5 +214,47 @@
     "title": "Tozalashga buyurtma",
     "description": "Raqamingizni qoldiring va biz tez orada sizga qo'ng'iroq qilamiz.",
     "telegram": "Telegramda yozish"
+  },
+  "QuizPage": {
+    "title": "Ideal tozalashni tanlang",
+    "subtitle": "3 ta savolga javob bering va biz mos keladigan tozalash turini tavsiya qilamiz.",
+    "step_prefix": "Bosqich",
+    "step_of": "dan",
+    "property_type_title": "Ob'ekt turi",
+    "cleaning_goal_title": "Asosiy vazifa",
+    "area_title": "Taxminiy maydon",
+    "result_title": "Sizga mos keladi: {service}",
+    "result_description": "{area} m² maydonli {propertyType} uchun biz {goal} tavsiya qilamiz. Bu sizning vazifalaringizni hisobga olgan holda mukammal tozalikka erishish imkonini beradi.",
+    "learn_more_button": "Xizmat haqida batafsil",
+    "back_button": "Orqaga",
+    "next_button": "Keyingisi",
+    "show_result_button": "Natijani ko'rish",
+    "start_over_button": "Boshidan boshlash",
+    "cta_title": "{service}ga buyurtma bermoqchimisiz?",
+    "cta_subtitle": "Ariza qoldiring va biz tozalash tafsilotlarini muhokama qilamiz.",
+    "area_slider_hint": "Maydonni tanlash uchun slayderni suring",
+    "property_types": {
+      "office": "Ofis",
+      "business-center": "Biznes-markaz",
+      "shop": "Do'kon / Butik",
+      "clinic": "Klinika / Salon",
+      "warehouse": "Ombor / Sex",
+      "other": "Boshqa"
+    },
+    "property_type_genitive": {
+      "office": "ofis",
+      "business-center": "biznes-markaz",
+      "shop": "do'kon",
+      "clinic": "klinika",
+      "warehouse": "ombor",
+      "other": "sizning ob'ektingiz"
+    },
+    "cleaning_goals": {
+      "subscription": "Muntazam tozalikni saqlash",
+      "general": "General tozalash (chuqur tozalash)",
+      "post-construction": "Ta'mirdan/qurilishdan keyingi tozalash",
+      "furniture": "Mebel va kofrolinni kimyoviy tozalash",
+      "windows": "Oyna va fasadni yuvish"
+    }
   }
 }

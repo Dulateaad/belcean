@@ -1,4 +1,5 @@
 
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -59,7 +60,7 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
         
         <div className="relative z-10 flex flex-col items-center justify-center flex-grow text-center text-primary-foreground p-4 pt-20 md:pt-32 pb-12">
           <div className="w-full max-w-[1792px] mx-auto px-4">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-6xl xl:text-8xl/none font-headline text-white animate-pulse text-center">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-6xl xl:text-8xl/none font-headline text-white text-center">
                   {t.HomePage.hero_title}
               </h1>
               <p className="max-w-[700px] mx-auto text-white/90 md:text-xl/relaxed mt-6 text-center">

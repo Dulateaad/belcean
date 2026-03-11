@@ -214,5 +214,47 @@
     "title": "Заказать уборку",
     "description": "Оставьте свой номер, и мы перезвоним вам в ближайшее время.",
     "telegram": "Написать в Telegram"
+  },
+  "QuizPage": {
+    "title": "Подберите идеальную уборку",
+    "subtitle": "Ответьте на 3 вопроса, и мы порекомендуем подходящий тип клининга.",
+    "step_prefix": "Шаг",
+    "step_of": "из",
+    "property_type_title": "Тип вашего объекта",
+    "cleaning_goal_title": "Основная задача",
+    "area_title": "Примерная площадь",
+    "result_title": "Вам подходит: {service}",
+    "result_description": "Для {propertyType} площадью {area} м² мы рекомендуем {goal}. Это позволит добиться идеальной чистоты с учетом ваших задач.",
+    "learn_more_button": "Подробнее об услуге",
+    "back_button": "Назад",
+    "next_button": "Далее",
+    "show_result_button": "Показать результат",
+    "start_over_button": "Начать сначала",
+    "cta_title": "Хотите заказать {service}?",
+    "cta_subtitle": "Оставьте заявку, и мы обсудим детали уборки.",
+    "area_slider_hint": "Потяните ползунок, чтобы выбрать площадь",
+    "property_types": {
+      "office": "Офис",
+      "business-center": "Бизнес-центр",
+      "shop": "Магазин / Бутик",
+      "clinic": "Клиника / Салон",
+      "warehouse": "Склад / Цех",
+      "other": "Другое"
+    },
+    "property_type_genitive": {
+      "office": "офиса",
+      "business-center": "бизнес-центра",
+      "shop": "магазина",
+      "clinic": "клиники",
+      "warehouse": "склада",
+      "other": "вашего объекта"
+    },
+    "cleaning_goals": {
+      "subscription": "Регулярная поддержка чистоты",
+      "general": "Генеральная уборка (глубокая очистка)",
+      "post-construction": "Уборка после ремонта/строительства",
+      "furniture": "Химчистка мебели и ковролина",
+      "windows": "Мойка окон и фасада"
+    }
   }
 }

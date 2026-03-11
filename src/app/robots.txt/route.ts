@@ -1,15 +1,4 @@
-import { MetadataRoute } from 'next';
-
-export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://becleanservis.example.com';
-
-  return {
-    rules: [
-      {
-        userAgent: '*',
-        allow: '/',
-      },
-    ],
-    sitemap: `${baseUrl}/sitemap.xml`,
-  };
-}
+// This file is removed to avoid conflict with robots.ts
+// Next.js metadata is now handled by src/app/robots.ts
+export const dynamic = 'force-static';
+export const GET = undefined;
