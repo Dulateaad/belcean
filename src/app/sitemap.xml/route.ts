@@ -1,3 +1,8 @@
-// Этот файл полностью деактивирован, чтобы устранить конфликт с src/app/sitemap.ts в Next.js 15.
-// Вся логика метаданных теперь находится исключительно в src/app/sitemap.ts.
+
+// This file is disabled to avoid conflict with src/app/sitemap.ts in Next.js 15.
 export const dynamic = 'force-static';
+export function GET() {
+  return new Response('', {
+    headers: { 'Content-Type': 'application/xml' },
+  });
+}

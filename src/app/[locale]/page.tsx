@@ -73,7 +73,7 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
                     </Link>
                   </Button>
                   <Button asChild variant="outline" size="lg" className="px-8 py-6 text-lg font-bold bg-white/10 text-white border-white/20 hover:bg-white/20 w-full sm:w-auto backdrop-blur-sm">
-                    <Link href={`/${locale}#cta`}>{t.Header.call_request} <ArrowRight className="ml-2 h-5 w-5" /></Link>
+                    <Link href={`/${locale}#cta`}>{t.ContactForm.submit_button} <ArrowRight className="ml-2 h-5 w-5" /></Link>
                   </Button>
               </div>
           </div>
@@ -94,13 +94,14 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
             {clientTypes.map((client: any, index: number) => (
               <div key={index} className="flex flex-col items-center gap-4 text-center transition-transform duration-300 hover:scale-105">
                 {client.imageUrl ? (
-                    <Image
-                      src={client.imageUrl}
-                      alt={client.name}
-                      width={120}
-                      height={120}
-                      className="h-24 w-24 rounded-2xl object-contain shadow-sm bg-white p-2"
-                    />
+                    <div className="relative h-24 w-24 rounded-2xl bg-white shadow-sm overflow-hidden p-2">
+                        <Image
+                          src={client.imageUrl}
+                          alt={client.name}
+                          fill
+                          className="object-contain p-2"
+                        />
+                    </div>
                   ) : (
                     <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-primary/10 p-4 text-primary">
                       <client.icon className="h-12 w-12" />
@@ -194,13 +195,14 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
             </h2>
             <div className="flex flex-wrap justify-center items-center gap-12 opacity-80 hover:opacity-100 transition-opacity">
                 <div className="flex flex-col items-center gap-2">
-                    <Image 
-                        src="https://technomarket.kg/images/feature_variant/11/Karcher-Logo.png" 
-                        alt="Karcher" 
-                        width={240} 
-                        height={80} 
-                        className="h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all"
-                    />
+                    <div className="relative h-20 w-48">
+                        <Image 
+                            src="https://technomarket.kg/images/feature_variant/11/Karcher-Logo.png" 
+                            alt="Karcher" 
+                            fill
+                            className="object-contain grayscale hover:grayscale-0 transition-all"
+                        />
+                    </div>
                     <span className="text-sm font-semibold text-muted-foreground">Karcher</span>
                 </div>
             </div>
@@ -315,14 +317,15 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
             </div>
             <div className="w-full mx-auto max-w-4xl">
               <a href="https://maps.google.com/?q=Tashkent" target="_blank" rel="noopener noreferrer" className="inline-block">
-                <Image
-                  alt="Карта расположения офиса BeClean в Ташкенте"
-                  className="rounded-xl object-cover w-full h-full min-h-[400px] shadow-lg"
-                  height="400"
-                  src={mapPlaceholder?.imageUrl || ''}
-                  width="800"
-                  data-ai-hint="city map"
-                />
+                <div className="relative h-[400px] w-[800px] rounded-xl overflow-hidden shadow-lg">
+                    <Image
+                      alt="Карта расположения офиса BeClean в Ташкенте"
+                      fill
+                      className="object-cover"
+                      src={mapPlaceholder?.imageUrl || ''}
+                      data-ai-hint="city map"
+                    />
+                </div>
               </a>
             </div>
           </div>

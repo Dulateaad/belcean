@@ -1,3 +1,8 @@
-// Этот файл полностью деактивирован, чтобы устранить конфликт с src/app/robots.ts в Next.js 15.
-// Вся логика метаданных теперь находится исключительно в src/app/robots.ts.
+
+// This file is disabled to avoid conflict with src/app/robots.ts in Next.js 15.
 export const dynamic = 'force-static';
+export function GET() {
+  return new Response('User-agent: *\nAllow: /', {
+    headers: { 'Content-Type': 'text/plain' },
+  });
+}

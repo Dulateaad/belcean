@@ -20,7 +20,7 @@
     "phone_placeholder": "+998 XX XXX XX XX",
     "phone_error": "Iltimos, to'g'ri telefon raqamini kiriting.",
     "service_placeholder": "Xizmatni tanlang (ixtiyoriy)",
-    "submit_button": "Ariza qoldirish",
+    "submit_button": "Tozalashga buyurtma",
     "submitting_button": "Yuborilmoqda...",
     "error_toast_title": "Yuborishda xatolik",
     "error_toast_description": "Shaklni yuborishda xatolik yuz berdi.",
@@ -152,7 +152,7 @@
     ]
   },
   "ServicePageMoikaOkon": {
-    "service_name": "Oynalarni yuvish",
+    "service_name": "Derazalarni yuvish",
     "service_subtitle": "Har qanday balandlikda derazalar, vitrinalar va fasadlarni professional yuvish.",
     "meta_title": "Toshkentda oyna yuvish - Toza vitrina va fasadlar",
     "meta_description": "Toshkentda professional oyna yuvish. Shisha, rama va deraza tokchalarini tozalash. Vitrina va fasadlar bilan ishlaymiz.",
@@ -202,7 +202,7 @@
   "CalculatorPage": {
       "title": "Narxni hisoblash",
       "subtitle": "Xizmatni tanlang va bino maydonini kiriting.",
-      "form_title": "Hisob-kitobni yuborish",
+      "form_title": "Tozalashga buyurtma",
       "form_subtitle": "Narxni saqlab qolish uchun ariza qoldiring.",
       "area_label": "Bino maydoni",
       "total_label": "Taxminiy narx",
@@ -230,7 +230,7 @@
     "next_button": "Keyingisi",
     "show_result_button": "Natijani ko'rish",
     "start_over_button": "Boshidan boshlash",
-    "cta_title": "{service}ga buyurtma bermoqchimisiz?",
+    "cta_title": "Tozalashga buyurtma bermoqchimisiz?",
     "cta_subtitle": "Ariza qoldiring va biz tozalash tafsilotlarini muhokama qilamiz.",
     "area_slider_hint": "Maydonni tanlash uchun slayderni suring",
     "property_types": {
