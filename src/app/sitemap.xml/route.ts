@@ -1,4 +1,6 @@
-// This file is removed to avoid conflict with sitemap.ts
-// Next.js metadata is now handled by src/app/sitemap.ts
+// Этот файл удален, чтобы избежать конфликта с src/app/sitemap.ts
+// В Next.js 15 метаданные sitemap обрабатываются через sitemap.ts
 export const dynamic = 'force-static';
-export const GET = undefined;
+export function GET() {
+  return new Response('Sitemap metadata is handled by src/app/sitemap.ts', { status: 404 });
+}

@@ -1,4 +1,6 @@
-// This file is removed to avoid conflict with robots.ts
-// Next.js metadata is now handled by src/app/robots.ts
+// Этот файл удален, чтобы избежать конфликта с src/app/robots.ts
+// В Next.js 15 метаданные robots обрабатываются через robots.ts
 export const dynamic = 'force-static';
-export const GET = undefined;
+export function GET() {
+  return new Response('Robots metadata is handled by src/app/robots.ts', { status: 404 });
+}

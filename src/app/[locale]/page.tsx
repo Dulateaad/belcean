@@ -1,5 +1,4 @@
 
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -74,7 +73,7 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
                     </Link>
                   </Button>
                   <Button asChild variant="outline" size="lg" className="px-8 py-6 text-lg font-bold bg-white/10 text-white border-white/20 hover:bg-white/20 w-full sm:w-auto backdrop-blur-sm">
-                    <Link href="#cta">{t.Header.call_request} <ArrowRight className="ml-2 h-5 w-5" /></Link>
+                    <Link href={`/${locale}#cta`}>{t.Header.call_request} <ArrowRight className="ml-2 h-5 w-5" /></Link>
                   </Button>
               </div>
           </div>

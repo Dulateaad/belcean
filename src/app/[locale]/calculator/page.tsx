@@ -112,7 +112,9 @@ export default function CalculatorPage() {
             </div>
 
             <div className="p-6 rounded-xl bg-primary/5 border border-primary/20 flex items-start gap-4">
-                <Info className="w-6 h-6 text-primary shrink-0 mt-1" />
+                <div className="bg-primary/10 p-2 rounded-full">
+                    <Info className="w-6 h-6 text-primary shrink-0" />
+                </div>
                 <div className="space-y-1">
                     <p className="font-bold text-lg">{t.note_title}</p>
                     <p className="text-muted-foreground">

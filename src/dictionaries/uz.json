@@ -170,8 +170,8 @@
   "ServicePageOffice": {
     "service_name": "Ofislarni tozalash",
     "service_subtitle": "Jamoangiz samarali ishlashi uchun ideal sharoitlar yaratamiz.",
-    "meta_title": "Toshkentda ofislarni tozalash - Professional BM kliningi",
-    "meta_description": "Toshkentda ofislarning kundalik va general tozalash ishlari. O'qitilgan xodimlar, sifat nazorati, shartnoma asosida ishlash.",
+    "meta_title": "Toshkentda ofislarni tozalash - Professional klining xizmati",
+    "meta_description": "Toshkentda ofislar uchun kundalik va general tozalash ishlari. O'qitilgan xodimlar, sifat nazorati, shartnoma asosida ishlash.",
     "whats_included": ["Orgtexnikani artish", "Pol qoplamalarini parvarish qilish", "Shisha to'siqlarni tozalash", "Oshxona zonasini tozalash", "O'simliklarni sug'orish (ixtiyoriy)"],
     "work_process": [
       {"title": "Audit", "description": "Ofis jadvali va o'ziga xosligini baholaymiz."},
@@ -201,7 +201,7 @@
   },
   "CalculatorPage": {
       "title": "Narxni hisoblash",
-      "subtitle": "Xizmatni tanlang va maydonni kiriting.",
+      "subtitle": "Xizmatni tanlang va bino maydonini kiriting.",
       "form_title": "Hisob-kitobni yuborish",
       "form_subtitle": "Narxni saqlab qolish uchun ariza qoldiring.",
       "area_label": "Bino maydoni",
