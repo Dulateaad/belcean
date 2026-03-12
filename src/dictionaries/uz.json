@@ -1,4 +1,3 @@
-
 {
   "Header": {
     "services": "Xizmatlar",
@@ -37,19 +36,10 @@
     "clients_title": "Biz kimlar uchun ishlaymiz",
     "clients_subtitle": "Biz har xil turdagi tijorat ob'ektlari uchun sifatli tozalash xizmatlarini taqdim etamiz.",
     "services_title": "Bizning xizmatlarimiz",
-    "how_it_works_title": "Biz qanday ishlaymiz",
-    "why_us_title": "Nima uchun BeClean",
     "partners_title": "Bizning hamkorlarimiz",
     "gallery_title": "Ishimiz natijalari (Oldin va Keyin)",
-    "testimonials_title": "Mijozlarimizning fikrlari",
     "cta_title": "Tozalikka tayyormisiz?",
     "cta_subtitle": "Ariza qoldiring va menejerimiz tafsilotlarni muhokama qilish va narxni hisoblash uchun siz bilan bog'lanadi.",
-    "contacts_title": "Kontaktlar",
-    "contacts_subtitle": "Savollaringizga javob berish uchun doimo aloqadamiz.",
-    "contacts_address": "Manzil:",
-    "contacts_phone": "Telefon:",
-    "contacts_email": "Email:",
-    "contacts_hours": "Ish vaqti:",
     "pricing_unit": "so'm"
   },
   "Constants": {
@@ -61,23 +51,10 @@
       { "slug": "/moika-okon", "title": "Oynalarni yuvish", "description": "Kristal kabi toza derazalar, fasadlar va vitrinalar." },
       { "slug": "/himchistka-mebeli", "title": "Mebelni kimyoviy tozalash", "description": "Mebelingizga yangi va ozoda ko'rinishni qaytaramiz." }
     ],
-    "testimonials": [
-      { "name": "Alisher Karimov", "role": "Direktor, IT-kompaniya", "quote": "BeClean SERVIS — haqiqiy professionallar. Ofisimiz hech qachon bunchalik toza bo'lmagan. Menejer mas'uliyatiga besh ketdik.", "date": "01.03.2025", "stars": 5 },
-      { "name": "Elena Pak", "role": "Boshqaruvchi", "quote": "BeClean jamoasi juda bilimli va xushmuomala. Sifat nazorati a'lo darajada. Foto hisobotlar ishimizni osonlashtirdi.", "date": "02.03.2025", "stars": 5 }
-    ],
     "client_types": [
       { "name": "Ofislar" }, { "name": "Biznes-markazlar" }, { "name": "Do'konlar" }, { "name": "Klinikalar" }, { "name": "Omborlar" }, { "name": "Kvartiralar" }
     ],
-    "why_beclean": [
-      { "title": "500+ dan ortiq ishlar", "description": "Toshkent bo'ylab har qanday murakkablikdagi ob'ektlarni tozalashda ulkan tajriba." },
-      { "title": "Karcher texnikasi", "description": "Benuqson tozalik uchun faqat professional nemis uskunalaridan foydalanamiz." },
-      { "title": "Tekshiruvdan so'ng to'lov", "description": "Siz ish natijasidan shaxsan qoniqqaningizdan keyingina to'lov qilasiz." }
-    ],
-    "how_it_works": [
-      { "title": "Ariza yoki qo'ng'iroq", "description": "Siz saytda ariza qoldirasiz yoki bizga qo'ng'iroq qilasiz." },
-      { "title": "Ob'ektni baholash", "description": "Menejerimiz ish hajmini baholash uchun ob'ektingizga bepul boradi." }
-    ],
-     "prices": [
+    "prices": [
       { "id": "cleaning", "name": "Tozalash", "price": 20000 },
       { "id": "facade", "name": "Fasad", "price": 16000 },
       { "id": "drycleaning", "name": "Kimyoviy tozalash", "price": 15000 }

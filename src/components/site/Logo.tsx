@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 
 export function Logo() {
@@ -8,7 +9,7 @@ export function Logo() {
         alt="BECLEAN SERVIS Logo"
         width={120}
         height={30}
-        className="w-auto"
+        className="w-auto object-contain"
         style={{ height: 25 }}
         priority
       />

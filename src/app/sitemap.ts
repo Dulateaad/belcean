@@ -1,4 +1,3 @@
-
 import { MetadataRoute } from 'next';
 import { i18n } from '@/i18n-config';
 
@@ -16,10 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/quiz'
   ];
 
-  const staticPages = [
-    '/',
-  ];
-  
+  const staticPages = ['/'];
   const allPages = [...staticPages, ...serviceSlugs];
   const urls: MetadataRoute.Sitemap = [];
 

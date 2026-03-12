@@ -1,9 +1,6 @@
-
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://beclean.uz';
-
   return {
     rules: [
       {
@@ -11,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: 'https://beclean.uz/sitemap.xml',
   };
 }
