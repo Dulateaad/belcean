@@ -143,7 +143,7 @@
     "whats_included": ["Dog'larni ketkazish", "Hidlarni yo'qotish", "Changni chuqur ekstraksiya qilish", "Mato rangini tiklash", "Antibakterial ishlov berish"],
     "work_process": [
       {"title": "Sinov", "description": "Matoning tozalash vositasiga reaksiyasini tekshiramiz."},
-      {"title": "Tozalash", "description": "Bosim ostida ifloslanishni ketkazishning asosiy bosqichi."},
+      {"title": "Tozalash", "description": "Bosim ostida ifloslanishni ketkazishнинг asosiy bosqichi."},
       {"title": "Quritish", "description": "Mebel biroz nam qoladi va bir necha soat ichida quriydi."}
     ],
     "faq": [
