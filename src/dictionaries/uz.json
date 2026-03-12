@@ -71,12 +71,12 @@
       "process_title": "Ish jarayoni",
       "faq_title": "Ko'p beriladigan savollar",
       "price_title": "Taxminiy narxlar",
-      "form_title_windows": "Oyna yuvishga buyurtma",
-      "form_title_furniture": "Kimyoviy tozalashga buyurtma",
-      "form_title_office": "Ofis tozalashga buyurtma",
-      "form_title_subscription": "Abonent buyurtma",
-      "form_title_general": "General buyurtma",
-      "form_title_construction": "Qurilishdan keyingi buyurtma",
+      "form_title_windows": "Tozalashga buyurtma",
+      "form_title_furniture": "Tozalashga buyurtma",
+      "form_title_office": "Tozalashga buyurtma",
+      "form_title_subscription": "Tozalashga buyurtma",
+      "form_title_general": "Tozalashga buyurtma",
+      "form_title_construction": "Tozalashga buyurtma",
       "price_postfix_individual": "Narx individual hisoblanadi.",
       "price_postfix_complexity": "Aniq narx maydonga va ishning murakkabligiga bog'liq."
   },
@@ -117,7 +117,7 @@
     "service_subtitle": "Divanlar, kreslolar, stullar va gilam qoplamalarini professional ekstraktorli tozalash.",
     "meta_title": "Toshkentda mebel kimyoviy tozalash - Divanlarni yuvish",
     "meta_description": "Toshkentda professional mebel kimyoviy tozalash. Dog'lar va hidlarni ketkazish. Xavfsiz kimyo, tezkor natija.",
-    "whats_included": ["Dog'larni ketkazish", "Hidlarni yo'qotish", "Changni chuqur ekstraksiya qilish", "Mato rangini tiklash", "Antibakterial ishlov berish"],
+    "whats_included": ["Dog'larni ketkazish", "Hidlarni yo'qotish", "Changni chuqur ekstraksiya qilish", "Mebelni dezinfeksiya qilish", "Antibakterial ishlov berish"],
     "work_process": [
       {"title": "Sinov", "description": "Matoning tozalash vositasiga reaksiyasini tekshiramiz."},
       {"title": "Tozalash", "description": "Bosim ostida ifloslanishni ketkazishнинг asosiy bosqichi."},
@@ -191,47 +191,5 @@
     "title": "Tozalashga buyurtma",
     "description": "Raqamingizni qoldiring va biz tez orada sizga qo'ng'iroq qilamiz.",
     "telegram": "Telegramda yozish"
-  },
-  "QuizPage": {
-    "title": "Ideal tozalashni tanlang",
-    "subtitle": "3 ta savolga javob bering va biz mos keladigan tozalash turini tavsiya qilamiz.",
-    "step_prefix": "Bosqich",
-    "step_of": "dan",
-    "property_type_title": "Ob'ekt turi",
-    "cleaning_goal_title": "Asosiy vazifa",
-    "area_title": "Taxminiy maydon",
-    "result_title": "Sizga mos keladi: {service}",
-    "result_description": "{area} m² maydonli {propertyType} uchun biz {goal} tavsiya qilamiz. Bu sizning vazifalaringizni hisobga olgan holda mukammal tozalikka erishish imkonini beradi.",
-    "learn_more_button": "Xizmat haqida batafsil",
-    "back_button": "Orqaga",
-    "next_button": "Keyingisi",
-    "show_result_button": "Natijani ko'rish",
-    "start_over_button": "Boshidan boshlash",
-    "cta_title": "Tozalashga buyurtma bermoqchimisiz?",
-    "cta_subtitle": "Ariza qoldiring va biz tozalash tafsilotlarini muhokama qilamiz.",
-    "area_slider_hint": "Maydonni tanlash uchun slayderni suring",
-    "property_types": {
-      "office": "Ofis",
-      "business-center": "Biznes-markaz",
-      "shop": "Do'kon / Butik",
-      "clinic": "Klinika / Salon",
-      "warehouse": "Ombor / Sex",
-      "other": "Boshqa"
-    },
-    "property_type_genitive": {
-      "office": "ofis",
-      "business-center": "biznes-markaz",
-      "shop": "do'kon",
-      "clinic": "klinika",
-      "warehouse": "ombor",
-      "other": "sizning ob'ektingiz"
-    },
-    "cleaning_goals": {
-      "subscription": "Muntazam tozalikni saqlash",
-      "general": "General tozalash (chuqur tozalash)",
-      "post-construction": "Ta'mirdan/qurilishdan keyingi tozalash",
-      "furniture": "Mebel va kofrolinni kimyoviy tozalash",
-      "windows": "Oyna va fasadni yuvish"
-    }
   }
 }

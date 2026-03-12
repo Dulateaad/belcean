@@ -1,4 +1,3 @@
-
 import { Building2, ShoppingBag, HeartPulse, HardHat, Sparkles, Wind, Sofa, Users, UserCheck, ShieldCheck, Smile, ClipboardList, Home, Trophy, Zap, Wallet } from 'lucide-react';
 
 export const getServices = (t: any) => {
@@ -20,18 +19,6 @@ export const getBeforeAfterImages = () => [
   "https://firebasestorage.googleapis.com/v0/b/studio-590355839-601a4.firebasestorage.app/o/%D1%80%D1%815.jpeg?alt=media&token=4b1328bd-5f21-457b-bc1f-56214905e379"
 ];
 
-export const getTestimonials = (t: any) => {
-  const testimonialsText = t.Constants.testimonials;
-  const avatarSeeds = [
-    'alisher', 'elena', 'timur', 'malika', 'rustam', 'lola', 'sanzhar', 'dildora', 'bakhtiyor', 'aziza'
-  ];
-  
-  return testimonialsText.map((item: any, index: number) => ({
-    ...item,
-    avatar: `https://picsum.photos/seed/${avatarSeeds[index]}/100/100`
-  }));
-};
-
 export const getClientTypes = (t: any) => {
     const clientTypesText = t.Constants.client_types;
     return [
@@ -42,19 +29,6 @@ export const getClientTypes = (t: any) => {
         { name: clientTypesText[4].name, icon: HardHat, imageUrl: 'https://img.freepik.com/premium-photo/warehouse-3d-render-icon-illustration_726846-1766.jpg' },
         { name: clientTypesText[5].name, icon: Home, imageUrl: 'https://cdn-icons-png.flaticon.com/512/10740/10740590.png' },
     ];
-};
-
-export const getWhyBeClean = (t: any) => {
-    const whyBeCleanText = t.Constants.why_beclean;
-    const icons = [Trophy, Zap, Wallet, Users, ShieldCheck, UserCheck];
-    return whyBeCleanText.map((item: any, index: number) => ({
-        ...item,
-        icon: icons[index] || ShieldCheck
-    }));
-};
-
-export const getHowItWorks = (t: any) => {
-    return t.Constants.how_it_works;
 };
 
 export const getPrices = (t: any) => {

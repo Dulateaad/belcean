@@ -1,4 +1,5 @@
-// This file is removed to resolve conflict with /app/sitemap.ts
-export async function GET() {
-  return new Response("");
+// Нейтрализовано для исправления конфликта с /app/sitemap.ts в Next.js 15
+export const dynamic = 'force-static';
+export function GET() {
+  return new Response(null, { status: 404 });
 }
