@@ -29,27 +29,65 @@
   "HomePage": {
     "meta_title": "BECLEAN SERVIS - Toshkentdagi biznes uchun professional tozalash",
     "meta_description": "Toshkentdagi ofislar, biznes markazlari, klinikalar va do'konlar uchun professional tozalash xizmatlari. Sifat kafolati, shartnoma, o'qitilgan xodimlar.",
-    "meta_keywords": "toshkent tozalash, ofislarni tozalash, tozalash xizmatlari, professional tozalash, BECLEAN SERVIS",
+    "meta_keywords": "toshkent tozalash, Toshkentda general tozalash, Toshkentda ofislarni tozalash, Toshkentda tozalash xizmatlari, Toshkentda professional tozalash, ta'mirdan keyin tozalash Toshkent, mebel kimyoviy tozalash Toshkent, oyna yuvish Toshkent, BECLEAN SERVIS",
     "hero_title": "Toshkentda biznes va uy uchun professional tozalash",
     "hero_subtitle": "Ofislar, BM, klinikalar. Shartnoma. Sifat nazorati.",
     "calculate_button": "Narxni hisoblash",
+    "stats_aria": "BECLEAN SERVIS ko'rsatkichlari",
+    "stats_items": [
+      { "value": 850, "label": "Professional tozalashdan keyin mamnun mijozlar" },
+      { "value": 12, "label": "Tozalash va mebel kimyoviy tozalash turlari" },
+      { "value": 6, "label": "Toshkent bozorida jamoa tajribasi (yil)" }
+    ],
     "clients_title": "Biz kimlar uchun ishlaymiz",
     "clients_subtitle": "Biz har xil turdagi tijorat ob'ektlari uchun sifatli tozalash xizmatlarini taqdim etamiz.",
     "services_title": "Bizning xizmatlarimiz",
+    "learn_more": "Batafsil",
+    "trust_us_title": "Bizga ishonadilar",
+    "trust_us_subtitle": "Turli biznes sohalari tozalikni saqlash uchun bizni tanlaydi",
+    "trust_us_items": [
+      "Restoranlar",
+      "Biznes-markazlar",
+      "Ofislar",
+      "Savdo markazlari",
+      "Klinikalar",
+      "Omborlar",
+      "Va boshqalar"
+    ],
+    "why_beclean_title": "Nima uchun BeClean",
+    "why_beclean_items": [
+      { "title": "Yuzlab yakunlangan loyihalar", "description": "Toshkent bo'ylab har qanday murakkablikdagi ob'ektlarni tozalashda katta tajriba." },
+      { "title": "Karcher texnikasi", "description": "Mukammal tozalik uchun faqat professional nemis uskunalaridan foydalanamiz." },
+      { "title": "Tekshiruvdan keyin to'lov", "description": "Ishimiz sifati bilan shaxsan tanishganingizdan keyingina natija uchun to'laysiz." },
+      { "title": "O'qitilgan xodimlar", "description": "Barcha xodimlarimiz maxsus o'qitishdan o'tadi va muntazam malaka oshiradi." },
+      { "title": "Sifat kafolati", "description": "Yuqori standartni kafolatlash uchun har bir ob'ekt uchun batafsil tekshiruv ro'yxatlaridan foydalanamiz." },
+      { "title": "Shaxsiy menejer", "description": "Har bir mijozga barcha savollar uchun shaxsiy menejer biriktiriladi." }
+    ],
     "partners_title": "Bizning hamkorlarimiz",
     "gallery_title": "Ishimiz natijalari (Oldin va Keyin)",
+    "reviews_title": "Mijozlarimiz fikrlari",
+    "reviews_subtitle": "Mijozlarimiz biz haqida nima deyapti",
+    "reviews_client_label": "Mijoz",
+    "testimonials": [
+      { "name": "Anna A.", "role": "Mijoz", "quote": "Sizga murojaat qilganimdan juda xursandman! Tozalash ishi sifatli va vaqtida bajarildi. Endi faqat sizga!" , "date": "01.03.2026" },
+      { "name": "Aziza Rahimova", "role": "Ofis direktori, IT-kompaniya", "quote": "BECLEAN bilan olti oydan beri ishlaymiz. Ofis doim mukammal toza, xodimlar vaqtida va ehtiyotkor. Tavsiya qilaman!", "date": "03.03.2026" },
+      { "name": "Sergey Petrov", "role": "Biznes-markaz egasi", "quote": "Professional jamoa. Ta'mirdan keyingi general tozalash ajoyib bajarildi — barcha chang va qurilish chiqindilarini tozaladilar.", "date": "05.03.2026" },
+      { "name": "Madina Karimova", "role": "Klinika boshqaruvchisi", "quote": "Sanitariya standartlariga qat'iy rioya, operatsiyaxonalar va yo'laklarni sifatli tozalash. Tibbiy muassasalar uchun ishonchli hamkor.", "date": "07.03.2026" },
+      { "name": "Dmitriy Kozlov", "role": "Do'kon direktori", "quote": "Vitrinallar va fasadni haftalik yuvadilar. Mijozlar tozalikni sezadilar. Narxlar mos, yillik shartnoma — qulay.", "date": "09.03.2026" },
+      { "name": "Nodira Yusupova", "role": "HR-menejer", "quote": "Abonent tozalash — ofisga kerak bo'lgan narsa. Jadval bo'yicha keladilar, xodimlarni chalg'itmaydilar. Hammasi aniq tashkilot.", "date": "11.03.2026" }
+    ],
     "cta_title": "Tozalikka tayyormisiz?",
     "cta_subtitle": "Ariza qoldiring va menejerimiz tafsilotlarni muhokama qilish va narxni hisoblash uchun siz bilan bog'lanadi.",
     "pricing_unit": "so'm"
   },
   "Constants": {
     "services": [
-      { "slug": "/uborka-ofisov-tashkent", "title": "Ofislarni tozalash", "description": "Ish joyingizda tozalik va tartibni saqlaymiz." },
-      { "slug": "/abonentskiy-klining", "title": "Abonent tozalash", "description": "Kelishilgan jadval bo'yicha muntazam tozalash." },
-      { "slug": "/generalnaya-uborka", "title": "General tozalash", "description": "Barcha xonalarni kompleks va puxta tozalash." },
-      { "slug": "/poslestroitelnaya-uborka", "title": "Qurilishdan keyingi tozalash", "description": "Barcha qurilish changi va chiqindilarini tozalaymiz." },
-      { "slug": "/moika-okon", "title": "Oynalarni yuvish", "description": "Kristal kabi toza derazalar, fasadlar va vitrinalar." },
-      { "slug": "/himchistka-mebeli", "title": "Mebelni kimyoviy tozalash", "description": "Mebelingizga yangi va ozoda ko'rinishni qaytaramiz." }
+      { "slug": "/uborka-ofisov-tashkent", "title": "Toshkentda ofislarni tozalash", "description": "Toshkentda professional ofis tozalash. Ish joyingizda tozalik va tartib." },
+      { "slug": "/abonentskiy-klining", "title": "Toshkentda abonent tozalash", "description": "Toshkentda jadval bo'yicha muntazam tozalash." },
+      { "slug": "/generalnaya-uborka", "title": "Toshkentda general tozalash", "description": "Toshkentda general tozalash — barcha xonalarni kompleks tozalash." },
+      { "slug": "/poslestroitelnaya-uborka", "title": "Toshkentda ta'mirdan keyingi tozalash", "description": "Toshkentda ta'mirdan keyin tozalash. Qurilish changi va chiqindilarini tozalaymiz." },
+      { "slug": "/moika-okon", "title": "Toshkentda oyna yuvish", "description": "Toshkentda oyna yuvish. Toza derazalar, fasadlar va vitrinalar." },
+      { "slug": "/himchistka-mebeli", "title": "Toshkentda mebel kimyoviy tozalash", "description": "Toshkentda mebel kimyoviy tozalash. Mebelingizga yangi ko'rinish." }
     ],
     "client_types": [
       { "name": "Ofislar" }, { "name": "Biznes-markazlar" }, { "name": "Do'konlar" }, { "name": "Klinikalar" }, { "name": "Omborlar" }, { "name": "Kvartiralar" }
@@ -177,8 +215,8 @@
     ]
   },
   "CalculatorPage": {
-      "title": "Narxni hisoblash",
-      "subtitle": "Xizmatni tanlang va bino maydonini kiriting.",
+      "title": "Toshkentda tozalash narxini hisoblash",
+      "subtitle": "Xizmatni tanlang va bino maydonini kiriting. Toshkent bo'ylab ishlaymiz.",
       "form_title": "Tozalashga buyurtma",
       "form_subtitle": "Narxni saqlab qolish uchun ariza qoldiring.",
       "area_label": "Bino maydoni",
@@ -186,10 +224,56 @@
       "note_title": "Tekshiruvdan so'ng aniq narx",
       "note_description": "Menejerimiz bepul tekshiruv uchun boradi va yakuniy narxni aytadi."
   },
+  "QuizPage": {
+    "title": "Xizmatni tanlang",
+    "subtitle": "Bir nechta savolga javob bering va biz mos xizmatni tavsiya qilamiz.",
+    "property_type_title": "Bino turi",
+    "cleaning_goal_title": "Tozalash maqsadi",
+    "area_title": "Bino maydoni",
+    "result_title": "Tavsiya: {service}",
+    "step_prefix": "Qadam",
+    "step_of": "/",
+    "area_slider_hint": "Maydonni ko'rsatish uchun slayderni siljiting",
+    "back_button": "Orqaga",
+    "next_button": "Keyingi",
+    "show_result_button": "Natijani ko'rsatish",
+    "start_over_button": "Qayta boshlash",
+    "learn_more_button": "Batafsil",
+    "cta_title": "{service} buyurtma qilish",
+    "cta_subtitle": "Ariza qoldiring va menejerimiz siz bilan bog'lanadi.",
+    "result_description": "{area} m² maydonli {propertyType} uchun {goal} mos keladi.",
+    "property_types": {
+      "office": "Ofis",
+      "business-center": "Biznes-markaz",
+      "shop": "Do'kon",
+      "clinic": "Klinika",
+      "warehouse": "Ombor",
+      "other": "Boshqa"
+    },
+    "cleaning_goals": {
+      "subscription": "Jadval bo'yicha muntazam tozalash",
+      "general": "General tozalash",
+      "post-construction": "Qurilishdan keyingi tozalash",
+      "furniture": "Mebelni kimyoviy tozalash",
+      "windows": "Oynalarni yuvish"
+    },
+    "property_type_genitive": {
+      "office": "ofis",
+      "business-center": "biznes-markaz",
+      "shop": "do'kon",
+      "clinic": "klinika",
+      "warehouse": "ombor",
+      "other": "bino"
+    }
+  },
   "FloatingInquiry": {
     "aria_label": "Tozalashga buyurtma",
     "title": "Tozalashga buyurtma",
-    "description": "Raqamingizni qoldiring va biz tez orada sizga qo'ng'iroq qilamiz.",
-    "telegram": "Telegramda yozish"
+    "description": "Ariza qoldiring va biz tez orada sizga qo'ng'iroq qilamiz.",
+    "prices_label": "Taxminiy narxlar",
+    "thank_you": "Arizangiz uchun rahmat! Tez orada siz bilan bog'lanamiz.",
+    "thank_you_title": "Rahmat!",
+    "telegram": "Telegramda yozish",
+    "call": "Qo'ng'iroq qilish"
   }
 }

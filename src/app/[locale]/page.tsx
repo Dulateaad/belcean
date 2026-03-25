@@ -8,13 +8,22 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+import { ReviewsCarousel } from '@/components/site/ReviewsCarousel';
 import {
   ArrowRight,
   Sparkles,
   CheckCircle2,
   Camera,
   Calculator,
-  Handshake
+  Handshake,
+  MessageCircle,
+  Shield,
+  Wrench,
+  CreditCard,
+  GraduationCap,
+  ClipboardCheck,
+  UserCheck,
+  Trophy
 } from 'lucide-react';
 import { ContactForm } from '@/components/site/ContactForm';
 import * as constants from '@/lib/constants';
@@ -23,6 +32,7 @@ import { getDictionary } from '@/lib/get-dictionary';
 import type { Locale } from '@/i18n-config';
 import { HeroCarousel } from '@/components/site/HeroCarousel';
 import { AutoCarousel } from '@/components/site/AutoCarousel';
+import { RollingStatsSection } from '@/components/site/RollingStatsSection';
 
 export default async function Home({ params }: { params: Promise<{ locale: Locale }> }) {
   const resolvedParams = await params;
@@ -31,6 +41,7 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
   const services = constants.getServices(t);
   const clientTypes = constants.getClientTypes(t);
   const beforeAfterImages = constants.getBeforeAfterImages();
+  const testimonials = constants.getTestimonials(t);
 
   const heroCarouselImages = [
     PlaceHolderImages.find(p => p.id === 'hero-carousel-1'),
@@ -61,12 +72,21 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
                     </Link>
                   </Button>
                   <Button asChild variant="outline" size="lg" className="px-8 py-6 text-lg font-bold bg-white/10 text-white border-white/20 hover:bg-white/20 w-full sm:w-auto backdrop-blur-sm">
-                    <Link href={`/${locale}#cta`}>{t.ContactForm.submit_button} <ArrowRight className="ml-2 h-5 w-5" /></Link>
+                    <Link href={`/${locale}/calculator`}>{t.ContactForm.submit_button} <ArrowRight className="ml-2 h-5 w-5" /></Link>
                   </Button>
               </div>
           </div>
         </div>
       </section>
+
+      <RollingStatsSection
+        ariaLabel={t.HomePage.stats_aria}
+        items={(t.HomePage.stats_items as { value: number; label: string }[]).map((item, i) => ({
+          value: item.value,
+          label: item.label,
+          delayBase: i * 250,
+        }))}
+      />
 
       <section id="clients" className="w-full py-16 md:py-32">
         <div className="container mx-auto px-4 md:px-6 text-center">
@@ -115,8 +135,60 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
                     <CardTitle className="text-xl mt-4">{service.title}</CardTitle>
                     <p className="text-muted-foreground mt-2 mb-4 flex-grow">{service.description}</p>
                      <Button asChild variant="link" className="p-0 h-auto font-semibold mt-auto opacity-70 group-hover:opacity-100 transition-opacity">
-                      <Link href={`/${locale}${service.slug}`}>Подробнее <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                      <Link href={`/${locale}${service.slug}`}>{t.HomePage.learn_more} <ArrowRight className="ml-2 h-4 w-4" /></Link>
                     </Button>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section id="trust-us" className="w-full py-16 md:py-32 bg-background">
+        <div className="container mx-auto px-4 md:px-6 text-center">
+          <div className="flex flex-col items-center justify-center space-y-4 mb-12">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline flex items-center justify-center gap-3">
+              <Handshake className="w-8 h-8 text-primary" /> {t.HomePage.trust_us_title}
+            </h2>
+            <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl/relaxed">
+              {t.HomePage.trust_us_subtitle}
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+            {(t.HomePage.trust_us_items as string[]).map((item: string, index: number) => (
+              <div
+                key={index}
+                className="px-6 py-3 rounded-full bg-primary/10 text-primary font-semibold border border-primary/20 hover:bg-primary/20 transition-colors"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="why-beclean" className="w-full py-16 md:py-32 bg-secondary">
+        <div className="container mx-auto px-4 md:px-6">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12 flex items-center justify-center gap-3">
+            <Shield className="w-8 h-8 text-primary" /> {t.HomePage.why_beclean_title}
+          </h2>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+            {(t.HomePage.why_beclean_items as any[]).map((item: any, index: number) => {
+              const icons = [Trophy, Wrench, CreditCard, GraduationCap, ClipboardCheck, UserCheck];
+              const Icon = icons[index % icons.length];
+              return (
+                <Card key={index} className="bg-background border hover:border-primary/50 transition-colors">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-primary/10 p-3 rounded-lg shrink-0">
+                        <Icon className="w-6 h-6 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
+                        <p className="text-muted-foreground text-sm">{item.description}</p>
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
               );
@@ -143,6 +215,25 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
                     <span className="text-sm font-semibold text-muted-foreground">Karcher</span>
                 </div>
             </div>
+        </div>
+      </section>
+
+      <section id="reviews" className="w-full py-16 md:py-32 bg-secondary/30">
+        <div className="container mx-auto px-4 md:px-6 text-center">
+          <div className="flex flex-col items-center justify-center space-y-4 mb-12">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline flex items-center justify-center gap-3">
+              <MessageCircle className="w-8 h-8 text-primary" /> {t.HomePage.reviews_title}
+            </h2>
+            <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl/relaxed">
+              {t.HomePage.reviews_subtitle}
+            </p>
+          </div>
+          <div className="relative max-w-4xl mx-auto">
+            <ReviewsCarousel
+              testimonials={testimonials}
+              clientLabel={t.HomePage.reviews_client_label}
+            />
+          </div>
         </div>
       </section>
 

@@ -2,7 +2,7 @@
 'use client';
 import Link from 'next/link';
 import { Logo } from './Logo';
-import { Facebook, Instagram, Send } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 import { useDictionary } from '@/contexts/dictionary-context';
 import * as constants from '@/lib/constants';
 import { usePathname } from 'next/navigation';
@@ -56,9 +56,6 @@ export function SiteFooter() {
                <div className="flex space-x-4 pt-4 justify-center md:justify-start">
                 <Link href="https://www.instagram.com/beclean_servic?igsh=OTlpZXg3ODlrZnYw" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                   <Instagram className="h-6 w-6 text-muted-foreground hover:text-primary" />
-                </Link>
-                <Link href="https://t.me/beclean_manager" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-                  <Send className="h-6 w-6 text-muted-foreground hover:text-primary" />
                 </Link>
               </div>
             </div>
