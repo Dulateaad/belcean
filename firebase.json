@@ -1,0 +1,16 @@
+{
+  "apphosting": [
+    {
+      "backendId": "studio",
+      "rootDir": ".",
+      "ignore": [
+        "node_modules",
+        ".git",
+        ".next",
+        "*.log",
+        ".env.local",
+        ".env*.local"
+      ]
+    }
+  ]
+}

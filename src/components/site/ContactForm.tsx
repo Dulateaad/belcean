@@ -35,7 +35,7 @@ const formSchema = z.object({
 
 type ContactFormValues = z.infer<typeof formSchema>;
 
-export function ContactForm({ defaultService }: { defaultService?: string }) {
+export function ContactForm({ defaultService, noRedirect, onSuccess }: { defaultService?: string; noRedirect?: boolean; onSuccess?: () => void }) {
   const t = useDictionary();
   const params = useParams();
   const locale = params.locale as string || 'ru';
@@ -59,7 +59,9 @@ export function ContactForm({ defaultService }: { defaultService?: string }) {
 
   async function handleAction(formData: FormData) {
       try {
-          await submitInquiry(formData);
+          if (noRedirect) formData.set('noRedirect', 'true');
+          const result = await submitInquiry(formData);
+          if (result?.success && onSuccess) onSuccess();
       } catch (e) {
           if (e instanceof Error && e.message.includes('NEXT_REDIRECT')) {
               throw e;

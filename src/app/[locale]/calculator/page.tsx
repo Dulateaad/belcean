@@ -1,7 +1,8 @@
 
 "use client";
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -13,10 +14,12 @@ import { Info, Calculator, Sparkles } from 'lucide-react';
 import { useDictionary } from '@/contexts/dictionary-context';
 import { cn } from '@/lib/utils';
 
-export default function CalculatorPage() {
+function CalculatorContent() {
   const d = useDictionary();
   const t = d.CalculatorPage;
   const prices = d.Constants.prices;
+  const searchParams = useSearchParams();
+  const submitted = searchParams.get('submitted') === '1';
   
   const [area, setArea] = useState(100);
   const [service, setService] = useState('cleaning');
@@ -27,6 +30,30 @@ export default function CalculatorPage() {
 
   const totalPrice = useMemo(() => area * currentService.price, [area, currentService]);
   const formattedTotal = new Intl.NumberFormat('ru-RU').format(totalPrice);
+
+  if (!submitted) {
+    return (
+      <div className="bg-background">
+        <div className="container py-12 md:py-24 animate-fade-in">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl font-headline flex items-center justify-center gap-4">
+              <Calculator className="w-10 h-10 text-primary" /> {t.form_title}
+            </h1>
+            <p className="max-w-[600px] mx-auto mt-4 text-muted-foreground md:text-lg">
+              {t.form_subtitle}
+            </p>
+          </div>
+          <div className="max-w-md mx-auto">
+            <Card className="shadow-xl border-primary/10 overflow-hidden">
+              <CardContent className="pt-6">
+                <ContactForm />
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-background">
@@ -140,5 +167,13 @@ export default function CalculatorPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function CalculatorPage() {
+  return (
+    <Suspense fallback={<div className="container py-24 text-center text-muted-foreground">Загрузка...</div>}>
+      <CalculatorContent />
+    </Suspense>
   );
 }

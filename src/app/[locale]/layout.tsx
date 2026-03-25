@@ -7,6 +7,7 @@ import { i18n, type Locale } from '@/i18n-config';
 import { DictionaryProvider } from '@/contexts/dictionary-context';
 import { FloatingInquiry } from '@/components/site/FloatingInquiry';
 import { Metadata } from 'next';
+import { headers } from 'next/headers';
 import Script from 'next/script';
 
 export async function generateStaticParams() {
@@ -23,6 +24,17 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: L
   };
 }
 
+async function getClientIp(): Promise<string> {
+  try {
+    const headersList = await headers();
+    const forwarded = headersList.get('x-forwarded-for');
+    if (forwarded) return forwarded.split(',')[0].trim();
+    return headersList.get('x-real-ip') || headersList.get('cf-connecting-ip') || '';
+  } catch {
+    return '';
+  }
+}
+
 export default async function LocaleLayout({
   children,
   params,
@@ -32,6 +44,7 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
   const t = await getDictionary(locale);
+  const clientIp = (await getClientIp()).replace(/["\\]/g, '');
 
   return (
     <html lang={locale}>
@@ -76,6 +89,7 @@ export default async function LocaleLayout({
         {/* Yandex Metrika */}
         <Script id="yandex-metrika" strategy="afterInteractive">
           {`
+            window.yaParams = { ip_address: "${clientIp}" };
             (function(m,e,t,r,i,k,a){
                 m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
                 m[i].l=1*new Date();
@@ -90,10 +104,16 @@ export default async function LocaleLayout({
                 referrer: document.referrer,
                 url: location.href,
                 accurateTrackBounce:true,
-                trackLinks:true
+                trackLinks:true,
+                params: window.yaParams
             });
           `}
         </Script>
+        <noscript>
+          <div>
+            <img src="https://mc.yandex.ru/watch/106653042" style={{ position: 'absolute', left: -9999 }} alt="" />
+          </div>
+        </noscript>
         <Script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module" strategy="lazyOnload" />
       </body>
     </html>

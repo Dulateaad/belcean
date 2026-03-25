@@ -5,3 +5,9 @@ runConfig:
   # Increase this value if you'd like to automatically spin up
   # more instances in response to increased traffic.
   maxInstances: 1
+
+env:
+  - variable: TELEGRAM_BOT_TOKEN
+    secret: TELEGRAM_BOT_TOKEN
+  - variable: TELEGRAM_CHAT_ID
+    secret: TELEGRAM_CHAT_ID

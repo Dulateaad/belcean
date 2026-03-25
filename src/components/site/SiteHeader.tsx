@@ -159,7 +159,7 @@ export function SiteHeader() {
                 </div>
 
                 <Button asChild className="hidden lg:inline-flex ml-4">
-                    <Link href={`/${currentLocale}#cta`}>{t.Header.call_request}</Link>
+                    <Link href={`/${currentLocale}/calculator`}>{t.Header.call_request}</Link>
                 </Button>
             </div>
         </div>

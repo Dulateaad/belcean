@@ -2,53 +2,69 @@
 "use server";
 
 import { redirect } from 'next/navigation';
-import { z } from 'zod';
 
-async function sendTelegramNotification(message: string) {
+async function sendTelegramNotification(message: string): Promise<{ ok: boolean; error?: string }> {
   const botToken = process.env.TELEGRAM_BOT_TOKEN;
-  const chatIds = ['7593008791'].concat(process.env.TELEGRAM_CHAT_ID?.split(',') || []);
+  const chatIds = (process.env.TELEGRAM_CHAT_ID || '7593008791')
+    .split(',')
+    .map(id => id.trim())
+    .filter(Boolean);
 
   if (!botToken || chatIds.length === 0) {
-    console.error("Telegram bot token or chat ID is not configured");
-    return;
+    console.warn('[submitInquiry] Telegram not configured: TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID missing');
+    return { ok: false, error: 'Telegram not configured' };
   }
 
   const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
-  
+  const errors: string[] = [];
+
   for (const chatId of chatIds) {
-      if (!chatId.trim()) continue;
-      try {
-        await fetch(url, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            chat_id: chatId.trim(),
-            text: message,
-            parse_mode: 'HTML',
-          }),
-        });
-      } catch (error) {
-        console.error(`Error sending Telegram notification to ${chatId}:`, error);
+    try {
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+          parse_mode: 'HTML',
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) {
+        errors.push(`Chat ${chatId}: ${data.description || res.statusText}`);
       }
+    } catch (error) {
+      errors.push(`Chat ${chatId}: ${error instanceof Error ? error.message : 'Network error'}`);
+    }
   }
+
+  if (errors.length > 0) {
+    console.error('[submitInquiry] Telegram error:', errors.join('; '));
+    return { ok: false, error: errors.join('; ') };
+  }
+  return { ok: true };
 }
 
-const inquirySchema = z.object({
-  name: z.string(),
-  phone: z.string(),
-  service: z.string().optional(),
-  locale: z.string().default('ru'),
-});
+export async function submitInquiry(formData: FormData): Promise<{ success?: boolean } | never> {
+  const name = String(formData.get('name') ?? '').trim();
+  const phone = String(formData.get('phone') ?? '').trim();
+  const service = String(formData.get('service') ?? '').trim();
+  const locale = String(formData.get('locale') ?? 'ru').trim() || 'ru';
+  const noRedirect = formData.get('noRedirect') === 'true';
 
-export async function submitInquiry(formData: FormData) {
-  const name = formData.get('name') as string;
-  const phone = formData.get('phone') as string;
-  const service = formData.get('service') as string;
-  const locale = formData.get('locale') as string || 'ru';
+  if (!name || !phone) {
+    throw new Error('Имя и телефон обязательны');
+  }
 
   const message = `📥 <b>Новая заявка</b>\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n📝 Инфо: ${service || '—'}\n🌍 Источник: website`;
     
-  await sendTelegramNotification(message);
+  const tgResult = await sendTelegramNotification(message);
+  if (!tgResult.ok) {
+    console.warn('[submitInquiry] Telegram failed, but form accepted:', tgResult.error);
+  }
   
-  redirect(`/${locale}/thank-you`);
+  if (noRedirect) {
+    return { success: true };
+  }
+  redirect(`/${locale}/calculator?submitted=1`);
 }

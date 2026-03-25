@@ -34,3 +34,23 @@ export const getClientTypes = (t: any) => {
 export const getPrices = (t: any) => {
     return t.Constants.prices;
 };
+
+const REVIEW_AVATARS = [
+    'https://picsum.photos/seed/review1/200/200',
+    'https://picsum.photos/seed/review2/200/200',
+    'https://picsum.photos/seed/review3/200/200',
+    'https://picsum.photos/seed/review4/200/200',
+    'https://picsum.photos/seed/review5/200/200',
+    'https://picsum.photos/seed/review6/200/200',
+];
+
+export const getTestimonials = (t: any) => {
+    const testimonials = t.HomePage.testimonials;
+    return testimonials.map((item: any, index: number) => ({
+        name: item.name,
+        role: item.role,
+        quote: item.quote,
+        date: item.date,
+        avatarUrl: REVIEW_AVATARS[index % REVIEW_AVATARS.length],
+    }));
+};
