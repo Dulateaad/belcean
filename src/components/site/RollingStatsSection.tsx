@@ -1,9 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 
 const DIGIT_H = 56;
-const CYCLES = 3;
+/** Больше полных оборотов 0→9 — цифры дольше «крутятся», финал не резкий */
+const CYCLES = 5;
+const DURATION_MS = 3200;
+const EASING = "cubic-bezier(0.15, 0.85, 0.25, 1)";
+const DIGIT_STAGGER_MS = 100;
 
 function DigitRoller({
   targetDigit,
@@ -18,18 +23,21 @@ function DigitRoller({
   const strip = Array.from({ length: CYCLES * 10 }, (_, i) => i % 10);
 
   return (
-    <div className="relative inline-block h-14 min-w-[2.25rem] overflow-hidden align-bottom md:min-w-[2.5rem]">
+    <div className="relative inline-block h-14 min-w-[2.25rem] overflow-hidden md:min-w-[2.5rem]">
       <div
-        className="flex flex-col transition-transform duration-[2200ms] ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none"
+        className="flex flex-col motion-reduce:!transition-none"
         style={{
           transform: `translateY(${active ? -finalIndex * DIGIT_H : 0}px)`,
-          transitionDelay: `${delayMs}ms`,
+          transitionProperty: active ? "transform" : "none",
+          transitionDuration: active ? `${DURATION_MS}ms` : "0ms",
+          transitionTimingFunction: EASING,
+          transitionDelay: active ? `${delayMs}ms` : "0ms",
         }}
       >
         {strip.map((d, i) => (
           <div
             key={i}
-            className="flex h-14 shrink-0 items-center justify-center text-4xl font-bold tracking-tight text-foreground tabular-nums md:text-5xl font-headline"
+            className="flex h-14 shrink-0 items-center justify-center font-headline text-4xl font-extrabold tracking-tighter text-foreground tabular-nums md:text-5xl"
           >
             {d}
           </div>
@@ -51,20 +59,30 @@ function RollingStat({
   delayBase: number;
 }) {
   const digits = String(Math.max(0, Math.floor(value))).split("");
+  const lastDigitDelay = delayBase + Math.max(0, digits.length - 1) * DIGIT_STAGGER_MS;
+  const plusDelayMs = lastDigitDelay + Math.round(DURATION_MS * 0.92);
 
   return (
     <div className="flex flex-col items-center px-2">
-      <div className="flex items-end justify-center">
+      <div className="flex items-center justify-center gap-0">
         {digits.map((ch, i) => (
           <DigitRoller
             key={`${value}-${i}`}
             targetDigit={Number(ch)}
             active={active}
-            delayMs={active ? delayBase + i * 75 : 0}
+            delayMs={active ? delayBase + i * DIGIT_STAGGER_MS : 0}
           />
         ))}
         <span
-          className="mb-2 ml-0.5 select-none text-lg font-bold leading-none text-red-500 md:text-xl"
+          className={cn(
+            "inline-flex h-14 min-w-[1.25rem] items-center justify-center pl-1 font-headline text-2xl font-extrabold leading-none text-red-500 md:pl-1.5 md:text-3xl",
+            "transition-[opacity,transform] duration-700 ease-out motion-reduce:transition-none"
+          )}
+          style={{
+            opacity: active ? 1 : 0,
+            transform: active ? "scale(1) translateY(0)" : "scale(0.88) translateY(4px)",
+            transitionDelay: active ? `${plusDelayMs}ms` : "0ms",
+          }}
           aria-hidden
         >
           +

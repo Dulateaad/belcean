@@ -35,7 +35,7 @@
     "calculate_button": "Narxni hisoblash",
     "stats_aria": "BECLEAN SERVIS ko'rsatkichlari",
     "stats_items": [
-      { "value": 850, "label": "Professional tozalashdan keyin mamnun mijozlar" },
+      { "value": 856, "label": "Professional tozalashdan keyin mamnun mijozlar" },
       { "value": 12, "label": "Tozalash va mebel kimyoviy tozalash turlari" },
       { "value": 6, "label": "Toshkent bozorida jamoa tajribasi (yil)" }
     ],
