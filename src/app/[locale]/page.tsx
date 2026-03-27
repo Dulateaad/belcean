@@ -225,10 +225,11 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
                 <div className="flex flex-col items-center gap-2">
                     <div className="relative h-16 w-32 md:h-20 md:w-40">
                         <Image
-                            src="/partners/odo.png"
+                            src="https://firebasestorage.googleapis.com/v0/b/studio-459358167-4d676.firebasestorage.app/o/Business%20Hub%20(1).png?alt=media&token=3f9f389e-0134-4258-8069-30db60758766"
                             alt="ODO"
                             fill
                             className="object-contain"
+                            sizes="(max-width: 768px) 128px, 160px"
                         />
                     </div>
                     <span className="text-sm font-semibold text-muted-foreground">ODO</span>
