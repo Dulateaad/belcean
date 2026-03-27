@@ -35,24 +35,37 @@ export const getPrices = (t: any) => {
     return t.Constants.prices;
 };
 
-/** Чередование аватаров: женский / мужской портрет по индексу отзыва */
+/** Аватары по полу из словаря (`gender`: female/male); разные лица — хэш от имени */
 const AVATAR_FEMALE = [
     'https://randomuser.me/api/portraits/women/65.jpg',
     'https://randomuser.me/api/portraits/women/44.jpg',
     'https://randomuser.me/api/portraits/women/68.jpg',
+    'https://randomuser.me/api/portraits/women/17.jpg',
+    'https://randomuser.me/api/portraits/women/33.jpg',
 ];
 const AVATAR_MALE = [
     'https://randomuser.me/api/portraits/men/32.jpg',
     'https://randomuser.me/api/portraits/men/75.jpg',
     'https://randomuser.me/api/portraits/men/52.jpg',
+    'https://randomuser.me/api/portraits/men/86.jpg',
+    'https://randomuser.me/api/portraits/men/41.jpg',
 ];
 
 export const getTestimonials = (t: any) => {
     const testimonials = t.HomePage.testimonials;
     return testimonials.map((item: any, index: number) => {
-        const isFemale = index % 2 === 0;
-        const pool = isFemale ? AVATAR_FEMALE : AVATAR_MALE;
-        const avatarUrl = pool[Math.floor(index / 2) % pool.length];
+        const g = String(item.gender ?? '').toLowerCase();
+        const useFemale =
+            g === 'female' || g === 'f'
+                ? true
+                : g === 'male' || g === 'm'
+                  ? false
+                  : index % 2 === 0;
+
+        const pool = useFemale ? AVATAR_FEMALE : AVATAR_MALE;
+        const hash = (item.name ?? '').split('').reduce((acc: number, ch: string) => acc + ch.charCodeAt(0), index);
+        const avatarUrl = pool[Math.abs(hash) % pool.length];
+
         return {
             name: item.name,
             role: item.role,

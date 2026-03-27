@@ -37,7 +37,7 @@
     "stats_items": [
       { "value": 856, "label": "Professional tozalashdan keyin mamnun mijozlar", "suffix": "plus" },
       { "value": 12, "label": "Tozalash va mebel kimyoviy tozalash turlari", "suffix": "none" },
-      { "value": 6, "label": "Toshkent bozorida jamoa tajribasi (yil)", "suffix": "none" },
+      { "value": 1, "label": "Yil bozorda", "suffix": "none" },
       { "value": 4.9, "label": "Mijozlarimizdan baho", "suffix": "star", "isRating": true }
     ],
     "clients_title": "Biz kimlar uchun ishlaymiz",
@@ -70,12 +70,12 @@
     "reviews_subtitle": "Mijozlarimiz biz haqida nima deyapti",
     "reviews_client_label": "Mijoz",
     "testimonials": [
-      { "name": "Anna A.", "role": "Mijoz", "quote": "Sizga murojaat qilganimdan juda xursandman! Tozalash ishi sifatli va vaqtida bajarildi. Endi faqat sizga!" , "date": "01.03.2026" },
-      { "name": "Aziza Rahimova", "role": "Ofis direktori, IT-kompaniya", "quote": "BECLEAN bilan olti oydan beri ishlaymiz. Ofis doim mukammal toza, xodimlar vaqtida va ehtiyotkor. Tavsiya qilaman!", "date": "03.03.2026" },
-      { "name": "Sergey Petrov", "role": "Biznes-markaz egasi", "quote": "Professional jamoa. Ta'mirdan keyingi general tozalash ajoyib bajarildi — barcha chang va qurilish chiqindilarini tozaladilar.", "date": "05.03.2026" },
-      { "name": "Madina Karimova", "role": "Klinika boshqaruvchisi", "quote": "Sanitariya standartlariga qat'iy rioya, operatsiyaxonalar va yo'laklarni sifatli tozalash. Tibbiy muassasalar uchun ishonchli hamkor.", "date": "07.03.2026" },
-      { "name": "Dmitriy Kozlov", "role": "Do'kon direktori", "quote": "Vitrinallar va fasadni haftalik yuvadilar. Mijozlar tozalikni sezadilar. Narxlar mos, yillik shartnoma — qulay.", "date": "09.03.2026" },
-      { "name": "Nodira Yusupova", "role": "HR-menejer", "quote": "Abonent tozalash — ofisga kerak bo'lgan narsa. Jadval bo'yicha keladilar, xodimlarni chalg'itmaydilar. Hammasi aniq tashkilot.", "date": "11.03.2026" }
+      { "name": "Anna A.", "role": "Mijoz", "gender": "female", "quote": "Sizga murojaat qilganimdan juda xursandman! Tozalash ishi sifatli va vaqtida bajarildi. Endi faqat sizga!" , "date": "01.03.2026" },
+      { "name": "Aziza Rahimova", "role": "Ofis direktori, IT-kompaniya", "gender": "female", "quote": "BECLEAN bilan olti oydan beri ishlaymiz. Ofis doim mukammal toza, xodimlar vaqtida va ehtiyotkor. Tavsiya qilaman!", "date": "03.03.2026" },
+      { "name": "Sergey Petrov", "role": "Biznes-markaz egasi", "gender": "male", "quote": "Professional jamoa. Ta'mirdan keyingi general tozalash ajoyib bajarildi — barcha chang va qurilish chiqindilarini tozaladilar.", "date": "05.03.2026" },
+      { "name": "Madina Karimova", "role": "Klinika boshqaruvchisi", "gender": "female", "quote": "Sanitariya standartlariga qat'iy rioya, operatsiyaxonalar va yo'laklarni sifatli tozalash. Tibbiy muassasalar uchun ishonchli hamkor.", "date": "07.03.2026" },
+      { "name": "Dmitriy Kozlov", "role": "Do'kon direktori", "gender": "male", "quote": "Vitrinallar va fasadni haftalik yuvadilar. Mijozlar tozalikni sezadilar. Narxlar mos, yillik shartnoma — qulay.", "date": "09.03.2026" },
+      { "name": "Nodira Yusupova", "role": "HR-menejer", "gender": "female", "quote": "Abonent tozalash — ofisga kerak bo'lgan narsa. Jadval bo'yicha keladilar, xodimlarni chalg'itmaydilar. Hammasi aniq tashkilot.", "date": "11.03.2026" }
     ],
     "cta_title": "Tozalikka tayyormisiz?",
     "cta_subtitle": "5 daqiqa ichida qo'ng'iroq qilamiz (bepul chiqish)",
