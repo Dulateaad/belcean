@@ -32,7 +32,7 @@ import { getDictionary } from '@/lib/get-dictionary';
 import type { Locale } from '@/i18n-config';
 import { HeroCarousel } from '@/components/site/HeroCarousel';
 import { AutoCarousel } from '@/components/site/AutoCarousel';
-import { RollingStatsSection } from '@/components/site/RollingStatsSection';
+import { RollingStatsSection, type StatSuffix } from '@/components/site/RollingStatsSection';
 
 export default async function Home({ params }: { params: Promise<{ locale: Locale }> }) {
   const resolvedParams = await params;
@@ -81,11 +81,17 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
 
       <RollingStatsSection
         ariaLabel={t.HomePage.stats_aria}
-        items={(t.HomePage.stats_items as { value: number; label: string }[]).map((item, i) => ({
-          value: item.value,
-          label: item.label,
-          delayBase: i * 250,
-        }))}
+        items={(t.HomePage.stats_items as { value: number; label: string; suffix: string; isRating?: boolean }[]).map(
+          (item, i) => ({
+            value: item.value,
+            label: item.label,
+            delayBase: i * 250,
+            suffix: (item.suffix === "star" || item.suffix === "none" || item.suffix === "plus"
+              ? item.suffix
+              : "plus") as StatSuffix,
+            isRating: Boolean(item.isRating),
+          })
+        )}
       />
 
       <section id="clients" className="w-full py-16 md:py-32">
@@ -135,7 +141,9 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
                     <CardTitle className="text-xl mt-4">{service.title}</CardTitle>
                     <p className="text-muted-foreground mt-2 mb-4 flex-grow">{service.description}</p>
                      <Button asChild variant="link" className="p-0 h-auto font-semibold mt-auto opacity-70 group-hover:opacity-100 transition-opacity">
-                      <Link href={`/${locale}${service.slug}`}>{t.HomePage.learn_more} <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                      <Link href={`/${locale}/calculator`}>
+                        {t.HomePage.learn_more} <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
                     </Button>
                   </CardContent>
                 </Card>
@@ -202,7 +210,7 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12 flex items-center justify-center gap-3">
               <Handshake className="w-8 h-8 text-primary" /> {t.HomePage.partners_title}
             </h2>
-            <div className="flex flex-wrap justify-center items-center gap-12 opacity-80 hover:opacity-100 transition-opacity">
+            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16 opacity-80 hover:opacity-100 transition-opacity">
                 <div className="flex flex-col items-center gap-2">
                     <div className="relative h-20 w-48">
                         <Image 
@@ -213,6 +221,17 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
                         />
                     </div>
                     <span className="text-sm font-semibold text-muted-foreground">Karcher</span>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                    <div className="relative h-16 w-32 md:h-20 md:w-40">
+                        <Image
+                            src="/partners/odo.png"
+                            alt="ODO"
+                            fill
+                            className="object-contain"
+                        />
+                    </div>
+                    <span className="text-sm font-semibold text-muted-foreground">ODO</span>
                 </div>
             </div>
         </div>

@@ -35,14 +35,15 @@
     "calculate_button": "Narxni hisoblash",
     "stats_aria": "BECLEAN SERVIS ko'rsatkichlari",
     "stats_items": [
-      { "value": 856, "label": "Professional tozalashdan keyin mamnun mijozlar" },
-      { "value": 12, "label": "Tozalash va mebel kimyoviy tozalash turlari" },
-      { "value": 6, "label": "Toshkent bozorida jamoa tajribasi (yil)" }
+      { "value": 856, "label": "Professional tozalashdan keyin mamnun mijozlar", "suffix": "plus" },
+      { "value": 12, "label": "Tozalash va mebel kimyoviy tozalash turlari", "suffix": "none" },
+      { "value": 6, "label": "Toshkent bozorida jamoa tajribasi (yil)", "suffix": "none" },
+      { "value": 4.9, "label": "Mijozlarimizdan baho", "suffix": "star", "isRating": true }
     ],
     "clients_title": "Biz kimlar uchun ishlaymiz",
     "clients_subtitle": "Biz har xil turdagi tijorat ob'ektlari uchun sifatli tozalash xizmatlarini taqdim etamiz.",
     "services_title": "Bizning xizmatlarimiz",
-    "learn_more": "Batafsil",
+    "learn_more": "5 soniyada narxni hisoblash",
     "trust_us_title": "Bizga ishonadilar",
     "trust_us_subtitle": "Turli biznes sohalari tozalikni saqlash uchun bizni tanlaydi",
     "trust_us_items": [
@@ -77,7 +78,7 @@
       { "name": "Nodira Yusupova", "role": "HR-menejer", "quote": "Abonent tozalash — ofisga kerak bo'lgan narsa. Jadval bo'yicha keladilar, xodimlarni chalg'itmaydilar. Hammasi aniq tashkilot.", "date": "11.03.2026" }
     ],
     "cta_title": "Tozalikka tayyormisiz?",
-    "cta_subtitle": "Ariza qoldiring va menejerimiz tafsilotlarni muhokama qilish va narxni hisoblash uchun siz bilan bog'lanadi.",
+    "cta_subtitle": "5 daqiqa ichida qo'ng'iroq qilamiz (bepul chiqish)",
     "pricing_unit": "so'm"
   },
   "Constants": {

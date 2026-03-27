@@ -35,22 +35,30 @@ export const getPrices = (t: any) => {
     return t.Constants.prices;
 };
 
-const REVIEW_AVATARS = [
-    'https://picsum.photos/seed/review1/200/200',
-    'https://picsum.photos/seed/review2/200/200',
-    'https://picsum.photos/seed/review3/200/200',
-    'https://picsum.photos/seed/review4/200/200',
-    'https://picsum.photos/seed/review5/200/200',
-    'https://picsum.photos/seed/review6/200/200',
+/** Чередование аватаров: женский / мужской портрет по индексу отзыва */
+const AVATAR_FEMALE = [
+    'https://randomuser.me/api/portraits/women/65.jpg',
+    'https://randomuser.me/api/portraits/women/44.jpg',
+    'https://randomuser.me/api/portraits/women/68.jpg',
+];
+const AVATAR_MALE = [
+    'https://randomuser.me/api/portraits/men/32.jpg',
+    'https://randomuser.me/api/portraits/men/75.jpg',
+    'https://randomuser.me/api/portraits/men/52.jpg',
 ];
 
 export const getTestimonials = (t: any) => {
     const testimonials = t.HomePage.testimonials;
-    return testimonials.map((item: any, index: number) => ({
-        name: item.name,
-        role: item.role,
-        quote: item.quote,
-        date: item.date,
-        avatarUrl: REVIEW_AVATARS[index % REVIEW_AVATARS.length],
-    }));
+    return testimonials.map((item: any, index: number) => {
+        const isFemale = index % 2 === 0;
+        const pool = isFemale ? AVATAR_FEMALE : AVATAR_MALE;
+        const avatarUrl = pool[Math.floor(index / 2) % pool.length];
+        return {
+            name: item.name,
+            role: item.role,
+            quote: item.quote,
+            date: item.date,
+            avatarUrl,
+        };
+    });
 };

@@ -1,14 +1,16 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const DIGIT_H = 56;
-/** Больше полных оборотов 0→9 — цифры дольше «крутятся», финал не резкий */
 const CYCLES = 5;
 const DURATION_MS = 3200;
 const EASING = "cubic-bezier(0.15, 0.85, 0.25, 1)";
 const DIGIT_STAGGER_MS = 100;
+
+export type StatSuffix = "plus" | "none" | "star";
 
 function DigitRoller({
   targetDigit,
@@ -47,7 +49,52 @@ function DigitRoller({
   );
 }
 
-function RollingStat({
+function SuffixIcon({
+  type,
+  active,
+  delayMs,
+}: {
+  type: "plus" | "star";
+  active: boolean;
+  delayMs: number;
+}) {
+  if (type === "plus") {
+    return (
+      <span
+        className={cn(
+          "inline-flex h-14 min-w-[1.25rem] items-center justify-center pl-1 font-headline text-2xl font-extrabold leading-none text-red-500 md:pl-1.5 md:text-3xl",
+          "transition-[opacity,transform] duration-700 ease-out motion-reduce:transition-none"
+        )}
+        style={{
+          opacity: active ? 1 : 0,
+          transform: active ? "scale(1) translateY(0)" : "scale(0.88) translateY(4px)",
+          transitionDelay: active ? `${delayMs}ms` : "0ms",
+        }}
+        aria-hidden
+      >
+        +
+      </span>
+    );
+  }
+
+  return (
+    <span
+      className={cn(
+        "inline-flex h-14 min-w-[2rem] items-center justify-center pl-1 transition-[opacity,transform] duration-700 ease-out motion-reduce:transition-none md:pl-1.5"
+      )}
+      style={{
+        opacity: active ? 1 : 0,
+        transform: active ? "scale(1) translateY(0)" : "scale(0.88) translateY(4px)",
+        transitionDelay: active ? `${delayMs}ms` : "0ms",
+      }}
+      aria-hidden
+    >
+      <Star className="h-9 w-9 fill-amber-400 text-amber-500 md:h-10 md:w-10" strokeWidth={1.25} />
+    </span>
+  );
+}
+
+function RollingRatingStat({
   value,
   label,
   active,
@@ -58,9 +105,55 @@ function RollingStat({
   active: boolean;
   delayBase: number;
 }) {
+  const intPart = Math.floor(value);
+  const decPart = Math.round((value - intPart) * 10);
+  const lastDelay = delayBase + DIGIT_STAGGER_MS;
+  const iconDelayMs = lastDelay + Math.round(DURATION_MS * 0.92);
+
+  return (
+    <div className="flex flex-col items-center px-2">
+      <div className="flex items-center justify-center gap-0">
+        <DigitRoller
+          targetDigit={intPart}
+          active={active}
+          delayMs={active ? delayBase : 0}
+        />
+        <span
+          className="inline-flex h-14 items-center justify-center px-0.5 font-headline text-4xl font-extrabold text-foreground md:text-5xl"
+          aria-hidden
+        >
+          .
+        </span>
+        <DigitRoller
+          targetDigit={decPart}
+          active={active}
+          delayMs={active ? delayBase + DIGIT_STAGGER_MS : 0}
+        />
+        <SuffixIcon type="star" active={active} delayMs={iconDelayMs} />
+      </div>
+      <p className="mt-4 max-w-[14rem] text-center text-sm font-medium leading-snug text-muted-foreground md:text-base">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+function RollingStat({
+  value,
+  label,
+  active,
+  delayBase,
+  suffix,
+}: {
+  value: number;
+  label: string;
+  active: boolean;
+  delayBase: number;
+  suffix: StatSuffix;
+}) {
   const digits = String(Math.max(0, Math.floor(value))).split("");
   const lastDigitDelay = delayBase + Math.max(0, digits.length - 1) * DIGIT_STAGGER_MS;
-  const plusDelayMs = lastDigitDelay + Math.round(DURATION_MS * 0.92);
+  const suffixDelayMs = lastDigitDelay + Math.round(DURATION_MS * 0.92);
 
   return (
     <div className="flex flex-col items-center px-2">
@@ -73,20 +166,7 @@ function RollingStat({
             delayMs={active ? delayBase + i * DIGIT_STAGGER_MS : 0}
           />
         ))}
-        <span
-          className={cn(
-            "inline-flex h-14 min-w-[1.25rem] items-center justify-center pl-1 font-headline text-2xl font-extrabold leading-none text-red-500 md:pl-1.5 md:text-3xl",
-            "transition-[opacity,transform] duration-700 ease-out motion-reduce:transition-none"
-          )}
-          style={{
-            opacity: active ? 1 : 0,
-            transform: active ? "scale(1) translateY(0)" : "scale(0.88) translateY(4px)",
-            transitionDelay: active ? `${plusDelayMs}ms` : "0ms",
-          }}
-          aria-hidden
-        >
-          +
-        </span>
+        {suffix === "plus" && <SuffixIcon type="plus" active={active} delayMs={suffixDelayMs} />}
       </div>
       <p className="mt-4 max-w-[14rem] text-center text-sm font-medium leading-snug text-muted-foreground md:text-base">
         {label}
@@ -99,6 +179,8 @@ export type RollingStatItem = {
   value: number;
   label: string;
   delayBase: number;
+  suffix: StatSuffix;
+  isRating?: boolean;
 };
 
 export function RollingStatsSection({
@@ -131,17 +213,28 @@ export function RollingStatsSection({
       className="w-full border-y bg-background py-14 md:py-20"
     >
       <div className="container mx-auto px-4 md:px-6">
-        <div className="mx-auto max-w-5xl rounded-2xl bg-card px-4 py-10 shadow-sm ring-1 ring-border md:px-8">
-          <div className="grid grid-cols-1 gap-12 sm:grid-cols-3 sm:gap-6">
-            {items.map((s) => (
-              <RollingStat
-                key={s.label}
-                value={s.value}
-                label={s.label}
-                active={active}
-                delayBase={s.delayBase}
-              />
-            ))}
+        <div className="mx-auto max-w-6xl rounded-2xl bg-card px-4 py-10 shadow-sm ring-1 ring-border md:px-8">
+          <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+            {items.map((s) =>
+              s.isRating && s.suffix === "star" ? (
+                <RollingRatingStat
+                  key={s.label}
+                  value={s.value}
+                  label={s.label}
+                  active={active}
+                  delayBase={s.delayBase}
+                />
+              ) : (
+                <RollingStat
+                  key={s.label}
+                  value={s.value}
+                  label={s.label}
+                  active={active}
+                  delayBase={s.delayBase}
+                  suffix={s.suffix}
+                />
+              )
+            )}
           </div>
         </div>
       </div>
