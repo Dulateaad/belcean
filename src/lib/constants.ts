@@ -54,6 +54,7 @@ const AVATAR_MALE = [
 export const getTestimonials = (t: any) => {
     const testimonials = t.HomePage.testimonials;
     return testimonials.map((item: any, index: number) => {
+        const override = typeof item.avatarUrl === 'string' && item.avatarUrl.trim().length > 0 ? item.avatarUrl.trim() : null;
         const g = String(item.gender ?? '').toLowerCase();
         const useFemale =
             g === 'female' || g === 'f'
@@ -64,7 +65,7 @@ export const getTestimonials = (t: any) => {
 
         const pool = useFemale ? AVATAR_FEMALE : AVATAR_MALE;
         const hash = (item.name ?? '').split('').reduce((acc: number, ch: string) => acc + ch.charCodeAt(0), index);
-        const avatarUrl = pool[Math.abs(hash) % pool.length];
+        const avatarUrl = override ?? pool[Math.abs(hash) % pool.length];
 
         return {
             name: item.name,
