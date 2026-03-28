@@ -70,12 +70,12 @@
     "reviews_subtitle": "Mijozlarimiz biz haqida nima deyapti",
     "reviews_client_label": "Mijoz",
     "testimonials": [
-      { "name": "Anna A.", "role": "Mijoz", "gender": "female", "quote": "Sizga murojaat qilganimdan juda xursandman! Tozalash ishi sifatli va vaqtida bajarildi. Endi faqat sizga!" , "date": "01.03.2026" },
-      { "name": "Aziza Rahimova", "role": "Ofis direktori, IT-kompaniya", "gender": "female", "avatarUrl": "https://randomuser.me/api/portraits/women/12.jpg", "quote": "BECLEAN bilan olti oydan beri ishlaymiz. Ofis doim mukammal toza, xodimlar vaqtida va ehtiyotkor. Tavsiya qilaman!", "date": "03.03.2026" },
-      { "name": "Sergey Petrov", "role": "Biznes-markaz egasi", "gender": "male", "quote": "Professional jamoa. Ta'mirdan keyingi general tozalash ajoyib bajarildi — barcha chang va qurilish chiqindilarini tozaladilar.", "date": "05.03.2026" },
-      { "name": "Madina Karimova", "role": "Klinika boshqaruvchisi", "gender": "female", "quote": "Sanitariya standartlariga qat'iy rioya, operatsiyaxonalar va yo'laklarni sifatli tozalash. Tibbiy muassasalar uchun ishonchli hamkor.", "date": "07.03.2026" },
-      { "name": "Dmitriy Kozlov", "role": "Do'kon direktori", "gender": "male", "quote": "Vitrinallar va fasadni haftalik yuvadilar. Mijozlar tozalikni sezadilar. Narxlar mos, yillik shartnoma — qulay.", "date": "09.03.2026" },
-      { "name": "Nodira Yusupova", "role": "HR-menejer", "gender": "female", "quote": "Abonent tozalash — ofisga kerak bo'lgan narsa. Jadval bo'yicha keladilar, xodimlarni chalg'itmaydilar. Hammasi aniq tashkilot.", "date": "11.03.2026" }
+      { "name": "Anna A.", "role": "Mijoz", "gender": "female", "avatarUrl": "https://randomuser.me/api/portraits/women/25.jpg", "quote": "Sizga murojaat qilganimdan juda xursandman! Tozalash ishi sifatli va vaqtida bajarildi. Endi faqat sizga!" , "date": "01.03.2026" },
+      { "name": "Aziza Rahimova", "role": "Ofis direktori, IT-kompaniya", "gender": "female", "avatarUrl": "https://randomuser.me/api/portraits/women/47.jpg", "quote": "BECLEAN bilan olti oydan beri ishlaymiz. Ofis doim mukammal toza, xodimlar vaqtida va ehtiyotkor. Tavsiya qilaman!", "date": "03.03.2026" },
+      { "name": "Sergey Petrov", "role": "Biznes-markaz egasi", "gender": "male", "avatarUrl": "https://randomuser.me/api/portraits/men/14.jpg", "quote": "Professional jamoa. Ta'mirdan keyingi general tozalash ajoyib bajarildi — barcha chang va qurilish chiqindilarini tozaladilar.", "date": "05.03.2026" },
+      { "name": "Madina Karimova", "role": "Klinika boshqaruvchisi", "gender": "female", "avatarUrl": "https://randomuser.me/api/portraits/women/63.jpg", "quote": "Sanitariya standartlariga qat'iy rioya, operatsiyaxonalar va yo'laklarni sifatli tozalash. Tibbiy muassasalar uchun ishonchli hamkor.", "date": "07.03.2026" },
+      { "name": "Dmitriy Kozlov", "role": "Do'kon direktori", "gender": "male", "avatarUrl": "https://randomuser.me/api/portraits/men/28.jpg", "quote": "Vitrinallar va fasadni haftalik yuvadilar. Mijozlar tozalikni sezadilar. Narxlar mos, yillik shartnoma — qulay.", "date": "09.03.2026" },
+      { "name": "Nodira Yusupova", "role": "HR-menejer", "gender": "female", "avatarUrl": "https://randomuser.me/api/portraits/women/82.jpg", "quote": "Abonent tozalash — ofisga kerak bo'lgan narsa. Jadval bo'yicha keladilar, xodimlarni chalg'itmaydilar. Hammasi aniq tashkilot.", "date": "11.03.2026" }
     ],
     "cta_title": "Tozalikka tayyormisiz?",
     "cta_subtitle": "5 daqiqa ichida qo'ng'iroq qilamiz (bepul chiqish)",

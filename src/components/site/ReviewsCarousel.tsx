@@ -60,10 +60,12 @@ export function ReviewsCarousel({ testimonials, clientLabel, className }: Review
                       <div className="flex flex-col items-center md:items-start shrink-0">
                         <div className="relative h-20 w-20 rounded-full overflow-hidden bg-muted ring-2 ring-primary/20">
                           <Image
+                            key={review.avatarUrl}
                             src={review.avatarUrl}
                             alt={review.name}
                             fill
                             className="object-cover"
+                            sizes="80px"
                           />
                         </div>
                         <p className="font-semibold text-lg mt-3">{review.name}</p>
