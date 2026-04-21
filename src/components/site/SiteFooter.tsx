@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Logo } from './Logo';
 import { Instagram } from 'lucide-react';
+import { onTelLinkClick, PHONE_TEL_HREF } from '@/lib/phone-conversion';
 import { useDictionary } from '@/contexts/dictionary-context';
 import * as constants from '@/lib/constants';
 import { usePathname } from 'next/navigation';
@@ -51,7 +52,13 @@ export function SiteFooter() {
                 <a href="mailto:info@beclean.pro" className="hover:text-primary hover:underline">info@beclean.pro</a>
               </p>
               <p>
-                <a href="tel:+998773566070" className="hover:text-primary hover:underline font-semibold">+998 77 356 60 70</a>
+                <a
+                  href={PHONE_TEL_HREF}
+                  onClick={(e) => onTelLinkClick(e)}
+                  className="hover:text-primary hover:underline font-semibold"
+                >
+                  +998 77 356 60 70
+                </a>
               </p>
                <div className="flex space-x-4 pt-4 justify-center md:justify-start">
                 <Link href="https://www.instagram.com/beclean_servic?igsh=OTlpZXg3ODlrZnYw" target="_blank" rel="noopener noreferrer" aria-label="Instagram">

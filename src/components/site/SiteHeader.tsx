@@ -21,6 +21,7 @@ import { Logo } from './Logo';
 import { useDictionary } from '@/contexts/dictionary-context';
 import * as constants from '@/lib/constants';
 import { i18n } from '@/i18n-config';
+import { onTelLinkClick, PHONE_TEL_HREF } from '@/lib/phone-conversion';
 
 export function SiteHeader() {
   const t = useDictionary();
@@ -92,7 +93,11 @@ export function SiteHeader() {
 
         <div className="flex flex-1 items-center justify-center md:flex-initial">
              <div className="md:hidden flex flex-col items-center pr-4">
-                <a href="tel:+998773566070" className="flex items-center gap-1 font-bold text-lg sm:text-xl hover:text-primary transition-colors leading-none">
+                <a
+                  href={PHONE_TEL_HREF}
+                  onClick={(e) => onTelLinkClick(e)}
+                  className="flex items-center gap-1 font-bold text-lg sm:text-xl hover:text-primary transition-colors leading-none"
+                >
                     <Phone className="h-4 w-4 text-primary" />
                     <span className="whitespace-nowrap">77 356-60-70</span>
                 </a>
@@ -130,7 +135,11 @@ export function SiteHeader() {
         <div className="flex flex-1 items-center justify-end md:flex-initial">
             <div className="flex items-center gap-x-2 sm:gap-x-4">
                 <div className="hidden md:flex items-center gap-4">
-                    <a href="tel:+998773566070" className="flex items-center gap-1 font-bold text-xl hover:text-primary transition-colors">
+                    <a
+                      href={PHONE_TEL_HREF}
+                      onClick={(e) => onTelLinkClick(e)}
+                      className="flex items-center gap-1 font-bold text-xl hover:text-primary transition-colors"
+                    >
                         <Phone className="h-5 w-5 text-primary" />
                         <span>77 356-60-70</span>
                     </a>

@@ -84,6 +84,19 @@ export default async function LocaleLayout({
             gtag('js', new Date());
             gtag('config', 'G-VT6Q7ZS6JZ');
             gtag('config', 'AW-18083313268');
+            window.gtag_report_conversion = function gtag_report_conversion(url) {
+              var callback = function () {
+                if (typeof url !== 'undefined') {
+                  window.location = url;
+                }
+              };
+              gtag('event', 'conversion', {
+                send_to: 'AW-18083313268/t5M8CLKH6Z8cEPTs5a5D',
+                transaction_id: '',
+                event_callback: callback
+              });
+              return false;
+            };
           `}
         </Script>
 

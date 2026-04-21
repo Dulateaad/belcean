@@ -15,6 +15,7 @@ import { ContactForm } from './ContactForm';
 import { useDictionary } from '@/contexts/dictionary-context';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import * as constants from '@/lib/constants';
+import { onTelLinkClick, PHONE_TEL_HREF } from '@/lib/phone-conversion';
 
 export function FloatingInquiry() {
   const t = useDictionary();
@@ -28,7 +29,11 @@ export function FloatingInquiry() {
           <Tooltip>
               <TooltipTrigger asChild>
                   <Button asChild size="icon" className="h-14 w-14 rounded-full shadow-lg animate-pulse-glow bg-green-600 hover:bg-green-700 text-white">
-                      <a href="tel:+998773566070" aria-label={tFloating.call}>
+                      <a
+                        href={PHONE_TEL_HREF}
+                        onClick={(e) => onTelLinkClick(e)}
+                        aria-label={tFloating.call}
+                      >
                           <Phone className="h-7 w-7" />
                       </a>
                   </Button>
