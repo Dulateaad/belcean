@@ -61,7 +61,20 @@ export function ContactForm({ defaultService, noRedirect, onSuccess }: { default
       try {
           if (noRedirect) formData.set('noRedirect', 'true');
           const result = await submitInquiry(formData);
-          if (result?.success && onSuccess) onSuccess();
+          if (
+            result &&
+            'success' in result &&
+            result.success === false &&
+            result.code === 'RATE_LIMIT'
+          ) {
+            toast({
+              variant: 'destructive',
+              title: t.ContactForm.rate_limit_toast_title,
+              description: t.ContactForm.rate_limit_toast_description,
+            });
+            return;
+          }
+          if (result && 'success' in result && result.success && onSuccess) onSuccess();
       } catch (e) {
           if (e instanceof Error && e.message.includes('NEXT_REDIRECT')) {
               throw e;

@@ -24,7 +24,9 @@
     "error_toast_title": "Yuborishda xatolik",
     "error_toast_description": "Shaklni yuborishda xatolik yuz berdi.",
     "server_error_toast_title": "Xatolik",
-    "server_error_toast_description": "Server bilan bog'lanib bo'lmadi."
+    "server_error_toast_description": "Server bilan bog'lanib bo'lmadi.",
+    "rate_limit_toast_title": "Ariza cheklovi",
+    "rate_limit_toast_description": "Ushbu raqamdan allaqachon 2 ta ariza yuborilgan. Bizga qo'ng'iroq qiling: +998 77 356 60 70."
   },
   "HomePage": {
     "meta_title": "BECLEAN SERVIS - Toshkentdagi biznes uchun professional tozalash",

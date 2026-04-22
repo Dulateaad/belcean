@@ -24,7 +24,9 @@
     "error_toast_title": "Ошибка отправки",
     "error_toast_description": "Произошла ошибка при отправке формы.",
     "server_error_toast_title": "Ошибка",
-    "server_error_toast_description": "Не удалось связаться с сервером."
+    "server_error_toast_description": "Не удалось связаться с сервером.",
+    "rate_limit_toast_title": "Лимит заявок",
+    "rate_limit_toast_description": "С этого номера уже отправлено максимум 2 заявки. Позвоните нам: +998 77 356 60 70."
   },
   "HomePage": {
     "meta_title": "BECLEAN SERVIS - Профессиональный клининг для бизнеса в Ташкенте",

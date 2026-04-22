@@ -2,6 +2,11 @@
 "use server";
 
 import { redirect } from 'next/navigation';
+import { normalizeInquiryPhoneDigits, reserveInquirySlotForPhone } from '@/lib/inquiry-rate-limit';
+
+export type SubmitInquiryResult =
+  | { success: true }
+  | { success: false; code: 'RATE_LIMIT' };
 
 async function sendTelegramNotification(message: string): Promise<{ ok: boolean; error?: string }> {
   const botToken = process.env.TELEGRAM_BOT_TOKEN;
@@ -45,7 +50,9 @@ async function sendTelegramNotification(message: string): Promise<{ ok: boolean;
   return { ok: true };
 }
 
-export async function submitInquiry(formData: FormData): Promise<{ success?: boolean } | never> {
+export async function submitInquiry(
+  formData: FormData,
+): Promise<SubmitInquiryResult | void> {
   const name = String(formData.get('name') ?? '').trim();
   const phone = String(formData.get('phone') ?? '').trim();
   const service = String(formData.get('service') ?? '').trim();
@@ -54,6 +61,16 @@ export async function submitInquiry(formData: FormData): Promise<{ success?: boo
 
   if (!name || !phone) {
     throw new Error('Имя и телефон обязательны');
+  }
+
+  const phoneDigits = normalizeInquiryPhoneDigits(phone);
+  if (phoneDigits.length < 7) {
+    throw new Error('Пожалуйста, введите корректный номер телефона.');
+  }
+
+  const reserved = await reserveInquirySlotForPhone(phoneDigits);
+  if (!reserved) {
+    return { success: false, code: 'RATE_LIMIT' };
   }
 
   const message = `📥 <b>Новая заявка</b>\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n📝 Инфо: ${service || '—'}\n🌍 Источник: website`;
