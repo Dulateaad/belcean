@@ -7,6 +7,7 @@ import { useQuoteFlow } from '@/components/site/quote-flow';
 
 export function ServicesCalculateCta() {
   const t = useDictionary();
+  const info = t.InfoModal;
   const { openQuote } = useQuoteFlow();
 
   return (
