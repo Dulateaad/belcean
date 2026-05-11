@@ -12,6 +12,7 @@ export default {
       fontFamily: {
         body: ['Inter', 'sans-serif'],
         headline: ['Manrope', 'sans-serif'],
+        stat: ['Oswald', 'Manrope', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {

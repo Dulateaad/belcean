@@ -14,7 +14,6 @@ import {
   Sparkles,
   CheckCircle2,
   Camera,
-  Calculator,
   Handshake,
   MessageCircle,
   Shield,
@@ -27,12 +26,15 @@ import {
 } from 'lucide-react';
 import { ContactForm } from '@/components/site/ContactForm';
 import * as constants from '@/lib/constants';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { getDictionary } from '@/lib/get-dictionary';
 import type { Locale } from '@/i18n-config';
-import { HeroCarousel } from '@/components/site/HeroCarousel';
 import { AutoCarousel } from '@/components/site/AutoCarousel';
-import { RollingStatsSection, type StatSuffix } from '@/components/site/RollingStatsSection';
+import {
+  RollingStatsSection,
+  type RollingStatItem,
+  type StatSuffix,
+} from '@/components/site/RollingStatsSection';
+import { HomeHeroFairPrice } from '@/components/site/HomeHeroFairPrice';
 
 export default async function Home({ params }: { params: Promise<{ locale: Locale }> }) {
   const resolvedParams = await params;
@@ -43,52 +45,30 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
   const beforeAfterImages = constants.getBeforeAfterImages();
   const testimonials = constants.getTestimonials(t);
 
-  const heroCarouselImages = [
-    PlaceHolderImages.find(p => p.id === 'hero-carousel-1'),
-    PlaceHolderImages.find(p => p.id === 'hero-carousel-2')
-  ].filter(Boolean) as any[];
-
   return (
     <div className="flex flex-col min-h-screen bg-background">
-      <section id="hero" className="relative w-full h-auto min-h-[80vh] overflow-hidden flex flex-col">
-        <div className="absolute inset-0 w-full h-full z-0">
-            <HeroCarousel images={heroCarouselImages} />
-            <div className="absolute inset-0 bg-cyan-950/60" />
-        </div>
-        
-        <div className="relative z-10 flex flex-col items-center justify-center flex-grow text-center text-primary-foreground p-4 pt-20 md:pt-32 pb-12">
-          <div className="w-full max-w-[1792px] mx-auto px-4">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-6xl xl:text-8xl/none font-headline text-white text-center">
-                  {t.HomePage.hero_title}
-              </h1>
-              <p className="max-w-[700px] mx-auto text-white/90 md:text-xl/relaxed mt-6 text-center">
-                {t.HomePage.hero_subtitle}
-              </p>
-              
-              <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <Button asChild size="lg" className="px-8 py-6 text-lg font-bold shadow-lg hover:shadow-primary/20 animate-pulse-glow w-full sm:w-auto">
-                    <Link href={`/${locale}/calculator`}>
-                        <Calculator className="mr-2 h-5 w-5" /> {t.HomePage.calculate_button}
-                    </Link>
-                  </Button>
-                  <Button asChild variant="outline" size="lg" className="px-8 py-6 text-lg font-bold bg-white/10 text-white border-white/20 hover:bg-white/20 w-full sm:w-auto backdrop-blur-sm">
-                    <Link href={`/${locale}/calculator`}>{t.ContactForm.submit_button} <ArrowRight className="ml-2 h-5 w-5" /></Link>
-                  </Button>
-              </div>
-          </div>
-        </div>
-      </section>
+      <div id="hero">
+        <HomeHeroFairPrice />
+      </div>
 
       <RollingStatsSection
+        variant="rows"
+        backgroundImageSrc="/stats-trust-bg.png"
+        statsHeader={{
+          badge: t.HomePage.stats_header_badge,
+          line1: t.HomePage.stats_headline_1,
+          line2Accent: t.HomePage.stats_headline_2,
+        }}
         ariaLabel={t.HomePage.stats_aria}
-        items={(t.HomePage.stats_items as { value: number; label: string; suffix: string; isRating?: boolean }[]).map(
-          (item, i) => ({
+        items={(t.HomePage.stats_items as { value: number; label: string; label_line2?: string; suffix: string; isRating?: boolean }[]).map(
+          (item, i): RollingStatItem => ({
             value: item.value,
             label: item.label,
+            label_line2: item.label_line2,
             delayBase: i * 250,
-            suffix: (item.suffix === "star" || item.suffix === "none" || item.suffix === "plus"
+            suffix: (item.suffix === 'star' || item.suffix === 'none' || item.suffix === 'plus'
               ? item.suffix
-              : "plus") as StatSuffix,
+              : 'plus') as StatSuffix,
             isRating: Boolean(item.isRating),
           })
         )}

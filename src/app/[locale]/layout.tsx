@@ -6,6 +6,8 @@ import { getDictionary } from '@/lib/get-dictionary';
 import { i18n, type Locale } from '@/i18n-config';
 import { DictionaryProvider } from '@/contexts/dictionary-context';
 import { FloatingInquiry } from '@/components/site/FloatingInquiry';
+import { QuoteFlowProvider } from '@/components/site/quote-flow';
+import { CalculateCostBubble } from '@/components/site/CalculateCostBubble';
 import { Metadata } from 'next';
 import { headers } from 'next/headers';
 import Script from 'next/script';
@@ -51,16 +53,19 @@ export default async function LocaleLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased min-h-screen flex flex-col bg-background">
         <DictionaryProvider dictionary={t}>
-          <div className="animate-fade-in flex flex-col flex-1">
-            <SiteHeader />
-            <main className="flex-grow">{children}</main>
-            <SiteFooter />
-          </div>
-          <FloatingInquiry />
+          <QuoteFlowProvider>
+            <div className="animate-fade-in flex flex-col flex-1">
+              <SiteHeader />
+              <main className="flex-grow">{children}</main>
+              <SiteFooter />
+            </div>
+            <FloatingInquiry />
+            <CalculateCostBubble />
+          </QuoteFlowProvider>
         </DictionaryProvider>
         <Toaster />
         
