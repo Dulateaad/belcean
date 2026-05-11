@@ -1,16 +1,13 @@
 'use client';
 
 import Image from 'next/image';
-import { BadgePercent, Calculator, Percent, ShieldCheck } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { BadgePercent, Percent, ShieldCheck } from 'lucide-react';
 import { useDictionary } from '@/contexts/dictionary-context';
-import { useQuoteFlow } from '@/components/site/quote-flow';
 import { Clock, ThumbsUp, UserRound, Wallet } from 'lucide-react';
 
 export function HomeHeroFairPrice() {
   const t = useDictionary();
   const h = t.HomePage;
-  const { openQuote } = useQuoteFlow();
 
   const features = [
     {
@@ -82,16 +79,6 @@ export function HomeHeroFairPrice() {
               </span>
             </li>
           </ul>
-
-          <Button
-            type="button"
-            size="lg"
-            onClick={openQuote}
-            className="mt-10 h-auto w-full max-w-md gap-2 rounded-2xl bg-emerald-600 px-8 py-6 text-lg font-bold text-white shadow-xl hover:bg-emerald-700 sm:w-auto"
-          >
-            <Calculator className="h-6 w-6 shrink-0 opacity-95" />
-            {h.calculate_button_long}
-          </Button>
         </div>
 
         <div className="mt-12 grid gap-3 rounded-2xl bg-white/95 p-5 shadow-xl ring-1 ring-black/5 backdrop-blur-sm sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-4 lg:p-6">

@@ -111,12 +111,13 @@ function QuickQuoteDialog({
     }
   }, [open]);
 
-  const totalSteps = 4;
+  const totalSteps = 5;
   const progress = (step / totalSteps) * 100;
 
   const canNext1 = Boolean(cleaningType);
-  const canNext2 = Boolean(rooms) && Boolean(placeType);
-  const canNext3 = Boolean(whenNeed);
+  const canNext2 = Boolean(rooms);
+  const canNext3 = Boolean(placeType);
+  const canNext4 = Boolean(whenNeed);
   const canSubmit = name.trim().length >= 2 && phone.replace(/\D/g, '').length >= 7;
 
   const buildServiceSummary = () => {
@@ -226,42 +227,39 @@ function QuickQuoteDialog({
             )}
 
             {step === 2 && (
-              <div className="space-y-4">
-                <div className="space-y-2">
-                  <p className="font-semibold">{q.q2_rooms_title}</p>
-                  <div className="grid grid-cols-3 gap-2">
-                    {(
-                      [
-                        ['1', '1'],
-                        ['2', '2'],
-                        ['3+', q.q2_rooms_3plus],
-                      ] as const
-                    ).map(([v, label]) => (
-                      <div key={v}>
-                        {choiceBtn(rooms === v, () => setRooms(v), label)}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <p className="font-semibold">{q.q2_place_title}</p>
-                  <div className="grid grid-cols-2 gap-2">
-                    {(
-                      [
-                        ['home', q.q2_home],
-                        ['office', q.q2_office],
-                      ] as const
-                    ).map(([v, label]) => (
-                      <div key={v}>
-                        {choiceBtn(placeType === v, () => setPlaceType(v), label)}
-                      </div>
-                    ))}
-                  </div>
+              <div className="space-y-3">
+                <p className="font-semibold">{q.q2_rooms_title}</p>
+                <div className="grid grid-cols-3 gap-2">
+                  {(
+                    [
+                      ['1', '1'],
+                      ['2', '2'],
+                      ['3+', q.q2_rooms_3plus],
+                    ] as const
+                  ).map(([v, label]) => (
+                    <div key={v}>{choiceBtn(rooms === v, () => setRooms(v), label)}</div>
+                  ))}
                 </div>
               </div>
             )}
 
             {step === 3 && (
+              <div className="space-y-3">
+                <p className="font-semibold">{q.q2_place_title}</p>
+                <div className="grid grid-cols-2 gap-2">
+                  {(
+                    [
+                      ['home', q.q2_home],
+                      ['office', q.q2_office],
+                    ] as const
+                  ).map(([v, label]) => (
+                    <div key={v}>{choiceBtn(placeType === v, () => setPlaceType(v), label)}</div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {step === 4 && (
               <div className="space-y-3">
                 <p className="font-semibold">{q.q3_title}</p>
                 <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
@@ -278,7 +276,7 @@ function QuickQuoteDialog({
               </div>
             )}
 
-            {step === 4 && (
+            {step === 5 && (
               <div className="space-y-4">
                 <p className="font-medium leading-snug">{q.q4_title}</p>
                 <div className="space-y-2">
@@ -313,16 +311,17 @@ function QuickQuoteDialog({
                 <span />
               )}
 
-              {step < 4 ? (
+              {step < 5 ? (
                 <Button
                   type="button"
                   size="sm"
                   disabled={
                     (step === 1 && !canNext1) ||
                     (step === 2 && !canNext2) ||
-                    (step === 3 && !canNext3)
+                    (step === 3 && !canNext3) ||
+                    (step === 4 && !canNext4)
                   }
-                  onClick={() => setStep((s) => Math.min(s + 1, 4))}
+                  onClick={() => setStep((s) => Math.min(s + 1, 5))}
                   className="bg-emerald-600 hover:bg-emerald-700"
                 >
                   {q.next}

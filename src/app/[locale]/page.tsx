@@ -35,6 +35,7 @@ import {
   type StatSuffix,
 } from '@/components/site/RollingStatsSection';
 import { HomeHeroFairPrice } from '@/components/site/HomeHeroFairPrice';
+import { ServicesCalculateCta } from '@/components/site/ServicesCalculateCta';
 
 export default async function Home({ params }: { params: Promise<{ locale: Locale }> }) {
   const resolvedParams = await params;
@@ -130,6 +131,7 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
               );
             })}
           </div>
+          <ServicesCalculateCta />
         </div>
       </section>
 

@@ -5,7 +5,8 @@ import { Award, SprayCan, Star, Users } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const DIGIT_H = 56;
+const DEFAULT_DIGIT_H = 56;
+const CARD_DIGIT_H = 72;
 const CYCLES = 5;
 const DURATION_MS = 3200;
 const EASING = "cubic-bezier(0.15, 0.85, 0.25, 1)";
@@ -17,20 +18,30 @@ function DigitRoller({
   targetDigit,
   active,
   delayMs,
+  cellHeight = DEFAULT_DIGIT_H,
+  digitClassName,
 }: {
   targetDigit: number;
   active: boolean;
   delayMs: number;
+  cellHeight?: number;
+  digitClassName?: string;
 }) {
   const finalIndex = (CYCLES - 1) * 10 + targetDigit;
   const strip = Array.from({ length: CYCLES * 10 }, (_, i) => i % 10);
 
   return (
-    <div className="relative inline-block h-14 min-w-[2.25rem] overflow-hidden md:min-w-[2.5rem]">
+    <div
+      className="relative inline-block shrink-0 overflow-hidden tabular-nums"
+      style={{
+        height: cellHeight,
+        minWidth: Math.max(22, cellHeight * 0.36),
+      }}
+    >
       <div
         className="flex flex-col motion-reduce:!transition-none"
         style={{
-          transform: `translateY(${active ? -finalIndex * DIGIT_H : 0}px)`,
+          transform: `translateY(${active ? -finalIndex * cellHeight : 0}px)`,
           transitionProperty: active ? "transform" : "none",
           transitionDuration: active ? `${DURATION_MS}ms` : "0ms",
           transitionTimingFunction: EASING,
@@ -40,7 +51,14 @@ function DigitRoller({
         {strip.map((d, i) => (
           <div
             key={i}
-            className="flex h-14 shrink-0 items-center justify-center font-stat text-4xl font-bold tracking-tight text-foreground tabular-nums md:text-5xl md:font-extrabold"
+            className={cn(
+              "flex shrink-0 items-center justify-center font-stat font-normal leading-none tracking-tight text-foreground",
+              cellHeight >= CARD_DIGIT_H - 1
+                ? "text-[2.65rem] md:text-[3.35rem]"
+                : "text-4xl md:text-5xl",
+              digitClassName,
+            )}
+            style={{ height: cellHeight }}
           >
             {d}
           </div>
@@ -54,19 +72,26 @@ function SuffixIcon({
   type,
   active,
   delayMs,
+  cellHeight = DEFAULT_DIGIT_H,
 }: {
   type: "plus" | "star";
   active: boolean;
   delayMs: number;
+  cellHeight?: number;
 }) {
+  const isLarge = cellHeight >= CARD_DIGIT_H - 1;
+
   if (type === "plus") {
     return (
       <span
         className={cn(
-          "inline-flex h-14 min-w-[1.25rem] items-center justify-center pl-1 font-stat text-2xl font-bold leading-none text-foreground md:pl-1.5 md:text-3xl md:font-extrabold",
-          "transition-[opacity,transform] duration-700 ease-out motion-reduce:transition-none"
+          "inline-flex shrink-0 items-center justify-center pl-0.5 font-stat font-normal leading-none text-foreground",
+          isLarge ? "text-4xl md:text-[3.1rem]" : "text-2xl md:text-3xl",
+          "transition-[opacity,transform] duration-700 ease-out motion-reduce:transition-none",
         )}
         style={{
+          height: cellHeight,
+          minWidth: isLarge ? 20 : 18,
           opacity: active ? 1 : 0,
           transform: active ? "scale(1) translateY(0)" : "scale(0.88) translateY(4px)",
           transitionDelay: active ? `${delayMs}ms` : "0ms",
@@ -81,16 +106,24 @@ function SuffixIcon({
   return (
     <span
       className={cn(
-        "inline-flex h-14 min-w-[2rem] items-center justify-center pl-1 transition-[opacity,transform] duration-700 ease-out motion-reduce:transition-none md:pl-1.5"
+        "inline-flex shrink-0 items-center justify-center pl-0.5 transition-[opacity,transform] duration-700 ease-out motion-reduce:transition-none md:pl-1",
       )}
       style={{
+        height: cellHeight,
+        minWidth: isLarge ? 40 : 32,
         opacity: active ? 1 : 0,
         transform: active ? "scale(1) translateY(0)" : "scale(0.88) translateY(4px)",
         transitionDelay: active ? `${delayMs}ms` : "0ms",
       }}
       aria-hidden
     >
-      <Star className="h-9 w-9 fill-amber-400 text-amber-500 md:h-10 md:w-10" strokeWidth={1.25} />
+      <Star
+        className={cn(
+          "fill-amber-400 text-amber-500",
+          isLarge ? "h-11 w-11 md:h-12 md:w-12" : "h-9 w-9 md:h-10 md:w-10",
+        )}
+        strokeWidth={1.25}
+      />
     </span>
   );
 }
@@ -122,7 +155,8 @@ function RollingRatingStat({
           delayMs={active ? delayBase : 0}
         />
         <span
-          className="inline-flex h-14 items-center justify-center px-0.5 font-stat text-4xl font-bold text-foreground md:text-5xl md:font-extrabold"
+          className="inline-flex items-center justify-center px-0.5 font-stat text-4xl font-normal leading-none text-foreground md:text-5xl"
+          style={{ height: DEFAULT_DIGIT_H }}
           aria-hidden
         >
           .
@@ -132,7 +166,7 @@ function RollingRatingStat({
           active={active}
           delayMs={active ? delayBase + DIGIT_STAGGER_MS : 0}
         />
-        <SuffixIcon type="star" active={active} delayMs={iconDelayMs} />
+        <SuffixIcon type="star" active={active} delayMs={iconDelayMs} cellHeight={DEFAULT_DIGIT_H} />
       </div>
       <div className="mt-4 max-w-[14rem] text-center text-sm font-medium leading-snug text-muted-foreground md:text-base">
         <p className="text-foreground">{label}</p>
@@ -172,7 +206,9 @@ function RollingStat({
             delayMs={active ? delayBase + i * DIGIT_STAGGER_MS : 0}
           />
         ))}
-        {suffix === "plus" && <SuffixIcon type="plus" active={active} delayMs={suffixDelayMs} />}
+        {suffix === "plus" && (
+          <SuffixIcon type="plus" active={active} delayMs={suffixDelayMs} cellHeight={DEFAULT_DIGIT_H} />
+        )}
       </div>
       <div className="mt-4 max-w-[14rem] text-center text-sm font-medium leading-snug text-muted-foreground md:text-base">
         <p className="text-foreground">{label}</p>
@@ -182,7 +218,7 @@ function RollingStat({
   );
 }
 
-function RollingStatRow({
+function RollingStatCard({
   value,
   label,
   labelLine2,
@@ -202,34 +238,36 @@ function RollingStatRow({
   const digits = String(Math.max(0, Math.floor(value))).split("");
   const lastDigitDelay = delayBase + Math.max(0, digits.length - 1) * DIGIT_STAGGER_MS;
   const suffixDelayMs = lastDigitDelay + Math.round(DURATION_MS * 0.92);
+  const h = CARD_DIGIT_H;
 
   return (
-    <div className="flex gap-4 py-6 first:pt-2 last:pb-2">
-      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-400">
-        <Icon className="h-7 w-7" strokeWidth={1.5} />
+    <div className="flex flex-col items-center gap-3 px-1 text-center sm:px-2">
+      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-400">
+        <Icon className="h-6 w-6" strokeWidth={1.5} />
       </div>
-      <div className="flex min-w-0 flex-1 flex-col gap-3 sm:flex-row sm:items-center sm:gap-8">
-        <div className="flex shrink-0 items-center">
-          {digits.map((ch, i) => (
-            <DigitRoller
-              key={`${value}-${i}`}
-              targetDigit={Number(ch)}
-              active={active}
-              delayMs={active ? delayBase + i * DIGIT_STAGGER_MS : 0}
-            />
-          ))}
-          {suffix === "plus" && <SuffixIcon type="plus" active={active} delayMs={suffixDelayMs} />}
-        </div>
-        <div className="min-w-0 text-sm leading-snug text-muted-foreground">
-          <p className="font-semibold text-foreground">{label}</p>
-          {labelLine2 ? <p className="mt-1">{labelLine2}</p> : null}
-        </div>
+      <div className="flex flex-wrap items-center justify-center gap-0">
+        {digits.map((ch, i) => (
+          <DigitRoller
+            key={`${value}-${i}`}
+            targetDigit={Number(ch)}
+            active={active}
+            delayMs={active ? delayBase + i * DIGIT_STAGGER_MS : 0}
+            cellHeight={h}
+          />
+        ))}
+        {suffix === "plus" && (
+          <SuffixIcon type="plus" active={active} delayMs={suffixDelayMs} cellHeight={h} />
+        )}
+      </div>
+      <div className="max-w-[11rem] space-y-1 text-xs leading-snug text-muted-foreground sm:max-w-[12rem] sm:text-sm">
+        <p className="font-semibold text-foreground">{label}</p>
+        {labelLine2 ? <p>{labelLine2}</p> : null}
       </div>
     </div>
   );
 }
 
-function RollingRatingStatRow({
+function RollingRatingStatCard({
   value,
   label,
   labelLine2,
@@ -246,32 +284,33 @@ function RollingRatingStatRow({
   const decPart = Math.round((value - intPart) * 10);
   const lastDelay = delayBase + DIGIT_STAGGER_MS;
   const iconDelayMs = lastDelay + Math.round(DURATION_MS * 0.92);
+  const h = CARD_DIGIT_H;
 
   return (
-    <div className="flex gap-4 py-6 first:pt-2 last:pb-2">
-      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-amber-600 dark:bg-amber-950/40 dark:text-amber-400">
-        <Star className="h-7 w-7" strokeWidth={1.5} />
+    <div className="flex flex-col items-center gap-3 px-1 text-center sm:px-2">
+      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-amber-600 dark:bg-amber-950/40 dark:text-amber-400">
+        <Star className="h-6 w-6" strokeWidth={1.5} />
       </div>
-      <div className="flex min-w-0 flex-1 flex-col gap-3 sm:flex-row sm:items-center sm:gap-8">
-        <div className="flex shrink-0 items-center">
-          <DigitRoller targetDigit={intPart} active={active} delayMs={active ? delayBase : 0} />
-          <span
-            className="inline-flex h-14 items-center justify-center px-0.5 font-stat text-4xl font-bold text-foreground md:text-5xl md:font-extrabold"
-            aria-hidden
-          >
-            .
-          </span>
-          <DigitRoller
-            targetDigit={decPart}
-            active={active}
-            delayMs={active ? delayBase + DIGIT_STAGGER_MS : 0}
-          />
-          <SuffixIcon type="star" active={active} delayMs={iconDelayMs} />
-        </div>
-        <div className="min-w-0 text-sm leading-snug text-muted-foreground">
-          <p className="font-semibold text-foreground">{label}</p>
-          {labelLine2 ? <p className="mt-1">{labelLine2}</p> : null}
-        </div>
+      <div className="flex flex-wrap items-center justify-center gap-0">
+        <DigitRoller targetDigit={intPart} active={active} delayMs={active ? delayBase : 0} cellHeight={h} />
+        <span
+          className="inline-flex items-center justify-center px-0.5 font-stat text-[2.65rem] font-normal leading-none text-foreground md:text-[3.35rem]"
+          style={{ height: h }}
+          aria-hidden
+        >
+          .
+        </span>
+        <DigitRoller
+          targetDigit={decPart}
+          active={active}
+          delayMs={active ? delayBase + DIGIT_STAGGER_MS : 0}
+          cellHeight={h}
+        />
+        <SuffixIcon type="star" active={active} delayMs={iconDelayMs} cellHeight={h} />
+      </div>
+      <div className="max-w-[11rem] space-y-1 text-xs leading-snug text-muted-foreground sm:max-w-[12rem] sm:text-sm">
+        <p className="font-semibold text-foreground">{label}</p>
+        {labelLine2 ? <p>{labelLine2}</p> : null}
       </div>
     </div>
   );
@@ -334,10 +373,10 @@ export function RollingStatsSection({
       ) : null}
 
       {variant === "rows" ? (
-        <div className="divide-y divide-border">
+        <div className="grid grid-cols-2 gap-x-3 gap-y-10 sm:grid-cols-4 sm:gap-x-2 sm:gap-y-8">
           {items.map((s, i) =>
             s.isRating && s.suffix === "star" ? (
-              <RollingRatingStatRow
+              <RollingRatingStatCard
                 key={s.label}
                 value={s.value}
                 label={s.label}
@@ -346,7 +385,7 @@ export function RollingStatsSection({
                 delayBase={s.delayBase}
               />
             ) : (
-              <RollingStatRow
+              <RollingStatCard
                 key={s.label}
                 value={s.value}
                 label={s.label}

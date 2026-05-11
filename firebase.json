@@ -10,7 +10,8 @@
         "*.log",
         ".env.local",
         ".env*.local"
-      ]
+      ],
+      "alwaysDeployFromSource": true
     }
   ]
 }

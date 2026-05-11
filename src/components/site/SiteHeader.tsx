@@ -101,25 +101,26 @@ export function SiteHeader() {
         </div>
 
         <div className="flex flex-1 items-center justify-center md:flex-initial">
-             <div
+             <a
+               href={PHONE_TEL_HREF}
+               onClick={(e) => onTelLinkClick(e)}
+               aria-label={`${t.FloatingInquiry.call} +998 77 356 60 70`}
                className={cn(
-                 'md:hidden flex flex-col items-center pr-4 transition-all duration-700 ease-out motion-reduce:transition-none',
+                 'md:hidden flex flex-col items-center rounded-xl bg-gradient-to-b from-emerald-700 to-emerald-900 px-3.5 py-2 shadow-md ring-1 ring-white/15 transition-all duration-700 ease-out motion-reduce:transition-none cursor-pointer active:opacity-95',
                  phoneReveal ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0',
                )}
              >
-                <a
-                  href={PHONE_TEL_HREF}
-                  onClick={(e) => onTelLinkClick(e)}
-                  className="flex items-center gap-1 font-bold text-lg sm:text-xl hover:text-primary transition-colors leading-none"
-                >
-                    <Phone className="h-4 w-4 text-emerald-600" />
-                    <span className="whitespace-nowrap">77 356-60-70</span>
-                </a>
-                <div className="flex items-center gap-1 mt-0.5 opacity-80">
-                    <Clock className="h-3 w-3 text-emerald-600" />
-                    <span className="text-[10px] font-bold uppercase tracking-wider">{t.Header.work_hours}</span>
-                </div>
-             </div>
+                <span className="flex items-center gap-1.5 font-bold text-lg text-white sm:text-xl leading-none">
+                    <Phone className="h-4 w-4 shrink-0 text-emerald-200" aria-hidden />
+                    <span className="whitespace-nowrap tabular-nums">77 356-60-70</span>
+                </span>
+                <span className="mt-1 flex items-center gap-1.5 text-emerald-50">
+                    <Clock className="h-4 w-4 shrink-0 text-emerald-200" aria-hidden />
+                    <span className="text-sm font-bold uppercase tracking-wide sm:text-base text-emerald-50">
+                      {t.Header.work_hours}
+                    </span>
+                </span>
+             </a>
 
              <nav className="hidden items-center space-x-6 text-base font-medium md:flex">
               <DropdownMenu>
@@ -148,27 +149,26 @@ export function SiteHeader() {
 
         <div className="flex flex-1 items-center justify-end md:flex-initial">
             <div className="flex items-center gap-x-2 sm:gap-x-4">
-                <div
+                <a
+                  href={PHONE_TEL_HREF}
+                  onClick={(e) => onTelLinkClick(e)}
+                  aria-label={`${t.FloatingInquiry.call} +998 77 356 60 70`}
                   className={cn(
-                    'hidden md:flex items-center gap-4 transition-all duration-700 ease-out motion-reduce:transition-none',
+                    'hidden md:flex flex-col items-end gap-0.5 transition-all duration-700 ease-out motion-reduce:transition-none cursor-pointer rounded-lg px-1 py-0.5 hover:bg-muted/50',
                     phoneReveal ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0',
                   )}
                 >
-                    <a
-                      href={PHONE_TEL_HREF}
-                      onClick={(e) => onTelLinkClick(e)}
-                      className="flex items-center gap-1 font-bold text-xl hover:text-emerald-600 transition-colors"
-                    >
-                        <Phone className="h-5 w-5 text-emerald-600" />
-                        <span>77 356-60-70</span>
-                    </a>
-                </div>
+                    <span className="flex items-center gap-1 font-bold text-xl hover:text-emerald-600 transition-colors">
+                        <Phone className="h-5 w-5 shrink-0 text-emerald-600" aria-hidden />
+                        <span className="tabular-nums">77 356-60-70</span>
+                    </span>
+                    <span className="flex items-center gap-1 text-emerald-700/90">
+                        <Clock className="h-3.5 w-3.5 shrink-0" aria-hidden />
+                        <span className="text-xs font-bold uppercase tracking-wide">{t.Header.work_hours}</span>
+                    </span>
+                </a>
 
                 <div className="flex items-center gap-2 sm:gap-4">
-                    <div className="hidden md:flex items-center gap-1">
-                        <Clock className="h-4 w-4 text-emerald-600" />
-                        <span className="font-semibold text-xs sm:text-sm">{t.Header.work_hours}</span>
-                    </div>
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                         <Button variant="outline" size="sm" className="w-[60px] h-7 text-xs sm:w-[70px]">

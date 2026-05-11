@@ -55,7 +55,7 @@
     "stats_headline_2": "raqamlar",
     "stats_aria": "BECLEAN SERVIS ko'rsatkichlari",
     "stats_items": [
-      { "value": 856, "label": "Mamnun mijozlar", "label_line2": "professional tozalashdan keyin", "suffix": "plus" },
+      { "value": 1500, "label": "Mamnun mijozlar", "label_line2": "professional tozalashdan keyin", "suffix": "plus" },
       { "value": 12, "label": "Tozalash turlari", "label_line2": "va mebel kimyoviy tozalash", "suffix": "none" },
       { "value": 1, "label": "Yil bozorda", "label_line2": "tajriba va sifatli servis", "suffix": "none" },
       { "value": 4.9, "label": "Mijozlar bahosi", "label_line2": "barcha platformalarda", "suffix": "star", "isRating": true }
@@ -63,6 +63,7 @@
     "clients_title": "Biz kimlar uchun ishlaymiz",
     "clients_subtitle": "Biz har xil turdagi tijorat ob'ektlari uchun sifatli tozalash xizmatlarini taqdim etamiz.",
     "services_title": "Bizning xizmatlarimiz",
+    "services_calculate_hint": "Xizmatlar bilan tanishdingiz — ob'ektingiz uchun tozalash narxini hisoblang.",
     "learn_more": "5 soniyada narxni hisoblash",
     "trust_us_title": "Bizga ishonadilar",
     "trust_us_subtitle": "Turli biznes sohalari tozalikni saqlash uchun bizni tanlaydi",
