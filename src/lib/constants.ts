@@ -54,6 +54,17 @@ const AVATAR_MALE = [
 export const getTestimonials = (t: any) => {
     const testimonials = t.HomePage.testimonials;
     return testimonials.map((item: any, index: number) => {
+        if (item.business === true) {
+            return {
+                name: item.name,
+                role: item.role,
+                quote: item.quote,
+                date: item.date,
+                avatarUrl: '',
+                isBusiness: true,
+            };
+        }
+
         const override = typeof item.avatarUrl === 'string' && item.avatarUrl.trim().length > 0 ? item.avatarUrl.trim() : null;
         const g = String(item.gender ?? '').toLowerCase();
         const useFemale =
@@ -73,6 +84,7 @@ export const getTestimonials = (t: any) => {
             quote: item.quote,
             date: item.date,
             avatarUrl,
+            isBusiness: false,
         };
     });
 };

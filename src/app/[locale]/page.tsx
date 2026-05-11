@@ -16,13 +16,9 @@ import {
   Camera,
   Handshake,
   MessageCircle,
-  Shield,
   Wrench,
-  CreditCard,
-  GraduationCap,
-  ClipboardCheck,
-  UserCheck,
-  Trophy
+  BadgeCheck,
+  Users,
 } from 'lucide-react';
 import { ContactForm } from '@/components/site/ContactForm';
 import * as constants from '@/lib/constants';
@@ -158,25 +154,30 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
         </div>
       </section>
 
-      <section id="why-beclean" className="w-full py-16 md:py-32 bg-secondary">
+      <section id="trust-pillars" className="w-full py-16 md:py-32 bg-secondary">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12 flex items-center justify-center gap-3">
-            <Shield className="w-8 h-8 text-primary" /> {t.HomePage.why_beclean_title}
-          </h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-            {(t.HomePage.why_beclean_items as any[]).map((item: any, index: number) => {
-              const icons = [Trophy, Wrench, CreditCard, GraduationCap, ClipboardCheck, UserCheck];
-              const Icon = icons[index % icons.length];
+          <div className="mx-auto mb-10 max-w-2xl text-center">
+            <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">
+              {t.HomePage.trust_pillars_title}
+            </h2>
+            <p className="mt-3 text-muted-foreground md:text-lg">
+              {t.HomePage.trust_pillars_subtitle}
+            </p>
+          </div>
+          <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
+            {(t.HomePage.trust_pillars as { title: string; description: string }[]).map((item, index) => {
+              const icons = [Wrench, BadgeCheck, Users];
+              const Icon = icons[index] ?? Wrench;
               return (
-                <Card key={index} className="bg-background border hover:border-primary/50 transition-colors">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="bg-primary/10 p-3 rounded-lg shrink-0">
-                        <Icon className="w-6 h-6 text-primary" />
+                <Card key={item.title} className="border bg-background/95 shadow-sm hover:border-primary/40 transition-colors">
+                  <CardContent className="p-6 md:p-7">
+                    <div className="flex flex-col gap-4 sm:flex-row sm:items-start md:flex-col">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                        <Icon className="h-6 w-6" strokeWidth={2} />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
-                        <p className="text-muted-foreground text-sm">{item.description}</p>
+                        <h3 className="mb-2 font-semibold text-lg leading-snug">{item.title}</h3>
+                        <p className="text-sm leading-relaxed text-muted-foreground">{item.description}</p>
                       </div>
                     </div>
                   </CardContent>

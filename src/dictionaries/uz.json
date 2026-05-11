@@ -3,7 +3,7 @@
     "services": "Xizmatlar",
     "calculator": "Kalkulyator",
     "contacts": "Kontaktlar",
-    "call_request": "Narxni hisoblash",
+    "call_request": "Batafsil",
     "work_hours": "24/7"
   },
   "Footer": {
@@ -63,7 +63,7 @@
     "clients_title": "Biz kimlar uchun ishlaymiz",
     "clients_subtitle": "Biz har xil turdagi tijorat ob'ektlari uchun sifatli tozalash xizmatlarini taqdim etamiz.",
     "services_title": "Bizning xizmatlarimiz",
-    "services_calculate_hint": "Xizmatlar bilan tanishdingiz — ob'ektingiz uchun tozalash narxini hisoblang.",
+    "services_calculate_hint": "Pastda — xizmatlar ro'yxati. Tayyor bo'lsangiz, batafsil oching: narx va ish tartibi haqida, savollar-savollarsiz.",
     "learn_more": "5 soniyada narxni hisoblash",
     "trust_us_title": "Bizga ishonadilar",
     "trust_us_subtitle": "Turli biznes sohalari tozalikni saqlash uchun bizni tanlaydi",
@@ -76,27 +76,25 @@
       "Omborlar",
       "Va boshqalar"
     ],
-    "why_beclean_title": "Nima uchun BeClean",
-    "why_beclean_items": [
-      { "title": "Yuzlab yakunlangan loyihalar", "description": "Toshkent bo'ylab har qanday murakkablikdagi ob'ektlarni tozalashda katta tajriba." },
-      { "title": "Karcher texnikasi", "description": "Mukammal tozalik uchun faqat professional nemis uskunalaridan foydalanamiz." },
-      { "title": "Tekshiruvdan keyin to'lov", "description": "Ishimiz sifati bilan shaxsan tanishganingizdan keyingina natija uchun to'laysiz." },
-      { "title": "O'qitilgan xodimlar", "description": "Barcha xodimlarimiz maxsus o'qitishdan o'tadi va muntazam malaka oshiradi." },
-      { "title": "Sifat kafolati", "description": "Yuqori standartni kafolatlash uchun har bir ob'ekt uchun batafsil tekshiruv ro'yxatlaridan foydalanamiz." },
-      { "title": "Shaxsiy menejer", "description": "Har bir mijozga barcha savollar uchun shaxsiy menejer biriktiriladi." }
+    "trust_pillars_title": "Nega bizga ishonishadi",
+    "trust_pillars_subtitle": "Har bir buyurtmachi oladigan asosiy narsalar",
+    "trust_pillars": [
+      { "title": "Kärcher texnikasi", "description": "Yuqori bosimli yuvish, changyutgichlar va professional aksessuarlar — har xil yuzalar uchun barqaror natija." },
+      { "title": "Tekshiruvdan keyin to'lov", "description": "Avvalo ish va ob'ektda qabul qilish. To'lov — sifat va hajmga ishonchingiz komil bo'lgach." },
+      { "title": "Yuz minglab mamnun mijozlar", "description": "Kvartiralar, ofislar, restoranlar, omborlar va savdo nuqtalari — Toshkent va atrofda shaffof kelishuvlar bilan." }
     ],
     "partners_title": "Bizning hamkorlarimiz",
     "gallery_title": "Ishimiz natijalari (Oldin va Keyin)",
-    "reviews_title": "Mijozlarimiz fikrlari",
-    "reviews_subtitle": "Mijozlarimiz biz haqida nima deyapti",
-    "reviews_client_label": "Mijoz",
+    "reviews_title": "Korxonalar va muassasalar fikri",
+    "reviews_subtitle": "Ofislar, restoranlar va boshqa ob'ektlar haqida qanday yozganlari",
+    "reviews_client_label": "Ob'ekt",
     "testimonials": [
-      { "name": "Anna A.", "role": "Mijoz", "gender": "female", "avatarUrl": "https://randomuser.me/api/portraits/women/25.jpg", "quote": "Sizga murojaat qilganimdan juda xursandman! Tozalash ishi sifatli va vaqtida bajarildi. Endi faqat sizga!" , "date": "01.03.2026" },
-      { "name": "Aziza Rahimova", "role": "Ofis direktori, IT-kompaniya", "gender": "female", "avatarUrl": "https://randomuser.me/api/portraits/women/47.jpg", "quote": "BECLEAN bilan olti oydan beri ishlaymiz. Ofis doim mukammal toza, xodimlar vaqtida va ehtiyotkor. Tavsiya qilaman!", "date": "03.03.2026" },
-      { "name": "Sergey Petrov", "role": "Biznes-markaz egasi", "gender": "male", "avatarUrl": "https://randomuser.me/api/portraits/men/14.jpg", "quote": "Professional jamoa. Ta'mirdan keyingi general tozalash ajoyib bajarildi — barcha chang va qurilish chiqindilarini tozaladilar.", "date": "05.03.2026" },
-      { "name": "Madina Karimova", "role": "Klinika boshqaruvchisi", "gender": "female", "avatarUrl": "https://randomuser.me/api/portraits/women/63.jpg", "quote": "Sanitariya standartlariga qat'iy rioya, operatsiyaxonalar va yo'laklarni sifatli tozalash. Tibbiy muassasalar uchun ishonchli hamkor.", "date": "07.03.2026" },
-      { "name": "Dmitriy Kozlov", "role": "Do'kon direktori", "gender": "male", "avatarUrl": "https://randomuser.me/api/portraits/men/28.jpg", "quote": "Vitrinallar va fasadni haftalik yuvadilar. Mijozlar tozalikni sezadilar. Narxlar mos, yillik shartnoma — qulay.", "date": "09.03.2026" },
-      { "name": "Nodira Yusupova", "role": "HR-menejer", "gender": "female", "avatarUrl": "https://randomuser.me/api/portraits/women/82.jpg", "quote": "Abonent tozalash — ofisga kerak bo'lgan narsa. Jadval bo'yicha keladilar, xodimlarni chalg'itmaydilar. Hammasi aniq tashkilot.", "date": "11.03.2026" }
+      { "name": "IT-kompaniyasi ofisi", "role": "Biznes-markaz, ~900 m²", "business": true, "quote": "Abonent tozalash jadvali bo'yicha: open space, muzokaralar va oshxona doim tartibda. Birinchi haftadan boshlab xodimlar farqni sezdilar.", "date": "02.2026" },
+      { "name": "Restoranlar tarmog'i", "role": "Zal + oshxona, bir nechta nuqta", "business": true, "quote": "Smenadan keyin tezlik va sanitariya muhim. Kelish vaqti aniq, zal va oshxona bo'yicha chek-list bajariladi — biz uchun juda muhim.", "date": "01.2026" },
+      { "name": "Savdo markazi", "role": "Umumiy zonalar va eskalatorlar", "business": true, "quote": "Mavsum oldi general tayyorgarligi: shisha, pol, panellar. Hajm va oldin/keyin foto hisobot — rahbariyat uchun qulay.", "date": "12.2025" },
+      { "name": "Klinika", "role": "Yo'laklar va kabinetlar", "business": true, "quote": "Qabul oralig'ida sokin vaqt talab qilindi. Belgilangan soatlarda shovqinsiz; sarflanuvchilar o'zlari bilan — nazorat oson.", "date": "11.2025" },
+      { "name": "Ombor majmuasi", "role": "Ishlab chiqarish va ofis bloklari", "business": true, "quote": "Ta'mirdan keyin yuqori stellaj yo'laklaridagi qurilish changi tozalandi. Ob'ektni aylanib, keyin to'lov — shunday kelishgan edik.", "date": "10.2025" },
+      { "name": "Kovorking", "role": "Open space va uchrashuv xonalari", "business": true, "quote": "Rezidentlar hid va shovqinga sezgir. Neytral kimyo, ish vaqtida xalaqit bermasdan — kovorking uchun yaxshi variant.", "date": "09.2025" }
     ],
     "cta_title": "Tozalikka tayyormisiz?",
     "cta_subtitle": "5 daqiqa ichida qo'ng'iroq qilamiz (bepul chiqish)",
@@ -288,34 +286,33 @@
       "other": "bino"
     }
   },
-  "QuickQuote": {
-    "dialog_title": "Narxni hisoblash",
-    "step_of": "Qadam",
-    "back": "Orqaga",
-    "next": "Keyingi",
-    "submit": "Hisobot olish",
-    "submitting": "Yuborilmoqda…",
-    "thank_title": "So'rov yuborildi",
-    "thank_body": "Tez orada bog'lanamiz va narxni aytamiz.",
-    "q1_title": "Qanday tozalash kerak?",
-    "q1_general": "General",
-    "q1_renovation": "Ta'mirdan keyin",
-    "q1_maintenance": "Qo'llab-quvvatlovchi",
-    "q2_rooms_title": "Necha xona?",
-    "q2_rooms_3plus": "3+",
-    "q2_place_title": "Uy yoki ofis?",
-    "q2_home": "Uy",
-    "q2_office": "Ofis",
-    "q3_title": "Qachon kerak?",
-    "q3_today": "Bugun",
-    "q3_tomorrow": "Ertaga",
-    "q3_week": "Hafta ichida",
-    "q4_title": "Hisob-kitob uchun telefon raqamingizni qoldiring",
-    "summary_prefix": "Savollar",
-    "summary_cleaning": "Tozalash",
-    "summary_rooms": "Xonalar",
-    "summary_place": "Ob'ekt",
-    "summary_when": "Qachon"
+  "InfoModal": {
+    "title": "Ishlash tartibi va narx qayerdan keladi",
+    "open_button": "Batafsil",
+    "lead": "Bu yerda faqat ma'lumot: anketasiz va raqam maydonlari yo'q. O'qigach ob'ektni muhokama qilmoqchi bo'lsangiz — qo'ng'iroq qiling, menejer telefonda aniqlashtiradi.",
+    "sections": [
+      {
+        "title": "Narx va kelishuvlar",
+        "body": "Maydon, ob'ekt turi va ish hajmi bo'yicha taxminiy narxni telefonda yoki qisqa tavsifdan beramiz. Xizmatlar ro'yxati smeta yoki shartnomada — nima uchun to'lash oldindan ko'rinadi, yashirin qo'shimchalar yo'q."
+      },
+      {
+        "title": "Ob'ektga kim chiqadi",
+        "body": "O'z professional kimyosi va jihozlari bilan brigada, shu jumladan yuvish va chang yutish uchun Kärcher texnikasi. Menejer aloqada: vaqt, zona yoki chastotani moslashtirish mumkin."
+      },
+      {
+        "title": "Qabul qilish va to'lov",
+        "body": "Tozalashdan keyin natijani chek-list bo'yicha qabul qilasiz. To'lov — tekshirganingizdan keyin: kelishilgan va bajarilgan hajm uchun."
+      }
+    ],
+    "bullets_title": "Qisqacha",
+    "bullets": [
+      "Toshkent bo'yicha shaffof tariflar — majburiy xizmatlar yo'q",
+      "Moslashuvchan jadval: bir martalik yoki abonent",
+      "Kvartira, ofis, HoReCa va tijorat uchun mos"
+    ],
+    "footer_note": "Pastdagi shakl yoki messenjer orqali ariza istalgan vaqtda mumkin — savollar oynasini ishlatmaymiz.",
+    "phone_cta": "Qo'ng'iroq: +998 77 356 60 70",
+    "close": "Tushunarli"
   },
   "FloatingInquiry": {
     "aria_label": "Tozalashga buyurtma",

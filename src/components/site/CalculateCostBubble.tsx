@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Calculator } from 'lucide-react';
+import { Info } from 'lucide-react';
 import { useDictionary } from '@/contexts/dictionary-context';
 import { useQuoteFlow } from '@/components/site/quote-flow';
 import { cn } from '@/lib/utils';
@@ -11,6 +11,7 @@ const DELAY_MS = 15_000;
 
 export function CalculateCostBubble() {
   const t = useDictionary();
+  const info = t.InfoModal;
   const { openQuote } = useQuoteFlow();
   const [visible, setVisible] = useState(false);
 
@@ -33,8 +34,8 @@ export function CalculateCostBubble() {
         size="lg"
         className="h-auto w-full gap-2 rounded-2xl bg-emerald-600 px-5 py-4 text-base font-bold text-white shadow-xl hover:bg-emerald-700"
       >
-        <Calculator className="h-6 w-6 shrink-0" />
-        <span className="text-left leading-tight">{t.HomePage.calculate_button_long}</span>
+        <Info className="h-6 w-6 shrink-0" />
+        <span className="text-left leading-tight">{info.open_button}</span>
       </Button>
     </div>
   );

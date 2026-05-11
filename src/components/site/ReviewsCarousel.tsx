@@ -13,6 +13,7 @@ import {
 } from '@/components/ui/carousel';
 import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
+import { Building2 } from 'lucide-react';
 
 export interface TestimonialItem {
   name: string;
@@ -20,6 +21,7 @@ export interface TestimonialItem {
   quote: string;
   avatarUrl: string;
   date: string;
+  isBusiness?: boolean;
 }
 
 interface ReviewsCarouselProps {
@@ -58,18 +60,34 @@ export function ReviewsCarousel({ testimonials, clientLabel, className }: Review
                     <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8">
                       {/* Avatar + Name (left) */}
                       <div className="flex flex-col items-center md:items-start shrink-0">
-                        <div className="relative h-20 w-20 rounded-full overflow-hidden bg-muted ring-2 ring-primary/20">
-                          <Image
-                            key={review.avatarUrl}
-                            src={review.avatarUrl}
-                            alt={review.name}
-                            fill
-                            className="object-cover"
-                            sizes="80px"
-                          />
+                        <div
+                          className={cn(
+                            'relative flex h-20 w-20 items-center justify-center overflow-hidden rounded-full ring-2 ring-primary/20',
+                            review.isBusiness ? 'bg-primary/12' : 'bg-muted',
+                          )}
+                        >
+                          {review.isBusiness || !review.avatarUrl ? (
+                            <Building2 className="h-10 w-10 text-primary" aria-hidden />
+                          ) : (
+                            <Image
+                              key={review.avatarUrl}
+                              src={review.avatarUrl}
+                              alt={review.name}
+                              fill
+                              className="object-cover"
+                              sizes="80px"
+                            />
+                          )}
                         </div>
-                        <p className="font-semibold text-lg mt-3">{review.name}</p>
-                        <p className="text-sm text-muted-foreground">{clientLabel}</p>
+                        <p className="mt-3 max-w-[14rem] text-center text-lg font-semibold leading-snug md:text-left">
+                          {review.name}
+                        </p>
+                        <p className="max-w-[14rem] text-center text-sm text-muted-foreground md:text-left">
+                          {review.role}
+                        </p>
+                        {!review.isBusiness ? (
+                          <p className="mt-1 text-xs text-muted-foreground/90">{clientLabel}</p>
+                        ) : null}
                       </div>
 
                       {/* Quote (center) */}
