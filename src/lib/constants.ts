@@ -3,7 +3,7 @@ import { Building2, ShoppingBag, HeartPulse, HardHat, Sparkles, Wind, Sofa, User
 export const getServices = (t: any) => {
     const servicesText = t.Constants.services;
     return [
-      { slug: servicesText[0].slug, title: servicesText[0].title, description: servicesText[0].description, icon: Building2, imageId: 'service-office', imageHint: 'clean office' },
+      { slug: servicesText[0].slug, title: servicesText[0].title, description: servicesText[0].description, icon: Building2, cardImage: '/services/tashkent-card.png', imageId: 'service-office', imageHint: 'clean office' },
       { slug: servicesText[1].slug, title: servicesText[1].title, description: servicesText[1].description, icon: ClipboardList, imageId: 'service-subscription', imageHint: 'calendar schedule' },
       { slug: servicesText[2].slug, title: servicesText[2].title, description: servicesText[2].description, icon: Sparkles, imageId: 'service-general', imageHint: 'floor polishing' },
       { slug: servicesText[3].slug, title: servicesText[3].title, description: servicesText[3].description, icon: HardHat, imageId: 'service-construction', imageHint: 'construction site' },

@@ -67,12 +67,6 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'technomarket.kg',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
         hostname: 'api.dicebear.com',
         port: '',
         pathname: '/**',

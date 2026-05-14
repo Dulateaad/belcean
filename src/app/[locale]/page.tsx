@@ -20,7 +20,6 @@ import {
   BadgeCheck,
   Users,
 } from 'lucide-react';
-import { ContactForm } from '@/components/site/ContactForm';
 import * as constants from '@/lib/constants';
 import { getDictionary } from '@/lib/get-dictionary';
 import type { Locale } from '@/i18n-config';
@@ -112,9 +111,22 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
               return (
                 <Card key={index} className="flex flex-col overflow-hidden bg-background border border-transparent hover:border-primary transition-colors duration-300 h-full group">
                    <CardContent className="p-8 flex-grow flex flex-col items-center">
-                    <div className="bg-primary/10 p-4 rounded-xl text-primary mb-6">
-                       <ServiceIcon className="w-10 h-10" />
-                    </div>
+                    {service.cardImage ? (
+                      <div className="relative mb-6 flex h-40 w-full max-w-[280px] items-center justify-center overflow-hidden rounded-xl bg-primary/5 p-4">
+                        <Image
+                          src={service.cardImage}
+                          alt={service.title}
+                          width={280}
+                          height={160}
+                          className="h-full w-full object-contain object-center"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        />
+                      </div>
+                    ) : (
+                      <div className="mb-6 rounded-xl bg-primary/10 p-4 text-primary">
+                        <ServiceIcon className="h-10 w-10" />
+                      </div>
+                    )}
                     <CardTitle className="text-xl mt-4">{service.title}</CardTitle>
                     <p className="text-muted-foreground mt-2 mb-4 flex-grow">{service.description}</p>
                      <Button asChild variant="link" className="p-0 h-auto font-semibold mt-auto opacity-70 group-hover:opacity-100 transition-opacity">
@@ -196,14 +208,14 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
             <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16 opacity-80 hover:opacity-100 transition-opacity">
                 <div className="flex flex-col items-center gap-2">
                     <div className="relative h-20 w-48">
-                        <Image 
-                            src="https://technomarket.kg/images/feature_variant/11/Karcher-Logo.png" 
-                            alt="Karcher" 
+                        <Image
+                            src="/brands/karcher-logo.png"
+                            alt="Kärcher"
                             fill
                             className="object-contain grayscale hover:grayscale-0 transition-all"
                         />
                     </div>
-                    <span className="text-sm font-semibold text-muted-foreground">Karcher</span>
+                    <span className="text-sm font-semibold text-muted-foreground">Kärcher</span>
                 </div>
                 <div className="flex flex-col items-center gap-2">
                     <div className="relative h-16 w-32 md:h-20 md:w-40">
@@ -267,22 +279,6 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
             <CarouselPrevious className="-left-4 md:-left-12" />
             <CarouselNext className="-right-4 md:-right-12" />
           </AutoCarousel>
-        </div>
-      </section>
-
-      <section id="cta" className="w-full py-16 md:py-32 lg:py-40 bg-background">
-        <div className="max-w-[1792px] mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6">
-          <div className="space-y-3">
-            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">
-              {t.HomePage.cta_title}
-            </h2>
-            <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed text-center">
-              {t.HomePage.cta_subtitle}
-            </p>
-          </div>
-          <div className="mx-auto w-full max-w-md">
-            <ContactForm />
-          </div>
         </div>
       </section>
     </div>
