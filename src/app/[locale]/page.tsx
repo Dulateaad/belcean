@@ -31,6 +31,8 @@ import {
 } from '@/components/site/RollingStatsSection';
 import { HomeHeroFairPrice } from '@/components/site/HomeHeroFairPrice';
 import { ServicesCalculateCta } from '@/components/site/ServicesCalculateCta';
+import karcherLogo from '@/assets/brands/karcher-logo.png';
+import tashkentCardHero from '@/assets/services/tashkent-card.jpg';
 
 export default async function Home({ params }: { params: Promise<{ locale: Locale }> }) {
   const resolvedParams = await params;
@@ -108,18 +110,20 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 w-full">
             {services.map((service: any, index: number) => {
               const ServiceIcon = service.icon;
+              const officeVisual =
+                service.imageId === 'service-office' ? tashkentCardHero : null;
               return (
                 <Card key={index} className="flex flex-col overflow-hidden bg-background border border-transparent hover:border-primary transition-colors duration-300 h-full group">
                    <CardContent className="p-8 flex-grow flex flex-col items-center">
-                    {service.cardImage ? (
+                    {officeVisual ? (
                       <div className="relative mb-6 h-44 w-full max-w-[280px] overflow-hidden rounded-xl bg-muted">
                         <Image
-                          src={service.cardImage}
+                          src={officeVisual}
                           alt={service.title}
                           fill
                           className="object-cover object-center"
                           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 280px"
-                          unoptimized
+                          priority={index === 0}
                         />
                       </div>
                     ) : (
@@ -209,10 +213,9 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
                 <div className="flex flex-col items-center gap-2">
                     <div className="relative h-20 w-48">
                         <Image
-                            src="/brands/karcher-logo.png"
+                            src={karcherLogo}
                             alt="Kärcher"
                             fill
-                            unoptimized
                             className="object-contain grayscale hover:grayscale-0 transition-all"
                         />
                     </div>
