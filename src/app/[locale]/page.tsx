@@ -116,13 +116,14 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
                 <Card key={index} className="flex flex-col overflow-hidden bg-background border border-transparent hover:border-primary transition-colors duration-300 h-full group">
                    <CardContent className="p-8 flex-grow flex flex-col items-center">
                     {officeVisual ? (
-                      <div className="relative mb-6 h-44 w-full max-w-[280px] overflow-hidden rounded-xl bg-muted">
+                      <div className="relative mb-6 flex h-40 w-full max-w-[260px] items-center justify-center overflow-hidden rounded-xl bg-primary/5 p-3">
                         <Image
                           src={officeVisual}
                           alt={service.title}
-                          fill
-                          className="object-cover object-center"
-                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 280px"
+                          width={225}
+                          height={225}
+                          className="h-full w-full max-h-[152px] max-w-[152px] object-contain object-center"
+                          sizes="152px"
                           priority={index === 0}
                         />
                       </div>
