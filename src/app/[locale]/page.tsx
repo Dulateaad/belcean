@@ -112,14 +112,14 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
                 <Card key={index} className="flex flex-col overflow-hidden bg-background border border-transparent hover:border-primary transition-colors duration-300 h-full group">
                    <CardContent className="p-8 flex-grow flex flex-col items-center">
                     {service.cardImage ? (
-                      <div className="relative mb-6 flex h-40 w-full max-w-[280px] items-center justify-center overflow-hidden rounded-xl bg-primary/5 p-4">
+                      <div className="relative mb-6 h-44 w-full max-w-[280px] overflow-hidden rounded-xl bg-muted">
                         <Image
                           src={service.cardImage}
                           alt={service.title}
-                          width={280}
-                          height={160}
-                          className="h-full w-full object-contain object-center"
-                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          fill
+                          className="object-cover object-center"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 280px"
+                          unoptimized
                         />
                       </div>
                     ) : (
@@ -212,6 +212,7 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
                             src="/brands/karcher-logo.png"
                             alt="Kärcher"
                             fill
+                            unoptimized
                             className="object-contain grayscale hover:grayscale-0 transition-all"
                         />
                     </div>
