@@ -80,7 +80,7 @@ export default async function LocaleLayout({
           `}
         </Script>
         
-        {/* Global site tag (gtag.js) — Google Analytics + Google Ads (AW-18083313268) */}
+        {/* Global site tag (gtag.js) — Google Analytics + Google Ads */}
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-VT6Q7ZS6JZ" strategy="afterInteractive" />
         <Script id="gtag-init" strategy="afterInteractive">
           {`
@@ -89,6 +89,7 @@ export default async function LocaleLayout({
             gtag('js', new Date());
             gtag('config', 'G-VT6Q7ZS6JZ');
             gtag('config', 'AW-18083313268');
+            gtag('config', 'AW-17765235654');
             window.gtag_report_conversion = function gtag_report_conversion(url) {
               var callback = function () {
                 if (typeof url !== 'undefined') {
