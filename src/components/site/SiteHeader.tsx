@@ -27,7 +27,7 @@ import { cn } from '@/lib/utils';
 
 export function SiteHeader() {
   const t = useDictionary();
-  const { openQuote } = useQuoteFlow();
+  const { openInfo } = useQuoteFlow();
   const [phoneReveal, setPhoneReveal] = useState(false);
 
   useEffect(() => {
@@ -189,7 +189,7 @@ export function SiteHeader() {
                 <Button
                   type="button"
                   className="hidden lg:inline-flex ml-4 bg-emerald-600 hover:bg-emerald-700"
-                  onClick={openQuote}
+                  onClick={openInfo}
                 >
                   {t.Header.call_request}
                 </Button>

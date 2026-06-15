@@ -312,8 +312,6 @@ function RollingRatingStatCard({
 }) {
   const intPart = Math.floor(value);
   const decPart = Math.round((value - intPart) * 10);
-  const lastDelay = delayBase + DIGIT_STAGGER_MS;
-  const iconDelayMs = lastDelay + Math.round(DURATION_MS * 0.92);
   const h = CARD_DIGIT_H;
 
   return (
@@ -337,7 +335,6 @@ function RollingRatingStatCard({
             delayMs={active ? delayBase + DIGIT_STAGGER_MS : 0}
             cellHeight={h}
           />
-          <SuffixIcon type="star" active={active} delayMs={iconDelayMs} cellHeight={h} staticMode={!active} />
         </div>
       </div>
       <div className="max-w-[9.5rem] text-[11px] leading-tight text-muted-foreground sm:max-w-[10.5rem] sm:text-xs">

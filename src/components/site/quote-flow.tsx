@@ -14,13 +14,19 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
+import { ContactForm } from '@/components/site/ContactForm';
 import { useDictionary } from '@/contexts/dictionary-context';
 import { Phone } from 'lucide-react';
 import { onTelLinkClick, PHONE_TEL_HREF } from '@/lib/phone-conversion';
 
+type DialogMode = 'info' | 'form' | null;
+
 type QuoteContextValue = {
-  openQuote: () => void;
+  openInfo: () => void;
+  openForm: () => void;
   closeQuote: () => void;
+  /** @deprecated use openInfo or openForm */
+  openQuote: () => void;
 };
 
 const QuoteContext = createContext<QuoteContextValue | null>(null);
@@ -32,21 +38,47 @@ export function useQuoteFlow() {
 }
 
 export function QuoteFlowProvider({ children }: { children: React.ReactNode }) {
-  const [open, setOpen] = useState(false);
+  const [mode, setMode] = useState<DialogMode>(null);
 
-  const openQuote = useCallback(() => setOpen(true), []);
-  const closeQuote = useCallback(() => setOpen(false), []);
+  const openInfo = useCallback(() => setMode('info'), []);
+  const openForm = useCallback(() => setMode('form'), []);
+  const closeQuote = useCallback(() => setMode(null), []);
 
   const value = useMemo(
-    () => ({ openQuote, closeQuote }),
-    [openQuote, closeQuote],
+    () => ({ openInfo, openForm, closeQuote, openQuote: openInfo }),
+    [openInfo, openForm, closeQuote],
   );
 
   return (
     <QuoteContext.Provider value={value}>
       {children}
-      <ServiceInfoDialog open={open} onOpenChange={setOpen} />
+      <ServiceInfoDialog open={mode === 'info'} onOpenChange={(o) => !o && setMode(null)} />
+      <InquiryFormDialog open={mode === 'form'} onOpenChange={(o) => !o && setMode(null)} />
     </QuoteContext.Provider>
+  );
+}
+
+function InquiryFormDialog({
+  open,
+  onOpenChange,
+}: {
+  open: boolean;
+  onOpenChange: (o: boolean) => void;
+}) {
+  const t = useDictionary();
+
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="sm:max-w-md">
+        <DialogHeader>
+          <DialogTitle className="pr-8 text-left text-xl font-headline">
+            {t.HomePage.inquiry_title}
+          </DialogTitle>
+        </DialogHeader>
+        <p className="text-sm text-muted-foreground">{t.HomePage.inquiry_subtitle}</p>
+        <ContactForm noRedirect onSuccess={() => onOpenChange(false)} />
+      </DialogContent>
+    </Dialog>
   );
 }
 

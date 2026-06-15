@@ -1,6 +1,7 @@
 'use client';
 
-import { Phone } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Info, Phone } from 'lucide-react';
 import { useDictionary } from '@/contexts/dictionary-context';
 import { onTelLinkClick } from '@/lib/phone-conversion';
 import {
@@ -8,7 +9,10 @@ import {
   TELEGRAM_HREF,
   WHATSAPP_HREF,
 } from '@/lib/contact-links';
+import { useQuoteFlow } from '@/components/site/quote-flow';
 import { cn } from '@/lib/utils';
+
+const INFO_DELAY_MS = 8_000;
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -27,7 +31,7 @@ function TelegramIcon({ className }: { className?: string }) {
 }
 
 const iconBtn =
-  'flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-current shadow-md ring-1 ring-black/5 backdrop-blur-sm transition-transform active:scale-95 hover:shadow-lg';
+  'flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-transform active:scale-95';
 
 function ContactIcon({
   href,
@@ -60,65 +64,57 @@ function ContactIcon({
 export function FloatingInquiry() {
   const t = useDictionary();
   const tFloating = t.FloatingInquiry;
+  const info = t.InfoModal;
+  const { openInfo } = useQuoteFlow();
+  const [showInfo, setShowInfo] = useState(false);
+
+  useEffect(() => {
+    const id = window.setTimeout(() => setShowInfo(true), INFO_DELAY_MS);
+    return () => window.clearTimeout(id);
+  }, []);
 
   return (
-    <>
-      {/* Mobile: компактные иконки справа, без полосы */}
-      <div
-        className="pointer-events-none fixed bottom-3 right-3 z-40 flex flex-col items-end gap-2 md:hidden"
-        style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
-      >
-        <div className="pointer-events-auto flex items-center gap-2">
-          <ContactIcon
-            href={TELEGRAM_HREF}
-            label={tFloating.telegram}
-            colorClass="text-[#229ED9]"
-          >
-            <TelegramIcon className="h-[18px] w-[18px]" />
-          </ContactIcon>
-          <ContactIcon
-            href={WHATSAPP_HREF}
-            label={tFloating.whatsapp}
-            colorClass="text-[#25D366]"
-          >
-            <WhatsAppIcon className="h-[18px] w-[18px]" />
-          </ContactIcon>
-          <ContactIcon
-            href={PHONE_TEL_HREF}
-            label={tFloating.call}
-            onClick={(e) => onTelLinkClick(e)}
-            colorClass="text-emerald-600"
-          >
-            <Phone className="h-[18px] w-[18px]" strokeWidth={2.25} />
-          </ContactIcon>
-        </div>
-      </div>
+    <div
+      className="fixed bottom-3 right-3 z-50 flex items-center gap-1 rounded-full bg-white/95 p-1 shadow-lg ring-1 ring-black/8 backdrop-blur-sm"
+      style={{ paddingBottom: 'max(0.25rem, env(safe-area-inset-bottom))' }}
+    >
+      {showInfo && (
+        <button
+          type="button"
+          onClick={openInfo}
+          className="flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3 text-xs font-semibold text-emerald-700 transition-colors hover:bg-emerald-50"
+        >
+          <Info className="h-3.5 w-3.5" strokeWidth={2.5} />
+          <span className="hidden min-[380px]:inline">{info.open_button}</span>
+        </button>
+      )}
 
-      {/* Desktop */}
-      <div className="fixed bottom-5 right-5 z-40 hidden flex-col items-end gap-2 md:flex">
+      {showInfo && <span className="h-5 w-px shrink-0 bg-black/10" aria-hidden />}
+
+      <div className="flex items-center gap-0.5">
         <ContactIcon
           href={TELEGRAM_HREF}
           label={tFloating.telegram}
-          colorClass="text-[#229ED9]"
+          colorClass="text-[#229ED9] hover:bg-sky-50"
         >
-          <TelegramIcon className="h-[18px] w-[18px]" />
+          <TelegramIcon className="h-[17px] w-[17px]" />
         </ContactIcon>
         <ContactIcon
           href={WHATSAPP_HREF}
           label={tFloating.whatsapp}
-          colorClass="text-[#25D366]"
+          colorClass="text-[#25D366] hover:bg-green-50"
         >
-          <WhatsAppIcon className="h-[18px] w-[18px]" />
+          <WhatsAppIcon className="h-[17px] w-[17px]" />
         </ContactIcon>
         <ContactIcon
           href={PHONE_TEL_HREF}
           label={tFloating.call}
           onClick={(e) => onTelLinkClick(e)}
-          colorClass="text-emerald-600"
+          colorClass="text-emerald-600 hover:bg-emerald-50"
         >
-          <Phone className="h-[18px] w-[18px]" strokeWidth={2.25} />
+          <Phone className="h-[17px] w-[17px]" strokeWidth={2.25} />
         </ContactIcon>
       </div>
-    </>
+    </div>
   );
 }

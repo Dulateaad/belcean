@@ -7,7 +7,6 @@ import { i18n, type Locale } from '@/i18n-config';
 import { DictionaryProvider } from '@/contexts/dictionary-context';
 import { FloatingInquiry } from '@/components/site/FloatingInquiry';
 import { QuoteFlowProvider } from '@/components/site/quote-flow';
-import { CalculateCostBubble } from '@/components/site/CalculateCostBubble';
 import { Metadata } from 'next';
 import { headers } from 'next/headers';
 import Script from 'next/script';
@@ -80,7 +79,6 @@ export default async function LocaleLayout({
               <SiteFooter />
             </div>
             <FloatingInquiry />
-            <CalculateCostBubble />
           </QuoteFlowProvider>
         </DictionaryProvider>
         <Toaster />

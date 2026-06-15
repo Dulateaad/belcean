@@ -1,19 +1,10 @@
 import Image from 'next/image';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import {
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel';
+import { Card, CardContent, CardTitle } from '@/components/ui/card';
 import { ReviewsCarousel } from '@/components/site/ReviewsCarousel';
 import {
   ArrowRight,
   Sparkles,
   CheckCircle2,
-  Camera,
   Handshake,
   MessageCircle,
   Wrench,
@@ -23,7 +14,6 @@ import {
 import * as constants from '@/lib/constants';
 import { getDictionary } from '@/lib/get-dictionary';
 import type { Locale } from '@/i18n-config';
-import { AutoCarousel } from '@/components/site/AutoCarousel';
 import {
   RollingStatsSection,
   type RollingStatItem,
@@ -32,6 +22,7 @@ import {
 import { HomeHeroFairPrice } from '@/components/site/HomeHeroFairPrice';
 import { HomeInquirySection } from '@/components/site/HomeInquirySection';
 import { ServicesCalculateCta } from '@/components/site/ServicesCalculateCta';
+import { OpenFormButton } from '@/components/site/OpenFormButton';
 import karcherLogo from '@/assets/brands/karcher-logo.png';
 import tashkentCardHero from '@/assets/services/tashkent-card.jpg';
 
@@ -41,7 +32,6 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
   const t = await getDictionary(locale);
   const services = constants.getServices(t);
   const clientTypes = constants.getClientTypes(t);
-  const beforeAfterImages = constants.getBeforeAfterImages(t);
   const testimonials = constants.getTestimonials(t);
 
   return (
@@ -135,11 +125,9 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
                     )}
                     <CardTitle className="text-xl mt-4">{service.title}</CardTitle>
                     <p className="text-muted-foreground mt-2 mb-4 flex-grow">{service.description}</p>
-                     <Button asChild variant="link" className="p-0 h-auto font-semibold mt-auto opacity-70 group-hover:opacity-100 transition-opacity">
-                      <Link href={`/${locale}/calculator`}>
-                        {t.HomePage.learn_more} <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
+                     <OpenFormButton className="mt-auto p-0 h-auto opacity-70 group-hover:opacity-100">
+                      {t.HomePage.learn_more} <ArrowRight className="ml-2 h-4 w-4" />
+                    </OpenFormButton>
                   </CardContent>
                 </Card>
               );
@@ -257,38 +245,6 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
               clientLabel={t.HomePage.reviews_client_label}
             />
           </div>
-        </div>
-      </section>
-
-      <section id="gallery" className="w-full py-16 md:py-32 text-center overflow-x-clip bg-secondary">
-        <div className="max-w-[1792px] mx-auto px-4 md:px-6">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12 flex items-center justify-center gap-3">
-            <Camera className="w-8 h-8 text-primary" /> {t.HomePage.gallery_title}
-          </h2>
-          <AutoCarousel className="w-full mx-auto">
-            <CarouselContent>
-              {beforeAfterImages.map((image: { src: string; alt: string }, index: number) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <div className="p-2 h-full">
-                    <Card className="h-full overflow-hidden bg-white/50 backdrop-blur-sm">
-                       <div className="relative aspect-video w-full">
-                        <Image
-                            src={image.src}
-                            alt={image.alt}
-                            fill
-                            loading="lazy"
-                            className="object-contain p-2"
-                            sizes="(max-width: 768px) 100vw, 33vw"
-                        />
-                       </div>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="-left-4 md:-left-12" />
-            <CarouselNext className="-right-4 md:-right-12" />
-          </AutoCarousel>
         </div>
       </section>
     </div>
