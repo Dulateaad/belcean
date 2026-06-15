@@ -56,7 +56,7 @@
     "stats_aria": "BECLEAN SERVIS ko'rsatkichlari",
     "stats_items": [
       { "value": 1500, "label": "Mamnun mijozlar", "label_line2": "professional tozalashdan keyin", "suffix": "plus" },
-      { "value": 12, "label": "Tozalash turlari", "label_line2": "va mebel kimyoviy tozalash", "suffix": "none" },
+      { "value": 13, "label": "Tozalash turlari", "label_line2": "va mebel kimyoviy tozalash", "suffix": "none" },
       { "value": 1, "label": "Yil bozorda", "label_line2": "tajriba va sifatli servis", "suffix": "none" },
       { "value": 4.9, "label": "Mijozlar bahosi", "label_line2": "barcha platformalarda", "suffix": "star", "isRating": true }
     ],
@@ -116,7 +116,8 @@
       { "slug": "/generalnaya-uborka", "title": "Toshkentda general tozalash", "description": "Toshkentda general tozalash — barcha xonalarni kompleks tozalash." },
       { "slug": "/poslestroitelnaya-uborka", "title": "Toshkentda ta'mirdan keyingi tozalash", "description": "Toshkentda ta'mirdan keyin tozalash. Qurilish changi va chiqindilarini tozalaymiz." },
       { "slug": "/moika-okon", "title": "Toshkentda oyna yuvish", "description": "Toshkentda oyna yuvish. Toza derazalar, fasadlar va vitrinalar." },
-      { "slug": "/himchistka-mebeli", "title": "Toshkentda mebel kimyoviy tozalash", "description": "Toshkentda mebel kimyoviy tozalash. Mebelingizga yangi ko'rinish." }
+      { "slug": "/himchistka-mebeli", "title": "Toshkentda mebel kimyoviy tozalash", "description": "Toshkentda mebel kimyoviy tozalash. Mebelingizga yangi ko'rinish." },
+      { "slug": "/chistka-kover", "title": "Toshkentda gilam tozalash", "description": "Toshkentda professional gilam tozalash. Uyga chiqib, dog' va hidni ketkazamiz." }
     ],
     "client_types": [
       { "name": "Ofislar" }, { "name": "Biznes-markazlar" }, { "name": "Do'konlar" }, { "name": "Klinikalar" }, { "name": "Omborlar" }, { "name": "Kvartiralar" }
@@ -124,7 +125,8 @@
     "prices": [
       { "id": "cleaning", "name": "Tozalash", "price": 20000 },
       { "id": "facade", "name": "Fasad", "price": 16000 },
-      { "id": "drycleaning", "name": "Kimyoviy tozalash", "price": 15000 }
+      { "id": "drycleaning", "name": "Kimyoviy tozalash", "price": 15000 },
+      { "id": "carpet", "name": "Gilam tozalash", "price": 12000 }
     ]
   },
   "ThankYouPage": {
@@ -193,6 +195,22 @@
     "faq": [
       {"question": "Kimyo bolalar uchun xavfsizmi?", "answer": "Ha, biz sertifikatlangan gipoallergen vositalardan foydalanamiz."},
       {"question": "Mebel qancha vaqtda quriydi?", "answer": "Odatda shamollatishga qarab 3 soatdan 6 soatgacha."}
+    ]
+  },
+  "ServicePageKovrov": {
+    "service_name": "Gilam tozalash",
+    "service_subtitle": "Uy yoki ofisga chiqib gilam va gilam qoplamalarini professional tozalash.",
+    "meta_title": "Toshkentda gilam tozalash - Professional gilam kimyoviy tozalash",
+    "meta_description": "Toshkentda professional gilam tozalash. Dog'lar, hidlar va changni ketkazish. Mutaxassislar chiqishi, xavfsiz kimyo.",
+    "whats_included": ["Tuk chuqur tozalash", "Dog' va hidni ketkazish", "Antibakterial ishlov", "Quritish va shaklni tiklash", "Har qanday o'lchamdagi gilamlar"],
+    "work_process": [
+      {"title": "Ko'rik", "description": "Mato turini va ifloslanish darajasini baholaymiz."},
+      {"title": "Tozalash", "description": "Ekstraktor yoki qo'lda chuqur tozalash."},
+      {"title": "Quritish", "description": "Gilam bir necha soat ichida foydalanishga tayyor bo'ladi."}
+    ],
+    "faq": [
+      {"question": "Uyga chiqasizlarmi?", "answer": "Ha, uyda tozalaymiz yoki sexga olib ketamiz — qulay usulni tanlaysiz."},
+      {"question": "Gilam qancha vaqtda quriydi?", "answer": "Odatda qalinligi va shamollatishga qarab 4–8 soat."}
     ]
   },
   "ServicePageMoikaOkon": {

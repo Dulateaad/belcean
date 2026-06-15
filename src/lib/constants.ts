@@ -1,15 +1,25 @@
-import { Building2, ShoppingBag, HeartPulse, HardHat, Sparkles, Wind, Sofa, Users, UserCheck, ShieldCheck, Smile, ClipboardList, Home, Trophy, Zap, Wallet } from 'lucide-react';
+import { Building2, ShoppingBag, HeartPulse, HardHat, Sparkles, Wind, Sofa, Users, UserCheck, ShieldCheck, Smile, ClipboardList, Home, Trophy, Zap, Wallet, Layers } from 'lucide-react';
 
 export const getServices = (t: any) => {
     const servicesText = t.Constants.services;
-    return [
-      { slug: servicesText[0].slug, title: servicesText[0].title, description: servicesText[0].description, icon: Building2, imageId: 'service-office', imageHint: 'clean office' },
-      { slug: servicesText[1].slug, title: servicesText[1].title, description: servicesText[1].description, icon: ClipboardList, imageId: 'service-subscription', imageHint: 'calendar schedule' },
-      { slug: servicesText[2].slug, title: servicesText[2].title, description: servicesText[2].description, icon: Sparkles, imageId: 'service-general', imageHint: 'floor polishing' },
-      { slug: servicesText[3].slug, title: servicesText[3].title, description: servicesText[3].description, icon: HardHat, imageId: 'service-construction', imageHint: 'construction site' },
-      { slug: servicesText[4].slug, title: servicesText[4].title, description: servicesText[4].description, icon: Wind, imageId: 'service-windows', imageHint: 'window cleaning' },
-      { slug: servicesText[5].slug, title: servicesText[5].title, description: servicesText[5].description, icon: Sofa, imageId: 'service-furniture', imageHint: 'upholstery cleaning' },
+    const icons = [Building2, ClipboardList, Sparkles, HardHat, Wind, Sofa, Layers];
+    const meta = [
+      { imageId: 'service-office', imageHint: 'clean office' },
+      { imageId: 'service-subscription', imageHint: 'calendar schedule' },
+      { imageId: 'service-general', imageHint: 'floor polishing' },
+      { imageId: 'service-construction', imageHint: 'construction site' },
+      { imageId: 'service-windows', imageHint: 'window cleaning' },
+      { imageId: 'service-furniture', imageHint: 'upholstery cleaning' },
+      { imageId: 'service-furniture', imageHint: 'carpet cleaning' },
     ];
+    return servicesText.map((service: { slug: string; title: string; description: string }, index: number) => ({
+      slug: service.slug,
+      title: service.title,
+      description: service.description,
+      icon: icons[index] ?? Sparkles,
+      imageId: meta[index]?.imageId,
+      imageHint: meta[index]?.imageHint,
+    }));
 };
 
 export const getBeforeAfterImages = (t: any) => {

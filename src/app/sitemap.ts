@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/poslestroitelnaya-uborka',
     '/moika-okon',
     '/himchistka-mebeli',
+    '/chistka-kover',
     '/calculator',
     '/quiz'
   ];
