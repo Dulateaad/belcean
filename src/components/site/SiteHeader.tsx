@@ -106,17 +106,17 @@ export function SiteHeader() {
                onClick={(e) => onTelLinkClick(e)}
                aria-label={`${t.FloatingInquiry.call} +998 77 356 60 70`}
                className={cn(
-                 'md:hidden flex flex-col items-center rounded-xl bg-gradient-to-b from-emerald-700 to-emerald-900 px-3.5 py-2 shadow-md ring-1 ring-white/15 transition-all duration-700 ease-out motion-reduce:transition-none cursor-pointer active:opacity-95',
+                 'md:hidden flex flex-col items-center rounded-lg border border-border/70 bg-background/90 px-3 py-1.5 shadow-sm transition-all duration-700 ease-out motion-reduce:transition-none cursor-pointer active:opacity-90',
                  phoneReveal ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0',
                )}
              >
-                <span className="flex items-center gap-1.5 font-bold text-lg text-white sm:text-xl leading-none">
-                    <Phone className="h-4 w-4 shrink-0 text-emerald-200" aria-hidden />
+                <span className="flex items-center gap-1.5 text-base font-semibold leading-none text-foreground">
+                    <Phone className="h-3.5 w-3.5 shrink-0 text-muted-foreground" aria-hidden />
                     <span className="whitespace-nowrap tabular-nums">77 356-60-70</span>
                 </span>
-                <span className="mt-1 flex items-center gap-1.5 text-emerald-50">
-                    <Clock className="h-4 w-4 shrink-0 text-emerald-200" aria-hidden />
-                    <span className="text-sm font-bold uppercase tracking-wide sm:text-base text-emerald-50">
+                <span className="mt-0.5 flex items-center gap-1 text-muted-foreground">
+                    <Clock className="h-3 w-3 shrink-0" aria-hidden />
+                    <span className="text-[11px] font-medium uppercase tracking-wide">
                       {t.Header.work_hours}
                     </span>
                 </span>
