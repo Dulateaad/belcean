@@ -1,7 +1,9 @@
 import type { MouseEvent } from "react";
 
+import { PHONE_TEL_HREF } from '@/lib/contact-links';
+
 /** Номер для конверсии «звонок» в Google Ads */
-export const PHONE_TEL_HREF = "tel:+998773566070";
+export { PHONE_TEL_HREF };
 
 /**
  * Вызов из onClick ссылки «Позвонить»: отправляет conversion и открывает tel: через callback Google.

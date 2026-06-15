@@ -30,6 +30,7 @@ import {
   type StatSuffix,
 } from '@/components/site/RollingStatsSection';
 import { HomeHeroFairPrice } from '@/components/site/HomeHeroFairPrice';
+import { HomeInquirySection } from '@/components/site/HomeInquirySection';
 import { ServicesCalculateCta } from '@/components/site/ServicesCalculateCta';
 import karcherLogo from '@/assets/brands/karcher-logo.png';
 import tashkentCardHero from '@/assets/services/tashkent-card.jpg';
@@ -40,7 +41,7 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
   const t = await getDictionary(locale);
   const services = constants.getServices(t);
   const clientTypes = constants.getClientTypes(t);
-  const beforeAfterImages = constants.getBeforeAfterImages();
+  const beforeAfterImages = constants.getBeforeAfterImages(t);
   const testimonials = constants.getTestimonials(t);
 
   return (
@@ -48,6 +49,8 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
       <div id="hero">
         <HomeHeroFairPrice />
       </div>
+
+      <HomeInquirySection />
 
       <RollingStatsSection
         variant="rows"
@@ -83,19 +86,17 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
             </p>
           </div>
           <div className="mx-auto grid grid-cols-2 items-start gap-8 sm:grid-cols-3 lg:grid-cols-6 lg:gap-12 text-center">
-            {clientTypes.map((client: any, index: number) => (
+            {clientTypes.map((client: any, index: number) => {
+              const ClientIcon = client.icon;
+              return (
               <div key={index} className="flex flex-col items-center gap-4 text-center transition-transform duration-300 hover:scale-105">
-                <div className="relative h-24 w-24 rounded-2xl bg-white shadow-sm overflow-hidden p-2">
-                    <Image
-                      src={client.imageUrl}
-                      alt={client.name}
-                      fill
-                      className="object-contain p-2"
-                    />
+                <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-white shadow-sm">
+                    <ClientIcon className="h-12 w-12 text-primary" strokeWidth={1.5} aria-hidden />
                 </div>
                 <p className="text-lg font-semibold">{client.name}</p>
               </div>
-            ))}
+            );
+            })}
           </div>
         </div>
       </section>
@@ -124,7 +125,7 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
                           height={225}
                           className="h-full w-full max-h-[152px] max-w-[152px] object-contain object-center"
                           sizes="152px"
-                          priority={index === 0}
+                          loading="lazy"
                         />
                       </div>
                     ) : (
@@ -215,8 +216,9 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
                     <div className="relative h-20 w-48">
                         <Image
                             src={karcherLogo}
-                            alt="Kärcher"
+                            alt="Kärcher — партнёр BECLEAN SERVIS"
                             fill
+                            loading="lazy"
                             className="object-contain grayscale hover:grayscale-0 transition-all"
                         />
                     </div>
@@ -226,8 +228,9 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
                     <div className="relative h-16 w-32 md:h-20 md:w-40">
                         <Image
                             src="https://firebasestorage.googleapis.com/v0/b/studio-459358167-4d676.firebasestorage.app/o/Business%20Hub%20(1).png?alt=media&token=3f9f389e-0134-4258-8069-30db60758766"
-                            alt="ODO"
+                            alt="ODO Business Hub — партнёр BECLEAN SERVIS"
                             fill
+                            loading="lazy"
                             className="object-contain"
                             sizes="(max-width: 768px) 128px, 160px"
                         />
@@ -264,16 +267,18 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
           </h2>
           <AutoCarousel className="w-full mx-auto">
             <CarouselContent>
-              {beforeAfterImages.map((imageUrl: string, index: number) => (
+              {beforeAfterImages.map((image: { src: string; alt: string }, index: number) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-2 h-full">
                     <Card className="h-full overflow-hidden bg-white/50 backdrop-blur-sm">
                        <div className="relative aspect-video w-full">
                         <Image
-                            src={imageUrl}
-                            alt={`Work result ${index + 1}`}
+                            src={image.src}
+                            alt={image.alt}
                             fill
+                            loading="lazy"
                             className="object-contain p-2"
+                            sizes="(max-width: 768px) 100vw, 33vw"
                         />
                        </div>
                     </Card>

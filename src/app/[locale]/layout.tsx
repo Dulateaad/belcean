@@ -23,6 +23,22 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: L
     title: t.HomePage.meta_title,
     description: t.HomePage.meta_description,
     keywords: t.HomePage.meta_keywords,
+    openGraph: {
+      title: t.HomePage.meta_title,
+      description: t.HomePage.meta_description,
+      url: 'https://beclean.uz',
+      siteName: 'BECLEAN SERVIS',
+      locale: locale === 'uz' ? 'uz_UZ' : 'ru_RU',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t.HomePage.meta_title,
+      description: t.HomePage.meta_description,
+    },
+    alternates: {
+      canonical: `https://beclean.uz/${locale}`,
+    },
   };
 }
 
@@ -55,7 +71,7 @@ export default async function LocaleLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-body antialiased min-h-screen flex flex-col bg-background">
+      <body className="font-body antialiased min-h-screen flex flex-col bg-background pb-[4.75rem] md:pb-0">
         <DictionaryProvider dictionary={t}>
           <QuoteFlowProvider>
             <div className="animate-fade-in flex flex-col flex-1">

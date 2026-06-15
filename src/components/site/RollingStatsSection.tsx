@@ -27,6 +27,31 @@ function DigitRoller({
   cellHeight?: number;
   digitClassName?: string;
 }) {
+  const digitClass = cn(
+    "flex shrink-0 items-center justify-center font-stat font-normal leading-none tracking-tight text-foreground",
+    cellHeight >= CARD_DIGIT_H - 1
+      ? "text-[2.65rem] md:text-[3.35rem]"
+      : "text-4xl md:text-5xl",
+    digitClassName,
+  );
+
+  if (!active) {
+    return (
+      <div
+        className="relative inline-flex shrink-0 items-center justify-center tabular-nums"
+        style={{
+          height: cellHeight,
+          minWidth: Math.max(22, cellHeight * 0.36),
+        }}
+        aria-hidden
+      >
+        <span className={digitClass} style={{ height: cellHeight }}>
+          {targetDigit}
+        </span>
+      </div>
+    );
+  }
+
   const finalIndex = (CYCLES - 1) * 10 + targetDigit;
   const strip = Array.from({ length: CYCLES * 10 }, (_, i) => i % 10);
 
@@ -73,13 +98,16 @@ function SuffixIcon({
   active,
   delayMs,
   cellHeight = DEFAULT_DIGIT_H,
+  staticMode = false,
 }: {
   type: "plus" | "star";
   active: boolean;
   delayMs: number;
   cellHeight?: number;
+  staticMode?: boolean;
 }) {
   const isLarge = cellHeight >= CARD_DIGIT_H - 1;
+  const visible = active || staticMode;
 
   if (type === "plus") {
     return (
@@ -92,8 +120,8 @@ function SuffixIcon({
         style={{
           height: cellHeight,
           minWidth: isLarge ? 20 : 18,
-          opacity: active ? 1 : 0,
-          transform: active ? "scale(1) translateY(0)" : "scale(0.88) translateY(4px)",
+          opacity: visible ? 1 : 0,
+          transform: visible ? "scale(1) translateY(0)" : "scale(0.88) translateY(4px)",
           transitionDelay: active ? `${delayMs}ms` : "0ms",
         }}
         aria-hidden
@@ -166,7 +194,7 @@ function RollingRatingStat({
           active={active}
           delayMs={active ? delayBase + DIGIT_STAGGER_MS : 0}
         />
-        <SuffixIcon type="star" active={active} delayMs={iconDelayMs} cellHeight={DEFAULT_DIGIT_H} />
+        <SuffixIcon type="star" active={active} delayMs={iconDelayMs} cellHeight={DEFAULT_DIGIT_H} staticMode={!active} />
       </div>
       <div className="mt-4 max-w-[14rem] text-center text-sm font-medium leading-snug text-muted-foreground md:text-base">
         <p className="text-foreground">{label}</p>
@@ -207,7 +235,7 @@ function RollingStat({
           />
         ))}
         {suffix === "plus" && (
-          <SuffixIcon type="plus" active={active} delayMs={suffixDelayMs} cellHeight={DEFAULT_DIGIT_H} />
+          <SuffixIcon type="plus" active={active} delayMs={suffixDelayMs} cellHeight={DEFAULT_DIGIT_H} staticMode={!active} />
         )}
       </div>
       <div className="mt-4 max-w-[14rem] text-center text-sm font-medium leading-snug text-muted-foreground md:text-base">
@@ -256,7 +284,7 @@ function RollingStatCard({
           />
         ))}
         {suffix === "plus" && (
-          <SuffixIcon type="plus" active={active} delayMs={suffixDelayMs} cellHeight={h} />
+          <SuffixIcon type="plus" active={active} delayMs={suffixDelayMs} cellHeight={h} staticMode={!active} />
         )}
       </div>
       <div className="max-w-[11rem] space-y-1 text-xs leading-snug text-muted-foreground sm:max-w-[12rem] sm:text-sm">
@@ -306,7 +334,7 @@ function RollingRatingStatCard({
           delayMs={active ? delayBase + DIGIT_STAGGER_MS : 0}
           cellHeight={h}
         />
-        <SuffixIcon type="star" active={active} delayMs={iconDelayMs} cellHeight={h} />
+        <SuffixIcon type="star" active={active} delayMs={iconDelayMs} cellHeight={h} staticMode={!active} />
       </div>
       <div className="max-w-[11rem] space-y-1 text-xs leading-snug text-muted-foreground sm:max-w-[12rem] sm:text-sm">
         <p className="font-semibold text-foreground">{label}</p>

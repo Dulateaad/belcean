@@ -85,6 +85,15 @@
     ],
     "partners_title": "Bizning hamkorlarimiz",
     "gallery_title": "Ishimiz natijalari (Oldin va Keyin)",
+    "gallery_alts": [
+      "Toshkentda ofis general tozalash — oldin va keyin natija",
+      "Ta'mirdan keyin tozalash — BECLEAN SERVIS toza pol va devorlar",
+      "Toshkentda professional oyna va vitrina yuvish",
+      "Mebel va gilam kimyoviy tozalash — BECLEAN SERVIS natijasi"
+    ],
+    "inquiry_badge": "Bepul maslahat",
+    "inquiry_title": "Hoziroq ariza qoldiring",
+    "inquiry_subtitle": "Ism va telefonni yozing — 5 daqiqada qo'ng'iroq qilamiz, narxni hisoblab beramiz va savollarga javob beramiz.",
     "reviews_title": "Korxonalar va muassasalar fikri",
     "reviews_subtitle": "Ofislar, restoranlar va boshqa ob'ektlar haqida qanday yozganlari",
     "reviews_client_label": "Ob'ekt",
@@ -322,6 +331,7 @@
     "thank_you": "Arizangiz uchun rahmat! Tez orada siz bilan bog'lanamiz.",
     "thank_you_title": "Rahmat!",
     "telegram": "Telegramda yozish",
+    "whatsapp": "WhatsApp",
     "call": "Qo'ng'iroq qilish"
   }
 }

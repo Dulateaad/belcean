@@ -37,7 +37,7 @@ export function HomeHeroFairPrice() {
       <div className="absolute inset-0">
         <Image
           src="/hero-fair-price.png"
-          alt=""
+          alt={h.hero_title}
           fill
           priority
           className="object-cover object-center"

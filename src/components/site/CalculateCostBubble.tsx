@@ -25,7 +25,7 @@ export function CalculateCostBubble() {
   return (
     <div
       className={cn(
-        'fixed bottom-24 left-4 right-4 z-40 duration-500 animate-in fade-in slide-in-from-bottom-6 md:left-auto md:right-7 md:max-w-md',
+        'fixed bottom-[4.75rem] left-4 right-4 z-40 duration-500 animate-in fade-in slide-in-from-bottom-6 md:bottom-24 md:left-auto md:right-7 md:max-w-md',
       )}
     >
       <Button
