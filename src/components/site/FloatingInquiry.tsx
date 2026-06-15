@@ -8,6 +8,7 @@ import {
   TELEGRAM_HREF,
   WHATSAPP_HREF,
 } from '@/lib/contact-links';
+import { cn } from '@/lib/utils';
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -25,17 +26,20 @@ function TelegramIcon({ className }: { className?: string }) {
   );
 }
 
-function ContactButton({
+const iconBtn =
+  'flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-current shadow-md ring-1 ring-black/5 backdrop-blur-sm transition-transform active:scale-95 hover:shadow-lg';
+
+function ContactIcon({
   href,
   label,
   onClick,
-  className,
+  colorClass,
   children,
 }: {
   href: string;
   label: string;
   onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
-  className: string;
+  colorClass: string;
   children: React.ReactNode;
 }) {
   return (
@@ -45,10 +49,10 @@ function ContactButton({
       target={href.startsWith('http') ? '_blank' : undefined}
       rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
       aria-label={label}
-      className={className}
+      title={label}
+      className={cn(iconBtn, colorClass)}
     >
       {children}
-      <span className="text-xs font-semibold leading-tight">{label}</span>
     </a>
   );
 }
@@ -57,68 +61,63 @@ export function FloatingInquiry() {
   const t = useDictionary();
   const tFloating = t.FloatingInquiry;
 
-  const mobileBtn =
-    'flex flex-1 flex-col items-center justify-center gap-1 rounded-xl px-2 py-2.5 text-white transition-opacity active:opacity-80';
-
   return (
     <>
+      {/* Mobile: компактные иконки справа, без полосы */}
       <div
-        className="fixed bottom-0 left-0 right-0 z-50 border-t border-black/10 bg-white/95 shadow-[0_-4px_24px_rgba(0,0,0,0.12)] backdrop-blur-md md:hidden"
-        style={{ paddingBottom: 'max(0.5rem, env(safe-area-inset-bottom))' }}
+        className="pointer-events-none fixed bottom-3 right-3 z-40 flex flex-col items-end gap-2 md:hidden"
+        style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
       >
-        <div className="grid grid-cols-3 gap-1.5 p-2">
-          <ContactButton
+        <div className="pointer-events-auto flex items-center gap-2">
+          <ContactIcon
+            href={TELEGRAM_HREF}
+            label={tFloating.telegram}
+            colorClass="text-[#229ED9]"
+          >
+            <TelegramIcon className="h-[18px] w-[18px]" />
+          </ContactIcon>
+          <ContactIcon
+            href={WHATSAPP_HREF}
+            label={tFloating.whatsapp}
+            colorClass="text-[#25D366]"
+          >
+            <WhatsAppIcon className="h-[18px] w-[18px]" />
+          </ContactIcon>
+          <ContactIcon
             href={PHONE_TEL_HREF}
             label={tFloating.call}
             onClick={(e) => onTelLinkClick(e)}
-            className={`${mobileBtn} bg-emerald-600`}
+            colorClass="text-emerald-600"
           >
-            <Phone className="h-5 w-5" />
-          </ContactButton>
-          <ContactButton
-            href={WHATSAPP_HREF}
-            label={tFloating.whatsapp}
-            className={`${mobileBtn} bg-[#25D366]`}
-          >
-            <WhatsAppIcon className="h-5 w-5" />
-          </ContactButton>
-          <ContactButton
-            href={TELEGRAM_HREF}
-            label={tFloating.telegram}
-            className={`${mobileBtn} bg-[#229ED9]`}
-          >
-            <TelegramIcon className="h-5 w-5" />
-          </ContactButton>
+            <Phone className="h-[18px] w-[18px]" strokeWidth={2.25} />
+          </ContactIcon>
         </div>
       </div>
 
-      <div className="fixed bottom-6 right-6 z-50 hidden flex-col items-end gap-3 md:flex">
-        <a
+      {/* Desktop */}
+      <div className="fixed bottom-5 right-5 z-40 hidden flex-col items-end gap-2 md:flex">
+        <ContactIcon
           href={TELEGRAM_HREF}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={tFloating.telegram}
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-[#229ED9] text-white shadow-lg transition-transform hover:scale-105"
+          label={tFloating.telegram}
+          colorClass="text-[#229ED9]"
         >
-          <TelegramIcon className="h-6 w-6" />
-        </a>
-        <a
+          <TelegramIcon className="h-[18px] w-[18px]" />
+        </ContactIcon>
+        <ContactIcon
           href={WHATSAPP_HREF}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={tFloating.whatsapp}
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105"
+          label={tFloating.whatsapp}
+          colorClass="text-[#25D366]"
         >
-          <WhatsAppIcon className="h-6 w-6" />
-        </a>
-        <a
+          <WhatsAppIcon className="h-[18px] w-[18px]" />
+        </ContactIcon>
+        <ContactIcon
           href={PHONE_TEL_HREF}
+          label={tFloating.call}
           onClick={(e) => onTelLinkClick(e)}
-          aria-label={tFloating.call}
-          className="flex h-14 w-14 items-center justify-center rounded-full bg-emerald-600 text-white shadow-lg animate-pulse-glow transition-transform hover:scale-105 hover:bg-emerald-700"
+          colorClass="text-emerald-600"
         >
-          <Phone className="h-7 w-7" />
-        </a>
+          <Phone className="h-[18px] w-[18px]" strokeWidth={2.25} />
+        </ContactIcon>
       </div>
     </>
   );

@@ -1,13 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Button } from '@/components/ui/button';
 import { Info } from 'lucide-react';
 import { useDictionary } from '@/contexts/dictionary-context';
 import { useQuoteFlow } from '@/components/site/quote-flow';
 import { cn } from '@/lib/utils';
 
-const DELAY_MS = 15_000;
+const DELAY_MS = 8_000;
 
 export function CalculateCostBubble() {
   const t = useDictionary();
@@ -25,18 +24,20 @@ export function CalculateCostBubble() {
   return (
     <div
       className={cn(
-        'fixed bottom-[4.75rem] left-4 right-4 z-40 duration-500 animate-in fade-in slide-in-from-bottom-6 md:bottom-24 md:left-auto md:right-7 md:max-w-md',
+        'fixed bottom-3 left-3 z-50 duration-500 animate-in fade-in slide-in-from-bottom-4 md:bottom-24 md:left-auto md:right-24',
       )}
+      style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
     >
-      <Button
+      <button
         type="button"
         onClick={openQuote}
-        size="lg"
-        className="h-auto w-full gap-2 rounded-2xl bg-emerald-600 px-5 py-4 text-base font-bold text-white shadow-xl hover:bg-emerald-700"
+        className="flex h-10 items-center gap-2 rounded-full bg-white/95 px-4 text-sm font-semibold text-emerald-700 shadow-lg ring-1 ring-emerald-600/20 backdrop-blur-sm transition-transform active:scale-95 hover:bg-white hover:shadow-xl"
       >
-        <Info className="h-6 w-6 shrink-0" />
-        <span className="text-left leading-tight">{info.open_button}</span>
-      </Button>
+        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-600 text-white">
+          <Info className="h-3.5 w-3.5" strokeWidth={2.5} />
+        </span>
+        <span>{info.open_button}</span>
+      </button>
     </div>
   );
 }
