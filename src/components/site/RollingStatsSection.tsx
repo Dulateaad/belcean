@@ -5,8 +5,8 @@ import { Award, SprayCan, Star, Users } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const DEFAULT_DIGIT_H = 56;
-const CARD_DIGIT_H = 72;
+const DEFAULT_DIGIT_H = 40;
+const CARD_DIGIT_H = 44;
 const CYCLES = 5;
 const DURATION_MS = 3200;
 const EASING = "cubic-bezier(0.15, 0.85, 0.25, 1)";
@@ -28,10 +28,10 @@ function DigitRoller({
   digitClassName?: string;
 }) {
   const digitClass = cn(
-    "flex shrink-0 items-center justify-center font-stat font-normal leading-none tracking-tight text-foreground",
+    "flex shrink-0 items-center justify-center font-stat font-bold leading-none tracking-tight text-foreground",
     cellHeight >= CARD_DIGIT_H - 1
-      ? "text-[2.65rem] md:text-[3.35rem]"
-      : "text-4xl md:text-5xl",
+      ? "text-[1.65rem] md:text-[2rem]"
+      : "text-3xl md:text-4xl",
     digitClassName,
   );
 
@@ -77,10 +77,10 @@ function DigitRoller({
           <div
             key={i}
             className={cn(
-              "flex shrink-0 items-center justify-center font-stat font-normal leading-none tracking-tight text-foreground",
+              "flex shrink-0 items-center justify-center font-stat font-bold leading-none tracking-tight text-foreground",
               cellHeight >= CARD_DIGIT_H - 1
-                ? "text-[2.65rem] md:text-[3.35rem]"
-                : "text-4xl md:text-5xl",
+                ? "text-[1.65rem] md:text-[2rem]"
+                : "text-3xl md:text-4xl",
               digitClassName,
             )}
             style={{ height: cellHeight }}
@@ -113,8 +113,8 @@ function SuffixIcon({
     return (
       <span
         className={cn(
-          "inline-flex shrink-0 items-center justify-center pl-0.5 font-stat font-normal leading-none text-foreground",
-          isLarge ? "text-4xl md:text-[3.1rem]" : "text-2xl md:text-3xl",
+          "inline-flex shrink-0 items-center justify-center pl-0.5 font-stat font-bold leading-none text-foreground",
+          isLarge ? "text-xl md:text-2xl" : "text-xl md:text-2xl",
           "transition-[opacity,transform] duration-700 ease-out motion-reduce:transition-none",
         )}
         style={{
@@ -139,8 +139,8 @@ function SuffixIcon({
       style={{
         height: cellHeight,
         minWidth: isLarge ? 40 : 32,
-        opacity: active ? 1 : 0,
-        transform: active ? "scale(1) translateY(0)" : "scale(0.88) translateY(4px)",
+        opacity: visible ? 1 : 0,
+        transform: visible ? "scale(1) translateY(0)" : "scale(0.88) translateY(4px)",
         transitionDelay: active ? `${delayMs}ms` : "0ms",
       }}
       aria-hidden
@@ -148,7 +148,7 @@ function SuffixIcon({
       <Star
         className={cn(
           "fill-amber-400 text-amber-500",
-          isLarge ? "h-11 w-11 md:h-12 md:w-12" : "h-9 w-9 md:h-10 md:w-10",
+          isLarge ? "h-6 w-6 md:h-7 md:w-7" : "h-7 w-7 md:h-8 md:w-8",
         )}
         strokeWidth={1.25}
       />
@@ -269,27 +269,29 @@ function RollingStatCard({
   const h = CARD_DIGIT_H;
 
   return (
-    <div className="flex flex-col items-center gap-3 px-1 text-center sm:px-2">
-      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-400">
-        <Icon className="h-6 w-6" strokeWidth={1.5} />
+    <div className="flex flex-col items-center gap-1 px-1 text-center sm:px-2">
+      <div className="flex items-center justify-center gap-2">
+        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-100 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-400">
+          <Icon className="h-4 w-4" strokeWidth={2.25} />
+        </div>
+        <div className="flex flex-wrap items-center justify-center gap-0">
+          {digits.map((ch, i) => (
+            <DigitRoller
+              key={`${value}-${i}`}
+              targetDigit={Number(ch)}
+              active={active}
+              delayMs={active ? delayBase + i * DIGIT_STAGGER_MS : 0}
+              cellHeight={h}
+            />
+          ))}
+          {suffix === "plus" && (
+            <SuffixIcon type="plus" active={active} delayMs={suffixDelayMs} cellHeight={h} staticMode={!active} />
+          )}
+        </div>
       </div>
-      <div className="flex flex-wrap items-center justify-center gap-0">
-        {digits.map((ch, i) => (
-          <DigitRoller
-            key={`${value}-${i}`}
-            targetDigit={Number(ch)}
-            active={active}
-            delayMs={active ? delayBase + i * DIGIT_STAGGER_MS : 0}
-            cellHeight={h}
-          />
-        ))}
-        {suffix === "plus" && (
-          <SuffixIcon type="plus" active={active} delayMs={suffixDelayMs} cellHeight={h} staticMode={!active} />
-        )}
-      </div>
-      <div className="max-w-[11rem] space-y-1 text-xs leading-snug text-muted-foreground sm:max-w-[12rem] sm:text-sm">
-        <p className="font-semibold text-foreground">{label}</p>
-        {labelLine2 ? <p>{labelLine2}</p> : null}
+      <div className="max-w-[9.5rem] text-[11px] leading-tight text-muted-foreground sm:max-w-[10.5rem] sm:text-xs">
+        <p className="font-bold text-foreground">{label}</p>
+        {labelLine2 ? <p className="mt-0.5 font-semibold">{labelLine2}</p> : null}
       </div>
     </div>
   );
@@ -315,30 +317,32 @@ function RollingRatingStatCard({
   const h = CARD_DIGIT_H;
 
   return (
-    <div className="flex flex-col items-center gap-3 px-1 text-center sm:px-2">
-      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-amber-600 dark:bg-amber-950/40 dark:text-amber-400">
-        <Star className="h-6 w-6" strokeWidth={1.5} />
+    <div className="flex flex-col items-center gap-1 px-1 text-center sm:px-2">
+      <div className="flex items-center justify-center gap-2">
+        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-100 text-amber-600 dark:bg-amber-950/40 dark:text-amber-400">
+          <Star className="h-4 w-4" strokeWidth={2.25} />
+        </div>
+        <div className="flex flex-wrap items-center justify-center gap-0">
+          <DigitRoller targetDigit={intPart} active={active} delayMs={active ? delayBase : 0} cellHeight={h} />
+          <span
+            className="inline-flex items-center justify-center px-0.5 font-stat text-[1.65rem] font-bold leading-none text-foreground md:text-[2rem]"
+            style={{ height: h }}
+            aria-hidden
+          >
+            .
+          </span>
+          <DigitRoller
+            targetDigit={decPart}
+            active={active}
+            delayMs={active ? delayBase + DIGIT_STAGGER_MS : 0}
+            cellHeight={h}
+          />
+          <SuffixIcon type="star" active={active} delayMs={iconDelayMs} cellHeight={h} staticMode={!active} />
+        </div>
       </div>
-      <div className="flex flex-wrap items-center justify-center gap-0">
-        <DigitRoller targetDigit={intPart} active={active} delayMs={active ? delayBase : 0} cellHeight={h} />
-        <span
-          className="inline-flex items-center justify-center px-0.5 font-stat text-[2.65rem] font-normal leading-none text-foreground md:text-[3.35rem]"
-          style={{ height: h }}
-          aria-hidden
-        >
-          .
-        </span>
-        <DigitRoller
-          targetDigit={decPart}
-          active={active}
-          delayMs={active ? delayBase + DIGIT_STAGGER_MS : 0}
-          cellHeight={h}
-        />
-        <SuffixIcon type="star" active={active} delayMs={iconDelayMs} cellHeight={h} staticMode={!active} />
-      </div>
-      <div className="max-w-[11rem] space-y-1 text-xs leading-snug text-muted-foreground sm:max-w-[12rem] sm:text-sm">
-        <p className="font-semibold text-foreground">{label}</p>
-        {labelLine2 ? <p>{labelLine2}</p> : null}
+      <div className="max-w-[9.5rem] text-[11px] leading-tight text-muted-foreground sm:max-w-[10.5rem] sm:text-xs">
+        <p className="font-bold text-foreground">{label}</p>
+        {labelLine2 ? <p className="mt-0.5 font-semibold">{labelLine2}</p> : null}
       </div>
     </div>
   );
@@ -385,14 +389,14 @@ export function RollingStatsSection({
   }, []);
 
   const shell = (
-    <div className="mx-auto max-w-6xl rounded-2xl bg-card px-4 py-10 shadow-lg ring-1 ring-border/60 md:px-10">
+    <div className="mx-auto max-w-6xl rounded-2xl bg-card px-3 py-5 shadow-lg ring-1 ring-border/60 sm:px-6 sm:py-6 md:px-8">
       {statsHeader ? (
-        <div className="mb-10 text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-emerald-600 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-white">
-            <Star className="h-3.5 w-3.5 fill-white text-white" />
+        <div className="mb-4 text-center sm:mb-5">
+          <div className="mb-2 inline-flex items-center gap-1.5 rounded-full bg-emerald-600 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white sm:text-xs">
+            <Star className="h-3 w-3 fill-white text-white" />
             {statsHeader.badge}
           </div>
-          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 className="font-headline text-xl font-extrabold tracking-tight sm:text-2xl md:text-3xl">
             <span className="text-foreground">{statsHeader.line1}</span>
             <br className="sm:hidden" />
             <span className="text-emerald-600"> {statsHeader.line2Accent}</span>
@@ -401,7 +405,7 @@ export function RollingStatsSection({
       ) : null}
 
       {variant === "rows" ? (
-        <div className="grid grid-cols-2 gap-x-3 gap-y-10 sm:grid-cols-4 sm:gap-x-2 sm:gap-y-8">
+        <div className="grid grid-cols-2 gap-x-2 gap-y-4 sm:grid-cols-4 sm:gap-x-3 sm:gap-y-5">
           {items.map((s, i) =>
             s.isRating && s.suffix === "star" ? (
               <RollingRatingStatCard
@@ -460,7 +464,7 @@ export function RollingStatsSection({
       ref={sectionRef}
       aria-label={ariaLabel}
       className={cn(
-        "w-full py-14 md:py-20",
+        "w-full py-8 md:py-12",
         variant === "rows" && backgroundImageSrc ? "relative overflow-hidden" : "border-y bg-background"
       )}
     >
