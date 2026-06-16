@@ -31,19 +31,19 @@ function TelegramIcon({ className }: { className?: string }) {
 }
 
 const iconBtn =
-  'flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors active:scale-95 hover:bg-muted/70 hover:text-foreground';
+  'flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white shadow-md transition-transform active:scale-95 hover:brightness-110';
 
 function ContactIcon({
   href,
   label,
   onClick,
-  colorClass,
+  className,
   children,
 }: {
   href: string;
   label: string;
   onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
-  colorClass: string;
+  className: string;
   children: React.ReactNode;
 }) {
   return (
@@ -54,7 +54,7 @@ function ContactIcon({
       rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
       aria-label={label}
       title={label}
-      className={cn(iconBtn, colorClass)}
+      className={cn(iconBtn, className)}
     >
       {children}
     </a>
@@ -75,42 +75,34 @@ export function FloatingInquiry() {
 
   return (
     <div
-      className="fixed bottom-3 right-3 z-50 flex items-center gap-1 rounded-full border border-border/70 bg-background/92 p-1 shadow-sm backdrop-blur-sm"
+      className="fixed bottom-3 right-3 z-50 flex items-center gap-1.5 rounded-full bg-white/95 p-1.5 shadow-lg ring-1 ring-black/5 backdrop-blur-sm"
       style={{ paddingBottom: 'max(0.25rem, env(safe-area-inset-bottom))' }}
     >
       {showInfo && (
         <button
           type="button"
           onClick={openInfo}
-          className="flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted/70 hover:text-foreground"
+          className="flex h-9 shrink-0 items-center gap-1.5 rounded-full bg-emerald-600 px-3 text-xs font-semibold text-white transition-colors hover:bg-emerald-700"
         >
           <Info className="h-3.5 w-3.5" strokeWidth={2.5} />
           <span className="hidden min-[380px]:inline">{info.open_button}</span>
         </button>
       )}
 
-      {showInfo && <span className="h-5 w-px shrink-0 bg-border" aria-hidden />}
+      {showInfo && <span className="h-5 w-px shrink-0 bg-black/10" aria-hidden />}
 
-      <div className="flex items-center gap-0.5">
-        <ContactIcon
-          href={TELEGRAM_HREF}
-          label={tFloating.telegram}
-          colorClass=""
-        >
+      <div className="flex items-center gap-1">
+        <ContactIcon href={TELEGRAM_HREF} label={tFloating.telegram} className="bg-[#229ED9]">
           <TelegramIcon className="h-[17px] w-[17px]" />
         </ContactIcon>
-        <ContactIcon
-          href={WHATSAPP_HREF}
-          label={tFloating.whatsapp}
-          colorClass=""
-        >
+        <ContactIcon href={WHATSAPP_HREF} label={tFloating.whatsapp} className="bg-[#25D366]">
           <WhatsAppIcon className="h-[17px] w-[17px]" />
         </ContactIcon>
         <ContactIcon
           href={PHONE_TEL_HREF}
           label={tFloating.call}
           onClick={(e) => onTelLinkClick(e)}
-          colorClass=""
+          className="bg-emerald-600"
         >
           <Phone className="h-[17px] w-[17px]" strokeWidth={2.25} />
         </ContactIcon>

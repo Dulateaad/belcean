@@ -94,6 +94,34 @@
     "inquiry_badge": "Bepul maslahat",
     "inquiry_title": "Hoziroq ariza qoldiring",
     "inquiry_subtitle": "Ism va telefonni yozing — 5 daqiqada qo'ng'iroq qilamiz, narxni hisoblab beramiz va savollarga javob beramiz.",
+    "usp": {
+      "badge": "Foydali shartlar",
+      "title": "Aksiyalar va sadoqat dasturi",
+      "subtitle": "Doimiy mijozlarni qadrlaymiz — tozalash sifatli va foydali bo'lishi kerak.",
+      "first_discount_title": "Birinchi tozalashga −15%",
+      "first_discount_desc": "Yangi mijozlarga birinchi buyurtmada 15% chegirma. Ariza qoldiring va birinchi marta ekaningizni ayting.",
+      "loyalty_title": "7-tozalash bepul",
+      "loyalty_desc": "6 ta to'langan tozalashdan keyin 7-si sovg'a. Dastur muntazam va bir martalik mijozlar uchun amal qiladi.",
+      "stamp_card_title": "Muhrli karta",
+      "stamp_free_label": "7 BEPUL",
+      "stamp_note": "Har bir tozalashdan keyin sadoqat kartangizga muhr qo'yamiz. 6 ta muhr — keyingi tozalash bepul."
+    },
+    "home_faq": {
+      "badge": "Javoblar",
+      "title": "Tez-tez beriladigan savollar",
+      "subtitle": "Ko'p savollaringiz bor — shuning uchun javob beramiz.",
+      "items": [
+        { "question": "BECLEAN SERVIS qanday xizmatlar ko'rsatadi?", "answer": "Ofis tozalash, abonent klining, general va ta'mirdan keyingi tozalash, oyna yuvish, mebel kimyoviy tozalash va gilam tozalash — Toshkent bo'ylab." },
+        { "question": "Qanday tozalash vositalaridan foydalanasiz?", "answer": "Kärcher professional kimyosi va sertifikatlangan vositalar — odamlar, bolalar va uy hayvonlari uchun xavfsiz." },
+        { "question": "Tozalashni qanday buyurtma qilish mumkin?", "answer": "Saytda ariza qoldiring, Telegram yoki WhatsApp orqali yozing yoki qo'ng'iroq qiling — 5 daqiqada qayta aloqaga chiqamiz." },
+        { "question": "Tozalash qancha vaqt oladi?", "answer": "Maydon va xizmat turiga qarab: kvartira uchun 2–3 soatdan katta ofis yoki general tozalash uchun butun kun." },
+        { "question": "Tozalash vaqtida bo'lmasam bo'ladimi?", "answer": "Ha. Ob'ektga kirishni ta'minlash kifoya. Xodimlar tekshirilgan, kelishuv va akt bo'yicha ishlaymiz." },
+        { "question": "Tozalash narxi qanday hisoblanadi?", "answer": "Maydon, xizmat turi va ifloslanish darajasiga qarab. Menejer ko'rik yoki telefon orqali aniq narx aytadi — yashirin to'lovsiz." },
+        { "question": "Xodimlaringiz tekshirilganmi?", "answer": "Ha. Klinerlar o'qitilgan, sifat nazorati bilan brigadalarda ishlaydi. Kerak bo'lsa shartnoma tuzamiz." },
+        { "question": "To'lov qanday amalga oshiriladi?", "answer": "Ish qabul qilingandan keyin — sifatga ishonch hosil qilganingizdan so'ng. Naqd yoki o'tkazma." },
+        { "question": "Muhrli dastur qanday ishlaydi?", "answer": "Har tozalashdan keyin sadoqat kartasiga muhr. 6 ta muhr — 7-tozalash bepul. Yangi mijozlarga birinchi buyurtmada 15% chegirma." }
+      ]
+    },
     "reviews_title": "Korxonalar va muassasalar fikri",
     "reviews_subtitle": "Ofislar, restoranlar va boshqa ob'ektlar haqida qanday yozganlari",
     "reviews_client_label": "Ob'ekt",

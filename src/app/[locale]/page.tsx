@@ -21,9 +21,10 @@ import {
 } from '@/components/site/RollingStatsSection';
 import { HomeHeroFairPrice } from '@/components/site/HomeHeroFairPrice';
 import { HomeInquirySection } from '@/components/site/HomeInquirySection';
+import { HomeUspSection } from '@/components/site/HomeUspSection';
+import { HomeFaqSection } from '@/components/site/HomeFaqSection';
 import { ServicesCalculateCta } from '@/components/site/ServicesCalculateCta';
 import { OpenFormButton } from '@/components/site/OpenFormButton';
-import karcherLogo from '@/assets/brands/karcher-logo.png';
 import tashkentCardHero from '@/assets/services/tashkent-card.jpg';
 
 export default async function Home({ params }: { params: Promise<{ locale: Locale }> }) {
@@ -39,6 +40,8 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
       <div id="hero">
         <HomeHeroFairPrice />
       </div>
+
+      <HomeUspSection />
 
       <HomeInquirySection />
 
@@ -194,40 +197,7 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
         </div>
       </section>
 
-      <section id="partners" className="w-full py-16 md:py-32">
-        <div className="container mx-auto px-4 md:px-6 text-center">
-           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-12 flex items-center justify-center gap-3">
-              <Handshake className="w-8 h-8 text-primary" /> {t.HomePage.partners_title}
-            </h2>
-            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16 opacity-80 hover:opacity-100 transition-opacity">
-                <div className="flex flex-col items-center gap-2">
-                    <div className="relative h-20 w-48">
-                        <Image
-                            src={karcherLogo}
-                            alt="Kärcher — партнёр BECLEAN SERVIS"
-                            fill
-                            loading="lazy"
-                            className="object-contain grayscale hover:grayscale-0 transition-all"
-                        />
-                    </div>
-                    <span className="text-sm font-semibold text-muted-foreground">Kärcher</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                    <div className="relative h-16 w-32 md:h-20 md:w-40">
-                        <Image
-                            src="https://firebasestorage.googleapis.com/v0/b/studio-459358167-4d676.firebasestorage.app/o/Business%20Hub%20(1).png?alt=media&token=3f9f389e-0134-4258-8069-30db60758766"
-                            alt="ODO Business Hub — партнёр BECLEAN SERVIS"
-                            fill
-                            loading="lazy"
-                            className="object-contain"
-                            sizes="(max-width: 768px) 128px, 160px"
-                        />
-                    </div>
-                    <span className="text-sm font-semibold text-muted-foreground">ODO</span>
-                </div>
-            </div>
-        </div>
-      </section>
+      <HomeFaqSection />
 
       <section id="reviews" className="w-full py-16 md:py-32 bg-secondary/30">
         <div className="container mx-auto px-4 md:px-6 text-center">
