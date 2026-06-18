@@ -16,7 +16,7 @@
   "ContactForm": {
     "name_placeholder": "Ismingiz",
     "name_error": "Ism kamida 2 belgidan iborat bo'lishi kerak.",
-    "phone_placeholder": "+998 XX XXX XX XX",
+    "phone_placeholder": "991234567",
     "phone_error": "Iltimos, to'g'ri telefon raqamini kiriting.",
     "service_placeholder": "Xizmatni tanlang (ixtiyoriy)",
     "submit_button": "Tozalashga buyurtma",
@@ -26,7 +26,7 @@
     "server_error_toast_title": "Xatolik",
     "server_error_toast_description": "Server bilan bog'lanib bo'lmadi.",
     "rate_limit_toast_title": "Ariza cheklovi",
-    "rate_limit_toast_description": "Ushbu raqamdan allaqachon 2 ta ariza yuborilgan. Bizga qo'ng'iroq qiling: +998 77 356 60 70."
+    "rate_limit_toast_description": "Ushbu raqamdan allaqachon 2 ta ariza yuborilgan. Bizga qo'ng'iroq qiling: 77 356 60 70."
   },
   "HomePage": {
     "meta_title": "BECLEAN SERVIS - Toshkentdagi biznes uchun professional tozalash",
@@ -83,7 +83,6 @@
       { "title": "Tekshiruvdan keyin to'lov", "description": "Avvalo ish va ob'ektda qabul qilish. To'lov — sifat va hajmga ishonchingiz komil bo'lgach." },
       { "title": "Yuz minglab mamnun mijozlar", "description": "Kvartiralar, ofislar, restoranlar, omborlar va savdo nuqtalari — Toshkent va atrofda shaffof kelishuvlar bilan." }
     ],
-    "partners_title": "Bizning hamkorlarimiz",
     "gallery_title": "Ishimiz natijalari (Oldin va Keyin)",
     "gallery_alts": [
       "Toshkentda ofis general tozalash — oldin va keyin natija",
@@ -366,7 +365,7 @@
       "Kvartira, ofis, HoReCa va tijorat uchun mos"
     ],
     "footer_note": "Pastdagi shakl yoki messenjer orqali ariza istalgan vaqtda mumkin — savollar oynasini ishlatmaymiz.",
-    "phone_cta": "Qo'ng'iroq: +998 77 356 60 70",
+    "phone_cta": "Qo'ng'iroq: 77 356 60 70",
     "close": "Tushunarli"
   },
   "FloatingInquiry": {

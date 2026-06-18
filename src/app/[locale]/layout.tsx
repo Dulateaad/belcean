@@ -7,9 +7,15 @@ import { i18n, type Locale } from '@/i18n-config';
 import { DictionaryProvider } from '@/contexts/dictionary-context';
 import { FloatingInquiry } from '@/components/site/FloatingInquiry';
 import { QuoteFlowProvider } from '@/components/site/quote-flow';
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 import { headers } from 'next/headers';
 import Script from 'next/script';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+};
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ locale }));
@@ -70,7 +76,7 @@ export default async function LocaleLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-body antialiased min-h-screen flex flex-col bg-background">
+      <body className="font-body antialiased min-h-screen flex flex-col bg-background pb-[calc(5rem+env(safe-area-inset-bottom,0px))] md:pb-0">
         <DictionaryProvider dictionary={t}>
           <QuoteFlowProvider>
             <div className="animate-fade-in flex flex-col flex-1">

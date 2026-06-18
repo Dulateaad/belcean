@@ -22,6 +22,7 @@ import { useDictionary } from '@/contexts/dictionary-context';
 import * as constants from '@/lib/constants';
 import { i18n } from '@/i18n-config';
 import { onTelLinkClick, PHONE_TEL_HREF } from '@/lib/phone-conversion';
+import { PHONE_DISPLAY } from '@/lib/contact-links';
 import { useQuoteFlow } from '@/components/site/quote-flow';
 import { cn } from '@/lib/utils';
 
@@ -53,8 +54,8 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" suppressHydrationWarning>
       <div className="container flex h-20 items-center justify-between">
-        <div className="flex flex-1 items-center justify-start md:flex-initial">
-            <div className="md:hidden">
+        <div className="flex flex-1 items-center justify-start gap-2 md:flex-initial">
+            <div className="md:hidden shrink-0">
               <Sheet>
                 <SheetTrigger asChild>
                   <Button variant="ghost" size="icon">
@@ -94,8 +95,8 @@ export function SiteHeader() {
                 </SheetContent>
               </Sheet>
             </div>
-            
-            <Link href={`/${currentLocale}`} className="hidden md:flex mr-6">
+
+            <Link href={`/${currentLocale}`} className="shrink-0 md:mr-6">
                 <Logo />
             </Link>
         </div>
@@ -104,7 +105,7 @@ export function SiteHeader() {
              <a
                href={PHONE_TEL_HREF}
                onClick={(e) => onTelLinkClick(e)}
-               aria-label={`${t.FloatingInquiry.call} +998 77 356 60 70`}
+               aria-label={`${t.FloatingInquiry.call} ${PHONE_DISPLAY}`}
                className={cn(
                  'md:hidden flex flex-col items-center rounded-lg border border-border/70 bg-background/90 px-3 py-1.5 shadow-sm transition-all duration-700 ease-out motion-reduce:transition-none cursor-pointer active:opacity-90',
                  phoneReveal ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0',
@@ -152,7 +153,7 @@ export function SiteHeader() {
                 <a
                   href={PHONE_TEL_HREF}
                   onClick={(e) => onTelLinkClick(e)}
-                  aria-label={`${t.FloatingInquiry.call} +998 77 356 60 70`}
+                  aria-label={`${t.FloatingInquiry.call} ${PHONE_DISPLAY}`}
                   className={cn(
                     'hidden md:flex flex-col items-end gap-0.5 transition-all duration-700 ease-out motion-reduce:transition-none cursor-pointer rounded-lg px-1 py-0.5 hover:bg-muted/50',
                     phoneReveal ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0',

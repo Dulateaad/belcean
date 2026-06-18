@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Phone, Send, Clock } from "lucide-react";
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { PHONE_DISPLAY, PHONE_TEL_HREF } from '@/lib/contact-links';
 import { getDictionary } from "@/lib/get-dictionary";
 import { Locale } from "@/i18n-config";
 
@@ -29,11 +30,11 @@ export default async function ThankYouPage({ params }: { params: Promise<{ local
           <div className="bg-secondary/50 p-6 rounded-xl border mb-8 space-y-4">
             <p className="font-semibold text-lg">{pageData.contact_prefix}</p>
             <div className="flex flex-col gap-3">
-              <a href="tel:+998773566070" className="flex items-center gap-3 text-xl font-bold hover:text-primary transition-colors">
+              <a href={PHONE_TEL_HREF} className="flex items-center gap-3 text-xl font-bold hover:text-primary transition-colors">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                   <Phone className="w-5 h-5 text-primary" />
                 </div>
-                <span>+998 77 356 60 70</span>
+                <span>{PHONE_DISPLAY}</span>
               </a>
               <a href="https://t.me/beclean_manager" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-xl font-bold text-[#229ED9] hover:opacity-80 transition-opacity">
                 <div className="w-10 h-10 rounded-full bg-[#229ED9]/10 flex items-center justify-center">

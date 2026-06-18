@@ -67,16 +67,43 @@ export function FloatingInquiry() {
   const info = t.InfoModal;
   const { openInfo } = useQuoteFlow();
   const [showInfo, setShowInfo] = useState(false);
+  const [bottomOffset, setBottomOffset] = useState('1rem');
 
   useEffect(() => {
     const id = window.setTimeout(() => setShowInfo(true), INFO_DELAY_MS);
     return () => window.clearTimeout(id);
   }, []);
 
+  useEffect(() => {
+    const updateOffset = () => {
+      const vv = window.visualViewport;
+      if (!vv) {
+        setBottomOffset('max(1rem, env(safe-area-inset-bottom, 0px))');
+        return;
+      }
+      const chromeGap = Math.max(0, window.innerHeight - vv.height - vv.offsetTop);
+      const extra = chromeGap > 8 ? chromeGap + 8 : 0;
+      setBottomOffset(`calc(1rem + env(safe-area-inset-bottom, 0px) + ${extra}px)`);
+    };
+
+    updateOffset();
+    window.visualViewport?.addEventListener('resize', updateOffset);
+    window.visualViewport?.addEventListener('scroll', updateOffset);
+    window.addEventListener('resize', updateOffset);
+    return () => {
+      window.visualViewport?.removeEventListener('resize', updateOffset);
+      window.visualViewport?.removeEventListener('scroll', updateOffset);
+      window.removeEventListener('resize', updateOffset);
+    };
+  }, []);
+
   return (
     <div
-      className="fixed bottom-3 right-3 z-50 flex items-center gap-1.5 rounded-full bg-white/95 p-1.5 shadow-lg ring-1 ring-black/5 backdrop-blur-sm"
-      style={{ paddingBottom: 'max(0.25rem, env(safe-area-inset-bottom))' }}
+      className="fixed left-1/2 z-50 flex max-w-[calc(100vw-1.5rem)] -translate-x-1/2 items-center gap-1.5 rounded-full bg-white/95 p-1.5 shadow-lg ring-1 ring-black/5 backdrop-blur-sm"
+      style={{
+        bottom: bottomOffset,
+        transform: 'translateX(-50%) translateZ(0)',
+      }}
     >
       {showInfo && (
         <button

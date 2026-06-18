@@ -128,20 +128,12 @@ function ServiceInfoDialog({
 
           {info.footer_note ? <p className="text-xs sm:text-sm">{info.footer_note}</p> : null}
 
-          <div className="flex flex-col gap-2 border-t border-border pt-4 sm:flex-row sm:items-center sm:justify-between">
-            <Button asChild variant="outline" className="w-full gap-2 sm:w-auto">
+          <div className="border-t border-border pt-4">
+            <Button asChild variant="outline" className="w-full gap-2">
               <a href={PHONE_TEL_HREF} onClick={(e) => onTelLinkClick(e)}>
                 <Phone className="h-4 w-4 shrink-0" />
                 {info.phone_cta}
               </a>
-            </Button>
-            <Button
-              type="button"
-              variant="secondary"
-              className="w-full sm:w-auto"
-              onClick={() => onOpenChange(false)}
-            >
-              {info.close}
             </Button>
           </div>
         </div>

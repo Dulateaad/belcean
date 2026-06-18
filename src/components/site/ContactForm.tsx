@@ -124,7 +124,15 @@ export function ContactForm({ defaultService, noRedirect, onSuccess }: { default
             <FormItem>
               <FormLabel className="sr-only">{t.ContactForm.phone_placeholder}</FormLabel>
               <FormControl>
-                <Input placeholder={t.ContactForm.phone_placeholder} type="tel" name="phone" required {...field} />
+                <Input
+                  placeholder={t.ContactForm.phone_placeholder}
+                  type="tel"
+                  inputMode="numeric"
+                  autoComplete="tel"
+                  name="phone"
+                  required
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
