@@ -34,12 +34,11 @@
     "meta_keywords": "toshkent tozalash, Toshkentda general tozalash, Toshkentda ofislarni tozalash, Toshkentda tozalash xizmatlari, Toshkentda professional tozalash, ta'mirdan keyin tozalash Toshkent, mebel kimyoviy tozalash Toshkent, oyna yuvish Toshkent, BECLEAN SERVIS",
     "hero_title": "Toshkentda biznes va uy uchun professional tozalash",
     "hero_subtitle": "Ofislar, BM, klinikalar. Shartnoma. Sifat nazorati.",
-    "hero_headline_lead": "Halol narxlarda professional",
-    "hero_headline_accent": "tozalash",
+    "hero_headline_lead": "Uy, ofis va biznes uchun to'liq klinik xizmatlar kompleksi",
+    "hero_headline_accent": "",
     "hero_bullet_1": "Toshkent bo'yicha narxlarni solishtiring — bizda halol tariflar",
     "hero_bullet_2": "Yashirin to'lovlar va majburiy xizmatlar yo'q",
-    "hero_bullet_3_prefix": "Shunday tozalashni arzonroq topsangiz —",
-    "hero_bullet_3_accent": "chegirma qilamiz",
+    "hero_bullet_3": "Zararli kimyo bo'lmagan chuqur tozalash",
     "calculate_button": "Narxni hisoblash",
     "calculate_button_long": "Tozalash narxini hisoblash",
     "hero_feature_fast_title": "Tez",
@@ -63,7 +62,7 @@
     "clients_title": "Biz kimlar uchun ishlaymiz",
     "clients_subtitle": "Biz har xil turdagi tijorat ob'ektlari uchun sifatli tozalash xizmatlarini taqdim etamiz.",
     "services_title": "Bizning xizmatlarimiz",
-    "services_calculate_hint": "Ariza qoldiring — 5 daqiqada qo'ng'iroq qilib, tozalash narxini hisoblab beramiz.",
+    "services_calculate_hint": "Narxni onlayn hisoblang — qayta ariza shart emas.",
     "learn_more": "5 soniyada narxni hisoblash",
     "trust_us_title": "Bizga ishonadilar",
     "trust_us_subtitle": "Turli biznes sohalari tozalikni saqlash uchun bizni tanlaydi",
@@ -90,7 +89,7 @@
       "Toshkentda professional oyna va vitrina yuvish",
       "Mebel va gilam kimyoviy tozalash — BECLEAN SERVIS natijasi"
     ],
-    "inquiry_badge": "Bepul maslahat",
+    "inquiry_badge": "Tez hisob-kitob",
     "inquiry_title": "Hoziroq ariza qoldiring",
     "inquiry_subtitle": "Ism va telefonni yozing — 5 daqiqada qo'ng'iroq qilamiz, narxni hisoblab beramiz va savollarga javob beramiz.",
     "usp": {
@@ -101,8 +100,8 @@
       "first_discount_desc": "Yangi mijozlarga birinchi buyurtmada 15% chegirma. Ariza qoldiring va birinchi marta ekaningizni ayting.",
       "loyalty_title": "7-tozalash bepul",
       "loyalty_desc": "6 ta to'langan tozalashdan keyin 7-si sovg'a. Dastur muntazam va bir martalik mijozlar uchun amal qiladi.",
-      "stamp_card_title": "Muhrli karta",
-      "stamp_free_label": "7 BEPUL",
+      "stamp_card_title": "Sadoqat kartasi",
+      "stamp_free_label": "7",
       "stamp_note": "Har bir tozalashdan keyin sadoqat kartangizga muhr qo'yamiz. 6 ta muhr — keyingi tozalash bepul."
     },
     "home_faq": {
@@ -133,7 +132,7 @@
       { "name": "Kovorking", "role": "Open space va uchrashuv xonalari", "business": true, "quote": "Rezidentlar hid va shovqinga sezgir. Neytral kimyo, ish vaqtida xalaqit bermasdan — kovorking uchun yaxshi variant.", "date": "09.2025" }
     ],
     "cta_title": "Tozalikka tayyormisiz?",
-    "cta_subtitle": "5 daqiqa ichida qo'ng'iroq qilamiz (bepul chiqish)",
+    "cta_subtitle": "5 daqiqa ichida qo'ng'iroq qilamiz",
     "pricing_unit": "so'm"
   },
   "Constants": {
@@ -296,7 +295,9 @@
       "area_label": "Bino maydoni",
       "total_label": "Taxminiy narx",
       "note_title": "Tekshiruvdan so'ng aniq narx",
-      "note_description": "Menejerimiz bepul tekshiruv uchun boradi va yakuniy narxni aytadi."
+      "note_description": "Menejerimiz tafsilotlarni aniqlaydi va ko'rik yoki telefon orqali yakuniy narxni aytadi.",
+      "submitted_banner_title": "Ariza qabul qilindi",
+      "submitted_banner_subtitle": "5 daqiqa ichida qo'ng'iroq qilamiz. Quyida — dastlabki narx hisobi."
   },
   "QuizPage": {
     "title": "Xizmatni tanlang",

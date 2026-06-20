@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { BadgePercent, Percent, ShieldCheck } from 'lucide-react';
+import { Leaf, Percent, ShieldCheck } from 'lucide-react';
 import { useDictionary } from '@/contexts/dictionary-context';
 import { Clock, ThumbsUp, UserRound, Wallet } from 'lucide-react';
 
@@ -50,10 +50,14 @@ export function HomeHeroFairPrice() {
       <div className="relative z-10 mx-auto flex max-w-[1792px] flex-col px-4 pb-10 pt-8 md:px-6 md:pb-16 md:pt-12">
         <div className="max-w-xl">
           <h1 className="font-headline text-3xl font-extrabold leading-[1.15] tracking-tight text-foreground sm:text-4xl md:text-5xl">
-            <span className="block">
-              {h.hero_headline_lead}{' '}
-              <span className="text-emerald-600">{h.hero_headline_accent}</span>
-            </span>
+            {h.hero_headline_accent ? (
+              <span className="block">
+                {h.hero_headline_lead}{' '}
+                <span className="text-emerald-600">{h.hero_headline_accent}</span>
+              </span>
+            ) : (
+              <span className="block">{h.hero_headline_lead}</span>
+            )}
           </h1>
 
           <ul className="mt-8 space-y-4 text-base leading-snug text-foreground/90 md:text-lg">
@@ -71,12 +75,9 @@ export function HomeHeroFairPrice() {
             </li>
             <li className="flex gap-3">
               <span className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
-                <BadgePercent className="h-4 w-4" strokeWidth={2.25} />
+                <Leaf className="h-4 w-4" strokeWidth={2.25} />
               </span>
-              <span>
-                {h.hero_bullet_3_prefix}{' '}
-                <span className="font-semibold text-emerald-600">{h.hero_bullet_3_accent}</span>
-              </span>
+              <span>{h.hero_bullet_3}</span>
             </li>
           </ul>
         </div>
