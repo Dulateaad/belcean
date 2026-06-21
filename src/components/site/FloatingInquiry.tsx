@@ -16,7 +16,7 @@ function TelegramIcon({ className }: { className?: string }) {
 }
 
 const iconBtn =
-  'flex h-16 w-16 shrink-0 items-center justify-center rounded-full text-white shadow-lg transition-transform active:scale-95 hover:brightness-110 sm:h-[4.5rem] sm:w-[4.5rem]';
+  'flex h-[4.75rem] w-[4.75rem] shrink-0 items-center justify-center rounded-full text-white shadow-xl transition-transform active:scale-95 hover:brightness-110 sm:h-20 sm:w-20';
 
 function ContactIcon({
   href,
@@ -76,14 +76,14 @@ export function FloatingInquiry() {
 
   return (
     <div
-      className="fixed left-1/2 z-50 flex -translate-x-1/2 items-center gap-4 rounded-full bg-white/95 p-2.5 shadow-lg ring-1 ring-black/5 backdrop-blur-sm"
+      className="fixed left-1/2 z-50 flex -translate-x-1/2 items-center gap-5 rounded-full bg-white/95 p-3 shadow-xl ring-1 ring-black/5 backdrop-blur-sm"
       style={{
         bottom: bottomOffset,
         transform: 'translateX(-50%) translateZ(0)',
       }}
     >
       <ContactIcon href={TELEGRAM_HREF} label={tFloating.telegram} className="bg-[#229ED9]">
-        <TelegramIcon className="h-8 w-8 sm:h-9 sm:w-9" />
+        <TelegramIcon className="h-10 w-10 sm:h-11 sm:w-11" />
       </ContactIcon>
       <ContactIcon
         href={PHONE_TEL_HREF}
@@ -91,7 +91,7 @@ export function FloatingInquiry() {
         onClick={(e) => onTelLinkClick(e)}
         className="bg-emerald-600"
       >
-        <Phone className="h-8 w-8 sm:h-9 sm:w-9" strokeWidth={2.25} />
+        <Phone className="h-10 w-10 sm:h-11 sm:w-11" strokeWidth={2.25} />
       </ContactIcon>
     </div>
   );

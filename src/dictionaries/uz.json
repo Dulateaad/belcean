@@ -297,7 +297,10 @@
       "note_title": "Tekshiruvdan so'ng aniq narx",
       "note_description": "Menejerimiz tafsilotlarni aniqlaydi va ko'rik yoki telefon orqali yakuniy narxni aytadi.",
       "submitted_banner_title": "Ariza qabul qilindi",
-      "submitted_banner_subtitle": "5 daqiqa ichida qo'ng'iroq qilamiz. Quyida — dastlabki narx hisobi."
+      "submitted_banner_subtitle": "5 daqiqa ichida qo'ng'iroq qilamiz. Quyida — dastlabki narx hisobi.",
+      "call_cta_title": "Aniq narx kerakmi?",
+      "call_cta_text": "Qo'ng'iroq qiling — menejer 5 daqiqada obyektingizni hisobga olgan holda yakuniy narxni aytadi.",
+      "call_cta_button": "Qo'ng'iroq: 77 356 60 70"
   },
   "QuizPage": {
     "title": "Xizmatni tanlang",

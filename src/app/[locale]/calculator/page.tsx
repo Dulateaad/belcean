@@ -3,12 +3,14 @@
 import { useState, useMemo, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Slider } from '@/components/ui/slider';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { CheckCircle2, Info, Calculator, Sparkles } from 'lucide-react';
+import { CheckCircle2, Info, Calculator, Phone, Sparkles } from 'lucide-react';
 import { useDictionary } from '@/contexts/dictionary-context';
+import { onTelLinkClick, PHONE_TEL_HREF } from '@/lib/phone-conversion';
 import { cn } from '@/lib/utils';
 
 function CalculatorContent() {
@@ -124,6 +126,23 @@ function CalculatorContent() {
               <Sparkles className="h-5 w-5" />
               <span className="text-sm font-bold">{t.note_title}</span>
             </div>
+          </div>
+
+          <div className="rounded-2xl border-2 border-emerald-600 bg-emerald-50 p-6 text-center shadow-lg sm:p-8">
+            <p className="font-headline text-2xl font-bold text-emerald-900 sm:text-3xl">{t.call_cta_title}</p>
+            <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-emerald-800/90 sm:text-base">
+              {t.call_cta_text}
+            </p>
+            <Button
+              asChild
+              size="lg"
+              className="mt-6 h-auto w-full max-w-md gap-2 rounded-2xl bg-emerald-600 px-8 py-6 text-lg font-bold text-white shadow-md hover:bg-emerald-700 sm:text-xl"
+            >
+              <a href={PHONE_TEL_HREF} onClick={(e) => onTelLinkClick(e)}>
+                <Phone className="h-6 w-6 shrink-0" />
+                {t.call_cta_button}
+              </a>
+            </Button>
           </div>
 
           <div className="flex items-start gap-4 rounded-xl border border-primary/20 bg-primary/5 p-6">

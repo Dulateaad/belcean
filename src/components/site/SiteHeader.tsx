@@ -23,12 +23,10 @@ import * as constants from '@/lib/constants';
 import { i18n } from '@/i18n-config';
 import { onTelLinkClick, PHONE_TEL_HREF } from '@/lib/phone-conversion';
 import { PHONE_DISPLAY } from '@/lib/contact-links';
-import { useQuoteFlow } from '@/components/site/quote-flow';
 import { cn } from '@/lib/utils';
 
 export function SiteHeader() {
   const t = useDictionary();
-  const { openInfo } = useQuoteFlow();
   const [phoneReveal, setPhoneReveal] = useState(false);
 
   useEffect(() => {
@@ -190,9 +188,11 @@ export function SiteHeader() {
                 <Button
                   type="button"
                   className="hidden lg:inline-flex ml-4 bg-emerald-600 hover:bg-emerald-700"
-                  onClick={openInfo}
+                  asChild
                 >
-                  {t.Header.call_request}
+                  <a href={PHONE_TEL_HREF} onClick={(e) => onTelLinkClick(e)}>
+                    {PHONE_DISPLAY}
+                  </a>
                 </Button>
             </div>
         </div>
