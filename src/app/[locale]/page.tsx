@@ -1,9 +1,7 @@
 import { Card, CardContent } from '@/components/ui/card';
-import { ReviewsCarousel } from '@/components/site/ReviewsCarousel';
 import {
   CheckCircle2,
   Handshake,
-  MessageCircle,
   Wrench,
   BadgeCheck,
   Users,
@@ -22,13 +20,13 @@ import { HomeUspSection } from '@/components/site/HomeUspSection';
 import { HomeFaqSection } from '@/components/site/HomeFaqSection';
 import { HomeServicesSection } from '@/components/site/HomeServicesSection';
 import { HomeWorkAlgorithmSection } from '@/components/site/HomeWorkAlgorithmSection';
+import { HomeReviewsSection } from '@/components/site/HomeReviewsSection';
 
 export default async function Home({ params }: { params: Promise<{ locale: Locale }> }) {
   const resolvedParams = await params;
   const locale = resolvedParams.locale;
   const t = await getDictionary(locale);
   const clientTypes = constants.getClientTypes(t);
-  const testimonials = constants.getTestimonials(t);
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
@@ -152,24 +150,7 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
 
       <HomeFaqSection />
 
-      <section id="reviews" className="w-full py-16 md:py-32 bg-secondary/30">
-        <div className="container mx-auto px-4 md:px-6 text-center">
-          <div className="flex flex-col items-center justify-center space-y-4 mb-12">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline flex items-center justify-center gap-3">
-              <MessageCircle className="w-8 h-8 text-primary" /> {t.HomePage.reviews_title}
-            </h2>
-            <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl/relaxed">
-              {t.HomePage.reviews_subtitle}
-            </p>
-          </div>
-          <div className="relative max-w-4xl mx-auto">
-            <ReviewsCarousel
-              testimonials={testimonials}
-              clientLabel={t.HomePage.reviews_client_label}
-            />
-          </div>
-        </div>
-      </section>
+      <HomeReviewsSection />
     </div>
   );
 }

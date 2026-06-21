@@ -108,6 +108,7 @@
       "loyalty_title": "7-tozalash bepul",
       "loyalty_desc": "6 ta to'langan tozalashdan keyin 7-si sovg'a. Dastur muntazam va bir martalik mijozlar uchun amal qiladi.",
       "stamp_card_title": "Sadoqat kartasi",
+      "stamp_card_aria": "Sadoqat kartasi: 6 ta muhr, 7-tozalash bepul",
       "stamp_free_label": "7",
       "stamp_note": "Har bir tozalashdan keyin sadoqat kartangizga muhr qo'yamiz. 6 ta muhr — keyingi tozalash bepul."
     },
@@ -127,10 +128,15 @@
         { "question": "Muhrli dastur qanday ishlaydi?", "answer": "Har tozalashdan keyin sadoqat kartasiga muhr. 6 ta muhr — 7-tozalash bepul. Yangi mijozlarga birinchi buyurtmada 15% chegirma." }
       ]
     },
-    "reviews_title": "Korxonalar va muassasalar fikri",
-    "reviews_subtitle": "Ofislar, restoranlar va boshqa ob'ektlar haqida qanday yozganlari",
-    "reviews_client_label": "Ob'ekt",
+    "reviews_title": "Biz haqimizda fikrlar",
+    "reviews_subtitle": "Mijozlar biz haqimizda nima yozishini o'qing",
+    "reviews_client_label": "Mijoz",
+    "reviews_order_button": "Tozalashga buyurtma",
+    "reviews_leave_button": "Fikr qoldirish",
     "testimonials": [
+      { "name": "Shoxrux", "role": "Kvartira, 85 m²", "quote": "Kvartira uchun general tozalash buyurtma qildim. Vaqtida kelishdi, hammasi tartibli, kimyo hidi yo'q. Tavsiya qilaman!", "date": "04.2026", "gender": "male" },
+      { "name": "Ramzan", "role": "Ofis, 120 m²", "quote": "Ofisning muntazam tozalashi — doim toza, xodimlar mamnun. Narx qat'iy, kutilmagan to'lovlar yo'q.", "date": "03.2026", "gender": "male" },
+      { "name": "Madina", "role": "Ta'mirdan keyingi kvartira", "quote": "Ta'mirdan keyin barcha chang va chiqindilarni bir kunda tozaladilar. Derazalar, pollar, hammom — hammasi yaltiraydi. Rahmat!", "date": "02.2026", "gender": "female" },
       { "name": "IT-kompaniyasi ofisi", "role": "Biznes-markaz, ~900 m²", "business": true, "quote": "Abonent tozalash jadvali bo'yicha: open space, muzokaralar va oshxona doim tartibda. Birinchi haftadan boshlab xodimlar farqni sezdilar.", "date": "02.2026" },
       { "name": "Restoranlar tarmog'i", "role": "Zal + oshxona, bir nechta nuqta", "business": true, "quote": "Smenadan keyin tezlik va sanitariya muhim. Kelish vaqti aniq, zal va oshxona bo'yicha chek-list bajariladi — biz uchun juda muhim.", "date": "01.2026" },
       { "name": "Savdo markazi", "role": "Umumiy zonalar va eskalatorlar", "business": true, "quote": "Mavsum oldi general tayyorgarligi: shisha, pol, panellar. Hajm va oldin/keyin foto hisobot — rahbariyat uchun qulay.", "date": "12.2025" },

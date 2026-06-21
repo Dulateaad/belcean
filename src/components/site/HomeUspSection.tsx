@@ -1,17 +1,129 @@
 'use client';
 
+import { useEffect, useRef, useState } from 'react';
+import dynamic from 'next/dynamic';
+import type { LottieRefCurrentProps } from 'lottie-react';
 import { useDictionary } from '@/contexts/dictionary-context';
 import { Gift, Percent, Stamp } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import confirmationAnimation from '@/assets/animations/confirmation.json';
+
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
+
+const STAMP_COUNT = 6;
+const STAMP_STAGGER_MS = 450;
+
+function LoyaltyStamp({
+  index,
+  active,
+  reducedMotion,
+}: {
+  index: number;
+  active: boolean;
+  reducedMotion: boolean;
+}) {
+  const [stamped, setStamped] = useState(false);
+  const lottieRef = useRef<LottieRefCurrentProps>(null);
+
+  useEffect(() => {
+    if (!active) return;
+    if (reducedMotion) {
+      setStamped(true);
+      return;
+    }
+    const timer = window.setTimeout(
+      () => setStamped(true),
+      index * STAMP_STAGGER_MS,
+    );
+    return () => window.clearTimeout(timer);
+  }, [active, index, reducedMotion]);
+
+  useEffect(() => {
+    if (stamped) lottieRef.current?.setSpeed(2.75);
+  }, [stamped]);
+
+  return (
+    <div
+      className={cn(
+        'relative flex h-11 w-11 items-center justify-center rounded-full border-2 transition-all duration-500 motion-reduce:transition-none',
+        stamped
+          ? 'scale-100 border-emerald-500 bg-emerald-50 opacity-100 shadow-sm'
+          : 'scale-90 border-dashed border-emerald-300 bg-white/90 opacity-70',
+        active && !stamped && !reducedMotion && 'animate-pulse',
+      )}
+      style={
+        active && !reducedMotion
+          ? { transitionDelay: `${index * 80}ms` }
+          : undefined
+      }
+    >
+      {stamped ? (
+        <Lottie
+          lottieRef={lottieRef}
+          animationData={confirmationAnimation}
+          loop={false}
+          className="h-9 w-9"
+        />
+      ) : (
+        <span className="text-xs font-bold text-emerald-500">{index + 1}</span>
+      )}
+    </div>
+  );
+}
 
 export function HomeUspSection() {
   const h = useDictionary().HomePage;
   const usp = h.usp;
+  const sectionRef = useRef<HTMLElement>(null);
+  const [inView, setInView] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
+  const [stampsComplete, setStampsComplete] = useState(false);
+
+  useEffect(() => {
+    setReducedMotion(
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+    );
+  }, []);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) setInView(true);
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -8% 0px' },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!inView) return;
+    if (reducedMotion) {
+      setStampsComplete(true);
+      return;
+    }
+    const timer = window.setTimeout(
+      () => setStampsComplete(true),
+      (STAMP_COUNT - 1) * STAMP_STAGGER_MS + 700,
+    );
+    return () => window.clearTimeout(timer);
+  }, [inView, reducedMotion]);
 
   return (
-    <section id="offers" className="w-full scroll-mt-20 bg-gradient-to-b from-emerald-50/80 to-background py-12 md:py-16">
+    <section
+      ref={sectionRef}
+      id="offers"
+      className="w-full scroll-mt-20 bg-gradient-to-b from-emerald-50/80 to-background py-12 md:py-16"
+    >
       <div className="container mx-auto px-4 md:px-6">
-        <div className="mx-auto max-w-4xl text-center">
+        <div
+          className={cn(
+            'mx-auto max-w-4xl text-center transition-all duration-700 motion-reduce:transition-none',
+            inView ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0',
+          )}
+        >
           <p className="text-sm font-semibold uppercase tracking-wide text-emerald-600">
             {usp.badge}
           </p>
@@ -22,7 +134,14 @@ export function HomeUspSection() {
         </div>
 
         <div className="mx-auto mt-8 grid max-w-4xl gap-4 sm:grid-cols-2">
-          <div className="rounded-2xl border border-emerald-200 bg-white p-6 shadow-sm">
+          <div
+            className={cn(
+              'rounded-2xl border border-emerald-200 bg-white p-6 shadow-sm transition-all duration-500 motion-reduce:transition-none',
+              'hover:-translate-y-0.5 hover:border-emerald-300 hover:shadow-md motion-reduce:hover:translate-y-0',
+              inView ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0',
+            )}
+            style={{ transitionDelay: inView ? '120ms' : '0ms' }}
+          >
             <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-600 text-white">
               <Percent className="h-5 w-5" strokeWidth={2.25} />
             </div>
@@ -31,7 +150,14 @@ export function HomeUspSection() {
               {usp.first_discount_desc}
             </p>
           </div>
-          <div className="rounded-2xl border border-emerald-200 bg-white p-6 shadow-sm">
+          <div
+            className={cn(
+              'rounded-2xl border border-emerald-200 bg-white p-6 shadow-sm transition-all duration-500 motion-reduce:transition-none',
+              'hover:-translate-y-0.5 hover:border-emerald-300 hover:shadow-md motion-reduce:hover:translate-y-0',
+              inView ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0',
+            )}
+            style={{ transitionDelay: inView ? '220ms' : '0ms' }}
+          >
             <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-600 text-white">
               <Gift className="h-5 w-5" strokeWidth={2.25} />
             </div>
@@ -42,30 +168,50 @@ export function HomeUspSection() {
           </div>
         </div>
 
-        <div className="mx-auto mt-8 max-w-2xl rounded-2xl border border-dashed border-emerald-300 bg-white/80 p-6 text-center">
+        <div
+          className={cn(
+            'mx-auto mt-8 max-w-2xl rounded-2xl border border-dashed border-emerald-300 bg-white/80 p-6 text-center shadow-sm transition-all duration-700 motion-reduce:transition-none',
+            'hover:border-emerald-400 hover:bg-white hover:shadow-md motion-reduce:hover:shadow-sm',
+            inView ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-8 scale-[0.98] opacity-0',
+          )}
+          style={{ transitionDelay: inView ? '320ms' : '0ms' }}
+          aria-label={usp.stamp_card_aria}
+        >
           <div className="mb-4 inline-flex items-center gap-2 text-sm font-semibold text-emerald-700">
             <Stamp className="h-4 w-4" />
             {usp.stamp_card_title}
           </div>
           <div className="flex flex-wrap items-center justify-center gap-2">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <div
+            {Array.from({ length: STAMP_COUNT }).map((_, i) => (
+              <LoyaltyStamp
                 key={i}
-                className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-emerald-400 bg-emerald-50 text-xs font-bold text-emerald-700"
-              >
-                {i + 1}
-              </div>
+                index={i}
+                active={inView}
+                reducedMotion={reducedMotion}
+              />
             ))}
             <div
               className={cn(
-                'flex h-10 min-w-[4.5rem] items-center justify-center rounded-full px-3 text-xs font-bold text-white',
+                'flex h-11 min-w-[4.5rem] items-center justify-center gap-1 rounded-full px-3 text-xs font-bold text-white transition-all duration-500 motion-reduce:transition-none',
                 'bg-emerald-600',
+                stampsComplete
+                  ? 'scale-105 shadow-md ring-2 ring-emerald-300/70 motion-reduce:scale-100 motion-reduce:ring-0'
+                  : 'scale-100 opacity-90',
               )}
             >
+              <Gift className="h-3.5 w-3.5 shrink-0" aria-hidden />
               {usp.stamp_free_label}
             </div>
           </div>
-          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{usp.stamp_note}</p>
+          <p
+            className={cn(
+              'mt-4 text-sm leading-relaxed text-muted-foreground transition-opacity duration-700 motion-reduce:transition-none',
+              inView ? 'opacity-100' : 'opacity-0',
+            )}
+            style={{ transitionDelay: inView ? '520ms' : '0ms' }}
+          >
+            {usp.stamp_note}
+          </p>
         </div>
       </div>
     </section>

@@ -23,8 +23,8 @@ export function HomeHeroFairPrice() {
   const bullets = [h.hero_bullet_1, h.hero_bullet_2, h.hero_bullet_3];
 
   return (
-    <section className="relative overflow-hidden bg-slate-950">
-      <div className="absolute inset-0">
+    <section className="relative min-h-[72vh] overflow-hidden bg-slate-950 md:min-h-[78vh] lg:min-h-[85vh]">
+      <div className="absolute inset-0 min-h-full">
         <Image
           src={HERO_BANNER_IMAGE}
           alt={h.hero_title}
@@ -33,12 +33,12 @@ export function HomeHeroFairPrice() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-slate-950/75" />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/70 to-slate-950/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/30" />
+        <div className="absolute inset-0 bg-slate-950/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/65 via-slate-950/40 to-slate-950/15" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-slate-950/10" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-[1792px] px-4 pb-0 pt-28 md:px-6 md:pt-32 lg:pt-36">
+      <div className="relative z-10 mx-auto flex min-h-[72vh] max-w-[1792px] flex-col justify-end px-4 pb-8 pt-28 md:min-h-[78vh] md:px-6 md:pb-10 md:pt-32 lg:min-h-[85vh] lg:pb-12 lg:pt-36">
         <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:gap-12">
           <div>
             <h1 className="font-headline text-[2rem] font-extrabold uppercase leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[3.35rem]">
