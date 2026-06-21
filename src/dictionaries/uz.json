@@ -140,7 +140,21 @@
     ],
     "cta_title": "Tozalikka tayyormisiz?",
     "cta_subtitle": "5 daqiqa ichida qo'ng'iroq qilamiz",
-    "pricing_unit": "so'm"
+    "pricing_unit": "so'm",
+    "work_algorithm": {
+      "badge": "Kafolatlangan sifat",
+      "title": "Ishonchli tozalik",
+      "lead": "Menejerimizga murojaat qiling — u shartlarni tushuntiradi va sizga mos tozalash variantini tanlaydi.",
+      "image_alt": "BECLEAN SERVIS jamoasi — professional tozalash",
+      "subtitle": "Muvaffaqiyatli hamkorlik uchun atigi 4 qadam!",
+      "steps_title": "Bizning ish tartibimiz",
+      "steps": [
+        { "title": "Bizga qo'ng'iroq qiling", "description": "Ariza qoldiring yoki qo'ng'iroq qiling — 5 daqiqada qayta aloqaga chiqamiz." },
+        { "title": "Tafsilotlarni kelishamiz", "description": "Maydon, tozalash turi, muddat va narxni aniqlaymiz — hammasi shaffof." },
+        { "title": "Ishni bajaramiz", "description": "Brigada vaqtida Kärcher uskunalari va professional vositalar bilan keladi." },
+        { "title": "To'lovni amalga oshirasiz", "description": "To'lov obyektda qabul qilgandan keyin — sifatga ishonchingiz komil bo'lganda." }
+      ]
+    }
   },
   "Constants": {
     "services": [

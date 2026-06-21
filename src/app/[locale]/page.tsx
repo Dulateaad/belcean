@@ -21,6 +21,7 @@ import { HomeInquirySection } from '@/components/site/HomeInquirySection';
 import { HomeUspSection } from '@/components/site/HomeUspSection';
 import { HomeFaqSection } from '@/components/site/HomeFaqSection';
 import { HomeServicesSection } from '@/components/site/HomeServicesSection';
+import { HomeWorkAlgorithmSection } from '@/components/site/HomeWorkAlgorithmSection';
 
 export default async function Home({ params }: { params: Promise<{ locale: Locale }> }) {
   const resolvedParams = await params;
@@ -89,6 +90,8 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
       </section>
 
       <HomeServicesSection />
+
+      <HomeWorkAlgorithmSection />
 
       <section id="trust-us" className="w-full py-16 md:py-32 bg-background">
         <div className="container mx-auto px-4 md:px-6 text-center">

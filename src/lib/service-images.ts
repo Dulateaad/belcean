@@ -34,6 +34,9 @@ export const SERVICE_CARD_IMAGES: Record<string, ServiceCardImage> = {
   },
 };
 
+export const WORK_ALGORITHM_IMAGE =
+  'https://firebasestorage.googleapis.com/v0/b/studio-459358167-4d676.firebasestorage.app/o/Gemini_Generated_Image_wxscbawxscbawxsc.png?alt=media&token=42514903-3c20-497a-9a03-a2114cf0c87e';
+
 export const HOMEPAGE_SERVICE_SLUGS = [
   '/generalnaya-uborka',
   '/poslestroitelnaya-uborka',
