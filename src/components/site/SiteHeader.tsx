@@ -49,14 +49,32 @@ export function SiteHeader() {
     { href: `/${currentLocale}#contacts`, label: t.Header.contacts },
   ];
 
+  const isHome =
+    pathname === `/${currentLocale}` ||
+    pathname === `/${currentLocale}/` ||
+    pathname === '/' ||
+    pathname === '';
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" suppressHydrationWarning>
+    <header
+      className={cn(
+        'z-50 w-full',
+        isHome
+          ? 'absolute border-b border-white/10 bg-slate-950/30 backdrop-blur-md'
+          : 'sticky top-0 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60',
+      )}
+      suppressHydrationWarning
+    >
       <div className="container flex h-20 items-center justify-between">
         <div className="flex flex-1 items-center justify-start gap-2 md:flex-initial">
             <div className="md:hidden shrink-0">
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className={cn(isHome && 'text-white hover:bg-white/10 hover:text-white')}
+                  >
                     <Menu className="h-6 w-6" />
                     <span className="sr-only">Toggle Menu</span>
                   </Button>
@@ -95,7 +113,7 @@ export function SiteHeader() {
             </div>
 
             <Link href={`/${currentLocale}`} className="shrink-0 md:mr-6">
-                <Logo />
+                <Logo light={isHome} />
             </Link>
         </div>
 
@@ -105,15 +123,23 @@ export function SiteHeader() {
                onClick={(e) => onTelLinkClick(e)}
                aria-label={`${t.FloatingInquiry.call} ${PHONE_DISPLAY}`}
                className={cn(
-                 'md:hidden flex flex-col items-center rounded-lg border border-border/70 bg-background/90 px-3 py-1.5 shadow-sm transition-all duration-700 ease-out motion-reduce:transition-none cursor-pointer active:opacity-90',
+                 'md:hidden flex flex-col items-center rounded-lg px-3 py-1.5 shadow-sm transition-all duration-700 ease-out motion-reduce:transition-none cursor-pointer active:opacity-90',
+                 isHome
+                   ? 'border border-white/25 bg-white/10'
+                   : 'border border-border/70 bg-background/90',
                  phoneReveal ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0',
                )}
              >
-                <span className="flex items-center gap-1.5 text-base font-semibold leading-none text-foreground">
-                    <Phone className="h-3.5 w-3.5 shrink-0 text-muted-foreground" aria-hidden />
+                <span
+                  className={cn(
+                    'flex items-center gap-1.5 text-base font-semibold leading-none',
+                    isHome ? 'text-white' : 'text-foreground',
+                  )}
+                >
+                    <Phone className={cn('h-3.5 w-3.5 shrink-0', isHome ? 'text-primary' : 'text-muted-foreground')} aria-hidden />
                     <span className="whitespace-nowrap tabular-nums">77 356-60-70</span>
                 </span>
-                <span className="mt-0.5 flex items-center gap-1 text-muted-foreground">
+                <span className={cn('mt-0.5 flex items-center gap-1', isHome ? 'text-white/75' : 'text-muted-foreground')}>
                     <Clock className="h-3 w-3 shrink-0" aria-hidden />
                     <span className="text-[11px] font-medium uppercase tracking-wide">
                       {t.Header.work_hours}
@@ -121,9 +147,14 @@ export function SiteHeader() {
                 </span>
              </a>
 
-             <nav className="hidden items-center space-x-6 text-base font-medium md:flex">
+             <nav className={cn('hidden items-center space-x-6 text-base font-medium md:flex', isHome && 'text-white')}>
               <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center outline-none hover:text-primary transition-colors">
+                <DropdownMenuTrigger
+                  className={cn(
+                    'flex items-center outline-none transition-colors',
+                    isHome ? 'hover:text-primary' : 'hover:text-primary',
+                  )}
+                >
                   {t.Header.services} <ChevronDown className="h-4 w-4 ml-1" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
@@ -153,15 +184,21 @@ export function SiteHeader() {
                   onClick={(e) => onTelLinkClick(e)}
                   aria-label={`${t.FloatingInquiry.call} ${PHONE_DISPLAY}`}
                   className={cn(
-                    'hidden md:flex flex-col items-end gap-0.5 transition-all duration-700 ease-out motion-reduce:transition-none cursor-pointer rounded-lg px-1 py-0.5 hover:bg-muted/50',
+                    'hidden md:flex flex-col items-end gap-0.5 transition-all duration-700 ease-out motion-reduce:transition-none cursor-pointer rounded-lg px-1 py-0.5',
+                    isHome ? 'hover:bg-white/10' : 'hover:bg-muted/50',
                     phoneReveal ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0',
                   )}
                 >
-                    <span className="flex items-center gap-1 font-bold text-xl hover:text-emerald-600 transition-colors">
-                        <Phone className="h-5 w-5 shrink-0 text-emerald-600" aria-hidden />
+                    <span
+                      className={cn(
+                        'flex items-center gap-1 font-bold text-xl transition-colors',
+                        isHome ? 'text-white hover:text-primary' : 'hover:text-emerald-600',
+                      )}
+                    >
+                        <Phone className={cn('h-5 w-5 shrink-0', isHome ? 'text-primary' : 'text-emerald-600')} aria-hidden />
                         <span className="tabular-nums">77 356-60-70</span>
                     </span>
-                    <span className="flex items-center gap-1 text-emerald-700/90">
+                    <span className={cn('flex items-center gap-1', isHome ? 'text-primary' : 'text-emerald-700/90')}>
                         <Clock className="h-3.5 w-3.5 shrink-0" aria-hidden />
                         <span className="text-xs font-bold uppercase tracking-wide">{t.Header.work_hours}</span>
                     </span>
@@ -170,7 +207,14 @@ export function SiteHeader() {
                 <div className="flex items-center gap-2 sm:gap-4">
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                        <Button variant="outline" size="sm" className="w-[60px] h-7 text-xs sm:w-[70px]">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className={cn(
+                            'h-7 w-[60px] text-xs sm:w-[70px]',
+                            isHome && 'border-white/30 bg-white/10 text-white hover:bg-white/20 hover:text-white',
+                          )}
+                        >
                             {currentLocale.toUpperCase()}
                             <ChevronDown className="h-4 w-4 ml-1 sm:ml-2" />
                         </Button>
@@ -187,7 +231,10 @@ export function SiteHeader() {
 
                 <Button
                   type="button"
-                  className="hidden lg:inline-flex ml-4 bg-emerald-600 hover:bg-emerald-700"
+                  className={cn(
+                    'ml-4 hidden lg:inline-flex',
+                    isHome ? 'bg-primary text-slate-950 hover:bg-primary/90' : 'bg-emerald-600 hover:bg-emerald-700',
+                  )}
                   asChild
                 >
                   <a href={PHONE_TEL_HREF} onClick={(e) => onTelLinkClick(e)}>
