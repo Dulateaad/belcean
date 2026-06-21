@@ -2,15 +2,17 @@ import { Building2, ShoppingBag, HeartPulse, HardHat, Sparkles, Wind, Sofa, User
 
 export const getServices = (t: any) => {
     const servicesText = t.Constants.services;
-    const icons = [Building2, ClipboardList, Sparkles, HardHat, Wind, Sofa, Layers];
+    const icons = [Sparkles, HardHat, Wind, Building2, Sofa, Layers, Building2, Users, ClipboardList];
     const meta = [
-      { imageId: 'service-office', imageHint: 'clean office' },
-      { imageId: 'service-subscription', imageHint: 'calendar schedule' },
-      { imageId: 'service-general', imageHint: 'floor polishing' },
+      { imageId: 'service-general', imageHint: 'general cleaning' },
       { imageId: 'service-construction', imageHint: 'construction site' },
-      { imageId: 'service-windows', imageHint: 'window cleaning' },
+      { imageId: 'service-wet', imageHint: 'wet cleaning' },
+      { imageId: 'service-office', imageHint: 'clean office' },
       { imageId: 'service-furniture', imageHint: 'upholstery cleaning' },
       { imageId: 'service-furniture', imageHint: 'carpet cleaning' },
+      { imageId: 'service-windows', imageHint: 'window cleaning' },
+      { imageId: 'service-moving', imageHint: 'moving help' },
+      { imageId: 'service-subscription', imageHint: 'calendar schedule' },
     ];
     return servicesText.map((service: { slug: string; title: string; description: string }, index: number) => ({
       slug: service.slug,

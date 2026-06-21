@@ -1,9 +1,6 @@
-import Image from 'next/image';
-import { Card, CardContent, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { ReviewsCarousel } from '@/components/site/ReviewsCarousel';
 import {
-  ArrowRight,
-  Sparkles,
   CheckCircle2,
   Handshake,
   MessageCircle,
@@ -23,15 +20,12 @@ import { HomeHeroFairPrice } from '@/components/site/HomeHeroFairPrice';
 import { HomeInquirySection } from '@/components/site/HomeInquirySection';
 import { HomeUspSection } from '@/components/site/HomeUspSection';
 import { HomeFaqSection } from '@/components/site/HomeFaqSection';
-import { ServicesCalculateCta } from '@/components/site/ServicesCalculateCta';
-import { OpenFormButton } from '@/components/site/OpenFormButton';
-import tashkentCardHero from '@/assets/services/tashkent-card.jpg';
+import { HomeServicesSection } from '@/components/site/HomeServicesSection';
 
 export default async function Home({ params }: { params: Promise<{ locale: Locale }> }) {
   const resolvedParams = await params;
   const locale = resolvedParams.locale;
   const t = await getDictionary(locale);
-  const services = constants.getServices(t);
   const clientTypes = constants.getClientTypes(t);
   const testimonials = constants.getTestimonials(t);
 
@@ -94,51 +88,7 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
         </div>
       </section>
 
-      <section id="services" className="w-full py-16 md:py-32 bg-secondary">
-        <div className="container mx-auto px-4 md:px-6 flex flex-col items-center text-center">
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline inline-flex items-center gap-3 relative after:content-[''] after:absolute after:-bottom-4 after:left-1/4 after:right-1/4 after:h-1 after:bg-primary after:rounded-full">
-              <Sparkles className="w-8 h-8 text-primary" /> {t.HomePage.services_title}
-            </h2>
-          </div>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 w-full">
-            {services.map((service: any, index: number) => {
-              const ServiceIcon = service.icon;
-              const officeVisual =
-                service.imageId === 'service-office' ? tashkentCardHero : null;
-              return (
-                <Card key={index} className="flex flex-col overflow-hidden bg-background border border-transparent hover:border-primary transition-colors duration-300 h-full group">
-                   <CardContent className="p-8 flex-grow flex flex-col items-center">
-                    {officeVisual ? (
-                      <div className="relative mb-6 flex h-40 w-full max-w-[260px] items-center justify-center overflow-hidden rounded-xl bg-primary/5 p-3">
-                        <Image
-                          src={officeVisual}
-                          alt={service.title}
-                          width={225}
-                          height={225}
-                          className="h-full w-full max-h-[152px] max-w-[152px] object-contain object-center"
-                          sizes="152px"
-                          loading="lazy"
-                        />
-                      </div>
-                    ) : (
-                      <div className="mb-6 rounded-xl bg-primary/10 p-4 text-primary">
-                        <ServiceIcon className="h-10 w-10" />
-                      </div>
-                    )}
-                    <CardTitle className="text-xl mt-4">{service.title}</CardTitle>
-                    <p className="text-muted-foreground mt-2 mb-4 flex-grow">{service.description}</p>
-                     <OpenFormButton className="mt-auto p-0 h-auto opacity-70 group-hover:opacity-100">
-                      {t.HomePage.learn_more} <ArrowRight className="ml-2 h-4 w-4" />
-                    </OpenFormButton>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-          <ServicesCalculateCta />
-        </div>
-      </section>
+      <HomeServicesSection />
 
       <section id="trust-us" className="w-full py-16 md:py-32 bg-background">
         <div className="container mx-auto px-4 md:px-6 text-center">

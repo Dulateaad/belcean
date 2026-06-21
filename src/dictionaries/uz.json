@@ -64,6 +64,11 @@
     "clients_title": "Biz kimlar uchun ishlaymiz",
     "clients_subtitle": "Biz har xil turdagi tijorat ob'ektlari uchun sifatli tozalash xizmatlarini taqdim etamiz.",
     "services_title": "Bizning xizmatlarimiz",
+    "services_badge": "Faqat sifatli ish",
+    "services_price_prefix": "dan",
+    "services_price_suffix": "kv.m uchun",
+    "services_price_individual": "Narx so'rov bo'yicha",
+    "services_order_button": "Buyurtma",
     "services_calculate_hint": "Narxni onlayn hisoblang — qayta ariza shart emas.",
     "learn_more": "5 soniyada narxni hisoblash",
     "trust_us_title": "Bizga ishonadilar",
@@ -139,13 +144,15 @@
   },
   "Constants": {
     "services": [
-      { "slug": "/uborka-ofisov-tashkent", "title": "Toshkentda ofislarni tozalash", "description": "Toshkentda professional ofis tozalash. Ish joyingizda tozalik va tartib." },
-      { "slug": "/abonentskiy-klining", "title": "Toshkentda abonent tozalash", "description": "Toshkentda jadval bo'yicha muntazam tozalash." },
-      { "slug": "/generalnaya-uborka", "title": "Toshkentda general tozalash", "description": "Toshkentda general tozalash — barcha xonalarni kompleks tozalash." },
-      { "slug": "/poslestroitelnaya-uborka", "title": "Toshkentda ta'mirdan keyingi tozalash", "description": "Toshkentda ta'mirdan keyin tozalash. Qurilish changi va chiqindilarini tozalaymiz." },
-      { "slug": "/moika-okon", "title": "Toshkentda oyna yuvish", "description": "Toshkentda oyna yuvish. Toza derazalar, fasadlar va vitrinalar." },
-      { "slug": "/himchistka-mebeli", "title": "Toshkentda mebel kimyoviy tozalash", "description": "Toshkentda mebel kimyoviy tozalash. Mebelingizga yangi ko'rinish." },
-      { "slug": "/chistka-kover", "title": "Toshkentda gilam tozalash", "description": "Toshkentda professional gilam tozalash. Uyga chiqib, dog' va hidni ketkazamiz." }
+      { "slug": "/generalnaya-uborka", "title": "Toshkentda general tozalash", "card_title": "General tozalash", "description": "Gigiena va qulaylik uchun barcha xonalarni kompleks va puxta tozalash.", "price_from": 20000 },
+      { "slug": "/poslestroitelnaya-uborka", "title": "Toshkentda ta'mirdan keyingi tozalash", "card_title": "Ta'mirdan keyin tozalash", "description": "Ta'mirdan keyin professional tozalash: qurilish chiqindilari, chang va izlarni olib tashlaymiz.", "price_from": 20000 },
+      { "slug": "/vlazhnaya-uborka", "title": "Toshkentda nam tozalash", "card_title": "Nam tozalash", "description": "Sirtlarni nam salfetka yoki shvabra bilan tozalash — izsiz va ehtiyotkorlik bilan.", "price_from": 15000 },
+      { "slug": "/uborka-ofisov-tashkent", "title": "Toshkentda ofislarni tozalash", "card_title": "Ofislarni tozalash", "description": "Ofislarni kompleks tozalash: chiqindi chiqarish, mebelni artish va obyektda tozalikni saqlash.", "price_from": 14999 },
+      { "slug": "/himchistka-mebeli", "title": "Toshkentda mebel kimyoviy tozalash", "card_title": "Mebel kimyoviy tozalash", "description": "Uyga chiqib yumshoq mebel va gilam qoplamalarini professional tozalash.", "price_from": 15000 },
+      { "slug": "/chistka-kover", "title": "Toshkentda gilam tozalash", "card_title": "Gilam kimyoviy tozalash", "description": "Dog', hid va allergenlarni olib tashlash bilan gilamlarni chuqur tozalash.", "price_from": 12000 },
+      { "slug": "/moika-okon", "title": "Toshkentda oyna yuvish", "card_title": "Oyna / Fasad yuvish", "description": "Har qanday balandlikda derazalar, vitrinalar va fasadlarni izsiz tozalash.", "price_from": 16000 },
+      { "slug": "/pomosh-pri-pereezde", "title": "Toshkentda ko'chishda yordam", "card_title": "Ko'chishda yordam / Yukchilar", "description": "Ko'chishda yordam: ehtiyotkorlik bilan o'rash, yuklash va yangi joyda mebelni joylashtirish.", "price_from": 0 },
+      { "slug": "/abonentskiy-klining", "title": "Toshkentda abonent tozalash", "card_title": "Abonent tozalash", "description": "Toshkentda jadval bo'yicha muntazam tozalash.", "price_from": 20000 }
     ],
     "client_types": [
       { "name": "Ofislar" }, { "name": "Biznes-markazlar" }, { "name": "Do'konlar" }, { "name": "Klinikalar" }, { "name": "Omborlar" }, { "name": "Kvartiralar" }
