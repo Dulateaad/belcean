@@ -30,12 +30,13 @@ export function HomeHeroFairPrice() {
           alt={h.hero_title}
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-[62%_38%] brightness-110 saturate-105"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-slate-950/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/65 via-slate-950/40 to-slate-950/15" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-slate-950/10" />
+        {/* Darken only the left for headline text; keep center/right clear for people */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 from-0% via-slate-950/45 via-35% to-slate-950/5 to-70%" />
+        {/* Bottom fade for feature bar readability only */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/55 from-0% via-transparent via-35% to-transparent to-100%" />
       </div>
 
       <div className="relative z-10 mx-auto flex min-h-[72vh] max-w-[1792px] flex-col justify-end px-4 pb-8 pt-28 md:min-h-[78vh] md:px-6 md:pb-10 md:pt-32 lg:min-h-[85vh] lg:pb-12 lg:pt-36">
