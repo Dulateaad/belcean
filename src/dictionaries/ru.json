@@ -72,42 +72,91 @@
     "services_calculate_hint": "Рассчитайте стоимость онлайн — без повторной заявки.",
     "services_details_button": "Подробнее",
     "services_audience_hint": "Работаем и для дома, и для бизнеса",
-    "services_groups": [
+    "services_home_title": "Для дома",
+    "services_home_subtitle": "Чистота и уют в каждом уголке вашего дома",
+    "services_business_title": "Для бизнеса",
+    "services_business_subtitle": "Чистые рабочие пространства для вашего успеха",
+    "services_home_cards": [
       {
-        "id": "home",
-        "emoji": "🏠",
-        "title": "Для дома",
-        "items": [
-          { "label": "Генеральная уборка", "slug": "/generalnaya-uborka" },
-          { "label": "Влажная уборка", "slug": "/vlazhnaya-uborka" },
-          { "label": "Уборка после ремонта", "slug": "/poslestroitelnaya-uborka" },
-          { "label": "Химчистка мебели", "slug": "/himchistka-mebeli", "expand": true },
-          { "label": "Химчистка ковров", "slug": "/chistka-kover" },
-          { "label": "Мытье окон", "slug": "/moika-okon" }
+        "id": "home-cleaning",
+        "title": "Уборка дома",
+        "subtitle": "Генеральная, влажная, после ремонта",
+        "imageKey": "/vlazhnaya-uborka",
+        "href": "/generalnaya-uborka",
+        "tags": [
+          { "label": "Генеральная", "slug": "/generalnaya-uborka" },
+          { "label": "Влажная", "slug": "/vlazhnaya-uborka" },
+          { "label": "После ремонта", "slug": "/poslestroitelnaya-uborka" }
         ]
       },
       {
-        "id": "business",
-        "emoji": "🏢",
-        "title": "Для бизнеса",
-        "items": [
-          { "label": "Уборка офисов", "slug": "/uborka-ofisov-tashkent" },
-          { "label": "Мытье фасадов", "slug": "/moika-okon" },
-          { "label": "Мойка витрин", "slug": "/moika-okon" },
-          { "label": "Ежедневная уборка", "slug": "/abonentskiy-klining" },
-          { "label": "Генеральная уборка офисов", "slug": "/generalnaya-uborka" }
+        "id": "dry-cleaning",
+        "title": "Химчистка",
+        "subtitle": "Мебели, ковров и матрасов",
+        "imageKey": "/himchistka-mebeli",
+        "expand": true,
+        "tags": [
+          { "label": "Мебель", "slug": "/himchistka-mebeli" },
+          { "label": "Ковры", "slug": "/chistka-kover" },
+          { "label": "Матрасы", "slug": "/himchistka-mebeli" },
+          { "label": "Стулья", "slug": "/himchistka-mebeli" }
         ]
       },
       {
-        "id": "extra",
-        "emoji": "🚚",
-        "title": "Дополнительные услуги",
-        "items": [
-          { "label": "Грузчики", "slug": "/pomosh-pri-pereezde" },
-          { "label": "Помощь при переезде", "slug": "/pomosh-pri-pereezde" },
-          { "label": "Вывоз мусора", "slug": "#inquiry" }
+        "id": "washing",
+        "title": "Мытье",
+        "subtitle": "Окон, витрин и фасадов",
+        "imageKey": "/moika-okon",
+        "href": "/moika-okon",
+        "tags": [
+          { "label": "Окон", "slug": "/moika-okon" },
+          { "label": "Фасадов", "slug": "/moika-okon" },
+          { "label": "Витрин", "slug": "/moika-okon" }
         ]
       }
+    ],
+    "services_business_cards": [
+      {
+        "id": "office",
+        "title": "Уборка офисов",
+        "subtitle": "Поддерживающая и генеральная уборка офисных помещений",
+        "imageKey": "/uborka-ofisov-tashkent",
+        "href": "/uborka-ofisov-tashkent"
+      },
+      {
+        "id": "facade",
+        "title": "Мытье фасадов",
+        "subtitle": "Профессиональное мытье фасадов любой сложности",
+        "imageKey": "facade",
+        "href": "/moika-okon"
+      },
+      {
+        "id": "storefront",
+        "title": "Мойка витрин",
+        "subtitle": "Чистые витрины — привлекают клиентов",
+        "imageKey": "storefront",
+        "href": "/moika-okon"
+      },
+      {
+        "id": "daily",
+        "title": "Ежедневная уборка",
+        "subtitle": "Поддержание чистоты каждый день",
+        "imageKey": "/abonentskiy-klining",
+        "href": "/abonentskiy-klining"
+      }
+    ],
+    "services_business_featured": {
+      "id": "office-general",
+      "title": "Генеральная уборка офисов",
+      "subtitle": "Полная и глубокая уборка офисных помещений",
+      "imageKey": "office-general",
+      "href": "/generalnaya-uborka"
+    },
+    "services_trust": [
+      "Проверенный персонал",
+      "Безопасные средства",
+      "Точно в срок",
+      "Гарантия качества"
     ],
     "learn_more": "Рассчитать стоимость за 5 сек",
     "trust_us_title": "Нам доверяют",

@@ -72,42 +72,91 @@
     "services_calculate_hint": "Narxni onlayn hisoblang — qayta ariza shart emas.",
     "services_details_button": "Batafsil",
     "services_audience_hint": "Uy va biznes uchun ishlaymiz",
-    "services_groups": [
+    "services_home_title": "Uy uchun",
+    "services_home_subtitle": "Uyingizning har bir burchagida tozalik va qulaylik",
+    "services_business_title": "Biznes uchun",
+    "services_business_subtitle": "Muvaffaqiyat uchun toza ish joylari",
+    "services_home_cards": [
       {
-        "id": "home",
-        "emoji": "🏠",
-        "title": "Uy uchun",
-        "items": [
-          { "label": "General tozalash", "slug": "/generalnaya-uborka" },
-          { "label": "Nam tozalash", "slug": "/vlazhnaya-uborka" },
-          { "label": "Ta'mirdan keyin tozalash", "slug": "/poslestroitelnaya-uborka" },
-          { "label": "Mebel kimyoviy tozalash", "slug": "/himchistka-mebeli", "expand": true },
-          { "label": "Gilam kimyoviy tozalash", "slug": "/chistka-kover" },
-          { "label": "Oyna yuvish", "slug": "/moika-okon" }
+        "id": "home-cleaning",
+        "title": "Uy tozalash",
+        "subtitle": "General, nam, ta'mirdan keyin",
+        "imageKey": "/vlazhnaya-uborka",
+        "href": "/generalnaya-uborka",
+        "tags": [
+          { "label": "General", "slug": "/generalnaya-uborka" },
+          { "label": "Nam", "slug": "/vlazhnaya-uborka" },
+          { "label": "Ta'mirdan keyin", "slug": "/poslestroitelnaya-uborka" }
         ]
       },
       {
-        "id": "business",
-        "emoji": "🏢",
-        "title": "Biznes uchun",
-        "items": [
-          { "label": "Ofislarni tozalash", "slug": "/uborka-ofisov-tashkent" },
-          { "label": "Fasad yuvish", "slug": "/moika-okon" },
-          { "label": "Vitrina yuvish", "slug": "/moika-okon" },
-          { "label": "Kundalik tozalash", "slug": "/abonentskiy-klining" },
-          { "label": "Ofislar general tozalashi", "slug": "/generalnaya-uborka" }
+        "id": "dry-cleaning",
+        "title": "Kimyoviy tozalash",
+        "subtitle": "Mebel, gilam va matraslar",
+        "imageKey": "/himchistka-mebeli",
+        "expand": true,
+        "tags": [
+          { "label": "Mebel", "slug": "/himchistka-mebeli" },
+          { "label": "Gilam", "slug": "/chistka-kover" },
+          { "label": "Matras", "slug": "/himchistka-mebeli" },
+          { "label": "Stullar", "slug": "/himchistka-mebeli" }
         ]
       },
       {
-        "id": "extra",
-        "emoji": "🚚",
-        "title": "Qo'shimcha xizmatlar",
-        "items": [
-          { "label": "Yukchilar", "slug": "/pomosh-pri-pereezde" },
-          { "label": "Ko'chishda yordam", "slug": "/pomosh-pri-pereezde" },
-          { "label": "Chiqindi chiqarish", "slug": "#inquiry" }
+        "id": "washing",
+        "title": "Yuvish",
+        "subtitle": "Oyna, vitrina va fasadlar",
+        "imageKey": "/moika-okon",
+        "href": "/moika-okon",
+        "tags": [
+          { "label": "Oyna", "slug": "/moika-okon" },
+          { "label": "Fasad", "slug": "/moika-okon" },
+          { "label": "Vitrina", "slug": "/moika-okon" }
         ]
       }
+    ],
+    "services_business_cards": [
+      {
+        "id": "office",
+        "title": "Ofislarni tozalash",
+        "subtitle": "Ofis xonalarini qo'llab-quvvatlovchi va general tozalash",
+        "imageKey": "/uborka-ofisov-tashkent",
+        "href": "/uborka-ofisov-tashkent"
+      },
+      {
+        "id": "facade",
+        "title": "Fasad yuvish",
+        "subtitle": "Har qanday murakkablikdagi fasadlarni professional yuvish",
+        "imageKey": "facade",
+        "href": "/moika-okon"
+      },
+      {
+        "id": "storefront",
+        "title": "Vitrina yuvish",
+        "subtitle": "Toza vitrinalar — mijozlarni jalb qiladi",
+        "imageKey": "storefront",
+        "href": "/moika-okon"
+      },
+      {
+        "id": "daily",
+        "title": "Kundalik tozalash",
+        "subtitle": "Har kuni tozalikni saqlash",
+        "imageKey": "/abonentskiy-klining",
+        "href": "/abonentskiy-klining"
+      }
+    ],
+    "services_business_featured": {
+      "id": "office-general",
+      "title": "Ofislar general tozalashi",
+      "subtitle": "Ofis xonalarini to'liq va chuqur tozalash",
+      "imageKey": "office-general",
+      "href": "/generalnaya-uborka"
+    },
+    "services_trust": [
+      "Tekshirilgan xodimlar",
+      "Xavfsiz vositalar",
+      "Aniq muddatda",
+      "Sifat kafolati"
     ],
     "learn_more": "5 soniyada narxni hisoblash",
     "trust_us_title": "Bizga ishonadilar",
