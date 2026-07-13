@@ -70,6 +70,8 @@
     "services_price_individual": "Стоимость по запросу",
     "services_order_button": "Заказать",
     "services_calculate_hint": "Рассчитайте стоимость онлайн — без повторной заявки.",
+    "services_details_button": "Подробнее",
+    "services_audience_hint": "Работаем и для дома, и для бизнеса",
     "services_groups": [
       {
         "id": "home",
@@ -79,7 +81,7 @@
           { "label": "Генеральная уборка", "slug": "/generalnaya-uborka" },
           { "label": "Влажная уборка", "slug": "/vlazhnaya-uborka" },
           { "label": "Уборка после ремонта", "slug": "/poslestroitelnaya-uborka" },
-          { "label": "Химчистка мебели", "slug": "/himchistka-mebeli" },
+          { "label": "Химчистка мебели", "slug": "/himchistka-mebeli", "expand": true },
           { "label": "Химчистка ковров", "slug": "/chistka-kover" },
           { "label": "Мытье окон", "slug": "/moika-okon" }
         ]
@@ -90,10 +92,10 @@
         "title": "Для бизнеса",
         "items": [
           { "label": "Уборка офисов", "slug": "/uborka-ofisov-tashkent" },
-          { "label": "Мытье фасадов", "slug": "/moika-okon", "imageKey": "facade" },
-          { "label": "Мойка витрин", "slug": "/moika-okon", "imageKey": "storefront" },
+          { "label": "Мытье фасадов", "slug": "/moika-okon" },
+          { "label": "Мойка витрин", "slug": "/moika-okon" },
           { "label": "Ежедневная уборка", "slug": "/abonentskiy-klining" },
-          { "label": "Генеральная уборка офисов", "slug": "/generalnaya-uborka", "imageKey": "office-general" }
+          { "label": "Генеральная уборка офисов", "slug": "/generalnaya-uborka" }
         ]
       },
       {
@@ -101,9 +103,9 @@
         "emoji": "🚚",
         "title": "Дополнительные услуги",
         "items": [
-          { "label": "Грузчики", "slug": "/pomosh-pri-pereezde", "imageKey": "movers" },
+          { "label": "Грузчики", "slug": "/pomosh-pri-pereezde" },
           { "label": "Помощь при переезде", "slug": "/pomosh-pri-pereezde" },
-          { "label": "Вывоз мусора", "slug": "#inquiry", "imageKey": "trash" }
+          { "label": "Вывоз мусора", "slug": "#inquiry" }
         ]
       }
     ],

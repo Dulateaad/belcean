@@ -70,6 +70,8 @@
     "services_price_individual": "Narx so'rov bo'yicha",
     "services_order_button": "Buyurtma",
     "services_calculate_hint": "Narxni onlayn hisoblang — qayta ariza shart emas.",
+    "services_details_button": "Batafsil",
+    "services_audience_hint": "Uy va biznes uchun ishlaymiz",
     "services_groups": [
       {
         "id": "home",
@@ -79,7 +81,7 @@
           { "label": "General tozalash", "slug": "/generalnaya-uborka" },
           { "label": "Nam tozalash", "slug": "/vlazhnaya-uborka" },
           { "label": "Ta'mirdan keyin tozalash", "slug": "/poslestroitelnaya-uborka" },
-          { "label": "Mebel kimyoviy tozalash", "slug": "/himchistka-mebeli" },
+          { "label": "Mebel kimyoviy tozalash", "slug": "/himchistka-mebeli", "expand": true },
           { "label": "Gilam kimyoviy tozalash", "slug": "/chistka-kover" },
           { "label": "Oyna yuvish", "slug": "/moika-okon" }
         ]
@@ -90,10 +92,10 @@
         "title": "Biznes uchun",
         "items": [
           { "label": "Ofislarni tozalash", "slug": "/uborka-ofisov-tashkent" },
-          { "label": "Fasad yuvish", "slug": "/moika-okon", "imageKey": "facade" },
-          { "label": "Vitrina yuvish", "slug": "/moika-okon", "imageKey": "storefront" },
+          { "label": "Fasad yuvish", "slug": "/moika-okon" },
+          { "label": "Vitrina yuvish", "slug": "/moika-okon" },
           { "label": "Kundalik tozalash", "slug": "/abonentskiy-klining" },
-          { "label": "Ofislar general tozalashi", "slug": "/generalnaya-uborka", "imageKey": "office-general" }
+          { "label": "Ofislar general tozalashi", "slug": "/generalnaya-uborka" }
         ]
       },
       {
@@ -101,9 +103,9 @@
         "emoji": "🚚",
         "title": "Qo'shimcha xizmatlar",
         "items": [
-          { "label": "Yukchilar", "slug": "/pomosh-pri-pereezde", "imageKey": "movers" },
+          { "label": "Yukchilar", "slug": "/pomosh-pri-pereezde" },
           { "label": "Ko'chishda yordam", "slug": "/pomosh-pri-pereezde" },
-          { "label": "Chiqindi chiqarish", "slug": "#inquiry", "imageKey": "trash" }
+          { "label": "Chiqindi chiqarish", "slug": "#inquiry" }
         ]
       }
     ],
