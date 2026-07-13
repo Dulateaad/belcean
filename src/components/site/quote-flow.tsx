@@ -75,6 +75,7 @@ function InquiryFormDialog({
             {t.HomePage.inquiry_title}
           </DialogTitle>
         </DialogHeader>
+        <p className="text-sm font-semibold text-primary">{t.HomePage.brand_slogan}</p>
         <p className="text-sm text-muted-foreground">{t.HomePage.inquiry_subtitle}</p>
         <ContactForm noRedirect onSuccess={() => onOpenChange(false)} />
       </DialogContent>

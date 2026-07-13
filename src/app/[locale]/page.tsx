@@ -91,21 +91,21 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
 
       <HomeWorkAlgorithmSection />
 
-      <section id="trust-us" className="w-full py-16 md:py-32 bg-background">
-        <div className="container mx-auto px-4 md:px-6 text-center">
-          <div className="flex flex-col items-center justify-center space-y-4 mb-12">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline flex items-center justify-center gap-3">
-              <Handshake className="w-8 h-8 text-primary" /> {t.HomePage.trust_us_title}
+      <section id="trust-us" className="w-full bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-950 py-16 md:py-24">
+        <div className="container mx-auto px-4 text-center md:px-6">
+          <div className="mb-12 flex flex-col items-center justify-center space-y-4">
+            <h2 className="flex items-center justify-center gap-3 font-headline text-3xl font-bold tracking-tighter text-white sm:text-4xl">
+              <Handshake className="h-8 w-8 text-primary" /> {t.HomePage.trust_us_title}
             </h2>
-            <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl/relaxed">
+            <p className="mx-auto max-w-[700px] text-base text-white/85 md:text-xl md:leading-relaxed">
               {t.HomePage.trust_us_subtitle}
             </p>
           </div>
-          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+          <div className="mx-auto flex max-w-4xl flex-wrap justify-center gap-3 sm:gap-4">
             {(t.HomePage.trust_us_items as string[]).map((item: string, index: number) => (
               <div
                 key={index}
-                className="px-6 py-3 rounded-full bg-primary/10 text-primary font-semibold border border-primary/20 hover:bg-primary/20 transition-colors"
+                className="rounded-full border border-primary/40 bg-primary px-5 py-2.5 text-sm font-bold text-slate-950 shadow-md transition-transform hover:scale-105 sm:px-6 sm:py-3 sm:text-base"
               >
                 {item}
               </div>
@@ -114,13 +114,13 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
         </div>
       </section>
 
-      <section id="trust-pillars" className="w-full py-16 md:py-32 bg-secondary">
+      <section id="trust-pillars" className="w-full bg-secondary py-16 md:py-32">
         <div className="container mx-auto px-4 md:px-6">
           <div className="mx-auto mb-10 max-w-2xl text-center">
             <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">
               {t.HomePage.trust_pillars_title}
             </h2>
-            <p className="mt-3 text-muted-foreground md:text-lg">
+            <p className="mt-3 text-base font-medium text-foreground/80 md:text-lg">
               {t.HomePage.trust_pillars_subtitle}
             </p>
           </div>

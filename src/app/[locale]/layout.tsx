@@ -5,6 +5,7 @@ import { SiteFooter } from '@/components/site/SiteFooter';
 import { getDictionary } from '@/lib/get-dictionary';
 import { i18n, type Locale } from '@/i18n-config';
 import { DictionaryProvider } from '@/contexts/dictionary-context';
+import { AutoLeadPopup } from '@/components/site/AutoLeadPopup';
 import { FloatingInquiry } from '@/components/site/FloatingInquiry';
 import { QuoteFlowProvider } from '@/components/site/quote-flow';
 import { Metadata, Viewport } from 'next';
@@ -72,23 +73,6 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
-      </head>
-      <body className="font-body antialiased min-h-screen flex flex-col bg-background pb-[calc(5rem+env(safe-area-inset-bottom,0px))] md:pb-0">
-        <DictionaryProvider dictionary={t}>
-          <QuoteFlowProvider>
-            <div className="animate-fade-in flex flex-col flex-1">
-              <SiteHeader />
-              <main className="flex-grow">{children}</main>
-              <SiteFooter />
-            </div>
-            <FloatingInquiry />
-          </QuoteFlowProvider>
-        </DictionaryProvider>
-        <Toaster />
-        
         {/* Google Tag Manager */}
         <Script id="gtm-script" strategy="afterInteractive">
           {`
@@ -96,10 +80,38 @@ export default async function LocaleLayout({
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-K3RV87GB');
+            })(window,document,'script','dataLayer','GTM-PHBX7WMP');
           `}
         </Script>
-        
+        {/* End Google Tag Manager */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+      </head>
+      <body className="font-body antialiased min-h-screen flex flex-col bg-background pb-[calc(5rem+env(safe-area-inset-bottom,0px))] md:pb-0">
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PHBX7WMP"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
+        <DictionaryProvider dictionary={t}>
+          <QuoteFlowProvider>
+            <div className="animate-fade-in flex flex-col flex-1">
+              <SiteHeader />
+              <main className="flex-grow">{children}</main>
+              <SiteFooter />
+            </div>
+            <AutoLeadPopup />
+            <FloatingInquiry />
+          </QuoteFlowProvider>
+        </DictionaryProvider>
+        <Toaster />
+
         {/* Global site tag (gtag.js) — Google Analytics + Google Ads */}
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-VT6Q7ZS6JZ" strategy="afterInteractive" />
         <Script id="gtag-init" strategy="afterInteractive">
@@ -135,8 +147,8 @@ export default async function LocaleLayout({
                 m[i].l=1*new Date();
                 for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
                 k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-            })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106653042', 'ym');
-            ym(106653042, 'init', {
+            })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110144872', 'ym');
+            ym(110144872, 'init', {
                 ssr:true,
                 webvisor:true,
                 clickmap:true,
@@ -151,7 +163,7 @@ export default async function LocaleLayout({
         </Script>
         <noscript>
           <div>
-            <img src="https://mc.yandex.ru/watch/106653042" style={{ position: 'absolute', left: -9999 }} alt="" />
+            <img src="https://mc.yandex.ru/watch/110144872" style={{ position: 'absolute', left: -9999 }} alt="" />
           </div>
         </noscript>
         <Script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module" strategy="lazyOnload" />

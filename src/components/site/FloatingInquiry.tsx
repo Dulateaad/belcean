@@ -16,19 +16,21 @@ function TelegramIcon({ className }: { className?: string }) {
 }
 
 const iconBtn =
-  'flex h-[4.75rem] w-[4.75rem] shrink-0 items-center justify-center rounded-full text-white shadow-xl transition-transform active:scale-95 hover:brightness-110 sm:h-20 sm:w-20';
+  'flex h-[3.25rem] w-[3.25rem] shrink-0 items-center justify-center rounded-full text-white shadow-lg transition-transform active:scale-95 hover:brightness-110 sm:h-14 sm:w-14';
 
 function ContactIcon({
   href,
   label,
   onClick,
   className,
+  glowClass,
   children,
 }: {
   href: string;
   label: string;
   onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
   className: string;
+  glowClass?: string;
   children: React.ReactNode;
 }) {
   return (
@@ -39,7 +41,7 @@ function ContactIcon({
       rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
       aria-label={label}
       title={label}
-      className={cn(iconBtn, className)}
+      className={cn(iconBtn, 'contact-widget-glow contact-widget-float', glowClass, className)}
     >
       {children}
     </a>
@@ -76,22 +78,25 @@ export function FloatingInquiry() {
 
   return (
     <div
-      className="fixed left-1/2 z-50 flex -translate-x-1/2 items-center gap-5 rounded-full bg-white/95 p-3 shadow-xl ring-1 ring-black/5 backdrop-blur-sm"
-      style={{
-        bottom: bottomOffset,
-        transform: 'translateX(-50%) translateZ(0)',
-      }}
+      className="fixed right-3 z-50 flex flex-col gap-2.5 sm:right-4 sm:gap-3"
+      style={{ bottom: bottomOffset }}
     >
-      <ContactIcon href={TELEGRAM_HREF} label={tFloating.telegram} className="bg-[#229ED9]">
-        <TelegramIcon className="h-10 w-10 sm:h-11 sm:w-11" />
+      <ContactIcon
+        href={TELEGRAM_HREF}
+        label={tFloating.telegram}
+        className="bg-[#229ED9]"
+        glowClass="[--widget-glow:rgba(34,158,217,0.55)]"
+      >
+        <TelegramIcon className="h-6 w-6 sm:h-7 sm:w-7" />
       </ContactIcon>
       <ContactIcon
         href={PHONE_TEL_HREF}
         label={tFloating.call}
         onClick={(e) => onTelLinkClick(e)}
-        className="bg-emerald-600"
+        className="bg-emerald-600 contact-widget-float-delay"
+        glowClass="[--widget-glow:rgba(16,185,129,0.55)]"
       >
-        <Phone className="h-10 w-10 sm:h-11 sm:w-11" strokeWidth={2.25} />
+        <Phone className="h-6 w-6 sm:h-7 sm:w-7" strokeWidth={2.25} />
       </ContactIcon>
     </div>
   );

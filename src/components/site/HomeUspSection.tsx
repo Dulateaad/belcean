@@ -45,10 +45,10 @@ function LoyaltyStamp({
   return (
     <div
       className={cn(
-        'relative flex h-11 w-11 items-center justify-center rounded-full border-2 transition-all duration-500 motion-reduce:transition-none',
+        'relative flex h-14 w-14 items-center justify-center rounded-full border-2 transition-all duration-500 motion-reduce:transition-none sm:h-16 sm:w-16',
         stamped
-          ? 'scale-100 border-emerald-500 bg-emerald-50 opacity-100 shadow-sm'
-          : 'scale-90 border-dashed border-emerald-300 bg-white/90 opacity-70',
+          ? 'scale-100 border-emerald-500 bg-emerald-50 opacity-100 shadow-md'
+          : 'scale-90 border-dashed border-emerald-400 bg-white opacity-80',
         active && !stamped && !reducedMotion && 'animate-pulse',
       )}
       style={
@@ -62,10 +62,10 @@ function LoyaltyStamp({
           lottieRef={lottieRef}
           animationData={confirmationAnimation}
           loop={false}
-          className="h-9 w-9"
+          className="h-11 w-11 sm:h-12 sm:w-12"
         />
       ) : (
-        <span className="text-xs font-bold text-emerald-500">{index + 1}</span>
+        <span className="text-sm font-bold text-emerald-600 sm:text-base">{index + 1}</span>
       )}
     </div>
   );
@@ -115,7 +115,7 @@ export function HomeUspSection() {
     <section
       ref={sectionRef}
       id="offers"
-      className="w-full scroll-mt-20 bg-gradient-to-b from-emerald-50/80 to-background py-12 md:py-16"
+      className="w-full scroll-mt-20 bg-gradient-to-b from-emerald-50/80 to-background py-14 md:py-20"
     >
       <div className="container mx-auto px-4 md:px-6">
         <div
@@ -133,7 +133,7 @@ export function HomeUspSection() {
           <p className="mt-3 text-muted-foreground md:text-lg">{usp.subtitle}</p>
         </div>
 
-        <div className="mx-auto mt-8 grid max-w-4xl gap-4 sm:grid-cols-2">
+        <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2">
           <div
             className={cn(
               'rounded-2xl border border-emerald-200 bg-white p-6 shadow-sm transition-all duration-500 motion-reduce:transition-none',
@@ -170,48 +170,55 @@ export function HomeUspSection() {
 
         <div
           className={cn(
-            'mx-auto mt-8 max-w-2xl rounded-2xl border border-dashed border-emerald-300 bg-white/80 p-6 text-center shadow-sm transition-all duration-700 motion-reduce:transition-none',
-            'hover:border-emerald-400 hover:bg-white hover:shadow-md motion-reduce:hover:shadow-sm',
-            inView ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-8 scale-[0.98] opacity-0',
+            'mx-auto mt-10 max-w-xl transition-all duration-700 motion-reduce:transition-none',
+            inView ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0',
           )}
           style={{ transitionDelay: inView ? '320ms' : '0ms' }}
-          aria-label={usp.stamp_card_aria}
         >
-          <div className="mb-4 inline-flex items-center gap-2 text-sm font-semibold text-emerald-700">
-            <Stamp className="h-4 w-4" />
-            {usp.stamp_card_title}
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-2">
-            {Array.from({ length: STAMP_COUNT }).map((_, i) => (
-              <LoyaltyStamp
-                key={i}
-                index={i}
-                active={inView}
-                reducedMotion={reducedMotion}
-              />
-            ))}
-            <div
-              className={cn(
-                'flex h-11 min-w-[4.5rem] items-center justify-center gap-1 rounded-full px-3 text-xs font-bold text-white transition-all duration-500 motion-reduce:transition-none',
-                'bg-emerald-600',
-                stampsComplete
-                  ? 'scale-105 shadow-md ring-2 ring-emerald-300/70 motion-reduce:scale-100 motion-reduce:ring-0'
-                  : 'scale-100 opacity-90',
-              )}
-            >
-              <Gift className="h-3.5 w-3.5 shrink-0" aria-hidden />
-              {usp.stamp_free_label}
-            </div>
-          </div>
-          <p
+          <div
             className={cn(
-              'mt-4 text-sm leading-relaxed text-muted-foreground transition-opacity duration-700 motion-reduce:transition-none',
-              inView ? 'opacity-100' : 'opacity-0',
+              'flex flex-col justify-center rounded-2xl border-2 border-emerald-400 bg-white p-8 text-center shadow-lg sm:p-10',
+              'hover:border-emerald-500 hover:shadow-xl motion-reduce:hover:shadow-lg',
+              inView ? 'scale-100' : 'scale-[0.98]',
             )}
-            style={{ transitionDelay: inView ? '520ms' : '0ms' }}
+            aria-label={usp.stamp_card_aria}
           >
-            {usp.stamp_note}
-          </p>
+            <div className="mb-6 inline-flex items-center justify-center gap-2 text-base font-bold text-emerald-700 sm:text-lg">
+              <Stamp className="h-5 w-5" />
+              {usp.stamp_card_title}
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+              {Array.from({ length: STAMP_COUNT }).map((_, i) => (
+                <LoyaltyStamp
+                  key={i}
+                  index={i}
+                  active={inView}
+                  reducedMotion={reducedMotion}
+                />
+              ))}
+              <div
+                className={cn(
+                  'flex h-14 min-w-[5rem] items-center justify-center gap-1.5 rounded-full px-4 text-sm font-bold text-white transition-all duration-500 motion-reduce:transition-none sm:h-16 sm:min-w-[5.5rem] sm:text-base',
+                  'bg-emerald-600',
+                  stampsComplete
+                    ? 'scale-105 shadow-lg ring-4 ring-emerald-300/60 motion-reduce:scale-100 motion-reduce:ring-0'
+                    : 'scale-100 opacity-90',
+                )}
+              >
+                <Gift className="h-4 w-4 shrink-0 sm:h-5 sm:w-5" aria-hidden />
+                {usp.stamp_free_label}
+              </div>
+            </div>
+            <p
+              className={cn(
+                'mt-6 text-base leading-relaxed text-slate-700 transition-opacity duration-700 motion-reduce:transition-none sm:text-lg',
+                inView ? 'opacity-100' : 'opacity-0',
+              )}
+              style={{ transitionDelay: inView ? '520ms' : '0ms' }}
+            >
+              {usp.stamp_note}
+            </p>
+          </div>
         </div>
       </div>
     </section>

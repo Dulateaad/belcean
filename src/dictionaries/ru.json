@@ -70,6 +70,43 @@
     "services_price_individual": "Стоимость по запросу",
     "services_order_button": "Заказать",
     "services_calculate_hint": "Рассчитайте стоимость онлайн — без повторной заявки.",
+    "services_groups": [
+      {
+        "id": "home",
+        "emoji": "🏠",
+        "title": "Для дома",
+        "items": [
+          { "label": "Генеральная уборка", "slug": "/generalnaya-uborka" },
+          { "label": "Влажная уборка", "slug": "/vlazhnaya-uborka" },
+          { "label": "Уборка после ремонта", "slug": "/poslestroitelnaya-uborka" },
+          { "label": "Химчистка мебели", "slug": "/himchistka-mebeli" },
+          { "label": "Химчистка ковров", "slug": "/chistka-kover" },
+          { "label": "Мытье окон", "slug": "/moika-okon" }
+        ]
+      },
+      {
+        "id": "business",
+        "emoji": "🏢",
+        "title": "Для бизнеса",
+        "items": [
+          { "label": "Уборка офисов", "slug": "/uborka-ofisov-tashkent" },
+          { "label": "Мытье фасадов", "slug": "/moika-okon" },
+          { "label": "Мойка витрин", "slug": "/moika-okon" },
+          { "label": "Ежедневная уборка", "slug": "/abonentskiy-klining" },
+          { "label": "Генеральная уборка офисов", "slug": "/generalnaya-uborka" }
+        ]
+      },
+      {
+        "id": "extra",
+        "emoji": "🚚",
+        "title": "Дополнительные услуги",
+        "items": [
+          { "label": "Грузчики", "slug": "/pomosh-pri-pereezde" },
+          { "label": "Помощь при переезде", "slug": "/pomosh-pri-pereezde" },
+          { "label": "Вывоз мусора", "slug": "#inquiry" }
+        ]
+      }
+    ],
     "learn_more": "Рассчитать стоимость за 5 сек",
     "trust_us_title": "Нам доверяют",
     "trust_us_subtitle": "Разные сферы бизнеса выбирают нас для поддержания чистоты",
@@ -106,11 +143,11 @@
       "first_discount_title": "−15% на первую уборку",
       "first_discount_desc": "Новым клиентам — скидка 15% на первый заказ. Просто оставьте заявку и укажите, что заказываете впервые.",
       "loyalty_title": "7-я уборка бесплатно",
-      "loyalty_desc": "После 6 оплаченных уборок седьмая — в подарок. Программа действует для регулярных и разовых клиентов.",
+      "loyalty_desc": "После 6 оплаченных уборок седьмая — в подарок.",
       "stamp_card_title": "Карта лояльности",
       "stamp_card_aria": "Карта лояльности: 6 печатей, седьмая уборка бесплатно",
       "stamp_free_label": "7",
-      "stamp_note": "После каждой уборки ставим печать на вашу карту лояльности. Соберите 6 печатей — следующая уборка бесплатно."
+      "stamp_note": "После каждой уборки ставим печать на карту лояльности. Соберите 6 печатей — следующая уборка бесплатно."
     },
     "home_faq": {
       "badge": "Ответы на",
