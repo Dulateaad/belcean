@@ -129,20 +129,6 @@
         "subtitle": "Har qanday murakkablikdagi fasadlarni professional yuvish",
         "imageKey": "facade",
         "href": "/moika-okon"
-      },
-      {
-        "id": "storefront",
-        "title": "Vitrina yuvish",
-        "subtitle": "Toza vitrinalar — mijozlarni jalb qiladi",
-        "imageKey": "storefront",
-        "href": "/moika-okon"
-      },
-      {
-        "id": "daily",
-        "title": "Kundalik tozalash",
-        "subtitle": "Har kuni tozalikni saqlash",
-        "imageKey": "/abonentskiy-klining",
-        "href": "/abonentskiy-klining"
       }
     ],
     "services_business_featured": {

@@ -129,20 +129,6 @@
         "subtitle": "Профессиональное мытье фасадов любой сложности",
         "imageKey": "facade",
         "href": "/moika-okon"
-      },
-      {
-        "id": "storefront",
-        "title": "Мойка витрин",
-        "subtitle": "Чистые витрины — привлекают клиентов",
-        "imageKey": "storefront",
-        "href": "/moika-okon"
-      },
-      {
-        "id": "daily",
-        "title": "Ежедневная уборка",
-        "subtitle": "Поддержание чистоты каждый день",
-        "imageKey": "/abonentskiy-klining",
-        "href": "/abonentskiy-klining"
       }
     ],
     "services_business_featured": {

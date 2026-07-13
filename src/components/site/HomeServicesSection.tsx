@@ -142,16 +142,10 @@ export function HomeServicesSection() {
                       className="flex w-full items-center gap-3 p-3 text-left sm:gap-4 sm:p-4"
                       aria-expanded={isOpen}
                     >
-                      <ServiceThumb
-                        imageKey={card.imageKey}
-                        alt={card.title}
-                        className="h-16 w-16 shrink-0 rounded-xl sm:h-20 sm:w-20"
-                      />
                       <div className="min-w-0 flex-1">
                         <p className="font-headline text-base font-bold text-foreground sm:text-lg">
                           {card.title}
                         </p>
-                        <p className="mt-0.5 text-sm text-muted-foreground">{card.subtitle}</p>
                         {card.tags?.length ? (
                           <div className="mt-2 flex flex-wrap gap-1.5">
                             {card.tags.map((tag) => (
@@ -209,11 +203,6 @@ export function HomeServicesSection() {
                   key={card.id}
                   className="flex items-center gap-3 rounded-2xl border border-border/50 bg-white p-3 shadow-sm sm:gap-4 sm:p-4"
                 >
-                  <ServiceThumb
-                    imageKey={card.imageKey}
-                    alt={card.title}
-                    className="h-16 w-16 shrink-0 rounded-xl sm:h-20 sm:w-20"
-                  />
                   <div className="min-w-0 flex-1">
                     <Link
                       href={resolveHref(locale, card.href || card.tags?.[0]?.slug || '#inquiry')}
@@ -222,7 +211,6 @@ export function HomeServicesSection() {
                       <p className="font-headline text-base font-bold text-foreground sm:text-lg">
                         {card.title}
                       </p>
-                      <p className="mt-0.5 text-sm text-muted-foreground">{card.subtitle}</p>
                     </Link>
                     {card.tags?.length ? (
                       <div className="mt-2 flex flex-wrap gap-1.5">
