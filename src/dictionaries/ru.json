@@ -90,10 +90,10 @@
         "title": "Для бизнеса",
         "items": [
           { "label": "Уборка офисов", "slug": "/uborka-ofisov-tashkent" },
-          { "label": "Мытье фасадов", "slug": "/moika-okon" },
-          { "label": "Мойка витрин", "slug": "/moika-okon" },
+          { "label": "Мытье фасадов", "slug": "/moika-okon", "imageKey": "facade" },
+          { "label": "Мойка витрин", "slug": "/moika-okon", "imageKey": "storefront" },
           { "label": "Ежедневная уборка", "slug": "/abonentskiy-klining" },
-          { "label": "Генеральная уборка офисов", "slug": "/generalnaya-uborka" }
+          { "label": "Генеральная уборка офисов", "slug": "/generalnaya-uborka", "imageKey": "office-general" }
         ]
       },
       {
@@ -101,9 +101,9 @@
         "emoji": "🚚",
         "title": "Дополнительные услуги",
         "items": [
-          { "label": "Грузчики", "slug": "/pomosh-pri-pereezde" },
+          { "label": "Грузчики", "slug": "/pomosh-pri-pereezde", "imageKey": "movers" },
           { "label": "Помощь при переезде", "slug": "/pomosh-pri-pereezde" },
-          { "label": "Вывоз мусора", "slug": "#inquiry" }
+          { "label": "Вывоз мусора", "slug": "#inquiry", "imageKey": "trash" }
         ]
       }
     ],
